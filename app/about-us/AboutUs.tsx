@@ -128,6 +128,7 @@ export default function AboutUs() {
       <MissionWhy />
       <Pillars />
       <Differentiators />
+      <Founder />
       <Values />
       <CTABand />
     </>
@@ -138,7 +139,7 @@ export default function AboutUs() {
 
 function Hero() {
   return (
-    <section className="relative overflow-hidden bg-navy pt-20 pb-28">
+    <section className="relative overflow-hidden bg-navy pt-12 pb-16 sm:pt-20 sm:pb-28">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"
@@ -194,7 +195,7 @@ function Hero() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.05 }}
-              className="mt-6 text-5xl font-bold leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-[4.25rem]"
+              className="mt-5 text-[2.1rem] font-bold leading-[1.1] tracking-tight text-white sm:mt-6 sm:text-5xl md:text-6xl lg:text-[4.25rem]"
             >
               The nation&apos;s first MSO built{" "}
               <span className="bg-gradient-to-r from-teal to-teal-light bg-clip-text text-transparent">
@@ -267,7 +268,7 @@ function Hero() {
           >
             <span
               aria-hidden="true"
-              className="pointer-events-none absolute -top-20 -left-8 select-none text-[12rem] font-black leading-none tracking-tighter"
+              className="pointer-events-none absolute -top-10 -left-4 select-none text-[6rem] font-black leading-none tracking-tighter sm:-top-20 sm:-left-8 sm:text-[12rem]"
               style={{
                 WebkitTextStroke: "2px rgba(42,191,191,0.22)",
                 color: "transparent",
@@ -508,7 +509,7 @@ function Marquee() {
 
 function WhoWeAre() {
   return (
-    <section className="relative overflow-hidden bg-white py-28">
+    <section className="relative overflow-hidden bg-white py-16 sm:py-20 lg:py-28">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"
@@ -591,7 +592,7 @@ function WhoWeAre() {
 
 function MissionWhy() {
   return (
-    <section className="relative overflow-hidden bg-navy py-28">
+    <section className="relative overflow-hidden bg-navy py-16 sm:py-20 lg:py-28">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"
@@ -626,7 +627,7 @@ function MissionWhy() {
           >
             <span
               aria-hidden="true"
-              className="pointer-events-none absolute -right-10 -top-12 select-none text-[10rem] font-black leading-none text-teal/[0.07]"
+              className="pointer-events-none absolute -right-4 -top-6 select-none text-[5rem] font-black leading-none text-teal/[0.07] sm:-right-10 sm:-top-12 sm:text-[10rem]"
             >
               01
             </span>
@@ -673,7 +674,7 @@ function MissionWhy() {
           >
             <span
               aria-hidden="true"
-              className="pointer-events-none absolute -right-10 -top-12 select-none text-[10rem] font-black leading-none text-teal/[0.07]"
+              className="pointer-events-none absolute -right-4 -top-6 select-none text-[5rem] font-black leading-none text-teal/[0.07] sm:-right-10 sm:-top-12 sm:text-[10rem]"
             >
               02
             </span>
@@ -737,7 +738,7 @@ function MissionWhy() {
 
 function Pillars() {
   return (
-    <section className="relative overflow-hidden bg-white py-28">
+    <section className="relative overflow-hidden bg-white py-16 sm:py-20 lg:py-28">
       <div className="relative mx-auto max-w-7xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -796,7 +797,7 @@ function Pillars() {
 
 function Differentiators() {
   return (
-    <section className="relative overflow-hidden bg-navy py-28">
+    <section className="relative overflow-hidden bg-navy py-16 sm:py-20 lg:py-28">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"
@@ -904,7 +905,7 @@ function Differentiators() {
 
 function Values() {
   return (
-    <section className="relative overflow-hidden bg-white py-28">
+    <section className="relative overflow-hidden bg-white py-16 sm:py-20 lg:py-28">
       <div className="relative mx-auto max-w-7xl px-6">
         <div className="grid items-center gap-12 lg:grid-cols-[1fr_1.4fr]">
           <motion.div
@@ -965,11 +966,80 @@ function Values() {
   );
 }
 
+/* ==================== FOUNDER ==================== */
+
+function Founder() {
+  return (
+    <section className="relative scroll-mt-32 overflow-hidden bg-navy py-16 sm:py-20 lg:py-24">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(900px 500px at 20% 30%, rgba(42,191,191,0.12), transparent 60%)",
+        }}
+      />
+      <div className="relative mx-auto max-w-5xl px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.5 }}
+          className="text-center"
+        >
+          <span className="inline-flex items-center gap-2 rounded-full bg-teal/10 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.25em] text-teal ring-1 ring-teal/30 backdrop-blur">
+            <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
+            Founder
+          </span>
+          <h2 className="mt-5 text-3xl font-bold text-white sm:text-4xl">
+            Built by an operator who&apos;s lived the problem
+          </h2>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6 }}
+          className="mt-12 grid items-center gap-10 rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 backdrop-blur sm:p-10 md:grid-cols-[260px_1fr] md:gap-12"
+        >
+          <div className="mx-auto h-[220px] w-[220px] overflow-hidden rounded-3xl bg-gradient-to-br from-teal/30 via-navy-mid to-navy ring-1 ring-white/10 md:mx-0">
+            <div className="flex h-full w-full items-center justify-center text-white/40">
+              <Users className="h-16 w-16" aria-hidden="true" />
+            </div>
+          </div>
+          <div>
+            <p className="text-2xl font-bold text-white">Founder name</p>
+            <p className="mt-1 text-sm font-semibold uppercase tracking-[0.2em] text-teal">
+              Founder &amp; CEO, Dental Sleep Link
+            </p>
+            <p className="mt-5 text-base leading-relaxed text-white/75">
+              [Founder bio placeholder \u2014 replace before launch.] Short
+              paragraph on the founder&apos;s background in dental practice
+              operations, sleep medicine, medical billing, and why Dental
+              Sleep Link exists. The goal is to give a partner-facing dentist
+              one clear answer to &ldquo;who&apos;s actually behind this and
+              why should I trust the model?&rdquo;
+            </p>
+            <p className="mt-4 text-base leading-relaxed text-white/75">
+              [Second paragraph placeholder.] Track record \u2014 practices
+              built or advised, sleep cases personally walked through the
+              system, the specific operational gap this MSO is built to
+              close. Close with a one-line point of view on where dental
+              sleep medicine is going over the next 3\u20135 years.
+            </p>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
 /* ==================== CTA BAND ==================== */
 
 function CTABand() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-teal-dark via-teal to-teal-dark py-24">
+    <section className="relative overflow-hidden bg-gradient-to-br from-teal-dark via-teal to-teal-dark py-16 sm:py-20 lg:py-24">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 opacity-20"
@@ -1002,7 +1072,7 @@ function CTABand() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6 }}
-          className="text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl"
+          className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl"
         >
           Ready to build a sleep practice without the guesswork?
         </motion.h2>

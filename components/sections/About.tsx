@@ -27,7 +27,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative scroll-mt-32 overflow-hidden bg-white py-28"
+      className="relative scroll-mt-32 overflow-hidden bg-white py-16 sm:py-20 lg:py-28"
     >
       {/* Mesh + grid backdrop */}
       <div
@@ -64,7 +64,7 @@ export default function About() {
         className="pointer-events-none absolute bottom-0 left-0 h-80 w-80 rounded-full bg-teal/8 blur-3xl"
       />
 
-      <div className="relative mx-auto max-w-7xl px-6">
+      <div className="relative mx-auto max-w-7xl px-5 sm:px-6">
         {/* HEADER */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -80,7 +80,7 @@ export default function About() {
             </span>
             About us
           </span>
-          <h2 className="mt-5 text-4xl font-bold leading-[1.1] tracking-tight text-navy sm:text-5xl">
+          <h2 className="mt-5 text-3xl font-bold leading-[1.1] tracking-tight text-navy sm:text-4xl md:text-5xl">
             The first MSO built exclusively for{" "}
             <span className="bg-gradient-to-r from-teal-dark to-teal bg-clip-text text-transparent">
               dental sleep medicine
@@ -127,7 +127,7 @@ export default function About() {
         </motion.div>
 
         {/* MAIN GRID */}
-        <div className="mt-16 grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+        <div className="mt-10 grid gap-8 sm:mt-16 sm:gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
           {/* LEFT: image + bullets */}
           <div>
             {/* Image with rotating gradient border */}

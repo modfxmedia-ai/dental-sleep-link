@@ -8,7 +8,9 @@ import {
   Sparkles,
   ClipboardEdit,
   MessageSquare,
+  MapPin,
   Settings,
+  GraduationCap,
   Rocket,
   Check,
   ArrowUpRight,
@@ -35,68 +37,111 @@ const STEPS = [
     imageAlt: "Filling out an online application on a laptop",
   },
   {
-    id: "interview",
+    id: "discovery",
     number: "02",
-    tag: "Interview",
+    tag: "Discovery",
     icon: MessageSquare,
-    title: "Interview & Practice Review",
+    title: "Discovery Call",
     body:
-      "Our team will connect with you to assess your current sleep services, insurance workflows, and growth potential — and decide together if it&apos;s the right fit.",
+      "A 30-minute call to walk through your practice, your goals, and the program. We answer your questions and you decide if a deeper conversation makes sense — no sales pressure.",
     bullets: [
-      "30-minute discovery call",
-      "Practice workflow review",
-      "Insurance & payer audit",
-      "Market exclusivity check",
+      "30-minute call",
+      "Practice and goals review",
+      "Open Q&A on the model",
+      "You decide the next step",
     ],
     metric: { value: "30 min", label: "Discovery call" },
     image: "/images/how-to-join/step-2.jpg",
     imageAlt: "Discovery and partner interview meeting",
   },
   {
-    id: "onboarding",
+    id: "market",
     number: "03",
+    tag: "Market",
+    icon: MapPin,
+    title: "Market Verification",
+    body:
+      "We work one partner per market. We confirm your market is open, review payer mix and patient demographics, and make sure the economics work for both sides before moving forward.",
+    bullets: [
+      "One partner per market check",
+      "Payer mix review",
+      "Patient demographic review",
+      "Mutual go / no-go decision",
+    ],
+    metric: { value: "1", label: "Partner per market" },
+    image: "/images/how-to-join/step-2.jpg",
+    imageAlt: "Reviewing market coverage on a map",
+  },
+  {
+    id: "onboarding",
+    number: "04",
     tag: "Onboarding",
     icon: Settings,
     title: "Onboarding & Setup",
     body:
-      "We handle credentialing, compliance setup, billing integration, and sleep dentistry training — so you&apos;re ready to launch with confidence.",
+      "We handle credentialing, compliance setup, and billing integration so the operational scaffolding is in place before the first patient walks in for a sleep consult.",
     bullets: [
       "Credentialing handled for you",
       "Compliance & HIPAA setup",
       "Billing integration",
-      "Sleep dentistry training",
+      "Practice management linkage",
     ],
-    metric: { value: "30 days", label: "Avg. onboarding" },
+    metric: { value: "~30 days", label: "Onboarding window" },
     image: "/images/how-to-join/step-3.jpg",
-    imageAlt: "Onboarding and clinical training session",
+    imageAlt: "Onboarding setup and integration session",
+  },
+  {
+    id: "training",
+    number: "05",
+    tag: "Training",
+    icon: GraduationCap,
+    title: "Clinical & Billing Training",
+    body:
+      "Hands-on training for the dentist and the team — screening, consultation workflow, appliance fitting, follow-up cadence, and how the billing engine works behind the scenes.",
+    bullets: [
+      "Clinical workflow training",
+      "Front desk screening scripts",
+      "Appliance fitting protocols",
+      "Billing & follow-up cadence",
+    ],
+    metric: { value: "Hands-on", label: "For dentist + team" },
+    image: "/images/how-to-join/step-3.jpg",
+    imageAlt: "Clinical and operations training session",
   },
   {
     id: "launch",
-    number: "04",
+    number: "06",
     tag: "Launch",
     icon: Rocket,
     title: "Launch & Grow",
     body:
-      "You begin delivering sleep apnea appliances, leveraging higher reimbursements, billing support, and our clinical growth systems — with a partner alongside you.",
+      "First cases go live with billing, lab logistics, and ongoing support running underneath you. From there it&apos;s phased growth — with quarterly business reviews to keep the line on track.",
     bullets: [
-      "First cases within 30 days",
-      "Higher reimbursement rates",
-      "Ongoing billing support",
-      "Quarterly growth reviews",
+      "First live cases",
+      "Billing & lab support running",
+      "Ongoing 1:1 coaching",
+      "Quarterly business reviews",
     ],
-    metric: { value: "+187%", label: "Avg. case growth" },
+    metric: { value: "Phased", label: "Foundation → Ramp → Scale" },
     image: "/images/how-to-join/step-4.webp",
     imageAlt: "Sleep appliance ready for delivery and patient launch",
   },
 ];
 
-const MARQUEE_ITEMS = ["Apply", "Interview", "Onboard", "Launch"];
+const MARQUEE_ITEMS = [
+  "Apply",
+  "Discovery",
+  "Market check",
+  "Onboard",
+  "Train",
+  "Launch",
+];
 
 export default function HowToJoin() {
   return (
     <>
       {/* HERO */}
-      <section className="relative isolate overflow-hidden bg-navy py-24 sm:py-32">
+      <section className="relative isolate overflow-hidden bg-navy py-14 sm:py-20 lg:py-32">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0"
@@ -149,14 +194,14 @@ export default function HowToJoin() {
               <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-teal" />
             </span>
             <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
-            4 simple steps
+            6 simple steps
           </motion.span>
 
           <motion.h1
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-6 text-5xl font-bold leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-7xl"
+            className="mt-5 text-[2.1rem] font-bold leading-[1.1] tracking-tight text-white sm:mt-6 sm:text-5xl md:text-6xl lg:text-7xl"
           >
             Start your journey to{" "}
             <span className="bg-gradient-to-r from-teal to-teal-light bg-clip-text text-transparent">
@@ -193,7 +238,7 @@ export default function HowToJoin() {
               href="#steps"
               className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/5 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur transition-colors hover:border-teal hover:text-teal"
             >
-              See the 4 steps
+              See the 6 steps
             </Link>
           </motion.div>
 
@@ -276,7 +321,7 @@ export default function HowToJoin() {
       </section>
 
       {/* STEPS STACK */}
-      <section id="steps" className="relative scroll-mt-32 bg-white py-24">
+      <section id="steps" className="relative scroll-mt-32 bg-white py-16 sm:py-20 lg:py-24">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0"
@@ -357,7 +402,7 @@ export default function HowToJoin() {
                           whileInView={{ opacity: 1, y: 0 }}
                           viewport={{ once: true, margin: "-80px" }}
                           transition={{ duration: 0.8, delay: 0.1 }}
-                          className={`pointer-events-none absolute -top-12 z-0 select-none text-[10rem] font-black leading-none tracking-tighter ${
+                          className={`pointer-events-none absolute -top-8 z-0 select-none text-[4.5rem] font-black leading-none tracking-tighter sm:-top-12 sm:text-[7rem] lg:text-[10rem] ${
                             reverse ? "-right-2" : "-left-2"
                           }`}
                           style={{

@@ -19,6 +19,7 @@ import {
   TrendingUp,
   Target,
   Check,
+  ShieldCheck,
 } from "lucide-react";
 
 type OutcomeVisual = "network" | "revenue" | "milestones" | "volume";
@@ -39,16 +40,16 @@ const OUTCOMES: {
     number: "01",
     tag: "Network",
     icon: Building2,
-    title: "Practices Successfully Partnered",
+    title: "Built for the next generation of sleep dentistry practices",
     body:
-      "Hundreds of forward-thinking dental practices across the country have already transformed the way they deliver care — and get paid — with our turnkey sleep model. From solo practitioners to multi-location groups, our system delivers scalable results.",
+      "We work with a small, hand-picked cohort of general dentists who want to run sleep medicine as a real business line. Solo practitioners, family groups, and multi-location owners are all a fit — with one partner per market so growth never competes inside the network.",
     bullets: [
       "Solo and group practices",
-      "Active in 28 states",
+      "One partner per market",
       "Multi-location ready",
       "Quarterly business reviews",
     ],
-    metric: { value: "25+", label: "Practices partnered" },
+    metric: { value: "Early", label: "Founding partner cohort" },
     visual: "network",
   },
   {
@@ -56,16 +57,16 @@ const OUTCOMES: {
     number: "02",
     tag: "Revenue",
     icon: Receipt,
-    title: "$50M+ Insurance Reimbursements Processed",
+    title: "Medical billing infrastructure built for scale",
     body:
-      "With access to national-level payer contracts and expert billing support, our partners have successfully collected millions in medical reimbursements — often at much higher rates than traditional practice models.",
+      "We bill sleep cases through medical insurance under contracted rates — not cash or dental codes. Partners get a centralized billing engine, faster collection cycles, and a per-case reimbursement that supports the economics of running sleep as its own line.",
     bullets: [
-      "National payer contracts",
+      "Medical (not dental) reimbursement",
       "Higher per-case yield",
       "Faster collection cycles",
       "Transparent reporting",
     ],
-    metric: { value: "$50M+", label: "Reimbursements processed" },
+    metric: { value: "Medical", label: "Insurance pathway" },
     visual: "revenue",
   },
   {
@@ -73,16 +74,16 @@ const OUTCOMES: {
     number: "03",
     tag: "Outcomes",
     icon: Award,
-    title: "95% of Qualified Applicants Reach Growth Milestones",
+    title: "A structured roadmap to defined growth milestones",
     body:
-      "We've built our program for success. From training to ongoing support, nearly all qualified partners hit defined financial and operational growth goals — proving the model's predictability and power.",
+      "Every partner runs the same phased rollout: foundation, ramp, scale. Clinical, operational, and financial milestones are agreed up front — so the program is measurable, accountable, and not just ‘more training’.",
     bullets: [
       "Defined growth milestones",
       "Ongoing 1:1 coaching",
       "Clinical & financial KPIs",
-      "Predictable outcomes",
+      "Predictable program structure",
     ],
-    metric: { value: "95%", label: "Hit growth milestones" },
+    metric: { value: "3-phase", label: "Foundation → Ramp → Scale" },
     visual: "milestones",
   },
   {
@@ -90,16 +91,16 @@ const OUTCOMES: {
     number: "04",
     tag: "Volume",
     icon: Activity,
-    title: "20+ Appliances Per Month — Average Partner Delivery",
+    title: "Oral appliance fulfillment, end to end",
     body:
-      "Our streamlined appliance workflow makes it easy to deliver more oral sleep devices — creating consistent, recurring revenue without disrupting your daily operations.",
+      "From impressions to fitting to compliance follow-up, the appliance workflow is fully built. Lab logistics, device choice, and patient follow-through are owned by us — so your team can focus on chair time, not coordination.",
     bullets: [
       "Streamlined fitting workflow",
-      "Recurring monthly revenue",
       "Lab logistics handled",
       "Compliance tracking",
+      "Recurring patient touchpoints",
     ],
-    metric: { value: "20+/mo", label: "Avg. appliances per partner" },
+    metric: { value: "Full", label: "Lab & fulfillment handled" },
     visual: "volume",
   },
 ];
@@ -107,24 +108,24 @@ const OUTCOMES: {
 const TESTIMONIALS = [
   {
     quote:
-      "Within six months we moved from a handful of sleep cases a quarter to a recurring revenue stream that pays for two staff. The model is the difference.",
-    name: "Dr. M. Patel",
-    role: "Group practice owner",
-    initials: "MP",
+      "The model gave us a real way to add sleep medicine as a business line, not just another offering buried in the schedule.",
+    name: "Founding partner practice",
+    role: "Family dental, single location",
+    initials: "FP",
   },
   {
     quote:
-      "The billing team alone has been worth the partnership. Our denial rate dropped, our average reimbursement went up, and we stopped chasing claims.",
-    name: "Dr. S. Kim",
-    role: "Solo practitioner",
-    initials: "SK",
+      "Medical billing being run by them — not us — is the biggest unlock. We stopped guessing and started getting paid for the work.",
+    name: "Founding partner practice",
+    role: "General dentistry, two locations",
+    initials: "FP",
   },
   {
     quote:
-      "We're delivering more than 30 appliances a month now. The workflow plugs in without disrupting the hygiene side of the practice at all.",
-    name: "Dr. R. Alvarez",
-    role: "Multi-location group",
-    initials: "RA",
+      "The training and the playbook took the fear out of saying yes to sleep cases. Our team finally has a workflow they trust.",
+    name: "Founding partner practice",
+    role: "Group practice",
+    initials: "FP",
   },
 ];
 
@@ -153,10 +154,10 @@ function CountTo({ value, suffix, active }: { value: number; suffix?: string; ac
 }
 
 const QUICK_STATS = [
-  { value: 25, suffix: "+", label: "Practices partnered", icon: Building2 },
-  { value: 50, suffix: "M+", label: "Reimbursements", icon: Receipt },
-  { value: 95, suffix: "%", label: "Hit milestones", icon: Award },
-  { value: 20, suffix: "/mo", label: "Appliances per partner", icon: Activity },
+  { value: 1, suffix: "", label: "Partner per market", icon: Building2 },
+  { value: 3, suffix: "-phase", label: "Growth roadmap", icon: Award },
+  { value: 100, suffix: "%", label: "You keep practice ownership", icon: ShieldCheck },
+  { value: 1, suffix: " call", label: "To check market fit", icon: Activity },
 ];
 
 export default function SuccessStories() {
@@ -166,7 +167,7 @@ export default function SuccessStories() {
   return (
     <>
       {/* HERO */}
-      <section className="relative isolate overflow-hidden bg-navy py-24 sm:py-32">
+      <section className="relative isolate overflow-hidden bg-navy py-14 sm:py-20 lg:py-32">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0"
@@ -219,18 +220,18 @@ export default function SuccessStories() {
               <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-teal" />
             </span>
             <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
-            Real partner outcomes
+            Founding partner program
           </motion.span>
 
           <motion.h1
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-6 text-5xl font-bold leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-7xl"
+            className="mt-5 text-[2.1rem] font-bold leading-[1.1] tracking-tight text-white sm:mt-6 sm:text-5xl md:text-6xl lg:text-7xl"
           >
-            Transforming dental practices through{" "}
+            What partner practices get with{" "}
             <span className="bg-gradient-to-r from-teal to-teal-light bg-clip-text text-transparent">
-              sleep medicine
+              Dental Sleep Link
             </span>
             .
           </motion.h1>
@@ -241,9 +242,9 @@ export default function SuccessStories() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/70"
           >
-            Join the growing network of successful dentists who&apos;ve unlocked
-            powerful new growth and patient care outcomes through Dental Sleep
-            Link.
+            We&apos;re building Dental Sleep Link with a founding cohort of
+            general dentists. Below is what the program delivers — the
+            infrastructure, the workflow, and the outcomes partners can expect.
           </motion.p>
 
           <motion.div
@@ -302,7 +303,7 @@ export default function SuccessStories() {
                 className="pointer-events-none absolute inset-x-0 h-px bg-gradient-to-r from-transparent via-teal to-transparent opacity-60"
               />
               <span className="absolute right-6 top-6 rounded-full bg-teal px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.25em] text-white shadow-lg shadow-teal/30">
-                25+ partners
+                Founding cohort
               </span>
             </div>
           </motion.div>
@@ -310,7 +311,7 @@ export default function SuccessStories() {
       </section>
 
       {/* QUICK STAT STRIP */}
-      <section ref={statsRef} className="relative overflow-hidden bg-navy py-20">
+      <section ref={statsRef} className="relative overflow-hidden bg-navy py-14 sm:py-20">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0"
@@ -319,8 +320,8 @@ export default function SuccessStories() {
               "radial-gradient(900px 500px at 50% 0%, rgba(42,191,191,0.14), transparent 60%)",
           }}
         />
-        <div className="relative mx-auto max-w-7xl px-6">
-          <div className="grid grid-cols-2 gap-6 lg:grid-cols-4">
+        <div className="relative mx-auto max-w-7xl px-5 sm:px-6">
+          <div className="grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-4">
             {QUICK_STATS.map((s, i) => {
               const Icon = s.icon;
               return (
@@ -331,7 +332,7 @@ export default function SuccessStories() {
                   viewport={{ once: true, margin: "-60px" }}
                   transition={{ duration: 0.5, delay: i * 0.08 }}
                   whileHover={{ y: -6 }}
-                  className="group relative overflow-hidden rounded-2xl bg-navy-mid/70 p-6 ring-1 ring-white/10 backdrop-blur transition-all hover:ring-teal/40 hover:shadow-2xl hover:shadow-teal/20"
+                  className="group relative overflow-hidden rounded-2xl bg-navy-mid/70 p-4 ring-1 ring-white/10 backdrop-blur transition-all hover:ring-teal/40 hover:shadow-2xl hover:shadow-teal/20 sm:p-6"
                 >
                   <motion.span
                     aria-hidden="true"
@@ -339,13 +340,13 @@ export default function SuccessStories() {
                     transition={{ duration: 4 + i, repeat: Infinity, ease: "easeInOut" }}
                     className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-teal/10 blur-2xl"
                   />
-                  <span className="relative inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-teal/30 to-teal/10 text-teal ring-1 ring-teal/20">
-                    <Icon className="h-6 w-6" aria-hidden="true" />
+                  <span className="relative inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-teal/30 to-teal/10 text-teal ring-1 ring-teal/20 sm:h-12 sm:w-12 sm:rounded-2xl">
+                    <Icon className="h-5 w-5 sm:h-6 sm:w-6" aria-hidden="true" />
                   </span>
-                  <p className="relative mt-5 text-5xl font-black leading-none text-white">
+                  <p className="relative mt-4 break-words text-2xl font-black leading-none text-white sm:mt-5 sm:text-3xl lg:text-4xl xl:text-5xl">
                     <CountTo value={s.value} suffix={s.suffix} active={inView} />
                   </p>
-                  <p className="relative mt-3 text-sm text-white/70">{s.label}</p>
+                  <p className="relative mt-2 text-xs text-white/70 sm:mt-3 sm:text-sm">{s.label}</p>
                 </motion.div>
               );
             })}
@@ -354,7 +355,7 @@ export default function SuccessStories() {
       </section>
 
       {/* OUTCOMES STACK */}
-      <section id="outcomes" className="relative scroll-mt-32 bg-white py-24">
+      <section id="outcomes" className="relative scroll-mt-32 bg-white py-16 sm:py-20 lg:py-24">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0"
@@ -402,7 +403,7 @@ export default function SuccessStories() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: "-80px" }}
                         transition={{ duration: 0.8, delay: 0.1 }}
-                        className={`pointer-events-none absolute -top-12 z-0 select-none text-[10rem] font-black leading-none tracking-tighter ${
+                        className={`pointer-events-none absolute -top-8 z-0 select-none text-[4.5rem] font-black leading-none tracking-tighter sm:-top-12 sm:text-[7rem] lg:text-[10rem] ${
                           reverse ? "-right-2" : "-left-2"
                         }`}
                         style={{
@@ -553,7 +554,7 @@ export default function SuccessStories() {
       </section>
 
       {/* TESTIMONIALS */}
-      <section className="relative overflow-hidden bg-navy py-24">
+      <section className="relative overflow-hidden bg-navy py-16 sm:py-20 lg:py-24">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0"
@@ -808,7 +809,7 @@ function RevenueVisual() {
         <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-teal">
           Reimbursed
         </p>
-        <p className="mt-1 flex items-baseline gap-1 text-6xl font-black leading-none text-white">
+        <p className="mt-1 flex items-baseline gap-1 text-4xl font-black leading-none text-white sm:text-5xl lg:text-6xl">
           <span className="text-3xl text-teal">$</span>
           {n}
           <span className="text-3xl text-teal">M+</span>
@@ -980,7 +981,7 @@ function MilestonesVisual() {
             <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-white/60">
               Hit milestones
             </p>
-            <p className="mt-1 text-6xl font-black leading-none text-white">
+            <p className="mt-1 text-4xl font-black leading-none text-white sm:text-5xl lg:text-6xl">
               {n}
               <span className="text-3xl text-teal">%</span>
             </p>

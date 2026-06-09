@@ -34,9 +34,9 @@ export default function Testimonials() {
   return (
     <section
       id="success-stories"
-      className="relative scroll-mt-32 bg-navy py-24"
+      className="relative scroll-mt-32 bg-navy py-16 sm:py-20 lg:py-24"
     >
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -52,7 +52,7 @@ export default function Testimonials() {
           </h2>
         </motion.div>
 
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
+        <div className="mt-10 grid gap-5 sm:mt-14 sm:gap-6 md:grid-cols-3">
           {TESTIMONIALS.map((t, i) => (
             <motion.figure
               key={t.id}

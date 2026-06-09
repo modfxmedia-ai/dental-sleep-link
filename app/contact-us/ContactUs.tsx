@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { CONTACT as SITE_CONTACT } from "@/lib/seo";
 import {
   ArrowRight,
   Sparkles,
@@ -22,21 +23,21 @@ const INFO = [
   {
     icon: Phone,
     label: "Call us",
-    value: "(123) 456-7890",
-    href: "tel:+11234567890",
+    value: SITE_CONTACT.phoneDisplay,
+    href: `tel:${SITE_CONTACT.phone}`,
     sub: "Mon – Fri · 9am – 6pm ET",
   },
   {
     icon: Mail,
     label: "Email us",
-    value: "info@dentalsleeplink.com",
-    href: "mailto:info@dentalsleeplink.com",
+    value: SITE_CONTACT.email,
+    href: `mailto:${SITE_CONTACT.email}`,
     sub: "Reply within 1 business day",
   },
   {
     icon: MapPin,
     label: "Visit us",
-    value: "123 Main St, Springfield, USA",
+    value: `${SITE_CONTACT.locality}, ${SITE_CONTACT.region}`,
     href: "#map",
     sub: "By appointment only",
   },
@@ -51,9 +52,9 @@ const INFO = [
 
 const REASONS = [
   "Apply to become a partner",
-  "Ask about a specific market",
+  "Ask about market availability",
   "Billing or claims question",
-  "Press &amp; media inquiry",
+  "Press & media inquiry",
 ];
 
 const PROMISES = [
@@ -67,7 +68,7 @@ export default function ContactUs() {
   return (
     <>
       {/* HERO */}
-      <section className="relative isolate overflow-hidden bg-navy py-24 sm:py-28">
+      <section className="relative isolate overflow-hidden bg-navy py-14 sm:py-20 lg:py-28">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0"
@@ -127,7 +128,7 @@ export default function ContactUs() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-6 text-5xl font-bold leading-[1.05] tracking-tight text-white sm:text-6xl"
+            className="mt-5 text-[2.1rem] font-bold leading-[1.1] tracking-tight text-white sm:mt-6 sm:text-5xl md:text-6xl"
           >
             Talk to a{" "}
             <span className="bg-gradient-to-r from-teal to-teal-light bg-clip-text text-transparent">
@@ -170,7 +171,7 @@ export default function ContactUs() {
       </section>
 
       {/* INFO CARDS + FORM */}
-      <section className="relative bg-white py-24">
+      <section className="relative bg-white py-16 sm:py-20 lg:py-24">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0"
@@ -255,6 +256,36 @@ export default function ContactUs() {
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
+                  const form = e.currentTarget;
+                  const data = new FormData(form);
+                  const get = (k: string) => (data.get(k)?.toString() || "").trim();
+                  const reasons = data.getAll("reasons").map(String).filter(Boolean);
+                  const first = get("first");
+                  const last = get("last");
+                  const lines = [
+                    `Name: ${first} ${last}`.trim(),
+                    `Email: ${get("email")}`,
+                    `Phone: ${get("phone") || "—"}`,
+                    `Practice: ${get("practice") || "—"}`,
+                    `City & state: ${get("city") || "—"}`,
+                    "",
+                    "— Screening —",
+                    `General dentist: ${get("is_dentist") || "—"}`,
+                    `Years in practice: ${get("practice_age") || "—"}`,
+                    `Operatories: ${get("operatories") || "—"}`,
+                    `Current monthly sleep cases: ${get("sleep_volume") || "—"}`,
+                    `Annual production tier: ${get("production") || "—"}`,
+                    "",
+                    `Interest: ${reasons.length ? reasons.join(", ") : "—"}`,
+                    "",
+                    "— Message —",
+                    get("message"),
+                  ];
+                  const body = encodeURIComponent(lines.join("\n"));
+                  const subject = encodeURIComponent(
+                    `Partner inquiry — ${first} ${last}`.trim() || "Partner inquiry",
+                  );
+                  window.location.href = `mailto:${SITE_CONTACT.email}?subject=${subject}&body=${body}`;
                   setSent(true);
                 }}
                 className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-navy via-navy-mid to-navy p-8 ring-1 ring-white/10 shadow-2xl shadow-navy/30 sm:p-10"
@@ -292,11 +323,15 @@ export default function ContactUs() {
                         <Check className="h-7 w-7" aria-hidden="true" />
                       </span>
                       <p className="mt-4 text-lg font-bold text-white">
-                        Thanks — we got your note.
+                        Thanks — your email client should be opening.
                       </p>
                       <p className="mt-2 text-sm text-white/70">
-                        A partner success lead will reach out within one
-                        business day.
+                        If nothing opened, email us directly at{" "}
+                        <a href={`mailto:${SITE_CONTACT.email}`} className="font-semibold text-teal hover:text-teal-light">
+                          {SITE_CONTACT.email}
+                        </a>
+                        . A partner success lead will reply within one business
+                        day.
                       </p>
                       <button
                         type="button"
@@ -317,7 +352,51 @@ export default function ContactUs() {
                         <Field label="Phone" name="phone" placeholder="(555) 123-4567" />
                       </div>
                       <Field label="Practice name" name="practice" placeholder="Smile Family Dental" />
-                      <Field label="City &amp; state" name="city" placeholder="Springfield, IL" />
+                      <Field label="City &amp; state" name="city" placeholder="Springfield, IL" required />
+
+                      <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+                        <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-teal">
+                          A few screening questions
+                        </p>
+                        <p className="mt-1 text-xs text-white/60">
+                          Helps us check market availability and whether the
+                          program is a fit before our first call.
+                        </p>
+                        <div className="mt-5 grid gap-5 sm:grid-cols-2">
+                          <SelectField
+                            label="Are you a general dentist?"
+                            name="is_dentist"
+                            required
+                            options={["Yes", "No — specialist", "No — non-clinical owner"]}
+                          />
+                          <SelectField
+                            label="Years in practice"
+                            name="practice_age"
+                            required
+                            options={["Under 3", "3–7", "8–15", "15+"]}
+                          />
+                          <SelectField
+                            label="Operatories"
+                            name="operatories"
+                            options={["1–2", "3–4", "5–7", "8+"]}
+                          />
+                          <SelectField
+                            label="Current monthly sleep cases"
+                            name="sleep_volume"
+                            options={["0", "1–5", "6–15", "15+"]}
+                          />
+                          <SelectField
+                            label="Annual practice production"
+                            name="production"
+                            options={[
+                              "Under $750K",
+                              "$750K–$1.5M",
+                              "$1.5M–$3M",
+                              "$3M+",
+                            ]}
+                          />
+                        </div>
+                      </div>
 
                       <div>
                         <label className="block text-[11px] font-semibold uppercase tracking-[0.2em] text-white/70">
@@ -330,7 +409,7 @@ export default function ContactUs() {
                               className="cursor-pointer rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-semibold text-white/80 backdrop-blur transition-all has-[:checked]:border-teal has-[:checked]:bg-teal has-[:checked]:text-white hover:border-teal/60"
                             >
                               <input type="checkbox" name="reasons" value={r} className="sr-only" />
-                              <span dangerouslySetInnerHTML={{ __html: r }} />
+                              <span>{r}</span>
                             </label>
                           ))}
                         </div>
@@ -354,12 +433,12 @@ export default function ContactUs() {
                         className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-teal to-teal-dark px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-teal/30 transition-transform hover:scale-105"
                       >
                         <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
-                        <span className="relative">Send message</span>
+                        <span className="relative">Open my email to send</span>
                         <Send className="relative h-4 w-4 transition-transform group-hover:translate-x-1" />
                       </button>
                       <p className="text-center text-[11px] text-white/50">
-                        We&apos;ll only use your info to reply. No marketing
-                        spam, ever.
+                        Submitting opens your default email client with the
+                        details pre-filled. We only use your info to reply.
                       </p>
                     </div>
                   )}
@@ -654,6 +733,45 @@ function Field({
         required={required}
         className="mt-3 w-full rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm text-white placeholder:text-white/40 backdrop-blur focus:border-teal focus:outline-none focus:ring-2 focus:ring-teal/40"
       />
+    </div>
+  );
+}
+
+function SelectField({
+  label,
+  name,
+  options,
+  required,
+}: {
+  label: string;
+  name: string;
+  options: string[];
+  required?: boolean;
+}) {
+  return (
+    <div>
+      <label
+        htmlFor={name}
+        className="block text-[11px] font-semibold uppercase tracking-[0.2em] text-white/70"
+      >
+        {label}
+      </label>
+      <select
+        id={name}
+        name={name}
+        required={required}
+        defaultValue=""
+        className="mt-3 w-full appearance-none rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm text-white backdrop-blur focus:border-teal focus:outline-none focus:ring-2 focus:ring-teal/40"
+      >
+        <option value="" disabled className="bg-navy text-white">
+          Select …
+        </option>
+        {options.map((opt) => (
+          <option key={opt} value={opt} className="bg-navy text-white">
+            {opt}
+          </option>
+        ))}
+      </select>
     </div>
   );
 }

@@ -13,6 +13,7 @@ import {
   Compass,
   Check,
   ArrowUpRight,
+  Scale,
 } from "lucide-react";
 
 const STEPS = [
@@ -120,7 +121,7 @@ export default function TheModel() {
   return (
     <>
       {/* HERO */}
-      <section className="relative isolate overflow-hidden bg-navy py-24 sm:py-32">
+      <section className="relative isolate overflow-hidden bg-navy py-14 sm:py-20 lg:py-32">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0"
@@ -149,7 +150,7 @@ export default function TheModel() {
           className="pointer-events-none absolute -top-32 right-[-6rem] h-[28rem] w-[28rem] rounded-full bg-teal/20 blur-3xl"
         />
 
-        <div className="relative mx-auto max-w-5xl px-6 text-center">
+        <div className="relative mx-auto max-w-5xl px-5 text-center sm:px-6">
           <motion.nav
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
@@ -182,7 +183,7 @@ export default function TheModel() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-6 text-5xl font-bold leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-7xl"
+            className="mt-5 text-[2.1rem] font-bold leading-[1.1] tracking-tight text-white sm:mt-6 sm:text-5xl md:text-6xl lg:text-7xl"
           >
             A proven path to{" "}
             <span className="bg-gradient-to-r from-teal to-teal-light bg-clip-text text-transparent">
@@ -195,7 +196,7 @@ export default function TheModel() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/70"
+            className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-white/70 sm:mt-6 sm:text-lg"
           >
             We&apos;ve simplified the process of integrating sleep apnea
             services into your dental practice. Our model is built to reduce
@@ -334,7 +335,7 @@ export default function TheModel() {
       </section>
 
       {/* STEPS STACK */}
-      <section id="steps" className="relative scroll-mt-32 bg-white py-24">
+      <section id="steps" className="relative scroll-mt-32 bg-white py-16 sm:py-20 lg:py-24">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0"
@@ -418,7 +419,7 @@ export default function TheModel() {
                           whileInView={{ opacity: 1, y: 0 }}
                           viewport={{ once: true, margin: "-80px" }}
                           transition={{ duration: 0.8, delay: 0.1 }}
-                          className={`pointer-events-none absolute -top-12 z-0 select-none text-[10rem] font-black leading-none tracking-tighter ${
+                          className={`pointer-events-none absolute -top-8 z-0 select-none text-[4.5rem] font-black leading-none tracking-tighter sm:-top-12 sm:text-[7rem] lg:text-[10rem] ${
                             reverse ? "-right-2" : "-left-2"
                           }`}
                           style={{
@@ -563,6 +564,58 @@ export default function TheModel() {
               })}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* FUTURE LIQUIDITY / STRATEGIC EVENTS */}
+      <section className="relative scroll-mt-32 bg-white py-16 sm:py-20 lg:py-24">
+        <div className="mx-auto max-w-5xl px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.5 }}
+            className="rounded-[2rem] border border-navy/10 bg-gradient-to-br from-teal-light/40 via-white to-white p-8 ring-1 ring-navy/5 sm:p-12"
+          >
+            <div className="flex flex-col gap-6 sm:flex-row sm:items-start">
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-teal to-teal-dark text-white shadow-lg shadow-teal/30">
+                <Scale className="h-6 w-6" aria-hidden="true" />
+              </span>
+              <div>
+                <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-teal-dark">
+                  Transparent up front
+                </p>
+                <h2 className="mt-2 text-2xl font-bold text-navy sm:text-3xl">
+                  Future liquidity &amp; strategic events
+                </h2>
+                <p className="mt-4 text-sm leading-relaxed text-navy/70 sm:text-base">
+                  Dental Sleep Link is built to scale. As the network grows,
+                  we may pursue strategic transactions — additional capital
+                  partners, network-level acquisitions, or other corporate
+                  events. Partnership agreements include customary terms
+                  covering those scenarios (including standard drag-along
+                  provisions on the sleep medicine line we build together) so
+                  that the network can move as one when an opportunity arises.
+                  Your dental practice itself is never part of those terms
+                  — you keep 100% of it. Full mechanics are reviewed line by
+                  line during onboarding before anything is signed.
+                </p>
+                <ul className="mt-5 grid gap-2 text-sm text-navy/75 sm:grid-cols-2">
+                  {[
+                    "You retain 100% of your dental practice",
+                    "Standard drag-along on the sleep line only",
+                    "Reviewed in detail before onboarding",
+                    "Aligned incentives across the network",
+                  ].map((b) => (
+                    <li key={b} className="flex items-start gap-2">
+                      <Check className="mt-1 h-4 w-4 shrink-0 text-teal" aria-hidden="true" />
+                      <span>{b}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 

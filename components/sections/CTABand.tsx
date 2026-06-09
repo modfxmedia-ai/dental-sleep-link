@@ -6,20 +6,20 @@ import { ArrowRight } from "lucide-react";
 
 export default function CTABand() {
   return (
-    <section className="relative overflow-hidden bg-navy py-20">
+    <section className="relative overflow-hidden bg-navy py-14 sm:py-20">
       <motion.div
         aria-hidden="true"
         animate={{ x: [0, 40, 0], y: [0, -20, 0] }}
         transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
         className="pointer-events-none absolute -top-24 right-1/3 h-72 w-72 rounded-full bg-teal/30 blur-3xl"
       />
-      <div className="mx-auto max-w-5xl px-6">
+      <div className="mx-auto max-w-5xl px-5 sm:px-6">
         <motion.div
           initial={{ opacity: 0, scale: 0.96 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.5 }}
-          className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-teal via-teal-dark to-navy-mid p-10 text-center shadow-2xl shadow-teal/20 sm:p-14"
+          className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-teal via-teal-dark to-navy-mid p-6 text-center shadow-2xl shadow-teal/20 sm:p-10 lg:p-14"
         >
           <span
             aria-hidden="true"

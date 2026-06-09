@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import SuccessStories from "./SuccessStories";
+import SitemapPage from "./SitemapPage";
 
-const TITLE = "Success Stories — Real Dental Sleep Practice Outcomes";
+const TITLE = "Sitemap";
 const DESCRIPTION =
-  "25+ partner practices. $50M+ insurance reimbursements processed. 95% of partners hit growth milestones. See how dentists are scaling sleep medicine with Dental Sleep Link.";
-const PATH = "/success-stories";
+  "Every page on Dental Sleep Link in one place — programs, the model, partner criteria, success stories, blog, and how to get in touch.";
+const PATH = "/sitemap";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -15,5 +15,5 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <SuccessStories />;
+  return <SitemapPage />;
 }

@@ -14,6 +14,7 @@ import {
   Lock,
   ArrowUpRight,
   ShieldCheck,
+  X,
 } from "lucide-react";
 
 const CRITERIA = [
@@ -91,7 +92,7 @@ export default function PartnerCriteria() {
   return (
     <>
       {/* HERO */}
-      <section className="relative isolate overflow-hidden bg-navy py-24 sm:py-32">
+      <section className="relative isolate overflow-hidden bg-navy py-14 sm:py-20 lg:py-32">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0"
@@ -151,7 +152,7 @@ export default function PartnerCriteria() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-6 text-5xl font-bold leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-7xl"
+            className="mt-5 text-[2.1rem] font-bold leading-[1.1] tracking-tight text-white sm:mt-6 sm:text-5xl md:text-6xl lg:text-7xl"
           >
             Are you the right fit for{" "}
             <span className="bg-gradient-to-r from-teal to-teal-light bg-clip-text text-transparent">
@@ -302,7 +303,7 @@ export default function PartnerCriteria() {
       </section>
 
       {/* CRITERIA STACK */}
-      <section id="criteria" className="relative scroll-mt-32 bg-white py-24">
+      <section id="criteria" className="relative scroll-mt-32 bg-white py-16 sm:py-20 lg:py-24">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0"
@@ -368,7 +369,7 @@ export default function PartnerCriteria() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: "-80px" }}
                         transition={{ duration: 0.8, delay: 0.1 }}
-                        className={`pointer-events-none absolute -top-12 z-0 select-none text-[10rem] font-black leading-none tracking-tighter ${
+                        className={`pointer-events-none absolute -top-8 z-0 select-none text-[4.5rem] font-black leading-none tracking-tighter sm:-top-12 sm:text-[7rem] lg:text-[10rem] ${
                           reverse ? "-right-2" : "-left-2"
                         }`}
                         style={{
@@ -484,6 +485,85 @@ export default function PartnerCriteria() {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* WHO SHOULD NOT APPLY */}
+      <section className="relative scroll-mt-32 bg-navy py-16 sm:py-20 lg:py-24">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(800px 400px at 80% 20%, rgba(42,191,191,0.08), transparent 60%)",
+          }}
+        />
+        <div className="relative mx-auto max-w-5xl px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.5 }}
+            className="text-center"
+          >
+            <span className="inline-flex items-center gap-2 rounded-full bg-white/5 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.25em] text-white/70 ring-1 ring-white/10">
+              <Lock className="h-3.5 w-3.5" aria-hidden="true" />
+              An honest filter
+            </span>
+            <h2 className="mt-5 text-3xl font-bold text-white sm:text-4xl">
+              Who shouldn&apos;t apply
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-white/70">
+              The program isn&apos;t a fit for every practice — and we&apos;d
+              rather say so up front than waste your time on a call.
+            </p>
+          </motion.div>
+
+          <div className="mt-12 grid gap-4 sm:grid-cols-2">
+            {[
+              {
+                t: "Brand-new practices (under ~3 years old)",
+                b: "You need a stable patient base and operating rhythm before bolting on a new clinical line.",
+              },
+              {
+                t: "Practices already in a sleep franchise or exclusivity contract",
+                b: "If you’re locked into another sleep model, we can’t partner without that conflict being resolved first.",
+              },
+              {
+                t: "Owners unwilling to commit dedicated chair time",
+                b: "Sleep cases need protected time on the schedule. Squeezing them between hygiene blocks doesn’t work.",
+              },
+              {
+                t: "Markets where we already have a partner",
+                b: "We work one practice per market. If your area is already taken, we’ll tell you on the first call.",
+              },
+              {
+                t: "Practices with active payer disputes or compliance issues",
+                b: "Medical billing depends on clean payer relationships. Open disputes have to be resolved before joining.",
+              },
+              {
+                t: "Owners looking for a turnkey side gig",
+                b: "This is an additional line of business, not a hands-off referral fee. The dentist needs to be in the chair.",
+              },
+            ].map((d, i) => (
+              <motion.div
+                key={d.t}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.4, delay: i * 0.05 }}
+                className="flex gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-5 backdrop-blur"
+              >
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/5 ring-1 ring-white/10 text-white/60">
+                  <X className="h-4 w-4" aria-hidden="true" />
+                </span>
+                <div>
+                  <p className="text-sm font-semibold text-white">{d.t}</p>
+                  <p className="mt-1 text-sm leading-relaxed text-white/65">{d.b}</p>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

@@ -57,7 +57,7 @@ export default function ServicesGrid() {
   return (
     <section
       id="what-you-get"
-      className="relative scroll-mt-32 overflow-hidden bg-teal-light py-28"
+      className="relative scroll-mt-32 overflow-hidden bg-teal-light py-16 sm:py-20 lg:py-28"
     >
       {/* Mesh gradient */}
       <div
@@ -97,7 +97,7 @@ export default function ServicesGrid() {
         className="pointer-events-none absolute -bottom-24 -left-10 h-80 w-80 rounded-full bg-teal/20 blur-3xl"
       />
 
-      <div className="relative mx-auto max-w-7xl px-6">
+      <div className="relative mx-auto max-w-7xl px-5 sm:px-6">
         {/* HEADER */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -114,14 +114,14 @@ export default function ServicesGrid() {
               </span>
               Sleep practice expansion
             </span>
-            <h2 className="mt-5 text-4xl font-bold leading-[1.05] tracking-tight text-navy sm:text-5xl">
+            <h2 className="mt-5 text-3xl font-bold leading-[1.1] tracking-tight text-navy sm:text-4xl md:text-5xl">
               Scale your sleep dentistry with{" "}
               <span className="bg-gradient-to-r from-teal-dark to-teal bg-clip-text text-transparent">
                 proven systems
               </span>{" "}
               and support.
             </h2>
-            <p className="mt-5 text-lg text-navy/70">
+            <p className="mt-4 text-base text-navy/70 sm:mt-5 sm:text-lg">
               Four pillars of partnership that turn sleep medicine from a side
               service into a profitable, repeatable program.
             </p>
@@ -136,7 +136,7 @@ export default function ServicesGrid() {
         </motion.div>
 
         {/* GRID */}
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid grid-cols-1 gap-5 sm:mt-14 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
           {SERVICES.map((s, i) => {
             const Icon = s.icon;
             return (

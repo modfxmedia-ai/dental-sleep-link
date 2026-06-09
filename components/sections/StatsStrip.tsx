@@ -85,7 +85,7 @@ function CountUp({
 
 export default function StatsStrip() {
   return (
-    <section className="relative overflow-hidden bg-navy py-24">
+    <section className="relative overflow-hidden bg-navy py-16 sm:py-20 lg:py-24">
       {/* Mesh gradient */}
       <div
         aria-hidden="true"
@@ -137,7 +137,7 @@ export default function StatsStrip() {
         className="pointer-events-none absolute -top-20 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-teal/15 blur-3xl"
       />
 
-      <div className="relative mx-auto max-w-7xl px-6">
+      <div className="relative mx-auto max-w-7xl px-5 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -152,13 +152,13 @@ export default function StatsStrip() {
             </span>
             Trusted by dentists nationwide
           </span>
-          <h2 className="mt-5 text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl">
+          <h2 className="mt-5 text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl md:text-5xl">
             Real partners.{" "}
             <span className="bg-gradient-to-r from-teal to-teal-light bg-clip-text text-transparent">
               Real results.
             </span>
           </h2>
-          <p className="mt-5 text-white/70">
+          <p className="mt-4 text-sm text-white/70 sm:mt-5 sm:text-base">
             Hundreds of practices rely on Dental Sleep Link to grow their sleep
             programs efficiently and profitably. The numbers speak for
             themselves.
@@ -166,7 +166,7 @@ export default function StatsStrip() {
         </motion.div>
 
         {/* Connector line behind cards (desktop) */}
-        <div className="relative mt-16">
+        <div className="relative mt-10 sm:mt-16">
           <div
             aria-hidden="true"
             className="pointer-events-none absolute left-0 right-0 top-1/2 hidden h-px -translate-y-1/2 lg:block"
@@ -179,7 +179,7 @@ export default function StatsStrip() {
             />
           </div>
 
-          <div className="relative grid grid-cols-2 gap-6 lg:grid-cols-4">
+          <div className="relative grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-4">
             {STATS.map((s, i) => {
               const Icon = s.icon;
               return (
@@ -208,11 +208,11 @@ export default function StatsStrip() {
                     }}
                   />
 
-                  <div className="relative h-full overflow-hidden rounded-2xl bg-navy-mid/70 p-6 ring-1 ring-white/10 backdrop-blur transition-all group-hover:bg-navy-mid/90 group-hover:shadow-2xl group-hover:shadow-teal/20">
+                  <div className="relative h-full overflow-hidden rounded-2xl bg-navy-mid/70 p-4 ring-1 ring-white/10 backdrop-blur transition-all group-hover:bg-navy-mid/90 group-hover:shadow-2xl group-hover:shadow-teal/20 sm:p-6">
                     {/* Big watermark digit */}
                     <span
                       aria-hidden="true"
-                      className="pointer-events-none absolute -right-3 -bottom-6 select-none text-[7rem] font-black leading-none text-white/[0.04] transition-colors duration-500 group-hover:text-teal/10"
+                      className="pointer-events-none absolute -right-3 -bottom-6 select-none text-[5rem] font-black leading-none text-white/[0.04] transition-colors duration-500 group-hover:text-teal/10 sm:text-[7rem]"
                     >
                       {String(i + 1).padStart(2, "0")}
                     </span>
@@ -235,13 +235,13 @@ export default function StatsStrip() {
                     {/* Icon */}
                     <motion.span
                       whileHover={{ rotate: 8, scale: 1.1 }}
-                      className="relative inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-teal/30 to-teal/10 text-teal ring-1 ring-teal/20"
+                      className="relative inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-teal/30 to-teal/10 text-teal ring-1 ring-teal/20 sm:h-12 sm:w-12 sm:rounded-2xl"
                     >
-                      <Icon className="h-6 w-6" aria-hidden="true" />
+                      <Icon className="h-5 w-5 sm:h-6 sm:w-6" aria-hidden="true" />
                     </motion.span>
 
                     {/* Value */}
-                    <p className="relative mt-5 text-5xl font-black leading-none text-white">
+                    <p className="relative mt-4 text-3xl font-black leading-none text-white sm:mt-5 sm:text-4xl lg:text-5xl">
                       <CountUp value={s.value} />
                       <span className="bg-gradient-to-r from-teal to-teal-light bg-clip-text text-transparent">
                         {s.suffix}
@@ -249,12 +249,12 @@ export default function StatsStrip() {
                     </p>
 
                     {/* Label */}
-                    <p className="relative mt-3 text-sm leading-relaxed text-white/70">
+                    <p className="relative mt-2 text-xs leading-relaxed text-white/70 sm:mt-3 sm:text-sm">
                       {s.label}
                     </p>
 
                     {/* Delta chip */}
-                    <div className="relative mt-5 flex items-center gap-1.5 text-[11px] font-semibold text-teal">
+                    <div className="relative mt-4 flex items-center gap-1.5 text-[10px] font-semibold text-teal sm:mt-5 sm:text-[11px]">
                       <TrendingUp className="h-3.5 w-3.5" aria-hidden="true" />
                       <span>{s.delta}</span>
                     </div>

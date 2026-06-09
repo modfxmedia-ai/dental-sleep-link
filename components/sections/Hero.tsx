@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 import {
   ArrowRight,
   Sparkles,
-  Star,
   ShieldCheck,
   Activity,
   Award,
@@ -87,7 +86,7 @@ export default function Hero() {
         />
       ))}
 
-      <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-6 py-20 sm:py-28 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+      <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-5 py-14 sm:gap-12 sm:px-6 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:py-28">
         {/* LEFT: copy */}
         <div>
           <motion.span
@@ -108,12 +107,12 @@ export default function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-6 text-5xl font-bold leading-[1.02] tracking-tight text-white sm:text-6xl lg:text-7xl"
+            className="mt-5 text-[2.4rem] font-bold leading-[1.05] tracking-tight text-white sm:mt-6 sm:text-5xl md:text-6xl lg:text-7xl"
           >
-            Treat sleep.{" "}
+            Make sleep dentistry{" "}
             <span className="relative inline-block">
               <span className="bg-gradient-to-r from-teal via-teal-light to-teal bg-clip-text text-transparent">
-                Grow practice.
+                a real business.
               </span>
               <motion.span
                 aria-hidden="true"
@@ -129,23 +128,23 @@ export default function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.25 }}
-            className="mt-7 max-w-xl text-lg leading-relaxed text-white/70"
+            className="mt-5 max-w-xl text-base leading-relaxed text-white/70 sm:mt-7 sm:text-lg"
           >
-            The nation&apos;s only management services organization built for
-            dentists. We deliver oral appliance therapy, medical billing, and a
-            proven playbook so you can build a profitable, scalable sleep
-            practice.
+            The first MSO built exclusively for general dentists. We provide
+            the medical billing, oral appliance fulfillment, clinical training,
+            and operating playbook — so you can launch and scale a sleep
+            medicine line without the operational lift.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.35 }}
-            className="mt-10 flex flex-wrap items-center gap-4"
+            className="mt-7 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4"
           >
             <Link
               href="/contact-us"
-              className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-teal px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-teal/30 transition-transform hover:scale-105"
+              className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-teal px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-teal/30 transition-transform hover:scale-105 sm:px-7"
             >
               <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
               <span className="relative">Apply to Become a Partner</span>
@@ -153,7 +152,7 @@ export default function Hero() {
             </Link>
             <Link
               href="/the-model"
-              className="group inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/5 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur transition-colors hover:border-teal hover:text-teal"
+              className="group inline-flex items-center justify-center gap-2 rounded-full border border-white/25 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white backdrop-blur transition-colors hover:border-teal hover:text-teal sm:px-7"
             >
               <span className="flex h-2 w-2 rounded-full bg-teal transition-transform group-hover:scale-150" />
               See how it works
@@ -165,36 +164,19 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.55 }}
-            className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-5"
+            className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 sm:mt-12 sm:gap-x-8 sm:gap-y-4"
           >
-            <div className="flex items-center gap-3">
-              <div className="flex items-center gap-0.5">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star
-                    key={i}
-                    className="h-4 w-4 fill-teal text-teal"
-                    aria-hidden="true"
-                  />
-                ))}
-              </div>
-              <p className="text-sm text-white/80">
-                <span className="font-bold text-white">20k+</span> positive
-                reviews
-              </p>
+            <div className="inline-flex items-center gap-2 rounded-full border border-teal/30 bg-teal/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-teal backdrop-blur sm:text-[11px]">
+              <ShieldCheck className="h-4 w-4" aria-hidden="true" />
+              MSO, not a franchise
             </div>
-            <div className="hidden h-10 w-px bg-white/15 sm:block" />
-            <div>
-              <p className="text-2xl font-bold text-white">25+</p>
-              <p className="text-[11px] uppercase tracking-wider text-white/60">
-                Practices partnered
-              </p>
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/80 backdrop-blur sm:text-[11px]">
+              <Activity className="h-4 w-4 text-teal" aria-hidden="true" />
+              One practice per market
             </div>
-            <div className="hidden h-10 w-px bg-white/15 sm:block" />
-            <div>
-              <p className="text-2xl font-bold text-white">10+ yrs</p>
-              <p className="text-[11px] uppercase tracking-wider text-white/60">
-                Elevating sleep dentistry
-              </p>
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/80 backdrop-blur sm:text-[11px]">
+              <Award className="h-4 w-4 text-teal" aria-hidden="true" />
+              Medical billing handled
             </div>
           </motion.div>
         </div>
@@ -204,14 +186,14 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative mx-auto h-[34rem] w-full max-w-xl"
+          className="relative mx-auto h-[22rem] w-full max-w-md sm:h-[28rem] sm:max-w-lg lg:h-[34rem] lg:max-w-xl"
         >
           {/* Glow halo */}
           <motion.div
             aria-hidden="true"
             animate={{ scale: [1, 1.08, 1], opacity: [0.5, 0.8, 0.5] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute left-1/2 top-1/2 h-[28rem] w-[28rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-teal/30 blur-3xl"
+            className="absolute left-1/2 top-1/2 h-[18rem] w-[18rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-teal/30 blur-3xl sm:h-[22rem] sm:w-[22rem] lg:h-[28rem] lg:w-[28rem]"
           />
 
           {/* Outer dashed orbit */}
@@ -219,23 +201,23 @@ export default function Hero() {
             aria-hidden="true"
             animate={{ rotate: 360 }}
             transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
-            className="absolute left-1/2 top-1/2 h-[26rem] w-[26rem] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-teal/25"
+            className="absolute left-1/2 top-1/2 h-[17rem] w-[17rem] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-teal/25 sm:h-[22rem] sm:w-[22rem] lg:h-[26rem] lg:w-[26rem]"
           />
           {/* Inner dotted orbit */}
           <motion.div
             aria-hidden="true"
             animate={{ rotate: -360 }}
             transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
-            className="absolute left-1/2 top-1/2 h-[22rem] w-[22rem] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dotted border-teal/30"
+            className="absolute left-1/2 top-1/2 h-[14rem] w-[14rem] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dotted border-teal/30 sm:h-[18rem] sm:w-[18rem] lg:h-[22rem] lg:w-[22rem]"
           />
 
-          {/* Tick marks ring (SVG) */}
+          {/* Tick marks ring (SVG) — desktop only, clutters mobile */}
           <motion.svg
             aria-hidden="true"
             viewBox="0 0 400 400"
             animate={{ rotate: 360 }}
             transition={{ duration: 80, repeat: Infinity, ease: "linear" }}
-            className="absolute left-1/2 top-1/2 h-[30rem] w-[30rem] -translate-x-1/2 -translate-y-1/2 text-teal/40"
+            className="absolute left-1/2 top-1/2 hidden h-[30rem] w-[30rem] -translate-x-1/2 -translate-y-1/2 text-teal/40 lg:block"
           >
             {Array.from({ length: 60 }).map((_, i) => {
               const angle = (i * 360) / 60;
@@ -261,13 +243,13 @@ export default function Hero() {
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
             className="relative z-10 flex h-full w-full items-center justify-center"
           >
-            <div className="relative h-[26rem] w-[26rem]">
+            <div className="relative h-[18rem] w-[18rem] sm:h-[22rem] sm:w-[22rem] lg:h-[26rem] lg:w-[26rem]">
               <Image
                 src="/images/appliance.png"
                 alt="Dental sleep oral appliance"
                 fill
                 priority
-                sizes="(min-width: 1024px) 416px, 80vw"
+                sizes="(min-width: 1024px) 416px, (min-width: 640px) 352px, 288px"
                 className="object-contain drop-shadow-[0_30px_40px_rgba(42,191,191,0.35)]"
               />
             </div>
@@ -283,9 +265,9 @@ export default function Hero() {
           {SPEC_BADGES.map((b, i) => {
             const Icon = b.icon;
             const positions = [
-              "left-0 top-12",
+              "left-0 top-6 sm:top-12",
               "right-0 top-1/3",
-              "left-4 bottom-16",
+              "left-0 bottom-12 sm:left-4 sm:bottom-16",
             ];
             return (
               <motion.div
@@ -303,16 +285,16 @@ export default function Hero() {
                     ease: "easeInOut",
                     delay: i * 0.4,
                   }}
-                  className="flex items-center gap-3 rounded-2xl bg-navy-mid/80 p-3 pr-4 shadow-2xl ring-1 ring-white/10 backdrop-blur"
+                  className="flex items-center gap-2 rounded-xl bg-navy-mid/80 p-2 pr-3 shadow-2xl ring-1 ring-white/10 backdrop-blur sm:gap-3 sm:rounded-2xl sm:p-3 sm:pr-4"
                 >
-                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-teal/15 text-teal">
-                    <Icon className="h-5 w-5" aria-hidden="true" />
+                  <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-teal/15 text-teal sm:h-10 sm:w-10 sm:rounded-xl">
+                    <Icon className="h-4 w-4 sm:h-5 sm:w-5" aria-hidden="true" />
                   </span>
                   <div>
-                    <p className="text-sm font-semibold text-white">
+                    <p className="text-xs font-semibold text-white sm:text-sm">
                       {b.label}
                     </p>
-                    <p className="text-[11px] text-white/60">{b.sub}</p>
+                    <p className="text-[10px] text-white/60 sm:text-[11px]">{b.sub}</p>
                   </div>
                 </motion.div>
               </motion.div>
@@ -324,12 +306,12 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 1.1 }}
-            className="absolute -bottom-2 right-2 z-20 w-56 rounded-2xl bg-gradient-to-br from-teal to-teal-dark p-5 shadow-2xl ring-1 ring-white/20"
+            className="absolute -bottom-2 right-0 z-20 w-44 rounded-2xl bg-gradient-to-br from-teal to-teal-dark p-4 shadow-2xl ring-1 ring-white/20 sm:right-2 sm:w-56 sm:p-5"
           >
-            <p className="text-[11px] uppercase tracking-wider text-white/80">
+            <p className="text-[10px] uppercase tracking-wider text-white/80 sm:text-[11px]">
               Monthly cases
             </p>
-            <p className="mt-1 text-3xl font-bold text-white">+187%</p>
+            <p className="mt-1 text-2xl font-bold text-white sm:text-3xl">+187%</p>
             <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-white/20">
               <motion.div
                 initial={{ width: 0 }}
@@ -343,15 +325,15 @@ export default function Hero() {
       </div>
 
       {/* Marquee ticker */}
-      <div className="relative border-y border-white/10 bg-navy-mid/40 py-5">
+      <div className="relative border-y border-white/10 bg-navy-mid/40 py-4 sm:py-5">
         <div className="relative overflow-hidden">
-          <div className="animate-marquee flex w-max items-center gap-10 whitespace-nowrap text-sm font-semibold uppercase tracking-[0.25em] text-white/70">
+          <div className="animate-marquee flex w-max items-center gap-6 whitespace-nowrap text-xs font-semibold uppercase tracking-[0.2em] text-white/70 sm:gap-10 sm:text-sm sm:tracking-[0.25em]">
             {[...Array(2)].map((_, dup) => (
-              <div key={dup} className="flex items-center gap-10">
+              <div key={dup} className="flex items-center gap-6 sm:gap-10">
                 {MARQUEE_ITEMS.map((item, i) => (
                   <span
                     key={`${dup}-${i}`}
-                    className="flex items-center gap-10"
+                    className="flex items-center gap-6 sm:gap-10"
                   >
                     <span>{item}</span>
                     <span className="text-teal">★</span>

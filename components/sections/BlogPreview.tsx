@@ -10,7 +10,7 @@ const PREVIEW = POSTS.slice(0, 3);
 
 export default function BlogPreview() {
   return (
-    <section id="blog" className="relative scroll-mt-32 overflow-hidden bg-navy py-24">
+    <section id="blog" className="relative scroll-mt-32 overflow-hidden bg-navy py-16 sm:py-20 lg:py-24">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"

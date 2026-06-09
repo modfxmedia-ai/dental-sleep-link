@@ -8,6 +8,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Mail, MapPin, Menu, Phone, X } from "lucide-react";
 
 import { cn } from "@/lib/utils";
+import { CONTACT as SITE_CONTACT } from "@/lib/seo";
 import type { NavItem } from "@/types";
 
 type IconComponent = ComponentType<SVGProps<SVGSVGElement>>;
@@ -52,9 +53,10 @@ const NAV_ITEMS: NavItem[] = [
 ];
 
 const CONTACT = {
-  phone: "123456789",
-  email: "info@dentalsleeplink.com",
-  address: "123 Main St, Springfield, USA",
+  phone: SITE_CONTACT.phone,
+  phoneDisplay: SITE_CONTACT.phoneDisplay,
+  email: SITE_CONTACT.email,
+  address: `${SITE_CONTACT.street}, ${SITE_CONTACT.locality}, ${SITE_CONTACT.region}`,
 };
 
 const SOCIAL: { label: string; href: string; Icon: IconComponent }[] = [
@@ -91,7 +93,7 @@ export default function Header({ currentPath }: HeaderProps) {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
-      {/* Tier 1 — top bar */}
+      {/* Tier 1 — top bar (desktop only; on mobile the same info lives in the slide-down menu) */}
       <AnimatePresence initial={false}>
         {!scrolled && (
           <motion.div
@@ -100,7 +102,7 @@ export default function Header({ currentPath }: HeaderProps) {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
-            className="overflow-hidden bg-teal text-white"
+            className="hidden overflow-hidden bg-teal text-white md:block"
           >
             <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-4 py-2 text-sm md:flex-row md:gap-4">
               <ul className="flex flex-wrap items-center gap-x-6 gap-y-1">
@@ -110,7 +112,7 @@ export default function Header({ currentPath }: HeaderProps) {
                     className="inline-flex items-center gap-2 transition-opacity hover:opacity-80"
                   >
                     <Phone className="h-4 w-4" aria-hidden="true" />
-                    <span>{CONTACT.phone}</span>
+                    <span>{CONTACT.phoneDisplay}</span>
                   </a>
                 </li>
                 <li className="inline-flex items-center gap-2">
@@ -151,8 +153,8 @@ export default function Header({ currentPath }: HeaderProps) {
       {/* Tier 2 — main nav */}
       <motion.div
         animate={{
-          paddingTop: scrolled ? 8 : 16,
-          paddingBottom: scrolled ? 8 : 16,
+          paddingTop: scrolled ? 6 : 10,
+          paddingBottom: scrolled ? 6 : 10,
         }}
         transition={{ duration: 0.25, ease: "easeInOut" }}
         className={cn(
@@ -162,7 +164,7 @@ export default function Header({ currentPath }: HeaderProps) {
             : "bg-navy",
         )}
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 sm:gap-4">
           {/* Logo */}
           <Link
             href="/"
@@ -180,7 +182,7 @@ export default function Header({ currentPath }: HeaderProps) {
                 width={640}
                 height={230}
                 priority
-                className="h-16 w-auto sm:h-20"
+                className="h-11 w-auto sm:h-14 lg:h-16"
               />
             </motion.div>
           </Link>
@@ -239,7 +241,7 @@ export default function Header({ currentPath }: HeaderProps) {
           <div className="flex items-center gap-2">
             <Link
               href="/how-to-join"
-              className="hidden rounded-full bg-teal px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-teal/20 transition-transform hover:scale-105 hover:bg-teal-dark sm:inline-block"
+              className="hidden rounded-full bg-teal px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-teal/20 transition-transform hover:scale-105 hover:bg-teal-dark lg:inline-block"
             >
               Apply now
             </Link>
@@ -272,7 +274,7 @@ export default function Header({ currentPath }: HeaderProps) {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: "-100%", opacity: 0 }}
             transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
-            className="fixed inset-0 top-0 z-40 flex h-screen flex-col bg-navy pt-24 xl:hidden"
+            className="fixed inset-0 top-0 z-40 flex h-screen flex-col bg-navy pt-20 xl:hidden"
           >
             <nav
               aria-label="Mobile"
@@ -315,7 +317,7 @@ export default function Header({ currentPath }: HeaderProps) {
                   className="flex items-center gap-3 hover:text-teal"
                 >
                   <Phone className="h-4 w-4" aria-hidden="true" />
-                  {CONTACT.phone}
+                  {CONTACT.phoneDisplay}
                 </a>
                 <p className="flex items-center gap-3">
                   <MapPin className="h-4 w-4" aria-hidden="true" />

@@ -70,7 +70,7 @@ export default function ProgressSection() {
   const c = 2 * Math.PI * r;
 
   return (
-    <section className="relative overflow-hidden bg-white py-28">
+    <section className="relative overflow-hidden bg-white py-16 sm:py-20 lg:py-28">
       {/* Mesh accents */}
       <div
         aria-hidden="true"
@@ -123,7 +123,7 @@ export default function ProgressSection() {
             </span>
             Progress
           </span>
-          <h2 className="mt-5 text-4xl font-bold leading-[1.1] tracking-tight text-navy sm:text-5xl">
+          <h2 className="mt-5 text-3xl font-bold leading-[1.1] tracking-tight text-navy sm:text-4xl md:text-5xl">
             Numbers our partners{" "}
             <span className="bg-gradient-to-r from-teal-dark to-teal bg-clip-text text-transparent">
               actually feel
@@ -206,7 +206,7 @@ export default function ProgressSection() {
                 <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-teal-dark">
                   Network health
                 </p>
-                <p className="mt-2 text-6xl font-black leading-none text-navy">
+                <p className="mt-2 text-4xl font-black leading-none text-navy sm:text-5xl lg:text-6xl">
                   <CountTo value={RADIAL_TARGET} active={inView} />
                   <span className="text-3xl font-bold text-teal-dark">%</span>
                 </p>

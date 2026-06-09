@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { Mail, MapPin, Phone } from "lucide-react";
 
 import type { NavItem } from "@/types";
+import { CONTACT as SITE_CONTACT } from "@/lib/seo";
 
 type IconComponent = ComponentType<SVGProps<SVGSVGElement>>;
 
@@ -20,12 +21,14 @@ const QUICK_LINKS: NavItem[] = [
   { label: "How to Join", href: "/how-to-join" },
   { label: "Blog", href: "/blog" },
   { label: "Contact Us", href: "/contact-us" },
+  { label: "Sitemap", href: "/sitemap" },
 ];
 
 const CONTACT = {
-  phone: "123456789",
-  email: "info@dentalsleeplink.com",
-  address: "123 Main St, Springfield, USA",
+  phone: SITE_CONTACT.phone,
+  phoneDisplay: SITE_CONTACT.phoneDisplay,
+  email: SITE_CONTACT.email,
+  address: `${SITE_CONTACT.street}, ${SITE_CONTACT.locality}, ${SITE_CONTACT.region}`,
 };
 
 function FooterLogo() {
@@ -198,7 +201,7 @@ export default function Footer() {
                   className="mt-0.5 h-4 w-4 shrink-0 text-teal"
                   aria-hidden="true"
                 />
-                <span>{CONTACT.phone}</span>
+                <span>{CONTACT.phoneDisplay}</span>
               </a>
             </li>
             <li>
@@ -266,19 +269,30 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-white/10">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-6 py-5 text-xs text-white/60 sm:flex-row">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-6 py-5 text-xs text-white/60 sm:flex-row">
           <p>&copy; {year} Dental Sleep Link. All Rights Reserved.</p>
-          <p>
-            Powered by{" "}
-            <a
-              href="https://modfxmedia.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-teal transition-opacity hover:opacity-80"
+          <nav aria-label="Utility" className="flex items-center gap-4">
+            <Link
+              href="/sitemap"
+              className="transition-colors hover:text-teal"
             >
-              MODFXMedia
-            </a>
-          </p>
+              Sitemap
+            </Link>
+            <span aria-hidden="true" className="text-white/20">
+              ·
+            </span>
+            <p>
+              Powered by{" "}
+              <a
+                href="https://modfxmedia.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-teal transition-opacity hover:opacity-80"
+              >
+                MODFXMedia
+              </a>
+            </p>
+          </nav>
         </div>
       </div>
     </footer>

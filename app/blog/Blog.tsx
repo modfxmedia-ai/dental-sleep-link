@@ -44,7 +44,7 @@ export default function Blog() {
   return (
     <>
       {/* HERO */}
-      <section className="relative isolate overflow-hidden bg-navy py-24 sm:py-28">
+      <section className="relative isolate overflow-hidden bg-navy py-14 sm:py-20 lg:py-28">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0"
@@ -104,7 +104,7 @@ export default function Blog() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-6 text-5xl font-bold leading-[1.05] tracking-tight text-white sm:text-6xl"
+            className="mt-5 text-[2.1rem] font-bold leading-[1.1] tracking-tight text-white sm:mt-6 sm:text-5xl md:text-6xl"
           >
             Ideas that{" "}
             <span className="bg-gradient-to-r from-teal to-teal-light bg-clip-text text-transparent">
@@ -173,7 +173,7 @@ export default function Blog() {
       </section>
 
       {/* LISTING */}
-      <section className="relative bg-white py-24">
+      <section className="relative bg-white py-16 sm:py-20 lg:py-24">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0"
@@ -230,7 +230,7 @@ export default function Blog() {
               <div className="relative">
                 <motion.span
                   aria-hidden="true"
-                  className="pointer-events-none absolute -top-12 -left-2 z-0 select-none text-[10rem] font-black leading-none tracking-tighter"
+                  className="pointer-events-none absolute -top-8 -left-2 z-0 select-none text-[4.5rem] font-black leading-none tracking-tighter sm:-top-12 sm:text-[7rem] lg:text-[10rem]"
                   style={{
                     WebkitTextStroke: "2px rgba(42,191,191,0.30)",
                     color: "transparent",
