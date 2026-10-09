@@ -19,72 +19,72 @@ import {
 
 const CRITERIA = [
   {
-    id: "established",
+    id: "dentist",
     number: "01",
-    tag: "Experience",
+    tag: "Clinical lead",
     icon: Stethoscope,
-    title: "Established Dentists Already Treating Sleep Apnea",
+    title: "A responsible dentist leads care",
     body:
-      "You don\u2019t need to be a sleep expert \u2014 but you do need to have experience treating sleep apnea patients in your practice. We\u2019re built for dentists who\u2019ve dipped their toes in and now want to take the leap into a structured, profitable model.",
+      "The treating clinician stays involved. New and experienced sleep programs may be evaluated individually. Prior sleep experience is not a blanket requirement.",
     bullets: [
-      "Comfortable screening for OSA",
-      "Some prior appliance experience",
-      "Want a structured model",
-      "Ready to scale, not start",
+      "Dentist remains clinically responsible",
+      "New programs can be reviewed",
+      "Experienced programs can be reviewed",
+      "No published practice-age cutoff",
     ],
     image: "/images/partner-criteria/established.webp",
-    imageAlt: "Established dentist with sleep apnea experience",
+    imageAlt: "Dentist leading clinical care",
   },
   {
-    id: "growth",
+    id: "champion",
     number: "02",
-    tag: "Mindset",
+    tag: "Team",
     icon: TrendingUp,
-    title: "Growth-Focused Practices",
+    title: "An internal team champion",
     body:
-      "Whether you\u2019re solo or part of a multi-location group, we look for partners hungry for predictable revenue, scalable systems, and patient outcomes that go beyond cleanings and crowns.",
+      "Implementation needs someone inside the practice who will own scheduling, follow-up, and communication with the clinical lead. That role is part of readiness, not a promise of extra results.",
     bullets: [
-      "Solo or multi-location",
-      "Hungry for predictable revenue",
-      "Want scalable systems",
-      "Outcome-driven mindset",
+      "Named internal champion",
+      "Willing to learn the workflow",
+      "Coordinates nonclinical steps",
+      "Does not replace the dentist",
     ],
     image: "/images/partner-criteria/growth-v2.jpg",
-    imageAlt: "Growth focused dental practice",
+    imageAlt: "Practice team planning implementation",
   },
   {
-    id: "clinicians",
+    id: "capacity",
     number: "03",
-    tag: "Support",
+    tag: "Capacity",
     icon: HeartHandshake,
-    title: "Clinicians Seeking Simplicity & Support",
+    title: "Protected capacity",
     body:
-      "If you\u2019re tired of trying to figure out sleep medicine on your own \u2014 and want a turnkey partner that handles the operational, financial, and clinical lift \u2014 you\u2019re in the right place.",
+      "Prepared to implement with a responsible dentist, an internal team champion, and protected capacity. Existing staff are used where capacity permits. Extra hiring is assessed, not ruled out.",
     bullets: [
-      "Operational lift handled",
-      "Billing & coding done for you",
-      "Clinical playbook included",
-      "Dedicated success lead",
+      "Protected clinical time",
+      "Existing team if capacity allows",
+      "Staffing assessed in planning",
+      "Implementation work is expected",
     ],
     image: "/images/partner-criteria/clinicians-v2.jpg",
-    imageAlt: "Clinician support and simplicity",
+    imageAlt: "Protected time on the practice schedule",
   },
   {
-    id: "visionary",
+    id: "payer",
     number: "04",
-    tag: "Vision",
+    tag: "Payers",
     icon: Telescope,
-    title: "Visionary Dentists with Long-Term Goals",
+    title: "Payer readiness is reviewed individually",
     body:
-      "We\u2019re building partnerships that last decades \u2014 not weeks. Our partners aren\u2019t looking for a side hustle; they\u2019re looking to redefine what their dental practice does, who it serves, and what kind of life it builds for them.",
+      "Open payer questions are reviewed case by case. A blanket exclusion for disputes is not published unless Brian approves a policy. This review is not a territorial guarantee.",
     bullets: [
-      "Decade-long partnerships",
-      "Practice transformation",
-      "Owner lifestyle goals",
-      "Multi-generational outlook",
+      "Payer mix discussed",
+      "Entity requirements reviewed",
+      "Disputes reviewed individually",
+      "No market exclusivity offered",
     ],
     image: "/images/partner-criteria/visionary-v2.jpg",
-    imageAlt: "Visionary dentist with long-term goals",
+    imageAlt: "Practice readiness conversation",
   },
 ];
 
@@ -145,7 +145,7 @@ export default function PartnerCriteria() {
               <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-teal" />
             </span>
             <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
-            Limited &amp; exclusive
+            Practice fit
           </motion.span>
 
           <motion.h1
@@ -154,9 +154,9 @@ export default function PartnerCriteria() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-5 text-[2.1rem] font-bold leading-[1.1] tracking-tight text-white sm:mt-6 sm:text-5xl md:text-6xl lg:text-7xl"
           >
-            Are you the right fit for{" "}
+            Prepared to implement with{" "}
             <span className="bg-gradient-to-r from-teal to-teal-light bg-clip-text text-transparent">
-              Dental Sleep Link
+              protected capacity
             </span>
             ?
           </motion.h1>
@@ -167,10 +167,9 @@ export default function PartnerCriteria() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/70"
           >
-            We don&apos;t partner with everyone — and that&apos;s by design. To
-            protect the quality of our model and the success of our partners,
-            we limit our partnerships to dentists and practices who meet a
-            specific set of criteria.
+            Fit is a responsible dentist, an internal champion, protected
+            capacity, and payer readiness. New and experienced programs are
+            reviewed individually. Geography is not reserved on this site.
           </motion.p>
 
           <motion.div
@@ -184,7 +183,7 @@ export default function PartnerCriteria() {
               className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-teal px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-teal/30 transition-transform hover:scale-105"
             >
               <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
-              <span className="relative">Apply for partnership</span>
+              <span className="relative">Discuss practice fit</span>
               <ArrowRight className="relative h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
             <Link
@@ -230,7 +229,7 @@ export default function PartnerCriteria() {
               />
               <span className="absolute right-6 top-6 inline-flex items-center gap-1.5 rounded-full bg-teal px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.25em] text-white shadow-lg shadow-teal/30">
                 <Lock className="h-3 w-3" aria-hidden="true" />
-                1 partner per market
+                Fit assessed individually
               </span>
             </div>
           </motion.div>
@@ -279,22 +278,22 @@ export default function PartnerCriteria() {
               </div>
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.3em] text-teal">
-                  Limited &amp; exclusive
+                  Practice fit
                 </p>
                 <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">
-                  One partner per market.
+                  Fit is assessed practice by practice.
                 </h2>
                 <p className="mt-3 max-w-xl text-white/75">
-                  We don&apos;t saturate. We protect partner economics by
-                  granting exclusivity per geography — so when we say yes,
-                  we&apos;re betting on your practice to win.
+                  An initial cohort of about three to five practices is planned.
+                  That planning note is not a promise of market exclusivity or
+                  a claim about which partners have been most successful.
                 </p>
               </div>
               <Link
                 href="/contact-us"
                 className="inline-flex shrink-0 items-center gap-2 rounded-full bg-teal px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-teal/30 transition-transform hover:scale-105"
               >
-                Check availability
+                Discuss practice fit
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
@@ -338,10 +337,10 @@ export default function PartnerCriteria() {
               Who we&apos;re looking for
             </p>
             <h2 className="mt-3 text-3xl font-bold text-navy sm:text-4xl">
-              The four traits of our most successful partners.
+              What a ready practice brings.
             </h2>
             <p className="mt-4 text-navy/70">
-              If you recognize yourself in these, we should talk.
+              These are expectations for implementation, not a ranking of past partners.
             </p>
           </motion.div>
 
@@ -512,39 +511,40 @@ export default function PartnerCriteria() {
               An honest filter
             </span>
             <h2 className="mt-5 text-3xl font-bold text-white sm:text-4xl">
-              Who shouldn&apos;t apply
+              What still needs a conversation
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-white/70">
-              The program isn&apos;t a fit for every practice — and we&apos;d
-              rather say so up front than waste your time on a call.
+              These are planning cautions, not a published rejection policy.
+              A three-year practice-age rule and a blanket payer-dispute rule
+              are not in effect on this site.
             </p>
           </motion.div>
 
           <div className="mt-12 grid gap-4 sm:grid-cols-2">
             {[
               {
-                t: "Brand-new practices (under ~3 years old)",
-                b: "You need a stable patient base and operating rhythm before bolting on a new clinical line.",
+                t: "No protected clinical time",
+                b: "Implementation expects the dentist in the care and time set aside for it. Capacity is assessed rather than assumed.",
               },
               {
-                t: "Practices already in a sleep franchise or exclusivity contract",
-                b: "If you’re locked into another sleep model, we can’t partner without that conflict being resolved first.",
+                t: "No internal champion",
+                b: "Someone on the team needs to own the nonclinical follow-through with the dentist.",
               },
               {
-                t: "Owners unwilling to commit dedicated chair time",
-                b: "Sleep cases need protected time on the schedule. Squeezing them between hygiene blocks doesn’t work.",
+                t: "Looking for hands-off income",
+                b: "This is implementation work around dentist-led care, not a passive referral fee.",
               },
               {
-                t: "Markets where we already have a partner",
-                b: "We work one practice per market. If your area is already taken, we’ll tell you on the first call.",
+                t: "Practice age is not a published cutoff",
+                b: "Any three-year threshold stays unpublished until Brian confirms a policy.",
               },
               {
-                t: "Practices with active payer disputes or compliance issues",
-                b: "Medical billing depends on clean payer relationships. Open disputes have to be resolved before joining.",
+                t: "Payer questions are reviewed individually",
+                b: "Open disputes are not an automatic exclusion on this test site unless a policy is approved.",
               },
               {
-                t: "Owners looking for a turnkey side gig",
-                b: "This is an additional line of business, not a hands-off referral fee. The dentist needs to be in the chair.",
+                t: "Territory is not reserved here",
+                b: "Do not treat geography as protected. Exclusivity is unresolved.",
               },
             ].map((d, i) => (
               <motion.div
@@ -596,22 +596,22 @@ export default function PartnerCriteria() {
               Think you&apos;re a fit?
             </h2>
             <p className="relative mx-auto mt-4 max-w-xl text-white/80">
-              Tell us about your practice. If your market is open and the
-              criteria align, we&apos;ll reach out within one business day.
+              Tell us about the dentist, the champion, and the time you can
+              protect. A reply window is not promised until an owner confirms one.
             </p>
             <div className="relative mt-8 flex flex-wrap items-center justify-center gap-4">
               <Link
                 href="/contact-us"
                 className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-teal-dark shadow-lg transition-transform hover:scale-105"
               >
-                Apply now
+                Discuss practice fit
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
                 href="/success-stories"
                 className="inline-flex items-center gap-2 rounded-full border border-white/40 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white/10"
               >
-                See success stories
+                Founding practice program
                 <ArrowUpRight className="h-4 w-4" />
               </Link>
             </div>

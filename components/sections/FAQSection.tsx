@@ -6,39 +6,39 @@ import { ChevronDown } from "lucide-react";
 
 const FAQS = [
   {
-    id: "franchise",
-    q: "Is Dental Sleep Link a franchise?",
-    a: "No. We\u2019re a Management Services Organization (MSO), not a franchise. You retain full ownership and clinical control of your dental practice. We supply the infrastructure \u2014 medical billing on national contracts, oral appliance fulfillment, clinical training, and operating playbooks \u2014 under a services agreement.",
+    id: "how-it-works",
+    q: "How does DSL work with my practice?",
+    a: "Dental Sleep Link supports credentialing, medical billing, team training, and workflow implementation around dentist-led care. Your practice retains responsibility for clinical care. The relationship is a services arrangement. This site does not classify that arrangement as a franchise or decide any legal category.",
   },
   {
     id: "what-you-get",
-    q: "What do I receive when I join?",
-    a: "End-to-end medical billing on national payer contracts, oral appliance lab logistics, clinical and operational training, compliance and credentialing support, and a phased growth roadmap that takes you from a few sleep cases per month to a fully running sleep line.",
+    q: "What do I receive?",
+    a: "Agreed implementation work covers credentialing assistance, setup, and team training, including billing setup. Ongoing services include claims submission and follow-up, reporting, and other agreed nonclinical support, billed as 14% of appliance collections. Software, appliances, testing, and additional marketing are not bundled into that fee. Collections vary with payer contracts, coverage, documentation, and patient responsibility.",
   },
   {
     id: "ownership",
     q: "Do I still own my practice?",
-    a: "Yes \u2014 100%. Your dental practice and clinical autonomy remain entirely yours. Dental Sleep Link provides services to your practice under an MSO agreement; we do not take equity in your dental practice.",
+    a: "The practice remains independently owned, and treating clinicians keep clinical authority, subject to the final agreement. Ownership, services, and any transaction-related rights are governed by that agreement. This site does not describe equity transfers, exit proceeds, or drag-along rights.",
   },
   {
     id: "economics",
     q: "How is the partnership priced?",
-    a: "Pricing is a participation fee at onboarding plus an ongoing management fee on the sleep medicine line we help you build. We share the exact structure on a call \u2014 it\u2019s designed so the sleep program is profitable to you from the first full quarter of operation.",
+    a: "Implementation fees are $20,000, covering the agreed credentialing, setup, and team-training or billing-setup work. Ongoing support is a flat 14% of appliance collections and includes ongoing billing and support under the services agreement. Approved fixed costs pass through at actual cost. A $599 monthly software cost is a planning assumption, not a guaranteed vendor quote. A separate $249 annual patient membership is retained by DSL, is additional to the appliance payment, and is excluded from illustrated practice revenue. The 14% fee is not applied again to that membership. These figures are not a promise of first-quarter profit.",
   },
   {
-    id: "reimbursement",
-    q: "How does the reimbursement advantage work?",
-    a: "We negotiate and maintain medical insurance contracts on behalf of the partner network and bill centrally through our system. That typically means higher per-case reimbursement, faster collection cycles, and substantially less administrative load on your front desk.",
+    id: "billing",
+    q: "How does medical billing work?",
+    a: "DSL supports credentialing, claims submission, follow-up, and reporting for dentist-led care. Reimbursement and payment timing are not guaranteed. Under the latest proposed funds flow, appliance receipts go to the practice, and DSL invoices monthly in arrears for its services and approved pass-through costs. The final agreement controls. DSL does not promise to hold practice funds, remit a fixed share, or sweep accounts.",
   },
   {
-    id: "training",
+    id: "experience",
     q: "Do I need prior sleep medicine experience?",
-    a: "No. The program is built for general dentists with little or no prior sleep experience, as well as practices already delivering oral appliances. Training and pacing scale to your starting point and target case volume.",
+    a: "New and experienced sleep programs may be evaluated individually. Readiness, training, a responsible dentist, an internal team champion, and protected capacity are assessed during planning. Prior sleep experience is not a published requirement, and a practice-age threshold is not published until it is confirmed.",
   },
   {
-    id: "exclusivity",
-    q: "Why one practice per market?",
-    a: "We protect partner economics by only working with one practice per defined market area. That means no internal competition for cases inside the network and a clear runway to grow without us bringing on a competitor next door.",
+    id: "fit",
+    q: "How is practice fit assessed?",
+    a: "Practice fit looks at capacity, payer readiness, clinical leadership, and team commitment. An initial cohort of about three to five practices is planned, with an approximately six-month implementation horizon. Go-live depends on payer, entity, staff, and clinical readiness. Territorial protection is not offered on this site.",
   },
 ];
 
@@ -73,10 +73,11 @@ export default function FAQSection() {
             FAQs
           </p>
           <h2 className="mt-3 text-3xl font-bold text-navy sm:text-4xl">
-            Partnering made simple.
+            Questions about working together.
           </h2>
           <p className="mt-4 text-navy/70">
-            The most common questions from dentists exploring the model.
+            Commercial terms below follow the current planning materials.
+            Agreement language still needs counsel review.
           </p>
         </motion.div>
 
@@ -90,7 +91,7 @@ export default function FAQSection() {
           <Accordion.Root
             type="single"
             collapsible
-            defaultValue="franchise"
+            defaultValue="how-it-works"
             className="space-y-3"
           >
             {FAQS.map((f, i) => (

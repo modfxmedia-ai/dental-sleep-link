@@ -12,43 +12,43 @@ import {
 
 const SERVICES = [
   {
-    id: "reimbursements",
+    id: "credentialing",
     number: "01",
-    tag: "Revenue",
-    title: "Higher Insurance Reimbursements",
+    tag: "Setup",
+    title: "Credentialing and medical billing support",
     body:
-      "Get paid more per case with our national-level medical billing contracts.",
-    bullets: ["National payer contracts", "Faster collections", "Higher per-case yield"],
+      "DSL supports credentialing, claims submission, follow-up, and reporting. Reimbursement and payment timing are not guaranteed.",
+    bullets: ["Credentialing assistance", "Claims follow-up", "Payer outcomes vary"],
     icon: DollarSign,
   },
   {
     id: "billing",
     number: "02",
-    tag: "Operations",
-    title: "Done-For-You Billing & Compliance",
+    tag: "Billing",
+    title: "Ongoing billing under the services agreement",
     body:
-      "We handle everything — from coding to collections — so you can focus on patients.",
-    bullets: ["Medical coding", "Claims & appeals", "Credentialing"],
+      "Ongoing billing and support are included in the 14% fee on appliance collections. The practice receives appliance payments.",
+    bullets: ["14% of appliance collections", "Monthly invoice in arrears", "Not all practice revenue"],
     icon: FileCheck2,
   },
   {
-    id: "systems",
+    id: "training",
     number: "03",
-    tag: "Playbook",
-    title: "Proven Sleep Practice Systems",
+    tag: "Training",
+    title: "Team training and workflow implementation",
     body:
-      "Follow a step-by-step roadmap to scale from a few cases per month to a full sleep practice.",
-    bullets: ["Clinical workflows", "Patient journey", "Team training"],
+      "Use your existing team where capacity permits. Staffing and protected clinical time are assessed during planning.",
+    bullets: ["Agreed staff training", "Workflow implementation", "Capacity reviewed first"],
     icon: Rocket,
   },
   {
-    id: "network",
+    id: "support",
     number: "04",
-    tag: "Network",
-    title: "Partner-Driven Growth",
+    tag: "Support",
+    title: "Nonclinical support around dentist-led care",
     body:
-      "Join a network built for dentists who want real results, not just another service.",
-    bullets: ["Peer mentorship", "Marketing support", "Ongoing strategy"],
+      "Treating clinicians select, fit, adjust, and oversee appliances. DSL coordinates agreed nonclinical support.",
+    bullets: ["Dentist-led clinical care", "Agreed coordination", "Third-party costs are separate"],
     icon: Network,
   },
 ];
@@ -112,18 +112,18 @@ export default function ServicesGrid() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal opacity-75" />
                 <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-teal" />
               </span>
-              Sleep practice expansion
+              Implementation support
             </span>
             <h2 className="mt-5 text-3xl font-bold leading-[1.1] tracking-tight text-navy sm:text-4xl md:text-5xl">
-              Scale your sleep dentistry with{" "}
+              Support for adding dental sleep medicine{" "}
               <span className="bg-gradient-to-r from-teal-dark to-teal bg-clip-text text-transparent">
-                proven systems
-              </span>{" "}
-              and support.
+                with your existing team
+              </span>
+              .
             </h2>
             <p className="mt-4 text-base text-navy/70 sm:mt-5 sm:text-lg">
-              Four pillars of partnership that turn sleep medicine from a side
-              service into a profitable, repeatable program.
+              Credentialing assistance, team training, and ongoing billing
+              around care that stays with the practice.
             </p>
           </div>
           <Link

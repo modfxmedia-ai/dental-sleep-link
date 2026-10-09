@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Blog from "./Blog";
 
-const TITLE = "Blog — Dental Sleep Medicine Insights & Playbooks";
+const TITLE = "Resources for Building a Dental Sleep Program";
 const DESCRIPTION =
-  "Clinical insights, growth playbooks, and case studies on dental sleep medicine, medical billing, and scaling a sleep-focused dental practice.";
+  "Draft resources on evaluation, workflow, and adding dental sleep medicine to a general practice. Articles are held for authorship and clinical review.";
 const PATH = "/blog";
 
 export const metadata: Metadata = {

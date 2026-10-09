@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import ContactUs from "./ContactUs";
 
-const TITLE = "Contact Us — Talk to a Partner Success Lead";
+const TITLE = "Contact Us — Discuss Practice Fit";
 const DESCRIPTION =
-  "Apply to partner with Dental Sleep Link or speak with our team about scaling sleep dentistry. We respond within one business day.";
+  "Prepare an email about practice fit. You must send it yourself. Do not include patient or medical information. Phone, mailbox, and hours are pending confirmation.";
 const PATH = "/contact-us";
 
 export const metadata: Metadata = {

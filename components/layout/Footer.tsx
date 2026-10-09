@@ -2,21 +2,18 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import type { ComponentType, SVGProps } from "react";
 import { motion } from "framer-motion";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { ArrowRight, Mail, Phone } from "lucide-react";
 
 import type { NavItem } from "@/types";
 import { CONTACT as SITE_CONTACT } from "@/lib/seo";
-
-type IconComponent = ComponentType<SVGProps<SVGSVGElement>>;
 
 const QUICK_LINKS: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about-us" },
   { label: "What You Get", href: "/what-you-get" },
   { label: "The Model", href: "/the-model" },
-  { label: "Success Stories", href: "/success-stories" },
+  { label: "Founding Practice Program", href: "/success-stories" },
   { label: "Partner Criteria", href: "/partner-criteria" },
   { label: "How to Join", href: "/how-to-join" },
   { label: "Blog", href: "/blog" },
@@ -28,7 +25,6 @@ const CONTACT = {
   phone: SITE_CONTACT.phone,
   phoneDisplay: SITE_CONTACT.phoneDisplay,
   email: SITE_CONTACT.email,
-  address: `${SITE_CONTACT.street}, ${SITE_CONTACT.locality}, ${SITE_CONTACT.region}`,
 };
 
 function FooterLogo() {
@@ -42,39 +38,6 @@ function FooterLogo() {
     />
   );
 }
-
-const FacebookIcon: IconComponent = (props) => (
-  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
-    <path d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.7c0-.9.3-1.6 1.6-1.6h1.6V4.2c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.9H8.1V14h2.7v8h2.7Z" />
-  </svg>
-);
-const InstagramIcon: IconComponent = (props) => (
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth={1.8}
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    aria-hidden="true"
-    {...props}
-  >
-    <rect x="3" y="3" width="18" height="18" rx="5" />
-    <circle cx="12" cy="12" r="4" />
-    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
-  </svg>
-);
-const YoutubeIcon: IconComponent = (props) => (
-  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
-    <path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2 26 26 0 0 0 2 12a26 26 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8A26 26 0 0 0 22 12a26 26 0 0 0-.4-4.8ZM10 15V9l5 3-5 3Z" />
-  </svg>
-);
-
-const SOCIAL: { label: string; href: string; Icon: IconComponent }[] = [
-  { label: "Facebook", href: "https://facebook.com", Icon: FacebookIcon },
-  { label: "Instagram", href: "https://instagram.com", Icon: InstagramIcon },
-  { label: "YouTube", href: "https://youtube.com", Icon: YoutubeIcon },
-];
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -116,36 +79,11 @@ export default function Footer() {
             <FooterLogo />
           </Link>
 
-          <p className="flex items-start gap-2 text-sm text-white/70">
-            <MapPin
-              className="mt-0.5 h-4 w-4 shrink-0 text-teal"
-              aria-hidden="true"
-            />
-            <span>{CONTACT.address}</span>
-          </p>
-
           <p className="text-sm leading-relaxed text-white/70">
-            At Dental Sleep Link, we partner with forward-thinking dentists to
-            revolutionize sleep health. Together, we enable life-changing care
-            through innovative solutions, expert support, and proven
-            results—one restful night at a time.
+            Dental Sleep Link supports credentialing, medical billing, team
+            training, and workflow implementation around dentist-led care.
+            Your practice retains responsibility for clinical care.
           </p>
-
-          <ul className="flex items-center gap-3">
-            {SOCIAL.map(({ label, href, Icon }) => (
-              <li key={label}>
-                <a
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={label}
-                  className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-teal text-white transition-transform hover:scale-110 hover:bg-teal-dark"
-                >
-                  <Icon className="h-4 w-4" aria-hidden="true" />
-                </a>
-              </li>
-            ))}
-          </ul>
         </motion.div>
 
         {/* Column 2 — Quick Links */}
@@ -201,7 +139,12 @@ export default function Footer() {
                   className="mt-0.5 h-4 w-4 shrink-0 text-teal"
                   aria-hidden="true"
                 />
-                <span>{CONTACT.phoneDisplay}</span>
+                <span>
+                  {CONTACT.phoneDisplay}
+                  <span className="mt-0.5 block text-[11px] font-normal text-white/45">
+                    Pending confirmation
+                  </span>
+                </span>
               </a>
             </li>
             <li>
@@ -216,13 +159,6 @@ export default function Footer() {
                 <span>{CONTACT.email}</span>
               </a>
             </li>
-            <li className="flex items-start gap-3 text-white/80">
-              <MapPin
-                className="mt-0.5 h-4 w-4 shrink-0 text-teal"
-                aria-hidden="true"
-              />
-              <span>{CONTACT.address}</span>
-            </li>
           </ul>
         </motion.div>
 
@@ -235,34 +171,18 @@ export default function Footer() {
           transition={{ duration: 0.5, ease: "easeOut", delay: 0.15 }}
         >
           <div className="rounded-2xl bg-gradient-to-br from-teal to-teal-dark p-6 shadow-lg shadow-teal/10">
-            <h3 className="text-lg font-semibold text-white">Stay Updated</h3>
+            <h3 className="text-lg font-semibold text-white">Discuss practice fit</h3>
             <p className="mt-2 text-sm text-white/90">
-              Get the latest news on dental sleep medicine delivered to your
-              inbox.
+              A practice-fit conversation is the first step. No newsletter is
+              offered until subscription behavior is confirmed.
             </p>
-            <form
-              className="mt-5 space-y-3"
-              onSubmit={(e) => e.preventDefault()}
-              aria-label="Newsletter signup"
+            <Link
+              href="/contact-us"
+              className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-navy px-4 py-2.5 text-sm font-semibold text-white transition-transform hover:scale-[1.02] hover:bg-navy-mid"
             >
-              <label htmlFor="footer-email" className="sr-only">
-                Email address
-              </label>
-              <input
-                id="footer-email"
-                type="email"
-                name="email"
-                required
-                placeholder="you@example.com"
-                className="w-full rounded-full bg-white/15 px-4 py-2.5 text-sm text-white placeholder-white/70 outline-none ring-1 ring-white/30 backdrop-blur transition focus:bg-white focus:text-navy focus:placeholder-navy/40 focus:ring-2 focus:ring-white"
-              />
-              <button
-                type="submit"
-                className="w-full rounded-full bg-navy px-4 py-2.5 text-sm font-semibold text-white transition-transform hover:scale-[1.02] hover:bg-navy-mid"
-              >
-                Subscribe
-              </button>
-            </form>
+              Prepare an email
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
           </div>
         </motion.div>
       </div>

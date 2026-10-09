@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Dental Sleep Link — MSO for dental sleep medicine";
+export const alt = "Dental Sleep Link — implementation support for dentist-led sleep care";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -54,10 +54,10 @@ export default function OG() {
               maxWidth: 1000,
             }}
           >
-            The nation&apos;s first MSO built exclusively for dental sleep medicine.
+            Implementation support for dentist-led sleep care.
           </div>
           <div style={{ fontSize: 30, color: "rgba(255,255,255,0.75)", maxWidth: 900 }}>
-            Centralized billing. Done-for-you systems. Real partnership.
+            Credentialing, team training, and ongoing billing. Clinical care stays with the practice.
           </div>
         </div>
         <div
@@ -70,7 +70,7 @@ export default function OG() {
           }}
         >
           <span>dentalsleeplink.com</span>
-          <span style={{ color: "#2abfbf", fontWeight: 700 }}>Apply now →</span>
+          <span style={{ color: "#2abfbf", fontWeight: 700 }}>Discuss practice fit →</span>
         </div>
       </div>
     ),

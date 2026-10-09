@@ -15,7 +15,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${SITE_NAME} — MSO for Dental Sleep Medicine`,
+    default: `${SITE_NAME} — Dental sleep medicine implementation support`,
     template: `%s | ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,
@@ -36,13 +36,13 @@ export const metadata: Metadata = {
     type: "website",
     url: SITE_URL,
     siteName: SITE_NAME,
-    title: `${SITE_NAME} — MSO for Dental Sleep Medicine`,
+    title: `${SITE_NAME} — Dental sleep medicine implementation support`,
     description: SITE_DESCRIPTION,
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE_NAME} — MSO for Dental Sleep Medicine`,
+    title: `${SITE_NAME} — Dental sleep medicine implementation support`,
     description: SITE_DESCRIPTION,
   },
   robots: {

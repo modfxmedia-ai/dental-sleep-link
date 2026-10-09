@@ -12,45 +12,45 @@ import {
 
 const PILLARS = [
   {
-    id: "grow",
+    id: "plan",
     number: "01",
-    eyebrow: "Practice growth",
-    title: "Grow Your Sleep Practice",
+    eyebrow: "Planning",
+    title: "A structured implementation plan",
     body:
-      "Turn sleep dentistry into a major revenue driver. Our proven systems, training, and step-by-step guidance help your practice scale efficiently — without the guesswork.",
+      "Credentialing, setup, and team training overlap across an approximately six-month planning horizon. Go-live depends on payer, entity, staff, and clinical readiness.",
     icon: TrendingUp,
     image: "/images/snoring.jpg",
     stats: [
-      { label: "Average case volume lift", value: "5×" },
-      { label: "Onboarding time", value: "≤30 days" },
+      { label: "Planning horizon", value: "~6 mo" },
+      { label: "First case", value: "When ready" },
     ],
   },
   {
-    id: "boost",
+    id: "billing",
     number: "02",
-    eyebrow: "Revenue uplift",
-    title: "Boost Reimbursements",
+    eyebrow: "Billing support",
+    title: "Medical billing support",
     body:
-      "Access national insurance contracts that significantly raise reimbursement rates. Centralized billing and collections mean faster payments and far less administrative load.",
+      "Collections vary with payer contracts, coverage, documentation, and patient responsibility. Reimbursement and payment timing are not guaranteed.",
     icon: HandCoins,
     image: "/images/chin-strap.jpg",
     stats: [
-      { label: "Avg. reimbursement uplift", value: "+38%" },
-      { label: "Days to payment", value: "−42%" },
+      { label: "Appliance collections", value: "14%" },
+      { label: "Payment timing", value: "Varies" },
     ],
   },
   {
-    id: "support",
+    id: "team",
     number: "03",
-    eyebrow: "Mentorship",
-    title: "Hands-On Support & Mentorship",
+    eyebrow: "Your team",
+    title: "Training where capacity allows",
     body:
-      "From legal and compliance setup to ongoing clinical and operational mentorship, we provide the guidance you need to run a streamlined sleep practice at any scale.",
+      "Use your existing team where capacity permits. Staffing and protected clinical time are assessed during planning. Service levels such as response time are not published until confirmed.",
     icon: GraduationCap,
     image: "/images/turnkey-sleep-model.jpg",
     stats: [
-      { label: "Dedicated success leads", value: "1:1" },
-      { label: "Mentor response time", value: "<24h" },
+      { label: "Existing team", value: "If able" },
+      { label: "Extra hires", value: "Assessed" },
     ],
   },
 ];
@@ -114,18 +114,19 @@ export default function WhyPartner() {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal opacity-75" />
               <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-teal" />
             </span>
-            Why dentists partner with us
+            How the support is structured
           </span>
           <h2 className="mt-5 text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl md:text-5xl">
-            A partnership built around{" "}
+            Implementation support around{" "}
             <span className="bg-gradient-to-r from-teal to-teal-light bg-clip-text text-transparent">
-              three outcomes
+              dentist-led care
             </span>
             .
           </h2>
           <p className="mt-5 text-white/70">
-            We don&apos;t sell courses. We build long-term partnerships that
-            deliver real revenue, real systems, and real results.
+            DSL supports credentialing, medical billing, team training, and
+            workflow implementation. Clinical responsibility stays with the
+            practice.
           </p>
         </motion.div>
 

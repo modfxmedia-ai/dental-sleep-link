@@ -12,16 +12,16 @@ import {
 } from "lucide-react";
 
 const MARQUEE_ITEMS = [
-  "Sleep Apnea",
-  "Diagnose",
-  "Treat",
-  "Grow Your Sleep Practice",
+  "Implementation support",
+  "Team training",
+  "Credentialing assistance",
+  "Ongoing medical billing",
 ];
 
 const SPEC_BADGES = [
-  { icon: ShieldCheck, label: "FDA cleared", sub: "Class II device" },
-  { icon: Activity, label: "Custom-fit", sub: "Per patient scan" },
-  { icon: Award, label: "Insurance billable", sub: "Medical codes" },
+  { icon: ShieldCheck, label: "Implementation support", sub: "Setup and credentialing" },
+  { icon: Activity, label: "Team training", sub: "Where capacity allows" },
+  { icon: Award, label: "Ongoing medical billing", sub: "Under the services agreement" },
 ];
 
 const PARTICLES = [
@@ -100,7 +100,7 @@ export default function Hero() {
               <span className="relative inline-flex h-2 w-2 rounded-full bg-teal" />
             </span>
             <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
-            The MSO for dental sleep medicine
+            Making dental sleep medicine accessible
           </motion.span>
 
           <motion.h1
@@ -130,10 +130,19 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.25 }}
             className="mt-5 max-w-xl text-base leading-relaxed text-white/70 sm:mt-7 sm:text-lg"
           >
-            The first MSO built exclusively for general dentists. We provide
-            the medical billing, oral appliance fulfillment, clinical training,
-            and operating playbook — so you can launch and scale a sleep
-            medicine line without the operational lift.
+            Dental Sleep Link helps general dentists add dental sleep medicine
+            with implementation support, team training, credentialing assistance
+            and ongoing billing. Your practice retains responsibility for
+            clinical care.
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mt-4 max-w-xl text-sm leading-relaxed text-white/55"
+          >
+            Proposed tagline, pending approval: Making dental sleep medicine
+            accessible to more dentists—and the patients they serve.
           </motion.p>
 
           <motion.div
@@ -147,7 +156,7 @@ export default function Hero() {
               className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-teal px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-teal/30 transition-transform hover:scale-105 sm:px-7"
             >
               <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
-              <span className="relative">Apply to Become a Partner</span>
+              <span className="relative">Discuss practice fit</span>
               <ArrowRight className="relative h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
             <Link
@@ -168,15 +177,15 @@ export default function Hero() {
           >
             <div className="inline-flex items-center gap-2 rounded-full border border-teal/30 bg-teal/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-teal backdrop-blur sm:text-[11px]">
               <ShieldCheck className="h-4 w-4" aria-hidden="true" />
-              MSO, not a franchise
+              Implementation support
             </div>
             <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/80 backdrop-blur sm:text-[11px]">
               <Activity className="h-4 w-4 text-teal" aria-hidden="true" />
-              One practice per market
+              Team training
             </div>
             <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/80 backdrop-blur sm:text-[11px]">
               <Award className="h-4 w-4 text-teal" aria-hidden="true" />
-              Medical billing handled
+              Ongoing medical billing
             </div>
           </motion.div>
         </div>
@@ -301,26 +310,6 @@ export default function Hero() {
             );
           })}
 
-          {/* Monthly cases stat card */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.1 }}
-            className="absolute -bottom-2 right-0 z-20 w-44 rounded-2xl bg-gradient-to-br from-teal to-teal-dark p-4 shadow-2xl ring-1 ring-white/20 sm:right-2 sm:w-56 sm:p-5"
-          >
-            <p className="text-[10px] uppercase tracking-wider text-white/80 sm:text-[11px]">
-              Monthly cases
-            </p>
-            <p className="mt-1 text-2xl font-bold text-white sm:text-3xl">+187%</p>
-            <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-white/20">
-              <motion.div
-                initial={{ width: 0 }}
-                animate={{ width: "82%" }}
-                transition={{ duration: 1.6, delay: 1.4, ease: "easeOut" }}
-                className="h-full rounded-full bg-white"
-              />
-            </div>
-          </motion.div>
         </motion.div>
       </div>
 

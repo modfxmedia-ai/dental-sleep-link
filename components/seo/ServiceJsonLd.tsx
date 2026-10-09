@@ -13,7 +13,7 @@ export default function ServiceJsonLd({ name, description, url, serviceType }: P
     "@type": "Service",
     name,
     description,
-    serviceType: serviceType ?? "Dental Sleep Medicine MSO",
+    serviceType: serviceType ?? "Dental sleep medicine implementation support",
     url: `${SITE_URL}${url}`,
     provider: {
       "@type": "MedicalBusiness",

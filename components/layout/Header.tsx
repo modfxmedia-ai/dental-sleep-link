@@ -3,49 +3,18 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import type { ComponentType, SVGProps } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Mail, MapPin, Menu, Phone, X } from "lucide-react";
+import { Mail, Menu, Phone, X } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { CONTACT as SITE_CONTACT } from "@/lib/seo";
 import type { NavItem } from "@/types";
 
-type IconComponent = ComponentType<SVGProps<SVGSVGElement>>;
-
-// lucide-react no longer ships brand marks, so we inline the social glyphs.
-const FacebookIcon: IconComponent = (props) => (
-  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
-    <path d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.7c0-.9.3-1.6 1.6-1.6h1.6V4.2c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.9H8.1V14h2.7v8h2.7Z" />
-  </svg>
-);
-const InstagramIcon: IconComponent = (props) => (
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth={1.8}
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    aria-hidden="true"
-    {...props}
-  >
-    <rect x="3" y="3" width="18" height="18" rx="5" />
-    <circle cx="12" cy="12" r="4" />
-    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
-  </svg>
-);
-const YoutubeIcon: IconComponent = (props) => (
-  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
-    <path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2 26 26 0 0 0 2 12a26 26 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8A26 26 0 0 0 22 12a26 26 0 0 0-.4-4.8ZM10 15V9l5 3-5 3Z" />
-  </svg>
-);
-
 const NAV_ITEMS: NavItem[] = [
   { label: "About", href: "/about-us" },
   { label: "What You Get", href: "/what-you-get" },
   { label: "The Model", href: "/the-model" },
-  { label: "Success Stories", href: "/success-stories" },
+  { label: "Founding Practice Program", href: "/success-stories" },
   { label: "Partner Criteria", href: "/partner-criteria" },
   { label: "How to Join", href: "/how-to-join" },
   { label: "Blog", href: "/blog" },
@@ -56,14 +25,7 @@ const CONTACT = {
   phone: SITE_CONTACT.phone,
   phoneDisplay: SITE_CONTACT.phoneDisplay,
   email: SITE_CONTACT.email,
-  address: `${SITE_CONTACT.street}, ${SITE_CONTACT.locality}, ${SITE_CONTACT.region}`,
 };
-
-const SOCIAL: { label: string; href: string; Icon: IconComponent }[] = [
-  { label: "Facebook", href: "https://facebook.com", Icon: FacebookIcon },
-  { label: "Instagram", href: "https://instagram.com", Icon: InstagramIcon },
-  { label: "YouTube", href: "https://youtube.com", Icon: YoutubeIcon },
-];
 
 interface HeaderProps {
   currentPath: string;
@@ -115,10 +77,6 @@ export default function Header({ currentPath }: HeaderProps) {
                     <span>{CONTACT.phoneDisplay}</span>
                   </a>
                 </li>
-                <li className="inline-flex items-center gap-2">
-                  <MapPin className="h-4 w-4" aria-hidden="true" />
-                  <span>{CONTACT.address}</span>
-                </li>
                 <li>
                   <a
                     href={`mailto:${CONTACT.email}`}
@@ -130,21 +88,6 @@ export default function Header({ currentPath }: HeaderProps) {
                 </li>
               </ul>
 
-              <ul className="flex items-center gap-2">
-                {SOCIAL.map(({ label, href, Icon }) => (
-                  <li key={label}>
-                    <a
-                      href={href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={label}
-                      className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white text-teal transition-transform hover:scale-110"
-                    >
-                      <Icon className="h-4 w-4" aria-hidden="true" />
-                    </a>
-                  </li>
-                ))}
-              </ul>
             </div>
           </motion.div>
         )}
@@ -243,7 +186,7 @@ export default function Header({ currentPath }: HeaderProps) {
               href="/how-to-join"
               className="hidden rounded-full bg-teal px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-teal/20 transition-transform hover:scale-105 hover:bg-teal-dark lg:inline-block"
             >
-              Apply now
+              Discuss fit
             </Link>
 
             <button
@@ -308,7 +251,7 @@ export default function Header({ currentPath }: HeaderProps) {
                 onClick={closeMobile}
                 className="mt-8 block rounded-full bg-teal px-6 py-3 text-center text-base font-semibold text-white shadow-md shadow-teal/20 transition-transform hover:scale-105 hover:bg-teal-dark"
               >
-                Apply now
+                Discuss fit
               </Link>
 
               <div className="mt-8 space-y-3 text-sm text-white/80">
@@ -319,10 +262,6 @@ export default function Header({ currentPath }: HeaderProps) {
                   <Phone className="h-4 w-4" aria-hidden="true" />
                   {CONTACT.phoneDisplay}
                 </a>
-                <p className="flex items-center gap-3">
-                  <MapPin className="h-4 w-4" aria-hidden="true" />
-                  {CONTACT.address}
-                </p>
                 <a
                   href={`mailto:${CONTACT.email}`}
                   className="flex items-center gap-3 hover:text-teal"
@@ -332,21 +271,6 @@ export default function Header({ currentPath }: HeaderProps) {
                 </a>
               </div>
 
-              <ul className="mt-6 flex items-center gap-3">
-                {SOCIAL.map(({ label, href, Icon }) => (
-                  <li key={label}>
-                    <a
-                      href={href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={label}
-                      className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-teal text-white transition-transform hover:scale-110"
-                    >
-                      <Icon className="h-5 w-5" aria-hidden="true" />
-                    </a>
-                  </li>
-                ))}
-              </ul>
             </nav>
           </motion.div>
         )}

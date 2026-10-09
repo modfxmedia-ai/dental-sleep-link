@@ -2,6 +2,7 @@ import { SITE_URL, SITE_NAME } from "@/lib/seo";
 import type { Post } from "@/lib/posts";
 
 export default function ArticleJsonLd({ post }: { post: Post }) {
+  if (post.pendingReview) return null;
   const url = `${SITE_URL}/blog/${post.slug}`;
   const data = {
     "@context": "https://schema.org",

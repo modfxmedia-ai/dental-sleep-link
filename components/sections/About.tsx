@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import {
@@ -11,16 +12,16 @@ import {
 } from "lucide-react";
 
 const BULLETS = [
-  "Centralized medical billing with higher reimbursements",
-  "Done-for-you compliance, credentialing, and workflow setup",
-  "Training to scale to 100+ appliances per month",
-  "A clear path to becoming a full-time sleep provider",
+  "Credentialing and documentation support",
+  "Team training where existing capacity allows",
+  "Ongoing billing support at 14% of appliance collections",
+  "Clinical care remains the practice's responsibility",
 ];
 
 const STAT_PILLS = [
-  { icon: Building2, value: "25+", label: "Practices" },
-  { icon: Receipt, value: "$12M+", label: "Reimbursed" },
-  { icon: Stethoscope, value: "1,500+", label: "Appliances" },
+  { icon: Building2, value: "$20,000", label: "Implementation fees" },
+  { icon: Receipt, value: "14%", label: "Appliance collections" },
+  { icon: Stethoscope, value: "$249", label: "DSL membership" },
 ];
 
 export default function About() {
@@ -81,17 +82,17 @@ export default function About() {
             About us
           </span>
           <h2 className="mt-5 text-3xl font-bold leading-[1.1] tracking-tight text-navy sm:text-4xl md:text-5xl">
-            The first MSO built exclusively for{" "}
+            Implementation support for{" "}
             <span className="bg-gradient-to-r from-teal-dark to-teal bg-clip-text text-transparent">
-              dental sleep medicine
+              dentist-led sleep care
             </span>
             .
           </h2>
           <p className="mt-5 text-lg text-navy/70">
-            We help general dentists launch and scale a profitable sleep
-            division — without adding extra workload. We don&apos;t sell
-            courses. We build long-term partnerships that deliver real revenue,
-            real systems, and real results.
+            Dental Sleep Link helps general dentists add dental sleep medicine
+            with credentialing assistance, team training, and ongoing billing.
+            Staffing needs are assessed during planning. The practice keeps
+            clinical responsibility.
           </p>
         </motion.div>
 
@@ -170,7 +171,7 @@ export default function About() {
                   className="absolute right-5 top-5 flex items-center gap-2 rounded-full bg-white/10 px-3 py-1.5 text-[11px] font-semibold text-white backdrop-blur ring-1 ring-white/20"
                 >
                   <Sparkles className="h-3.5 w-3.5 text-teal" />
-                  Trusted MSO
+                  Dentist-led care
                 </motion.div>
 
                 {/* Bottom-left 10+ yrs badge */}
@@ -186,10 +187,10 @@ export default function About() {
                   </span>
                   <div>
                     <p className="text-xl font-bold leading-none text-navy">
-                      10+ yrs
+                      ~6 mo
                     </p>
                     <p className="mt-1 text-[10px] uppercase tracking-wider text-navy/60">
-                      Elevating sleep dentistry
+                      Planning horizon
                     </p>
                   </div>
                 </motion.div>
@@ -253,9 +254,7 @@ export default function About() {
               className="pointer-events-none absolute -inset-6 rounded-[2.5rem] bg-teal/15 blur-3xl"
             />
 
-            <form
-              onSubmit={(e) => e.preventDefault()}
-              aria-label="Get in touch"
+            <div
               className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-navy via-navy-mid to-navy p-8 ring-1 ring-white/10 shadow-2xl shadow-navy/30"
             >
               {/* Animated corner accent */}
@@ -278,69 +277,34 @@ export default function About() {
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal opacity-75" />
                     <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-teal" />
                   </span>
-                  Reply within 1 business day
+                  Practice-fit conversation
                 </span>
                 <h3 className="mt-4 text-2xl font-bold text-white">
-                  Talk to a partner success lead
+                  Discuss practice fit
                 </h3>
                 <p className="mt-2 text-sm text-white/70">
-                  Tell us about your practice. We&apos;ll map a clear path to
-                  scaling your sleep program.
+                  The contact page prepares an email in your own mail app. You
+                  still need to send it. Do not include patient or medical
+                  information. A response time is not promised until an owner
+                  confirms one.
                 </p>
 
-                <div className="mt-7 space-y-4">
-                  <Field id="name" label="Name" type="text" placeholder="Dr. Jane Smith" />
-                  <Field id="email" label="Email" type="email" placeholder="you@practice.com" />
-                  <Field id="phone" label="Phone" type="tel" placeholder="(555) 123-4567" />
-                </div>
-
-                <button
-                  type="submit"
+                <Link
+                  href="/contact-us"
                   className="group relative mt-7 inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-teal to-teal-dark px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-teal/30 transition-transform hover:scale-[1.02]"
                 >
                   <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
-                  <span className="relative">Send</span>
-                </button>
+                  <span className="relative">Prepare email</span>
+                </Link>
 
                 <p className="mt-4 text-center text-[11px] text-white/50">
-                  We&apos;ll never share your info. No spam. Ever.
+                  Public phone, mailbox, and hours are still pending confirmation.
                 </p>
               </div>
-            </form>
+            </div>
           </motion.div>
         </div>
       </div>
     </section>
-  );
-}
-
-function Field({
-  id,
-  label,
-  type,
-  placeholder,
-}: {
-  id: string;
-  label: string;
-  type: string;
-  placeholder?: string;
-}) {
-  return (
-    <div className="group">
-      <label
-        htmlFor={id}
-        className="block text-[11px] font-semibold uppercase tracking-[0.2em] text-white/60"
-      >
-        {label}
-      </label>
-      <input
-        id={id}
-        name={id}
-        type={type}
-        placeholder={placeholder}
-        required
-        className="mt-2 w-full rounded-xl bg-navy-mid/70 px-4 py-3 text-sm text-white placeholder-white/30 outline-none ring-1 ring-white/10 transition focus:bg-navy-mid focus:ring-2 focus:ring-teal"
-      />
-    </div>
   );
 }

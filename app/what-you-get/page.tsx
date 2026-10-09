@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import WhatYouGet from "./WhatYouGet";
 import ServiceJsonLd from "@/components/seo/ServiceJsonLd";
 
-const TITLE = "What You Get — Turnkey Sleep Dentistry Infrastructure";
+const TITLE = "What You Get — Implementation, Training, and Billing Support";
 const DESCRIPTION =
-  "Everything you need to run a profitable sleep dentistry practice: higher reimbursements, done-for-you medical billing, clinical training, turnkey tooling, and a partnership built to scale.";
+  "Agreed setup, staff training, credentialing assistance, claims submission and follow-up, reporting, and ongoing nonclinical support. Clinical care stays with the practice.";
 const PATH = "/what-you-get";
 
 export const metadata: Metadata = {

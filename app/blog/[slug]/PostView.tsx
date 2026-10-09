@@ -123,6 +123,13 @@ export default function PostView({
             {post.excerpt}
           </motion.p>
 
+          {post.pendingReview && (
+            <p className="mx-auto mt-6 max-w-2xl rounded-2xl border border-teal/40 bg-teal/10 px-4 py-3 text-center text-sm leading-relaxed text-white/80">
+              Unpublished draft. Authorship, credentials, and clinical claims
+              are pending review. This is not publication approval.
+            </p>
+          )}
+
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -436,18 +443,18 @@ export default function PostView({
               className="pointer-events-none absolute -top-20 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-white/20 blur-3xl"
             />
             <h2 className="relative text-3xl font-bold text-white sm:text-4xl">
-              Ready to bring sleep medicine into your practice?
+              This draft is not a clinical protocol.
             </h2>
             <p className="relative mx-auto mt-4 max-w-xl text-white/80">
-              Apply now and we&rsquo;ll map a clear, profitable path for your
-              sleep practice &mdash; within one business day.
+              If you want to discuss practice fit, prepare an email. Authorship
+              and clinical wording are still under review.
             </p>
             <div className="relative mt-8 flex flex-wrap items-center justify-center gap-4">
               <Link
                 href="/contact-us"
                 className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-teal-dark shadow-lg transition-transform hover:scale-105"
               >
-                Apply now
+                Discuss practice fit
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link

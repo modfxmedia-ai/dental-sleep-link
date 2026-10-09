@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import SuccessStories from "./SuccessStories";
 
-const TITLE = "Success Stories — Real Dental Sleep Practice Outcomes";
+const TITLE = "Founding Practice Program — What Participating Practices Will Measure";
 const DESCRIPTION =
-  "25+ partner practices. $50M+ insurance reimbursements processed. 95% of partners hit growth milestones. See how dentists are scaling sleep medicine with Dental Sleep Link.";
+  "An introduction to the founding practice program. Participating practices will measure training readiness, collected revenue, staff time, claims status, and patient follow-through. These are not achieved results.";
 const PATH = "/success-stories";
 
 export const metadata: Metadata = {

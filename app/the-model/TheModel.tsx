@@ -15,106 +15,107 @@ import {
   ArrowUpRight,
   Scale,
 } from "lucide-react";
+import EconomicsTable from "@/components/sections/EconomicsTable";
 
 const STEPS = [
   {
-    id: "onboarding",
+    id: "planning",
     number: "01",
-    tag: "Onboarding",
+    tag: "Planning",
     icon: Rocket,
-    title: "Start with Simplified Onboarding",
+    title: "A structured implementation plan",
     body:
-      "We kick off with an easy, guided onboarding process where your team learns how to effortlessly screen, refer, and manage sleep apnea patients using our proven systems.",
+      "Planning runs about six months. Credentialing, setup, and training overlap. Go-live depends on payer, entity, staff, and clinical or operational readiness. There is no 30-day first-case guarantee.",
     bullets: [
-      "Guided kickoff with success lead",
-      "Team training on screening protocols",
-      "Patient intake templates included",
-      "Live shadowing for first cases",
+      "Approximately six-month horizon",
+      "Overlapping workstreams",
+      "Readiness review before launch",
+      "No first-case date promised",
     ],
     image: "/images/the-model/step-1-v2.png",
-    imageAlt: "Sleep practice onboarding kickoff",
-    metric: { value: "≤30d", label: "Time to first case" },
+    imageAlt: "Implementation planning conversation",
+    metric: { value: "~6 mo", label: "Planning horizon" },
   },
   {
-    id: "integration",
+    id: "capacity",
     number: "02",
-    tag: "Workflow",
+    tag: "Capacity",
     icon: Workflow,
-    title: "Seamless Sleep Workflow Integration",
+    title: "Use the existing team where capacity permits",
     body:
-      "We plug in a complete sleep solution to your practice — including patient screening tools, diagnostic testing options and appliance ordering — without requiring extra staff or new departments.",
+      "Staffing and protected clinical time are assessed during planning. The model does not promise zero extra hires or that sleep work adds no time.",
     bullets: [
-      "Plug-in clinical workflows",
-      "Home sleep test ordering",
-      "Appliance ordering portal",
-      "No new hires required",
+      "Capacity reviewed up front",
+      "Protected clinical time",
+      "Internal team champion",
+      "Extra staffing if the assessment requires it",
     ],
     image: "/images/the-model/step-2-v3.png",
-    imageAlt: "Sleep workflow integrated into dental practice",
-    metric: { value: "0", label: "Extra hires required" },
+    imageAlt: "Practice team capacity planning",
+    metric: { value: "Assessed", label: "Staffing and capacity" },
   },
   {
     id: "billing",
     number: "03",
     tag: "Billing",
     icon: Receipt,
-    title: "Full-Service Medical Billing & Collections",
+    title: "Credentialing and medical billing support",
     body:
-      "We take care of everything: medical coding, insurance submissions, and payment follow-ups using our national-level contracts — meaning you get higher insurance reimbursements, faster.",
+      "DSL supports credentialing, claims submission, follow-up, and reporting. Collections vary by payer, coverage, documentation, and patient responsibility. Reimbursement and payment timing are not guaranteed.",
     bullets: [
-      "Medical coding handled for you",
-      "Claims submission & appeals",
-      "National payer contracts",
-      "Faster collections, less denial",
+      "Credentialing assistance",
+      "Claims submission and follow-up",
+      "14% of appliance collections",
+      "No national-contract uplift claimed",
     ],
     image: "/images/the-model/step-3-v2.webp",
-    imageAlt: "Medical billing dashboard for sleep practice",
-    metric: { value: "+38%", label: "Avg. reimbursement uplift" },
+    imageAlt: "Billing support, not a results dashboard",
+    metric: { value: "14%", label: "Of appliance collections" },
   },
   {
-    id: "device",
+    id: "clinical",
     number: "04",
-    tag: "Delivery",
+    tag: "Clinical",
     icon: PackageCheck,
-    title: "Device Delivery & Compliance Support",
+    title: "Clinicians oversee the appliance",
     body:
-      "From appliance manufacturing to patient fitting and compliance tracking — we ensure every step is executed with precision, so your patients get results and your practice earns.",
+      "Treating clinicians select, fit, adjust, and oversee appliances. DSL coordinates agreed nonclinical support. A positive screen does not by itself authorize an appliance.",
     bullets: [
-      "Lab and DME logistics",
-      "Patient fitting support",
-      "Compliance tracking dashboard",
-      "Outcome reporting included",
+      "Dentist selects and fits",
+      "Dentist adjusts and oversees",
+      "DSL coordinates nonclinical support",
+      "Lab cost remains a practice cost",
     ],
     image: "/images/the-model/step-4-v2.jpg",
-    imageAlt: "CPAP and oral appliance device delivery",
-    metric: { value: "1,500+", label: "Appliances / month" },
+    imageAlt: "Clinician-directed appliance care",
+    metric: { value: "Practice", label: "Clinical responsibility" },
   },
   {
-    id: "growth",
+    id: "funds",
     number: "05",
-    tag: "Partnership",
+    tag: "Funds",
     icon: Compass,
-    title: "Ongoing Growth Coaching & Partnership",
+    title: "Practice receipts and a monthly invoice",
     body:
-      "We're not just a service provider; we're a long-term partner. We help you monitor results, grow your sleep patient base, and tap into new revenue opportunities as your practice evolves.",
+      "Under the latest proposed funds flow, appliance receipts go to the practice. DSL invoices monthly in arrears for services and approved pass-through costs. The final agreement controls.",
     bullets: [
-      "Quarterly business reviews",
-      "Dedicated success lead, 1:1",
-      "Marketing playbook & support",
-      "Long-term scaling roadmap",
+      "Receipts stay with the practice",
+      "Monthly invoice in arrears",
+      "Approved costs at actual cost",
+      "No account sweep is promised",
     ],
     image: "/images/the-model/step-5.jpg",
-    imageAlt: "Long-term sleep practice growth partnership",
-    metric: { value: "96%", label: "Milestone success rate" },
+    imageAlt: "Planning discussion of funds flow",
+    metric: { value: "$20k", label: "Separate implementation fees" },
   },
 ];
 
 const MARQUEE_ITEMS = [
-  "Onboard",
-  "Integrate",
-  "Bill",
-  "Deliver",
-  "Grow",
+  "Plan",
+  "Credential",
+  "Train",
+  "Review readiness",
+  "Launch in phases",
 ];
 
 export default function TheModel() {
@@ -185,9 +186,9 @@ export default function TheModel() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-5 text-[2.1rem] font-bold leading-[1.1] tracking-tight text-white sm:mt-6 sm:text-5xl md:text-6xl lg:text-7xl"
           >
-            A proven path to{" "}
+            A structured{" "}
             <span className="bg-gradient-to-r from-teal to-teal-light bg-clip-text text-transparent">
-              sleep practice success
+              implementation plan
             </span>
             .
           </motion.h1>
@@ -198,10 +199,9 @@ export default function TheModel() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-white/70 sm:mt-6 sm:text-lg"
           >
-            We&apos;ve simplified the process of integrating sleep apnea
-            services into your dental practice. Our model is built to reduce
-            your workload, remove complexities, and open the door to long-term
-            profitability.
+            Credentialing, setup, and training overlap across about six months.
+            Launch depends on readiness. The practice keeps clinical
+            responsibility and receives appliance payments.
           </motion.p>
 
           <motion.div
@@ -215,7 +215,7 @@ export default function TheModel() {
               className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-teal px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-teal/30 transition-transform hover:scale-105"
             >
               <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
-              <span className="relative">Apply to Become a Partner</span>
+              <span className="relative">Discuss practice fit</span>
               <ArrowRight className="relative h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
             <Link
@@ -304,10 +304,10 @@ export default function TheModel() {
                 </span>
                 <div>
                   <p className="text-lg font-bold leading-none text-navy">
-                    Streamlined flow
+                    Readiness first
                   </p>
                   <p className="mt-1 text-[10px] uppercase tracking-wider text-navy/60">
-                    From intake to recurring revenue
+                    About six months of planning
                   </p>
                 </div>
               </motion.div>
@@ -554,7 +554,7 @@ export default function TheModel() {
                           href="/contact-us"
                           className="group mt-8 inline-flex items-center gap-2 rounded-full border border-teal/40 bg-teal/10 px-5 py-2.5 text-sm font-semibold text-teal-dark backdrop-blur transition-all hover:border-teal hover:bg-teal hover:text-white"
                         >
-                          Talk to a partner success lead
+                          Discuss practice fit
                           <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                         </Link>
                       </motion.div>
@@ -583,29 +583,25 @@ export default function TheModel() {
               </span>
               <div>
                 <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-teal-dark">
-                  Transparent up front
+                  Agreement controls
                 </p>
                 <h2 className="mt-2 text-2xl font-bold text-navy sm:text-3xl">
-                  Future liquidity &amp; strategic events
+                  Ownership, services, and funds flow
                 </h2>
                 <p className="mt-4 text-sm leading-relaxed text-navy/70 sm:text-base">
-                  Dental Sleep Link is built to scale. As the network grows,
-                  we may pursue strategic transactions — additional capital
-                  partners, network-level acquisitions, or other corporate
-                  events. Partnership agreements include customary terms
-                  covering those scenarios (including standard drag-along
-                  provisions on the sleep medicine line we build together) so
-                  that the network can move as one when an opportunity arises.
-                  Your dental practice itself is never part of those terms
-                  — you keep 100% of it. Full mechanics are reviewed line by
-                  line during onboarding before anything is signed.
+                  Ownership, services, and any transaction-related rights are
+                  governed by the final agreement. This page does not describe
+                  drag-along rights, practice equity, or a share of future exit
+                  proceeds. Appliance receipts go to the practice. DSL invoices
+                  monthly in arrears for its services and approved pass-through
+                  costs.
                 </p>
                 <ul className="mt-5 grid gap-2 text-sm text-navy/75 sm:grid-cols-2">
                   {[
-                    "You retain 100% of your dental practice",
-                    "Standard drag-along on the sleep line only",
-                    "Reviewed in detail before onboarding",
-                    "Aligned incentives across the network",
+                    "$20,000 implementation fees, shown separately",
+                    "14% of appliance collections, including ongoing billing",
+                    "Approved costs pass through at actual cost",
+                    "$249 membership retained by DSL and excluded from practice revenue",
                   ].map((b) => (
                     <li key={b} className="flex items-start gap-2">
                       <Check className="mt-1 h-4 w-4 shrink-0 text-teal" aria-hidden="true" />
@@ -613,6 +609,7 @@ export default function TheModel() {
                     </li>
                   ))}
                 </ul>
+                <EconomicsTable />
               </div>
             </div>
           </motion.div>
@@ -644,18 +641,18 @@ export default function TheModel() {
               className="pointer-events-none absolute -top-20 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-white/20 blur-3xl"
             />
             <h2 className="relative text-3xl font-bold text-white sm:text-4xl">
-              Ready to walk through the model with us?
+              Walk through fit, scope, and timing.
             </h2>
             <p className="relative mx-auto mt-4 max-w-xl text-white/80">
-              Apply now and we&apos;ll map a clear, profitable path for your
-              sleep practice — within one business day.
+              Start with a practice-fit conversation. Payment is not requested
+              before the applicable agreement and payment arrangements are ready.
             </p>
             <div className="relative mt-8 flex flex-wrap items-center justify-center gap-4">
               <Link
                 href="/contact-us"
                 className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-teal-dark shadow-lg transition-transform hover:scale-105"
               >
-                Apply now
+                Discuss practice fit
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link

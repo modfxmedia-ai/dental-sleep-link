@@ -31,28 +31,28 @@ export default function CTABand() {
           />
 
           <p className="relative text-xs font-semibold uppercase tracking-[0.3em] text-white/80">
-            Ready to grow?
+            Planning conversation
           </p>
           <h2 className="relative mt-3 text-3xl font-bold text-white sm:text-4xl">
-            Build a profitable sleep practice with us.
+            Discuss whether the program fits your practice.
           </h2>
           <p className="relative mx-auto mt-4 max-w-2xl text-white/85">
-            Apply to become a partner and we&apos;ll walk you through the model,
-            the math, and the next 90 days.
+            The first step is a practice-fit conversation. Implementation
+            planning is about six months, and launch depends on readiness.
           </p>
           <div className="relative mt-8 flex flex-wrap items-center justify-center gap-4">
             <Link
               href="/how-to-join"
               className="group inline-flex items-center gap-2 rounded-full bg-white px-7 py-3 text-sm font-semibold text-navy transition-transform hover:scale-105"
             >
-              Apply now
+              See how to join
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
             <Link
               href="/contact-us"
               className="inline-flex items-center gap-2 rounded-full border border-white/40 px-7 py-3 text-sm font-semibold text-white transition-colors hover:border-white hover:bg-white/10"
             >
-              Talk to our team
+              Discuss practice fit
             </Link>
           </div>
         </motion.div>

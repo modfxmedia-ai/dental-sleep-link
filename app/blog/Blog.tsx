@@ -97,7 +97,7 @@ export default function Blog() {
               <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-teal" />
             </span>
             <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
-            Insights &amp; playbooks
+            Draft resources
           </motion.span>
 
           <motion.h1
@@ -106,9 +106,9 @@ export default function Blog() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-5 text-[2.1rem] font-bold leading-[1.1] tracking-tight text-white sm:mt-6 sm:text-5xl md:text-6xl"
           >
-            Ideas that{" "}
+            Resources for building a{" "}
             <span className="bg-gradient-to-r from-teal to-teal-light bg-clip-text text-transparent">
-              grow sleep practices
+              dental sleep program
             </span>
             .
           </motion.h1>
@@ -119,8 +119,9 @@ export default function Blog() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/70"
           >
-            Clinical insights, billing playbooks, and growth stories from
-            inside the Dental Sleep Link partner network.
+            These drafts are held for authorship and clinical review. Named
+            authors from an earlier version were removed because they were not
+            verified, and they are not relabeled as the founder.
           </motion.p>
 
           {/* Search */}
@@ -412,31 +413,19 @@ export default function Blog() {
               className="pointer-events-none absolute -top-20 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-white/20 blur-3xl"
             />
             <h2 className="relative text-3xl font-bold text-white sm:text-4xl">
-              Get the playbook in your inbox.
+              Discuss practice fit
             </h2>
             <p className="relative mx-auto mt-4 max-w-xl text-white/80">
-              One short email a month. Clinical insights, billing wins, and
-              partner stories — no fluff.
+              A practice-fit conversation is the first step. These articles are
+              drafts held for authorship and clinical review.
             </p>
-            <form
-              onSubmit={(e) => e.preventDefault()}
-              className="relative mx-auto mt-8 flex max-w-md flex-col gap-3 sm:flex-row"
+            <Link
+              href="/contact-us"
+              className="relative mx-auto mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-teal-dark shadow-lg transition-transform hover:scale-105"
             >
-              <input
-                type="email"
-                required
-                placeholder="you@practice.com"
-                className="w-full rounded-full border border-white/30 bg-white/10 px-5 py-3 text-sm text-white placeholder:text-white/60 backdrop-blur focus:border-white focus:outline-none focus:ring-2 focus:ring-white/40"
-                aria-label="Email address"
-              />
-              <button
-                type="submit"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-teal-dark shadow-lg transition-transform hover:scale-105"
-              >
-                Subscribe
-                <ArrowRight className="h-4 w-4" />
-              </button>
-            </form>
+              Discuss practice fit
+              <ArrowRight className="h-4 w-4" />
+            </Link>
           </motion.div>
         </div>
       </section>

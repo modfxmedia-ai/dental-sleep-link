@@ -17,102 +17,102 @@ import {
 
 const PILLARS = [
   {
-    id: "reimbursements",
+    id: "credentialing",
     number: "01",
-    tag: "Revenue",
+    tag: "Credentialing",
     icon: ShieldCheck,
-    title: "Higher Reimbursements with National Insurance Contracts",
+    title: "Credentialing and medical billing support",
     body:
-      "Gain access to top-tier medical insurance payers and negotiate better reimbursement rates that most independent practices can't secure on their own. This means more revenue per case and predictable cash flow every month.",
+      "DSL supports credentialing and medical billing around dentist-led care. Collections vary with payer contracts, coverage, documentation, and patient responsibility. Reimbursement is not guaranteed.",
     bullets: [
-      "Pre-negotiated national payer contracts",
-      "Higher per-case yield vs. solo billing",
-      "Predictable, consistent monthly cash flow",
-      "Reduced denials with payer relationships",
+      "Credentialing assistance",
+      "No pre-negotiated national contracts claimed",
+      "Payer outcomes vary",
+      "Practice responsibilities stay in the agreement",
     ],
-    metric: { value: "+38%", label: "Avg. reimbursement uplift" },
+    metric: { value: "Support", label: "Not a rate guarantee" },
     image: "/images/what-you-get/reimbursements.jpg",
-    imageAlt: "Patient using CPAP therapy for sleep apnea",
+    imageAlt: "Clinical setting, not a reimbursement result",
   },
   {
     id: "billing",
     number: "02",
-    tag: "Operations",
+    tag: "Billing",
     icon: Receipt,
-    title: "Hassle-Free Medical Billing and Collections",
+    title: "Claims submission, follow-up, and reporting",
     body:
-      "Say goodbye to paperwork and coding confusion. Our expert team handles complete billing, claims submission, and follow-ups — so you can stay focused on patient care while we make sure you get paid faster.",
+      "Ongoing billing and support are included in the flat 14% of appliance collections. Appliance receipts go to the practice. DSL invoices monthly in arrears for services and approved pass-through costs. The final agreement controls.",
     bullets: [
-      "Medical coding handled end-to-end",
-      "Claims submission + appeals",
-      "Faster collections and follow-ups",
-      "Transparent reporting dashboard",
+      "Claims submission and follow-up",
+      "Reporting on agreed activity",
+      "14% of appliance collections",
+      "Not a promise of faster payment",
     ],
-    metric: { value: "−42%", label: "Days to payment" },
+    metric: { value: "14%", label: "Of appliance collections" },
     image: "/images/what-you-get/billing.webp",
-    imageAlt: "Sleep apnea therapy overview",
+    imageAlt: "Billing support illustration",
   },
   {
     id: "training",
     number: "03",
-    tag: "Playbook",
+    tag: "Training",
     icon: GraduationCap,
-    title: "End-to-End Sleep Practice Training & Growth Coaching",
+    title: "Staff training and workflow implementation",
     body:
-      "From diagnosis to delivery, receive full training for your team and ongoing guidance from sleep industry experts. Get tools, templates, and strategies proven to grow sleep departments — even if you're just getting started.",
+      "Agreed setup includes team training and billing setup. Treating clinicians select, fit, adjust, and oversee appliances. DSL does not diagnose patients or promise a first case within 30 days.",
     bullets: [
-      "Clinical workflows from intake to delivery",
-      "Team training & SOP templates",
-      "1:1 mentorship from sleep experts",
-      "Marketing playbook for patient acquisition",
+      "Team training where capacity allows",
+      "Workflow implementation",
+      "About six months of planning",
+      "Mentorship hours are not listed until confirmed",
     ],
-    metric: { value: "≤30d", label: "Time to first case" },
+    metric: { value: "~6 mo", label: "Planning horizon" },
     image: "/images/what-you-get/training.jpg",
-    imageAlt: "Dental practice team training session",
+    imageAlt: "Team training session",
   },
   {
-    id: "turnkey",
+    id: "coordination",
     number: "04",
-    tag: "Tooling",
+    tag: "Coordination",
     icon: Boxes,
-    title: "Turnkey Sleep Solution",
+    title: "Coordination is separate from third-party purchases",
     body:
-      "We handle referrals, device ordering, and more. Whether you need diagnostics or custom sleep appliances, we've got your practice covered — effortlessly.",
+      "DSL can coordinate agreed nonclinical steps. Software, appliances, testing, and additional marketing are not bundled unless specifically approved. Lab costs remain practice costs. The illustration assumes $300 each.",
     bullets: [
-      "Home sleep test kits + screening tools",
-      "Custom oral appliance ordering",
-      "Lab and DME logistics handled for you",
-      "Specialist referral network",
+      "Software is a pass-through assumption",
+      "$599 per month is not a vendor quote",
+      "Appliances and testing are separate",
+      "No supplied test-kit promise",
     ],
-    metric: { value: "1,500+", label: "Appliances / month" },
+    metric: { value: "Actual", label: "Approved pass-through cost" },
     image: "/images/what-you-get/turnkey.jpg",
-    imageAlt: "Turnkey sleep solution kit",
+    imageAlt: "Supplies coordinated separately from the services fee",
   },
   {
-    id: "scale",
+    id: "support",
     number: "05",
-    tag: "Partnership",
+    tag: "Ongoing",
     icon: TrendingUp,
-    title: "Partnership That Scales with You",
+    title: "Ongoing nonclinical support",
     body:
-      "With us, you're never alone. Whether you're adding your first sleep patient or scaling to multiple locations, our model grows with you — designed to help you succeed long-term in a booming medical niche.",
+      "After launch, support continues under the services agreement. Response times, live shadowing, dashboards, and specialist networks are not listed as available until the operational owner confirms them.",
     bullets: [
-      "From first case to multi-location",
-      "Dedicated success lead, 1:1",
-      "Quarterly business reviews",
-      "Peer network of partner practices",
+      "Ongoing billing and support included in 14%",
+      "Separate $249 DSL membership",
+      "Membership is not practice revenue",
+      "Service levels still need confirmation",
     ],
-    metric: { value: "10+ yrs", label: "Elevating sleep dentistry" },
+    metric: { value: "$249", label: "Annual membership, DSL-retained" },
     image: "/images/what-you-get/scale.webp",
-    imageAlt: "CPAP therapy comfort tips",
+    imageAlt: "Ongoing support planning image",
   },
 ];
 
 const MARQUEE_ITEMS = [
-  "Sleep Apnea",
-  "Diagnose",
-  "Treat",
-  "Grow Your Sleep Practice",
+  "Credentialing",
+  "Team training",
+  "Billing support",
+  "Dentist-led care",
 ];
 
 export default function WhatYouGetPage() {
@@ -183,9 +183,9 @@ export default function WhatYouGetPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-5 text-[2.1rem] font-bold leading-[1.1] tracking-tight text-white sm:mt-6 sm:text-5xl md:text-6xl lg:text-7xl"
           >
-            Everything you need to{" "}
+            Support for adding{" "}
             <span className="bg-gradient-to-r from-teal to-teal-light bg-clip-text text-transparent">
-              run a sleep practice
+              dental sleep medicine
             </span>
             .
           </motion.h1>
@@ -196,9 +196,9 @@ export default function WhatYouGetPage() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/70"
           >
-            Join the nation&apos;s only all-in-one management service built
-            exclusively for sleep dentistry. Here&apos;s what you unlock when
-            you partner with us.
+            Agreed setup, staff training, credentialing assistance, claims
+            work, reporting, and ongoing nonclinical support. Clinical care
+            stays with your practice.
           </motion.p>
 
           <motion.div
@@ -212,7 +212,7 @@ export default function WhatYouGetPage() {
               className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-teal px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-teal/30 transition-transform hover:scale-105"
             >
               <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
-              <span className="relative">Apply to Become a Partner</span>
+              <span className="relative">Discuss practice fit</span>
               <ArrowRight className="relative h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
             <Link
@@ -301,10 +301,10 @@ export default function WhatYouGetPage() {
                 </span>
                 <div>
                   <p className="text-lg font-bold leading-none text-navy">
-                    All-in-one MSO
+                    Implementation support
                   </p>
                   <p className="mt-1 text-[10px] uppercase tracking-wider text-navy/60">
-                    Built for sleep dentistry
+                    Around dentist-led care
                   </p>
                 </div>
               </motion.div>
@@ -584,7 +584,7 @@ export default function WhatYouGetPage() {
                         href="/contact-us"
                         className="group mt-8 inline-flex items-center gap-2 rounded-full border border-teal/40 bg-teal/10 px-5 py-2.5 text-sm font-semibold text-teal-dark backdrop-blur transition-all hover:border-teal hover:bg-teal hover:text-white"
                       >
-                        Talk to a partner success lead
+                        Discuss practice fit
                         <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                       </Link>
                     </motion.div>
@@ -621,18 +621,18 @@ export default function WhatYouGetPage() {
               className="pointer-events-none absolute -top-20 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-white/20 blur-3xl"
             />
             <h2 className="relative text-3xl font-bold text-white sm:text-4xl">
-              Ready to unlock all five pillars?
+              Review the services before you plan.
             </h2>
             <p className="relative mx-auto mt-4 max-w-xl text-white/80">
-              Apply now and we&apos;ll map a clear, profitable path for your
-              sleep practice — within one business day.
+              A practice-fit conversation comes first. No response-time promise
+              is published until an owner confirms one.
             </p>
             <div className="relative mt-8 flex flex-wrap items-center justify-center gap-4">
               <Link
                 href="/contact-us"
                 className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-teal-dark shadow-lg transition-transform hover:scale-105"
               >
-                Apply now
+                Discuss practice fit
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link

@@ -8,33 +8,62 @@ import {
   Sparkles,
   Receipt,
   Workflow,
+  Users,
+  BadgeDollarSign,
 } from "lucide-react";
+import EconomicsTable from "@/components/sections/EconomicsTable";
 
 const TIERS = [
   {
-    eyebrow: "One-time",
-    title: "Onboarding participation",
-    price: "Disclosed on call",
-    note: "Covers credentialing, billing integration, training, and program setup.",
+    eyebrow: "Implementation",
+    title: "Implementation fees",
+    price: "$20,000",
+    note: "Covers the agreed credentialing, setup, and team-training or billing-setup work. Shown separately from operating illustrations. It does not drop out of cash flow.",
     icon: Workflow,
     includes: [
-      "Medical credentialing handled",
-      "Billing engine integration",
-      "Clinical & operational training",
-      "Market exclusivity reserved",
+      "Credentialing assistance",
+      "Practice and billing setup",
+      "Team training",
+      "Separate from the 14% fee",
     ],
   },
   {
     eyebrow: "Ongoing",
-    title: "Management fee on the sleep line",
-    price: "Aligned with revenue",
-    note: "A management fee on the sleep medicine line we help you build \u2014 not on your dental practice.",
+    title: "Services fee",
+    price: "14% of appliance collections",
+    note: "A flat fee on appliance collections, including ongoing billing and support under the services agreement. Not calculated on production, billed charges, or general-dentistry revenue.",
     icon: Receipt,
     includes: [
-      "End-to-end medical billing",
-      "Lab logistics & fulfillment",
-      "Ongoing 1:1 coaching",
-      "Quarterly business reviews",
+      "Claims submission and follow-up",
+      "Reporting",
+      "Ongoing nonclinical support",
+      "Exact collections definition is for counsel",
+    ],
+  },
+  {
+    eyebrow: "Pass-through",
+    title: "Approved costs at actual cost",
+    price: "Actual approved cost",
+    note: "Fixed costs that are approved pass through at actual cost. $599 per month for software is a planning assumption, not a percentage fee or a guaranteed vendor quote.",
+    icon: BadgeDollarSign,
+    includes: [
+      "Retires the former 6% software proxy",
+      "Lab cost stays with the practice",
+      "Illustration uses $300 per appliance",
+      "Other pass-throughs need approval",
+    ],
+  },
+  {
+    eyebrow: "Separate",
+    title: "Patient membership",
+    price: "$249 per year",
+    note: "Additional to the appliance payment and retained by DSL. Excluded from illustrated practice revenue. The 14% fee is not applied again to the same receipt.",
+    icon: Users,
+    includes: [
+      "Not practice revenue in the illustration",
+      "Does not replace clinical follow-up",
+      "Patient terms still need review",
+      "Not public enrollment language",
     ],
   },
 ];
@@ -59,22 +88,23 @@ export default function Pricing() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.5 }}
-          className="mx-auto max-w-2xl text-center"
+          className="mx-auto max-w-3xl text-center"
         >
           <span className="inline-flex items-center gap-2 rounded-full bg-teal/10 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.25em] text-teal ring-1 ring-teal/30">
             <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
-            Transparent economics
+            Planning economics
           </span>
           <h2 className="mt-5 text-3xl font-bold text-navy sm:text-4xl">
-            Two pieces.{" "}
+            Implementation, ongoing support{" "}
             <span className="bg-gradient-to-r from-teal-dark to-teal bg-clip-text text-transparent">
-              No surprises.
+              and practice costs.
             </span>
           </h2>
           <p className="mt-4 text-base leading-relaxed text-navy/70 sm:text-lg">
-            One participation fee at onboarding. One management fee on the
-            sleep medicine line we build together. Designed so the sleep line
-            is profitable to you from the first full quarter of operation.
+            Go-live depends on payer, entity, staff, and clinical readiness.
+            Credentialing, setup, and training overlap across an approximately
+            six-month planning horizon. Profitability is not promised for the
+            first quarter, and there is no 30-day first-case guarantee.
           </p>
         </motion.div>
 
@@ -117,25 +147,30 @@ export default function Pricing() {
           })}
         </div>
 
+        <EconomicsTable />
+
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.5 }}
-          className="mx-auto mt-10 flex max-w-3xl flex-col items-center gap-4 rounded-2xl border border-navy/10 bg-navy/[0.03] p-5 text-center text-sm text-navy/70 sm:flex-row sm:text-left"
+          className="mx-auto mt-10 max-w-4xl rounded-2xl border border-navy/10 bg-navy/[0.03] p-5 text-sm leading-relaxed text-navy/70"
         >
-          <p className="flex-1">
-            We share the full economic structure on the first discovery call.
-            One practice per market, so we walk through the numbers before any
-            market is reserved.
+          <p>
+            Proposed funds flow, pending the final agreement: appliance receipts
+            go to the practice, and DSL invoices monthly in arrears for services
+            and approved pass-through costs. Payment timing, deposits, refunds,
+            and exclusivity are not set on this site.
           </p>
-          <Link
-            href="/contact-us"
-            className="group inline-flex items-center gap-2 rounded-full bg-navy px-5 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-white transition-transform hover:scale-105"
-          >
-            See if my market is open
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-          </Link>
+          <div className="mt-4 flex justify-center sm:justify-start">
+            <Link
+              href="/contact-us"
+              className="group inline-flex items-center gap-2 rounded-full bg-navy px-5 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-white transition-transform hover:scale-105"
+            >
+              Discuss practice fit
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+            </Link>
+          </div>
         </motion.div>
       </div>
     </section>

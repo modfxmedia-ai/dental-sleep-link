@@ -48,21 +48,21 @@ const GROUPS: SiteGroup[] = [
         href: "/",
         label: "Home",
         description:
-          "Sleep dentistry, built as a real business. Overview of the MSO and how partners join.",
+          "Implementation support, team training, credentialing assistance, and ongoing billing around dentist-led care.",
         icon: Home,
       },
       {
         href: "/about-us",
         label: "About Us",
         description:
-          "Who we are, why we exist, and the operator background behind Dental Sleep Link.",
+          "What Dental Sleep Link supports. Founder name, biography, and photograph are held for approval.",
         icon: Info,
       },
       {
         href: "/what-you-get",
         label: "What You Get",
         description:
-          "Medical billing, oral appliance fulfillment, training, and the operating playbook — itemized.",
+          "Credentialing and billing support, staff training, and the costs that are not bundled.",
         icon: Briefcase,
       },
     ],
@@ -77,28 +77,28 @@ const GROUPS: SiteGroup[] = [
         href: "/the-model",
         label: "The Model",
         description:
-          "How sleep medicine plugs into a general dental practice, and the economic structure underneath it.",
+          "A six-month implementation plan, practice receipts, and a monthly invoice. Final agreement controls.",
         icon: Workflow,
       },
       {
         href: "/partner-criteria",
         label: "Partner Criteria",
         description:
-          "Who we partner with, who shouldn't apply, and how we keep one practice per market.",
+          "Dentist leadership, an internal champion, and protected capacity. No territorial guarantee.",
         icon: ShieldCheck,
       },
       {
         href: "/how-to-join",
         label: "How to Join",
         description:
-          "The six-step path from application to live sleep cases inside your practice.",
+          "Six stages from a practice-fit conversation through a readiness review and phased launch.",
         icon: Rocket,
       },
       {
         href: "/success-stories",
-        label: "Success Stories",
+        label: "Founding Practice Program",
         description:
-          "What partner practices get from the program — outcomes, capabilities, and testimonials.",
+          "What participating practices will measure. Not achieved results, and not testimonials.",
         icon: Trophy,
       },
     ],
@@ -107,13 +107,13 @@ const GROUPS: SiteGroup[] = [
     eyebrow: "03 — Resources",
     title: "Blog & resources",
     blurb:
-      "Field notes on sleep apnea, oral appliance therapy, and building sleep medicine into a real business line.",
+      "Draft resources held for authorship and clinical review.",
     links: [
       {
         href: "/blog",
         label: "Blog index",
         description:
-          "All articles \u2014 clinical context, business model, and operator playbooks.",
+          "Resources for building a dental sleep program. Drafts are not publication-ready.",
         icon: Newspaper,
       },
       ...POSTS.map((p) => ({
@@ -128,13 +128,13 @@ const GROUPS: SiteGroup[] = [
     eyebrow: "04 — Get in touch",
     title: "Connect",
     blurb:
-      "Apply for a market check, ask a question, or grab the machine-readable sitemap for search engines.",
+      "Prepare an email, or open the machine-readable sitemap. Indexing is not publication approval.",
     links: [
       {
         href: "/contact-us",
         label: "Contact Us",
         description:
-          "Apply to become a partner or ask about your market. Replies within one business day.",
+          "Prepare an email about practice fit. You still have to send it. No patient information.",
         icon: Mail,
       },
       {
@@ -231,8 +231,8 @@ export default function SitemapPage() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/70 sm:text-lg"
           >
-            A human-friendly map of the site. Jump straight to the program
-            details, partner criteria, blog, or apply for a market check.
+            A human-friendly map of the test site, including the founding
+            practice program and the draft resources.
           </motion.p>
 
           <motion.div
@@ -437,7 +437,7 @@ export default function SitemapPage() {
                 </a>
                 <span className="inline-flex items-center gap-2">
                   <MapPin className="h-4 w-4 text-teal" aria-hidden="true" />
-                  {CONTACT.locality}, {CONTACT.region}
+                  Street address not published
                 </span>
               </div>
             </div>

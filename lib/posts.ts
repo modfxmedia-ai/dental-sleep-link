@@ -16,10 +16,18 @@ export type Post = {
   read: string;
   image: string;
   imageAlt: string;
-  author: { name: string; role: string; initials: string };
+  author: { name: string; role: string; initials: string; pending: boolean };
   tags: string[];
   body: PostBlock[];
   featured?: boolean;
+  pendingReview: boolean;
+};
+
+const PENDING_AUTHOR = {
+  name: "Authorship pending review",
+  role: "Not attributed to a named clinician",
+  initials: "—",
+  pending: true,
 };
 
 export const POSTS: Post[] = [
@@ -27,210 +35,151 @@ export const POSTS: Post[] = [
     slug: "what-happens-if-you-ignore-sleep-apnea",
     title: "What Happens If You Ignore Sleep Apnea?",
     excerpt:
-      "Sleep apnea isn\u2019t just about snoring. It\u2019s a serious condition that puts your heart, brain, and overall health at risk if left untreated.",
+      "Untreated obstructive sleep apnea can affect daytime function and cardiovascular health. A dental screening does not diagnose it or authorize an appliance.",
     category: "Clinical",
-    date: "May 28, 2026",
+    date: "Unpublished draft",
     read: "6 min",
     image: "/images/blog/post-1.webp",
-    imageAlt:
-      "Tired woman lying awake at night next to a snoring partner",
-    author: { name: "Dr. R. Alvarez", role: "Clinical Lead", initials: "RA" },
-    tags: ["Sleep apnea", "Cardiovascular", "Patient education"],
+    imageAlt: "Person awake at night, used as a general illustration",
+    author: PENDING_AUTHOR,
+    tags: ["Sleep apnea", "Evaluation", "Patient education"],
     featured: true,
+    pendingReview: true,
     body: [
       {
         type: "p",
-        text: "Most patients still think sleep apnea is a snoring problem. It is not. Obstructive sleep apnea (OSA) is a chronic disease that quietly damages the cardiovascular system, the brain, and metabolic health \u2014 and the longer it goes untreated, the steeper the bill becomes.",
+        text: "Obstructive sleep apnea is a medical condition, not only a snoring complaint. Leaving moderate or severe disease untreated is associated with daytime sleepiness and with cardiovascular concerns. How much risk any one person carries depends on severity and the rest of their health. This draft does not state a universal multiplier, and it does not promise that treatment will prevent disease or lengthen life.",
       },
       {
         type: "callout",
-        title: "The hidden epidemic",
-        text: "An estimated 80% of moderate-to-severe OSA cases in the U.S. remain undiagnosed. Dentists are uniquely positioned to find them first.",
+        title: "Held for clinical review",
+        text: "Specific prevalence, hypertension, and stroke figures are withheld until they are sourced and reviewed by the clinical lead. Do not treat this draft as patient education that is ready to publish.",
       },
-      { type: "h2", text: "The cardiovascular risk", id: "cardiovascular" },
+      { type: "h2", text: "Why a screen is not a diagnosis", id: "screen" },
       {
         type: "p",
-        text: "Each apneic event triggers a surge of cortisol and a spike in blood pressure. Repeat that hundreds of times a night, and the autonomic nervous system never gets to reset. The downstream effects are real and well documented.",
+        text: "A questionnaire or a conversation in the dental chair can flag people who should be evaluated. It does not establish obstructive sleep apnea, and a positive screen alone does not authorize an oral appliance. Diagnosis and the decision to prescribe therapy belong in a physician-coordinated evaluation.",
       },
-      {
-        type: "ul",
-        items: [
-          "2\u20133\u00d7 higher risk of hypertension",
-          "4\u00d7 higher risk of stroke",
-          "Significantly elevated risk of atrial fibrillation and heart failure",
-          "Higher all-cause mortality in severe, untreated cases",
-        ],
-      },
-      { type: "h2", text: "The cognitive cost", id: "cognitive" },
-      {
-        type: "p",
-        text: "Sleep fragmentation prevents the brain from completing the deep-sleep cycles where memory consolidation and waste clearance happen. Patients report brain fog, slower reaction times, and irritability long before they recognize a sleep problem.",
-      },
-      {
-        type: "quote",
-        text: "Patients almost never come in saying they have sleep apnea. They come in saying they\u2019re exhausted, foggy, and short-tempered \u2014 and they blame themselves.",
-        cite: "Dr. R. Alvarez, Clinical Lead",
-      },
-      { type: "h2", text: "Metabolism, mood, and daily life", id: "daily" },
-      {
-        type: "p",
-        text: "Chronic sleep deprivation drives insulin resistance, weight gain, and depression. The patient who can\u2019t lose weight despite trying may be fighting a biological battle they don\u2019t know they\u2019re in.",
-      },
-      { type: "h2", text: "Why dentists are on the frontline", id: "dentists" },
-      {
-        type: "p",
-        text: "Dentists see their patients more often than any other healthcare provider. The airway, the bite, the bruxism patterns, the scalloped tongue \u2014 all of it is visible in a routine exam. A trained dental team can screen for OSA in under three minutes and refer or treat directly with an oral appliance.",
-      },
+      { type: "h2", text: "A coordinated path", id: "path" },
       {
         type: "ol",
         items: [
-          "Add a 6-question screener to every new patient intake",
-          "Flag bruxism, scalloping, and retrognathic profiles",
-          "Order a home sleep test through your medical billing partner",
-          "Deliver an oral appliance \u2014 or refer for CPAP if severe",
+          "Notice symptoms or exam findings and discuss them with the patient",
+          "Refer for an appropriate medical evaluation and diagnosis",
+          "If an oral appliance is prescribed, a qualified dentist selects, fits, adjusts, and oversees it",
+          "Plan physician follow-up testing and periodic dental follow-up for side effects and occlusal change",
         ],
       },
       {
+        type: "p",
+        text: "The AASM and AADSM joint guideline on oral appliance therapy supports qualified-dentist oversight of dental side effects and occlusal changes, physician follow-up testing, and periodic follow-up visits. It does not support skipping that care.",
+      },
+      {
         type: "callout",
-        title: "The bottom line",
-        text: "Ignoring sleep apnea is not a neutral choice. Every untreated year compounds cardiovascular, cognitive, and metabolic damage \u2014 and your patients are looking at you to catch it.",
+        title: "Balanced language",
+        text: "Patients should hear that evaluation matters and that results vary. They should not hear that an appliance is automatic, that every untreated case has the same outcome, or that a coaching membership replaces visits.",
       },
     ],
   },
   {
-    slug: "from-3-to-20-appliances-a-month",
-    title:
-      "From 3 to 20+ Appliances a Month: How Dentists Are Scaling Sleep Medicine",
+    slug: "building-a-repeatable-dental-sleep-workflow",
+    title: "Building a Repeatable Dental Sleep Workflow",
     excerpt:
-      "It\u2019s easy to see sleep apnea treatment as a side service. The dentists scaling fastest treat it as a core revenue line \u2014 here\u2019s how.",
+      "A workable sleep program needs team ownership, protected time, billing follow-through, and measurement. Volume targets are not cohort results.",
     category: "Growth",
-    date: "Apr 30, 2026",
+    date: "Unpublished draft",
     read: "7 min",
     image: "/images/blog/post-3.jpg",
-    imageAlt: "Restful woman holding a pillow on a bed \u2014 calm sleep imagery",
-    author: { name: "Dr. S. Kim", role: "Practice Coach", initials: "SK" },
-    tags: ["Practice growth", "Operations", "Sleep medicine"],
+    imageAlt: "Restful sleep imagery used as a general illustration",
+    author: PENDING_AUTHOR,
+    tags: ["Workflow", "Operations", "Planning"],
+    pendingReview: true,
     body: [
       {
         type: "p",
-        text: "Most dental practices that offer sleep treatment deliver between two and four appliances a month. The top decile delivers more than twenty. The difference isn\u2019t talent or geography \u2014 it\u2019s system design.",
+        text: "Adding dental sleep medicine is an implementation project. It needs a dentist who remains responsible for care, someone on the team who owns the nonclinical steps, time that is actually protected on the schedule, and a way to see whether billing follow-through is happening. This article does not describe a typical monthly volume, and it does not present 20 appliances a month as a Dental Sleep Link result.",
       },
-      { type: "h2", text: "Stop treating it as a side service", id: "side" },
+      { type: "h2", text: "Give the work an owner and a block of time", id: "owner" },
       {
         type: "p",
-        text: "If sleep treatment lives in the corner of the schedule, it stays in the corner of the P&L. The scaling practices give it block time, a dedicated team lead, and the same operational discipline they use for crown-and-bridge.",
+        text: "If sleep visits have no owner and no protected time, they compete with the rest of the day and stall. Capacity should be assessed before cases are promised. An existing team can carry the work only where that capacity exists. Extra staffing is a planning question, not something this draft rules out.",
       },
-      {
-        type: "callout",
-        title: "Mindset shift",
-        text: "Sleep is not a service. It\u2019s a program \u2014 with intake, screening, diagnosis, fitting, follow-up, and billing as named, measured steps.",
-      },
-      { type: "h2", text: "Build a screening engine", id: "screening" },
+      { type: "h2", text: "Screening needs a clinical review", id: "screening" },
       {
         type: "p",
-        text: "Every new and recall patient should be screened. Use a short validated tool (STOP-BANG works), add airway photos to your standard exam set, and flag every patient with bruxism or known cardiovascular comorbidity.",
+        text: "Practices often start with a short questionnaire and findings already visible in a dental exam. Any screening protocol, including a body-mass threshold, should be reviewed by the clinical lead before it is adopted. Marketing copy should not invent a clinical rule. A positive screen is a reason to coordinate a medical evaluation, not a reason to deliver an appliance.",
+      },
+      { type: "h2", text: "Follow the billing through", id: "billing" },
+      {
+        type: "p",
+        text: "Billing follow-through means claims are submitted, pending items are watched, and collections are recorded as money actually received. Dental Sleep Link’s planning illustration uses two volumes only: 6 and 12 completed appliances a month. At $1,800 collected each, the annual balances before other expenses and taxes are $82,668 and $172,524, after the 14% fee, a $300 lab cost, and $599 monthly software. Those balances are not take-home income. The separate $20,000 implementation fees and the $249 membership retained by DSL sit outside that practice illustration. A third volume is not shown.",
       },
       {
         type: "ul",
         items: [
-          "STOP-BANG questionnaire at intake",
-          "Pharyngeal and tongue photos at exam",
-          "Auto-flag bruxism + HTN + BMI > 28",
-          "Weekly review of flagged charts",
-        ],
-      },
-      { type: "h2", text: "Systemize the billing", id: "billing" },
-      {
-        type: "p",
-        text: "Medical billing is the single most common reason sleep programs stall. The practices that scale offload it entirely \u2014 to an in-house biller trained on medical, or to a partner with national payer contracts. Either way, you should not be hand-coding D-codes and DME claims yourself.",
-      },
-      {
-        type: "quote",
-        text: "We hit 22 appliances a month the quarter we stopped doing our own medical billing. The clinical work didn\u2019t change. The friction did.",
-        cite: "Dr. S. Kim, Practice Coach",
-      },
-      { type: "h2", text: "Add a coach", id: "coach" },
-      {
-        type: "p",
-        text: "Every scaling program has someone above the practice keeping score \u2014 cases per month, gross per case, denial rate, time-to-fit. If nobody is watching the numbers weekly, the program will drift back to a side service. Quarterly business reviews keep it on the rails.",
-      },
-      {
-        type: "ol",
-        items: [
-          "Weekly scorecard \u2014 case volume + collections",
-          "Monthly clinical review of fitted cases",
-          "Quarterly business review with growth lead",
-          "Annual market expansion plan",
+          "Count completed appliances, not inquiries",
+          "Record collections, not billed charges",
+          "Track staff time against the capacity assumption",
+          "Review claims status without treating a target as a result",
         ],
       },
       {
         type: "callout",
-        title: "The pattern",
-        text: "Screening engine + outsourced medical billing + an outside coach. Every practice we\u2019ve seen scale past 20 appliances a month has all three.",
+        title: "What this is not",
+        text: "It is not evidence that practices commonly move from 3 to 20 appliances, and it is not an approved high scenario. Service levels such as coaching cadence are unpublished until confirmed.",
       },
     ],
   },
   {
-    slug: "why-every-dental-practice-should-offer-sleep-apnea-treatment",
-    title:
-      "Why Every Dental Practice Should Offer Sleep Apnea Treatment in 2026",
+    slug: "adding-dental-sleep-medicine-to-a-general-practice",
+    title: "Adding Dental Sleep Medicine to a General Practice",
     excerpt:
-      "Sleep apnea affects tens of millions of adults in the U.S. \u2014 most undiagnosed. Dentistry is the natural entry point for finding them.",
+      "Suitability, diagnosis, treatment, and reimbursement depend on the individual patient and the individual practice.",
     category: "Industry",
-    date: "Apr 12, 2026",
+    date: "Unpublished draft",
     read: "5 min",
     image: "/images/blog/post-2.jpg",
-    imageAlt: "Woman wearing an anti-snoring chin strap",
-    author: { name: "Dr. J. Lee", role: "Founder", initials: "JL" },
-    tags: ["Industry", "OSA", "Oral appliance"],
+    imageAlt: "Person wearing a chin strap, used as a general illustration",
+    author: PENDING_AUTHOR,
+    tags: ["General practice", "Oral appliance", "Follow-up"],
+    pendingReview: true,
     body: [
       {
         type: "p",
-        text: "The U.S. has a sleep apnea problem hiding in plain sight. Roughly 30 million adults have obstructive sleep apnea, and about 80% of moderate-to-severe cases are undiagnosed. The patients are already in your operatories \u2014 they just haven\u2019t been screened.",
+        text: "A general practice can be a place where sleep symptoms are noticed. Whether dental sleep medicine belongs in that practice depends on the dentist’s readiness, the team’s capacity, and the patients who are actually candidates. It is not an automatic service for every adult who snores, and it is not a guarantee of better margins.",
       },
-      { type: "h2", text: "The undiagnosed millions", id: "undiagnosed" },
+      { type: "h2", text: "Suitability is individual", id: "suitability" },
       {
         type: "p",
-        text: "These are not edge cases. They\u2019re your bruxism patients, your hypertensive patients, your patients with thick necks and scalloped tongues. They\u2019ve been told they snore. They blame their weight, their schedule, or their age \u2014 and they never connect the dots to sleep.",
+        text: "Diagnosis, appliance therapy, and reimbursement each depend on the patient and on the practice’s payer relationships. A prevalence figure is not used here until it is substantiated. An undiagnosed-population badge is not a substitute for that source. CPAP intolerance does not by itself mean every patient needs an oral appliance.",
       },
-      {
-        type: "callout",
-        title: "30M undiagnosed",
-        text: "If 80% of moderate-to-severe OSA in the U.S. is undiagnosed, the public-health gap is enormous \u2014 and dentistry is the most over-indexed specialty to close it.",
-      },
-      { type: "h2", text: "Dental is the natural entry point", id: "entry" },
-      {
-        type: "p",
-        text: "A general dentist sees most patients twice a year. Physicians often don\u2019t. Add in the fact that the entire airway is visible during every exam, and you have the highest-leverage screening surface in healthcare. CPAP-intolerant patients also need an oral appliance \u2014 a device you, and only you, are licensed to deliver.",
-      },
+      { type: "h2", text: "What the dentist is positioned to do", id: "dentist" },
       {
         type: "ul",
         items: [
-          "You see patients more often than any physician",
-          "You can see the airway directly",
-          "You can deliver the oral appliance",
-          "You can bill medical for it",
+          "See patients often enough to notice symptoms and dental findings",
+          "Refer for physician-coordinated evaluation and diagnosis",
+          "When an appliance is prescribed, select, fit, adjust, and oversee it",
+          "Bill medical claims with support, knowing payment is not guaranteed",
         ],
       },
-      { type: "h2", text: "The patient outcome", id: "outcome" },
       {
         type: "p",
-        text: "Patients who finally get treated for OSA describe it as life-changing \u2014 better mood, better cognition, lower blood pressure, fewer headaches, longer life. These aren\u2019t small wins. They\u2019re the kind of clinical results that make patients refer their entire family to your practice.",
+        text: "A dental exam does not display the entire airway, and a dentist is not the only clinician involved in care. Oral appliance therapy sits alongside medical diagnosis and follow-up testing.",
       },
-      { type: "h2", text: "The practice outcome", id: "practice" },
+      { type: "h2", text: "Follow-up is clinical", id: "follow-up" },
       {
         type: "p",
-        text: "Sleep treatment is a recurring, medically-billed, high-margin service line. Every appliance delivered creates a 3-year follow-up relationship and a multiplier of word-of-mouth referrals. The economics aren\u2019t just good \u2014 they\u2019re structurally better than most restorative work.",
+        text: "The AASM and AADSM joint clinical practice guideline supports qualified-dentist oversight for dental side effects and occlusal changes, physician follow-up testing, and periodic follow-up visits. A $249 annual membership retained by Dental Sleep Link cannot substitute for clinically necessary follow-up, and it cannot promise that teeth will not move or that office visits will be unnecessary.",
       },
       {
-        type: "quote",
-        text: "If you\u2019re a dentist in 2026 and you\u2019re not screening for sleep apnea, you\u2019re leaving both lives and revenue on the table.",
-        cite: "Dr. J. Lee, Founder",
+        type: "p",
+        text: "Guideline reference for clinical review: https://aasm.org/aasm-and-aadsm-issue-new-joint-clinical-practice-guideline-for-oral-appliance-therapy/",
       },
       {
         type: "callout",
-        title: "Why now",
-        text: "Medical reimbursement for oral appliances has never been better. Payer contracts are clearer, devices are more refined, and billing partners can do the heavy lifting. The barriers that existed five years ago are gone.",
+        title: "Held for review",
+        text: "This draft has no named author. It should not be published until authorship, credentials, and the clinical wording are approved. It is not a founder quotation.",
       },
     ],
   },

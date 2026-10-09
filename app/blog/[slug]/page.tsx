@@ -26,8 +26,6 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
       url: path,
       images: [{ url: `${SITE_URL}${post.image}`, width: 1200, height: 630, alt: post.imageAlt }],
       type: "article",
-      publishedTime: post.date,
-      authors: [post.author.name],
       tags: post.tags,
     },
     twitter: {

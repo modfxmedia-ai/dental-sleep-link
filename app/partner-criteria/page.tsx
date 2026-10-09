@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import PartnerCriteria from "./PartnerCriteria";
 
-const TITLE = "Partner Criteria — One Practice Per Market";
+const TITLE = "Partner Criteria — Practice Fit";
 const DESCRIPTION =
-  "Dental Sleep Link partnerships are limited and exclusive — one practice per market. See if your established, growth-focused dental practice is the right fit for our MSO model.";
+  "Practice fit looks for a responsible dentist, an internal team champion, and protected capacity. New and experienced sleep programs are evaluated individually. Territorial protection is not offered.";
 const PATH = "/partner-criteria";
 
 export const metadata: Metadata = {

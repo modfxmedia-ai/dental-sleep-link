@@ -32,11 +32,10 @@ export default function BlogPreview() {
               From the blog
             </p>
             <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl">
-              Your easy guide to treating sleep apnea.
+              Resources for building a dental sleep program.
             </h2>
             <p className="mt-4 text-white/70">
-              Practical reads for dentists building a sleep program &mdash; from
-              billing to clinical workflows.
+              Draft articles are held for authorship and clinical review.
             </p>
           </div>
           <Link

@@ -22,45 +22,45 @@ import {
 const INFO = [
   {
     icon: Phone,
-    label: "Call us",
+    label: "Phone on file",
     value: SITE_CONTACT.phoneDisplay,
     href: `tel:${SITE_CONTACT.phone}`,
-    sub: "Mon – Fri · 9am – 6pm ET",
+    sub: "Pending Brian's confirmation before launch",
   },
   {
     icon: Mail,
-    label: "Email us",
+    label: "Mailbox not confirmed",
     value: SITE_CONTACT.email,
     href: `mailto:${SITE_CONTACT.email}`,
-    sub: "Reply within 1 business day",
+    sub: `One-pager uses ${SITE_CONTACT.alternateEmail}`,
   },
   {
     icon: MapPin,
-    label: "Visit us",
-    value: `${SITE_CONTACT.locality}, ${SITE_CONTACT.region}`,
-    href: "#map",
-    sub: "By appointment only",
+    label: "Street address",
+    value: "Not published",
+    href: "#inquiry-notes",
+    sub: "No headquarters address on this test site",
   },
   {
     icon: Clock,
     label: "Hours",
-    value: "Mon – Fri, 9am – 6pm ET",
-    href: "#",
-    sub: "Closed weekends & holidays",
+    value: "Not published",
+    href: "#inquiry-notes",
+    sub: "Operating hours need confirmation",
   },
 ];
 
 const REASONS = [
-  "Apply to become a partner",
-  "Ask about market availability",
-  "Billing or claims question",
-  "Press & media inquiry",
+  "Discuss practice fit",
+  "Ask about implementation",
+  "Billing question",
+  "Press and media",
 ];
 
 const PROMISES = [
-  { icon: Clock, label: "Reply within 1 business day" },
-  { icon: ShieldCheck, label: "Your info stays private" },
-  { icon: Headphones, label: "Real humans, not bots" },
+  { icon: Mail, label: "Prepare email — you still send it" },
+  { icon: ShieldCheck, label: "No patient information" },
+  { icon: Headphones, label: "Response time not promised" },
 ];
 
 export default function ContactUs() {
@@ -130,9 +130,9 @@ export default function ContactUs() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-5 text-[2.1rem] font-bold leading-[1.1] tracking-tight text-white sm:mt-6 sm:text-5xl md:text-6xl"
           >
-            Talk to a{" "}
+            Discuss{" "}
             <span className="bg-gradient-to-r from-teal to-teal-light bg-clip-text text-transparent">
-              partner success lead
+              practice fit
             </span>
             .
           </motion.h1>
@@ -143,9 +143,9 @@ export default function ContactUs() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/70"
           >
-            Tell us about your practice and goals. We&apos;ll come back with a
-            clear path, an honest market assessment, and next steps — within
-            one business day.
+            This button prepares an email in your mail app. It does not deliver
+            the message, and it does not confirm that an inquiry was received.
+            Do not include patient or medical information.
           </motion.p>
 
           <motion.div
@@ -268,13 +268,7 @@ export default function ContactUs() {
                     `Phone: ${get("phone") || "—"}`,
                     `Practice: ${get("practice") || "—"}`,
                     `City & state: ${get("city") || "—"}`,
-                    "",
-                    "— Screening —",
-                    `General dentist: ${get("is_dentist") || "—"}`,
-                    `Years in practice: ${get("practice_age") || "—"}`,
-                    `Operatories: ${get("operatories") || "—"}`,
-                    `Current monthly sleep cases: ${get("sleep_volume") || "—"}`,
-                    `Annual production tier: ${get("production") || "—"}`,
+                    `Treating dentist: ${get("is_dentist") || "—"}`,
                     "",
                     `Interest: ${reasons.length ? reasons.join(", ") : "—"}`,
                     "",
@@ -302,14 +296,15 @@ export default function ContactUs() {
                       <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal opacity-75" />
                       <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-teal" />
                     </span>
-                    Send us a note
+                    Prepare an email
                   </span>
                   <h2 className="mt-4 text-3xl font-bold text-white sm:text-4xl">
                     Tell us about your practice.
                   </h2>
                   <p className="mt-3 text-sm text-white/70">
-                    We reply within one business day. No sales pressure — just a
-                    real conversation.
+                    Submitting opens your email app with this note filled in.
+                    You still have to send it. Nothing on this page means the
+                    message was delivered.
                   </p>
 
                   {sent ? (
@@ -323,15 +318,16 @@ export default function ContactUs() {
                         <Check className="h-7 w-7" aria-hidden="true" />
                       </span>
                       <p className="mt-4 text-lg font-bold text-white">
-                        Thanks — your email client should be opening.
+                        Your email app should open. Send the message yourself.
                       </p>
                       <p className="mt-2 text-sm text-white/70">
-                        If nothing opened, email us directly at{" "}
+                        This page did not receive an application. If nothing
+                        opened, write to{" "}
                         <a href={`mailto:${SITE_CONTACT.email}`} className="font-semibold text-teal hover:text-teal-light">
                           {SITE_CONTACT.email}
                         </a>
-                        . A partner success lead will reply within one business
-                        day.
+                        . That mailbox is still pending confirmation against{" "}
+                        {SITE_CONTACT.alternateEmail}. No reply window is promised.
                       </p>
                       <button
                         type="button"
@@ -352,51 +348,12 @@ export default function ContactUs() {
                         <Field label="Phone" name="phone" placeholder="(555) 123-4567" />
                       </div>
                       <Field label="Practice name" name="practice" placeholder="Smile Family Dental" />
-                      <Field label="City &amp; state" name="city" placeholder="Springfield, IL" required />
-
-                      <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
-                        <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-teal">
-                          A few screening questions
-                        </p>
-                        <p className="mt-1 text-xs text-white/60">
-                          Helps us check market availability and whether the
-                          program is a fit before our first call.
-                        </p>
-                        <div className="mt-5 grid gap-5 sm:grid-cols-2">
-                          <SelectField
-                            label="Are you a general dentist?"
-                            name="is_dentist"
-                            required
-                            options={["Yes", "No — specialist", "No — non-clinical owner"]}
-                          />
-                          <SelectField
-                            label="Years in practice"
-                            name="practice_age"
-                            required
-                            options={["Under 3", "3–7", "8–15", "15+"]}
-                          />
-                          <SelectField
-                            label="Operatories"
-                            name="operatories"
-                            options={["1–2", "3–4", "5–7", "8+"]}
-                          />
-                          <SelectField
-                            label="Current monthly sleep cases"
-                            name="sleep_volume"
-                            options={["0", "1–5", "6–15", "15+"]}
-                          />
-                          <SelectField
-                            label="Annual practice production"
-                            name="production"
-                            options={[
-                              "Under $750K",
-                              "$750K–$1.5M",
-                              "$1.5M–$3M",
-                              "$3M+",
-                            ]}
-                          />
-                        </div>
-                      </div>
+                      <Field label="City and state" name="city" placeholder="City, ST" required />
+                      <SelectField
+                        label="Are you the treating dentist?"
+                        name="is_dentist"
+                        options={["Yes", "No — another clinician treats", "Not sure yet"]}
+                      />
 
                       <div>
                         <label className="block text-[11px] font-semibold uppercase tracking-[0.2em] text-white/70">
@@ -433,12 +390,14 @@ export default function ContactUs() {
                         className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-teal to-teal-dark px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-teal/30 transition-transform hover:scale-105"
                       >
                         <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
-                        <span className="relative">Open my email to send</span>
+                        <span className="relative">Prepare email</span>
                         <Send className="relative h-4 w-4 transition-transform group-hover:translate-x-1" />
                       </button>
-                      <p className="text-center text-[11px] text-white/50">
-                        Submitting opens your default email client with the
-                        details pre-filled. We only use your info to reply.
+                      <p className="text-center text-[11px] leading-relaxed text-white/50">
+                        Do not submit patient names, records, or other medical
+                        information. This is a general inquiry, not a secure
+                        clinical channel. Preparing the email is not the same
+                        as sending it.
                       </p>
                     </div>
                   )}
@@ -484,59 +443,31 @@ export default function ContactUs() {
                   <div className="absolute inset-x-0 bottom-0 p-6 text-white">
                     <span className="inline-flex items-center gap-1.5 rounded-full bg-teal px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.25em] text-white shadow-lg shadow-teal/30">
                       <MessageCircle className="h-3 w-3" aria-hidden="true" />
-                      Real humans
+                      You send it
                     </span>
                     <p className="mt-3 text-2xl font-bold leading-tight">
-                      A partner success lead — not a bot.
+                      The button only prepares the email.
                     </p>
                     <p className="mt-2 text-sm text-white/75">
-                      Every inquiry routes to a real person on our team. We
-                      read it, then we write back.
+                      Delivery depends on your mail app. A response standard is
+                      not published until an owner confirms one.
                     </p>
                   </div>
                 </div>
               </div>
 
-              {/* Social row */}
-              <div className="rounded-2xl bg-white p-6 ring-1 ring-navy/10 shadow-sm">
+              <div id="inquiry-notes" className="rounded-2xl bg-white p-6 ring-1 ring-navy/10 shadow-sm">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-navy/60">
-                  Follow along
+                  Before you write
                 </p>
-                <div className="mt-4 flex flex-wrap gap-3">
-                  {[
-                    {
-                      label: "Facebook",
-                      href: "#",
-                      path: "M22 12.07C22 6.5 17.52 2 12 2S2 6.5 2 12.07c0 5 3.66 9.13 8.44 9.93v-7.02H7.9v-2.91h2.54V9.83c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.91h-2.34V22c4.78-.8 8.44-4.93 8.44-9.93Z",
-                    },
-                    {
-                      label: "Instagram",
-                      href: "#",
-                      path: "M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38a3.7 3.7 0 0 1-1.38.9c-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16ZM12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63A5.86 5.86 0 0 0 2 2 5.86 5.86 0 0 0 .63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91a5.86 5.86 0 0 0 1.38 2.14 5.86 5.86 0 0 0 2.14 1.38c.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.86 5.86 0 0 0 2.14-1.38 5.86 5.86 0 0 0 1.38-2.14c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91A5.86 5.86 0 0 0 22 2 5.86 5.86 0 0 0 19.86.63C19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0Zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32Zm0 10.16a4 4 0 1 1 0-8 4 4 0 0 1 0 8Zm6.41-11.85a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88Z",
-                    },
-                    {
-                      label: "YouTube",
-                      href: "#",
-                      path: "M23.5 6.2a3 3 0 0 0-2.12-2.12C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.38.58A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.12 2.12C4.5 20.5 12 20.5 12 20.5s7.5 0 9.38-.58a3 3 0 0 0 2.12-2.12C24 15.9 24 12 24 12s0-3.9-.5-5.8ZM9.6 15.6V8.4l6.24 3.6L9.6 15.6Z",
-                    },
-                  ].map(({ label, href, path }) => (
-                    <a
-                      key={label}
-                      href={href}
-                      aria-label={label}
-                      className="group flex h-11 w-11 items-center justify-center rounded-full border border-navy/10 bg-white text-navy/70 transition-all hover:border-teal hover:bg-teal hover:text-white"
-                    >
-                      <svg
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        className="h-5 w-5"
-                        aria-hidden="true"
-                      >
-                        <path d={path} />
-                      </svg>
-                    </a>
-                  ))}
-                </div>
+                <ul className="mt-4 space-y-3 text-sm leading-relaxed text-navy/70">
+                  <li>Social profiles are omitted until verified accounts exist.</li>
+                  <li>Do not include patient or medical information.</li>
+                  <li>
+                    The public mailbox is unresolved: this site prepares mail to{" "}
+                    {SITE_CONTACT.email}; the one-pager lists {SITE_CONTACT.alternateEmail}.
+                  </li>
+                </ul>
               </div>
             </motion.div>
           </div>
@@ -562,32 +493,24 @@ export default function ContactUs() {
               transition={{ duration: 0.7 }}
             >
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-teal">
-                Headquarters
+                Public details
               </p>
               <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl">
-                Come find us on the map.
+                No street address is published.
               </h2>
               <p className="mt-4 text-white/70">
-                Dental Sleep Link is headquartered in Springfield, with partner
-                practices coast to coast. Drop in by appointment.
+                A placeholder address, map, and phone number have been removed.
+                The (208) number and mailbox still need Brian&apos;s confirmation
+                before launch. Hours are not listed.
               </p>
               <div className="mt-8 space-y-4">
-                <div className="flex items-start gap-3">
-                  <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-teal/15 text-teal ring-1 ring-teal/30">
-                    <MapPin className="h-4 w-4" aria-hidden="true" />
-                  </span>
-                  <div>
-                    <p className="text-sm font-semibold text-white">123 Main St</p>
-                    <p className="text-sm text-white/65">Springfield, USA</p>
-                  </div>
-                </div>
                 <div className="flex items-start gap-3">
                   <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-teal/15 text-teal ring-1 ring-teal/30">
                     <Phone className="h-4 w-4" aria-hidden="true" />
                   </span>
                   <div>
-                    <p className="text-sm font-semibold text-white">(123) 456-7890</p>
-                    <p className="text-sm text-white/65">Mon – Fri · 9am – 6pm ET</p>
+                    <p className="text-sm font-semibold text-white">{SITE_CONTACT.phoneDisplay}</p>
+                    <p className="text-sm text-white/65">Pending confirmation</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -595,8 +518,8 @@ export default function ContactUs() {
                     <Mail className="h-4 w-4" aria-hidden="true" />
                   </span>
                   <div>
-                    <p className="text-sm font-semibold text-white">info@dentalsleeplink.com</p>
-                    <p className="text-sm text-white/65">Reply within 1 business day</p>
+                    <p className="text-sm font-semibold text-white">{SITE_CONTACT.email}</p>
+                    <p className="text-sm text-white/65">Also listed elsewhere: {SITE_CONTACT.alternateEmail}</p>
                   </div>
                 </div>
               </div>
@@ -622,7 +545,7 @@ export default function ContactUs() {
               <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[2rem] bg-navy ring-1 ring-teal/20 shadow-2xl shadow-navy/30">
                 <Image
                   src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1600&q=80"
-                  alt="City map of headquarters area"
+                  alt="Abstract city photograph, not a Dental Sleep Link location"
                   fill
                   sizes="(min-width: 1024px) 700px, 90vw"
                   className="object-cover"
@@ -650,9 +573,9 @@ export default function ContactUs() {
                 />
 
                 <div className="absolute bottom-6 left-6 rounded-2xl bg-white/95 px-4 py-3 shadow-xl ring-1 ring-navy/5 backdrop-blur">
-                  <p className="text-sm font-bold text-navy">Dental Sleep Link HQ</p>
+                  <p className="text-sm font-bold text-navy">Address not published</p>
                   <p className="mt-1 text-[11px] uppercase tracking-wider text-navy/60">
-                    Springfield, USA
+                    Confirm before launch
                   </p>
                 </div>
               </div>

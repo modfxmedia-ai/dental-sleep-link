@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import TheModel from "./TheModel";
 import ServiceJsonLd from "@/components/seo/ServiceJsonLd";
 
-const TITLE = "The Model — A 5-Step Path to a Profitable Sleep Practice";
+const TITLE = "The Model — A Structured Implementation Plan";
 const DESCRIPTION =
-  "A proven, streamlined model for sleep dentistry success: simplified onboarding, workflow integration, full-service medical billing, device delivery, and ongoing growth coaching.";
+  "An approximately six-month planning timeline with overlapping credentialing, setup, and team training. Appliance receipts stay with the practice. DSL invoices monthly in arrears.";
 const PATH = "/the-model";
 
 export const metadata: Metadata = {
@@ -22,7 +22,7 @@ export default function Page() {
         name="The Dental Sleep Link Partnership Model"
         description={DESCRIPTION}
         url={PATH}
-        serviceType="Managed Service Organization"
+        serviceType="Implementation and billing support"
       />
       <TheModel />
     </>

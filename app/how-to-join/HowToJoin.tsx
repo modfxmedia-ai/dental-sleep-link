@@ -19,122 +19,122 @@ import {
 
 const STEPS = [
   {
-    id: "apply",
+    id: "fit",
     number: "01",
-    tag: "Apply",
+    tag: "Fit",
     icon: ClipboardEdit,
-    title: "Apply Online",
+    title: "Practice-fit conversation",
     body:
-      "Fill out our short application form and share details about your practice and goals. It takes about five minutes — and there&apos;s no obligation.",
+      "Start by discussing the dentist, the internal champion, protected capacity, and whether planning is realistic. This page does not take payment.",
     bullets: [
-      "5-minute application form",
-      "Practice profile & goals",
-      "No obligation, no pressure",
-      "Reply within 1 business day",
+      "Dentist and champion identified",
+      "Capacity discussed",
+      "No deposit requested here",
+      "No promised reply window",
     ],
-    metric: { value: "~5 min", label: "To complete" },
+    metric: { value: "01", label: "Practice-fit conversation" },
     image: "/images/how-to-join/step-1.jpg",
-    imageAlt: "Filling out an online application on a laptop",
+    imageAlt: "Practice-fit conversation",
   },
   {
-    id: "discovery",
+    id: "scope",
     number: "02",
-    tag: "Discovery",
+    tag: "Scope",
     icon: MessageSquare,
-    title: "Discovery Call",
+    title: "Scope and economics review",
     body:
-      "A 30-minute call to walk through your practice, your goals, and the program. We answer your questions and you decide if a deeper conversation makes sense — no sales pressure.",
+      "Review the $20,000 implementation fees, the 14% collections fee, actual pass-through costs, and the separate $249 membership. The illustration is not a profit promise.",
     bullets: [
-      "30-minute call",
-      "Practice and goals review",
-      "Open Q&A on the model",
-      "You decide the next step",
+      "$20,000 implementation fees",
+      "14% of appliance collections",
+      "Pass-throughs at actual cost",
+      "Membership excluded from practice revenue",
     ],
-    metric: { value: "30 min", label: "Discovery call" },
+    metric: { value: "02", label: "Scope and economics" },
     image: "/images/how-to-join/step-2.jpg",
-    imageAlt: "Discovery and partner interview meeting",
+    imageAlt: "Reviewing scope and economics",
   },
   {
-    id: "market",
+    id: "agreement",
     number: "03",
-    tag: "Market",
+    tag: "Agreement",
     icon: MapPin,
-    title: "Market Verification",
+    title: "Agreement and entity or payer requirements",
     body:
-      "We work one partner per market. We confirm your market is open, review payer mix and patient demographics, and make sure the economics work for both sides before moving forward.",
+      "Move forward only when the applicable agreement and entity or payment arrangements are ready. Deposits, refunds, and installment timing are not published.",
     bullets: [
-      "One partner per market check",
-      "Payer mix review",
-      "Patient demographic review",
-      "Mutual go / no-go decision",
+      "Agreement before payment",
+      "Entity requirements reviewed",
+      "Payer readiness reviewed",
+      "No exclusivity term published",
     ],
-    metric: { value: "1", label: "Partner per market" },
+    metric: { value: "03", label: "Agreement and requirements" },
     image: "/images/how-to-join/step-2.jpg",
-    imageAlt: "Reviewing market coverage on a map",
+    imageAlt: "Agreement and payer requirements review",
   },
   {
-    id: "onboarding",
+    id: "credentialing",
     number: "04",
-    tag: "Onboarding",
+    tag: "Setup",
     icon: Settings,
-    title: "Onboarding & Setup",
+    title: "Credentialing and setup",
     body:
-      "We handle credentialing, compliance setup, and billing integration so the operational scaffolding is in place before the first patient walks in for a sleep consult.",
+      "Credentialing and setup run inside the approximately six-month planning horizon. They overlap with training. Completion depends on the payer and the entity.",
     bullets: [
-      "Credentialing handled for you",
-      "Compliance & HIPAA setup",
-      "Billing integration",
-      "Practice management linkage",
+      "Credentialing assistance",
+      "Billing setup",
+      "Overlaps with training",
+      "Not a 30-day window",
     ],
-    metric: { value: "~30 days", label: "Onboarding window" },
+    metric: { value: "04", label: "Credentialing and setup" },
     image: "/images/how-to-join/step-3.jpg",
-    imageAlt: "Onboarding setup and integration session",
+    imageAlt: "Credentialing and setup work",
   },
   {
     id: "training",
     number: "05",
     tag: "Training",
     icon: GraduationCap,
-    title: "Clinical & Billing Training",
+    title: "Concurrent team training",
     body:
-      "Hands-on training for the dentist and the team — screening, consultation workflow, appliance fitting, follow-up cadence, and how the billing engine works behind the scenes.",
+      "Team training happens alongside credentialing and setup. The dentist remains responsible for clinical decisions, including selecting, fitting, and overseeing appliances.",
     bullets: [
-      "Clinical workflow training",
-      "Front desk screening scripts",
-      "Appliance fitting protocols",
-      "Billing & follow-up cadence",
+      "Training runs concurrently",
+      "Existing team if capacity allows",
+      "Dentist stays clinically responsible",
+      "Shadowing is not listed until confirmed",
     ],
-    metric: { value: "Hands-on", label: "For dentist + team" },
+    metric: { value: "05", label: "Concurrent team training" },
     image: "/images/how-to-join/step-3.jpg",
-    imageAlt: "Clinical and operations training session",
+    imageAlt: "Concurrent team training",
   },
   {
     id: "launch",
     number: "06",
     tag: "Launch",
     icon: Rocket,
-    title: "Launch & Grow",
+    title: "Readiness review and phased launch",
     body:
-      "First cases go live with billing, lab logistics, and ongoing support running underneath you. From there it&apos;s phased growth — with quarterly business reviews to keep the line on track.",
+      "Launch is phased and follows a readiness review. It is not scheduled for 30 days after signing, and the first quarter is not described as profitable.",
     bullets: [
-      "First live cases",
-      "Billing & lab support running",
-      "Ongoing 1:1 coaching",
-      "Quarterly business reviews",
+      "Readiness review first",
+      "Phased launch",
+      "Depends on payer and staff",
+      "No 30-day first-case promise",
     ],
-    metric: { value: "Phased", label: "Foundation → Ramp → Scale" },
+    metric: { value: "06", label: "Readiness and phased launch" },
     image: "/images/how-to-join/step-4.webp",
-    imageAlt: "Sleep appliance ready for delivery and patient launch",
+    imageAlt: "Readiness review before a phased launch",
   },
 ];
 
 const MARQUEE_ITEMS = [
-  "Apply",
-  "Discovery",
-  "Market check",
-  "Onboard",
-  "Train",
-  "Launch",
+  "Practice fit",
+  "Scope",
+  "Agreement",
+  "Credentialing",
+  "Training",
+  "Readiness",
 ];
 
 export default function HowToJoin() {
@@ -194,7 +194,7 @@ export default function HowToJoin() {
               <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-teal" />
             </span>
             <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
-            6 simple steps
+            Six planning stages
           </motion.span>
 
           <motion.h1
@@ -203,9 +203,9 @@ export default function HowToJoin() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-5 text-[2.1rem] font-bold leading-[1.1] tracking-tight text-white sm:mt-6 sm:text-5xl md:text-6xl lg:text-7xl"
           >
-            Start your journey to{" "}
+            Six stages before a{" "}
             <span className="bg-gradient-to-r from-teal to-teal-light bg-clip-text text-transparent">
-              sleep dentistry success
+              phased launch
             </span>
             .
           </motion.h1>
@@ -216,8 +216,9 @@ export default function HowToJoin() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/70"
           >
-            Becoming a Dental Sleep Link Partner is simple, transparent, and
-            structured for success. Here&apos;s how you can get started.
+            Practice fit, scope, agreement, credentialing, concurrent training,
+            then a readiness review. Planning is about six months. Geographic
+            protection is not offered.
           </motion.p>
 
           <motion.div
@@ -231,7 +232,7 @@ export default function HowToJoin() {
               className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-teal px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-teal/30 transition-transform hover:scale-105"
             >
               <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
-              <span className="relative">Apply now</span>
+              <span className="relative">Discuss practice fit</span>
               <ArrowRight className="relative h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
             <Link
@@ -295,7 +296,7 @@ export default function HowToJoin() {
               />
               <span className="absolute right-6 top-6 inline-flex items-center gap-1.5 rounded-full bg-teal px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.25em] text-white shadow-lg shadow-teal/30">
                 <Clock className="h-3 w-3" aria-hidden="true" />
-                ~30 day onboarding
+                About six months
               </span>
             </div>
           </motion.div>
@@ -481,7 +482,7 @@ export default function HowToJoin() {
                               </p>
                             </motion.div>
                             <span className="absolute right-5 top-5 rounded-full bg-white/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.25em] text-white backdrop-blur ring-1 ring-white/25">
-                              {p.number} / 04
+                              {p.number} / 06
                             </span>
                             <span className="absolute bottom-6 right-6 rounded-full bg-teal px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-white shadow-lg shadow-teal/30">
                               {p.tag}
@@ -570,18 +571,18 @@ export default function HowToJoin() {
               className="pointer-events-none absolute -top-20 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-white/20 blur-3xl"
             />
             <h2 className="relative text-3xl font-bold text-white sm:text-4xl">
-              Apply to become a partner.
+              Start with stage one.
             </h2>
             <p className="relative mx-auto mt-4 max-w-xl text-white/80">
-              At Dental Sleep Link, we partner with forward-thinking dentists
-              to revolutionize sleep health — one restful night at a time.
+              No payment is requested before the applicable agreement and
+              entity or payment arrangements are ready.
             </p>
             <div className="relative mt-8 flex flex-wrap items-center justify-center gap-4">
               <Link
                 href="/contact-us"
                 className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-teal-dark shadow-lg transition-transform hover:scale-105"
               >
-                Apply now
+                Discuss practice fit
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link

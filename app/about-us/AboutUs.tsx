@@ -24,32 +24,32 @@ import {
 } from "lucide-react";
 
 const HERO_STATS = [
-  { value: "1st", label: "Sleep-only MSO" },
-  { value: "25+", label: "Partner practices" },
-  { value: "$12M+", label: "Reimbursed" },
-  { value: "1,500+", label: "Appliances/mo" },
+  { value: "$20k", label: "Implementation fees" },
+  { value: "14%", label: "Appliance collections" },
+  { value: "$249", label: "DSL membership" },
+  { value: "~6 mo", label: "Planning horizon" },
 ];
 
 const PILLARS = [
   {
     icon: Receipt,
-    title: "Centralized medical billing",
-    body: "National payer contracts, coding, and collections handled end-to-end so reimbursements arrive faster.",
+    title: "Medical billing support",
+    body: "Claims submission, follow-up, and reporting. Reimbursement and payment timing are not guaranteed.",
   },
   {
     icon: ShieldCheck,
-    title: "Compliance & credentialing",
-    body: "HIPAA, documentation, and policy frameworks fully managed — nothing for your team to assemble.",
+    title: "Credentialing assistance",
+    body: "Credentialing and documentation support. Practice responsibilities are defined in the agreement.",
   },
   {
     icon: Workflow,
-    title: "Done-for-you systems",
-    body: "Patient screening, intake, ordering, and outcome tracking workflows wired into your existing practice.",
+    title: "Workflow implementation",
+    body: "Agreed setup around dentist-led care. Software, appliances, and testing are not automatically included.",
   },
   {
     icon: GraduationCap,
-    title: "Clinical training & mentorship",
-    body: "Hands-on protocols, live shadowing, and ongoing support from clinicians who run sleep practices daily.",
+    title: "Team training",
+    body: "Training for the existing team where capacity permits. Staffing is assessed during planning.",
   },
 ];
 
@@ -57,66 +57,66 @@ const DIFFERENTIATORS = [
   {
     number: "01",
     icon: Handshake,
-    title: "True Partnership Model",
-    body: "We only win when you win. Your growth is our growth — fully aligned incentives, every quarter.",
+    title: "Services around your practice",
+    body: "DSL provides agreed nonclinical support. The practice remains independently owned, subject to the final agreement.",
   },
   {
     number: "02",
     icon: Workflow,
-    title: "Turnkey Systems & Workflows",
-    body: "Nothing to build from scratch. Our process is plug-and-play from day one of onboarding.",
+    title: "A structured implementation plan",
+    body: "Credentialing, setup, and training overlap. Go-live depends on payer, entity, staff, and clinical readiness.",
   },
   {
     number: "03",
     icon: ShieldCheck,
-    title: "Compliance & Credentialing Handled",
-    body: "HIPAA, documentation, policies — every regulatory requirement covered for you.",
+    title: "Credentialing and documentation support",
+    body: "Practice responsibilities are defined in the agreement. DSL does not claim that every regulatory requirement is covered.",
   },
   {
     number: "04",
     icon: Stethoscope,
-    title: "Sleep-Focused MSO",
-    body: "100% dedicated to dental sleep medicine. Not a coaching company, not a vendor, not a side hustle.",
+    title: "Dentist-led clinical care",
+    body: "Treating clinicians select, fit, adjust, and oversee appliances. DSL is not the diagnosing provider.",
   },
   {
     number: "05",
     icon: Heart,
-    title: "On-Going Support & Mentorship",
-    body: "You're never left figuring things out alone. A dedicated success lead walks beside your team.",
+    title: "Ongoing nonclinical support",
+    body: "Ongoing billing and support are included in the 14% fee on appliance collections. Specific response times are not published yet.",
   },
 ];
 
 const VALUES = [
   {
     icon: Target,
-    title: "Outcome-driven",
-    body: "Every system we build is measured by patient outcomes and partner profitability.",
+    title: "Clear commercial terms",
+    body: "Implementation fees, the collections fee, pass-through costs, and the separate membership are stated separately.",
   },
   {
     icon: Heart,
-    title: "Patient-first",
-    body: "Life-changing oral appliance therapy is the north star — accessible, well-fit, and well-supported.",
+    title: "Patient care stays clinical",
+    body: "A membership cannot replace diagnosis, appliance oversight, or clinically necessary follow-up.",
   },
   {
     icon: Compass,
-    title: "Long-term thinking",
-    body: "We build relationships measured in decades, not training cohorts.",
+    title: "Readiness before launch",
+    body: "Planning takes about six months. A public launch date and a 30-day first-case promise are not offered.",
   },
 ];
 
 const MARQUEE = [
-  "Diagnose",
-  "Treat",
-  "Bill",
-  "Scale",
-  "Mentor",
-  "Grow",
-  "Diagnose",
-  "Treat",
-  "Bill",
-  "Scale",
-  "Mentor",
-  "Grow",
+  "Credentialing",
+  "Training",
+  "Billing support",
+  "Planning",
+  "Dentist-led care",
+  "Readiness",
+  "Credentialing",
+  "Training",
+  "Billing support",
+  "Planning",
+  "Dentist-led care",
+  "Readiness",
 ];
 
 export default function AboutUs() {
@@ -197,9 +197,9 @@ function Hero() {
               transition={{ duration: 0.6, delay: 0.05 }}
               className="mt-5 text-[2.1rem] font-bold leading-[1.1] tracking-tight text-white sm:mt-6 sm:text-5xl md:text-6xl lg:text-[4.25rem]"
             >
-              The nation&apos;s first MSO built{" "}
+              Support for general dentists adding{" "}
               <span className="bg-gradient-to-r from-teal to-teal-light bg-clip-text text-transparent">
-                exclusively for dental sleep medicine
+                dental sleep medicine
               </span>
               .
             </motion.h1>
@@ -210,10 +210,10 @@ function Hero() {
               transition={{ duration: 0.6, delay: 0.12 }}
               className="mt-7 max-w-xl text-lg leading-relaxed text-white/70"
             >
-              We don&apos;t sell courses. We don&apos;t coach from a distance.
-              We build sleep dentistry businesses with you — full
-              infrastructure, real revenue systems, and a partnership measured
-              in years.
+              Dental Sleep Link helps general dentists add dental sleep medicine
+              with implementation support, team training, credentialing
+              assistance, and ongoing billing. Your practice retains
+              responsibility for clinical care.
             </motion.p>
 
             <motion.div
@@ -317,7 +317,7 @@ function Hero() {
                 </div>
 
                 <span className="absolute right-6 top-6 rounded-full bg-white/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.25em] text-white backdrop-blur ring-1 ring-white/20">
-                  Partner network
+                  Founding cohort
                 </span>
 
                 <motion.span
@@ -344,12 +344,12 @@ function NetworkGraphic() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
   const orbiters = [
-    { angle: 0, label: "DR", icon: Stethoscope },
-    { angle: 60, label: "JL", icon: Receipt },
-    { angle: 120, label: "MP", icon: Users },
-    { angle: 180, label: "SK", icon: ShieldCheck },
-    { angle: 240, label: "AR", icon: Workflow },
-    { angle: 300, label: "EM", icon: TrendingUp },
+    { angle: 0, icon: Stethoscope },
+    { angle: 60, icon: Receipt },
+    { angle: 120, icon: Users },
+    { angle: 180, icon: ShieldCheck },
+    { angle: 240, icon: Workflow },
+    { angle: 300, icon: TrendingUp },
   ];
 
   return (
@@ -463,7 +463,7 @@ function NetworkGraphic() {
         className="absolute right-2 top-2 flex items-center gap-1.5 rounded-lg bg-navy/85 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-teal-light backdrop-blur ring-1 ring-teal/30"
       >
         <Activity className="h-3 w-3" aria-hidden="true" />
-        25+ practices
+        Cohort forming
       </motion.div>
       <motion.div
         initial={{ opacity: 0, x: -10 }}
@@ -475,7 +475,7 @@ function NetworkGraphic() {
           <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal opacity-75" />
           <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-teal" />
         </span>
-        Always connected
+        Dentist-led care
       </motion.div>
     </div>
   );
@@ -531,13 +531,13 @@ function WhoWeAre() {
               Who we are
             </span>
             <h2 className="mt-5 text-4xl font-bold leading-[1.1] tracking-tight text-navy sm:text-5xl">
-              A partnership model — not a course, not a coaching program.
+              A services model around dentist-led care.
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-navy/70">
-              Dental Sleep Link is the nation&apos;s first dedicated MSO built
-              exclusively to help general dentists launch, scale, and profit
-              from dental sleep medicine — without adding complexity, risk, or
-              extra workload to their practice.
+              Dental Sleep Link supports credentialing, medical billing, team
+              training, and workflow implementation. It does not take clinical
+              responsibility away from the practice, and it does not promise
+              that the work adds no time or no risk.
             </p>
           </motion.div>
 
@@ -549,22 +549,22 @@ function WhoWeAre() {
             className="space-y-5"
           >
             <p className="text-lg leading-relaxed text-navy/80">
-              Through centralized billing, compliance systems, clinical
-              training, and a proven revenue structure, we turn sleep dentistry
-              into a predictable and scalable income stream.
+              Implementation fees are $20,000. Ongoing billing and support are
+              14% of appliance collections. Approved costs pass through at
+              actual cost, and the $249 annual membership is retained by DSL.
             </p>
             <p className="text-lg leading-relaxed text-navy/80">
-              Increase collections, treat more patients, and build a path
-              toward a full-time sleep practice — if and when you choose. We
-              work alongside your existing team and your existing schedule.
+              An initial cohort of about three to five practices is planned.
+              Use your existing team where capacity permits. Staffing and
+              protected clinical time are assessed during planning.
             </p>
 
             <div className="grid gap-3 pt-4 sm:grid-cols-2">
               {[
-                "Not a vendor",
-                "Not a consultant",
-                "Not a course",
-                "A long-term partner",
+                "Credentialing support",
+                "Team training",
+                "Ongoing billing",
+                "Practice-led care",
               ].map((t, i) => (
                 <motion.div
                   key={t}
@@ -636,20 +636,20 @@ function MissionWhy() {
               Our mission
             </span>
             <h3 className="relative mt-5 text-3xl font-bold leading-tight text-white sm:text-4xl">
-              Expand access to life-changing oral appliance therapy —
+              Make dental sleep medicine more accessible to general dentists.
             </h3>
             <p className="relative mt-5 text-lg leading-relaxed text-white/75">
-              while helping dental professionals unlock a new level of
-              financial, clinical, and professional freedom. Every protocol we
-              codify, every payer contract we negotiate, every workflow we
-              install ladders back to that mission.
+              The proposed direction is practical support for credentialing,
+              training, and billing, while the dentist remains responsible for
+              clinical care. This is a planning statement, not a guarantee of
+              income or patient outcomes.
             </p>
 
             <div className="relative mt-8 grid grid-cols-3 gap-3">
               {[
-                { v: "Patient", l: "First" },
-                { v: "Dentist", l: "Empowered" },
-                { v: "Sleep", l: "Solved" },
+                { v: "Patient", l: "Care stays clinical" },
+                { v: "Dentist", l: "Leads treatment" },
+                { v: "Planning", l: "About six months" },
               ].map((c) => (
                 <div
                   key={c.l}
@@ -683,21 +683,21 @@ function MissionWhy() {
               Why we exist
             </span>
             <h3 className="relative mt-5 text-3xl font-bold leading-tight text-white sm:text-4xl">
-              Sleep apnea is widespread. Dentists are the frontline.
+              General dentists need a workable way to add sleep care.
             </h3>
             <p className="relative mt-5 text-lg leading-relaxed text-white/75">
-              But most practices struggle because they lack the systems,
-              billing access, and clinical support required to make sleep
-              medicine work. That&apos;s the gap Dental Sleep Link was built
-              to fill.
+              Many practices do not yet have credentialing, billing workflow,
+              or protected team time in place. Dental Sleep Link is being built
+              to support those nonclinical pieces. It is an early cohort, not a
+              nationwide mature network.
             </p>
 
             <ul className="relative mt-7 space-y-3">
               {[
-                "Centralized billing with higher reimbursement rates",
-                "Full compliance, credentialing, and onboarding",
-                "Done-for-you systems and clinical training",
-                "Path from first appliance to sleep-only practice",
+                "Credentialing and documentation support",
+                "Billing support, with variable payer outcomes",
+                "Team training assessed against capacity",
+                "Phased launch only after a readiness review",
               ].map((t, i) => (
                 <motion.li
                   key={t}
@@ -724,9 +724,9 @@ function MissionWhy() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="mt-12 text-center text-xl font-semibold text-white sm:text-2xl"
         >
-          We don&apos;t just teach sleep dentistry —{" "}
+          DSL coordinates agreed nonclinical support.{" "}
           <span className="bg-gradient-to-r from-teal to-teal-light bg-clip-text text-transparent">
-            we build sleep dentistry businesses with you.
+            Treating clinicians remain responsible for care.
           </span>
         </motion.p>
       </div>
@@ -751,9 +751,9 @@ function Pillars() {
             What we provide
           </span>
           <h2 className="mt-5 text-4xl font-bold leading-[1.1] tracking-tight text-navy sm:text-5xl">
-            The infrastructure behind every{" "}
+            The support behind each{" "}
             <span className="bg-gradient-to-r from-teal to-teal-dark bg-clip-text text-transparent">
-              partner practice
+              participating practice
             </span>
             .
           </h2>
@@ -833,15 +833,15 @@ function Differentiators() {
             What makes us different
           </span>
           <h2 className="mt-5 text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl">
-            Not a vendor. Not a consultant. A{" "}
+            Services, training, and billing support{" "}
             <span className="bg-gradient-to-r from-teal to-teal-light bg-clip-text text-transparent">
-              long-term growth partner
+              with responsibilities retained
             </span>
             .
           </h2>
           <p className="mt-5 text-white/70">
-            A fully built infrastructure designed to remove every barrier that
-            stops dentists from succeeding in sleep medicine.
+            Describe the work that is included. Do not treat legal
+            classification, exclusivity, or zero extra work as settled.
           </p>
         </motion.div>
 
@@ -919,13 +919,13 @@ function Values() {
               What we stand for
             </span>
             <h2 className="mt-5 text-4xl font-bold leading-[1.1] tracking-tight text-navy sm:text-5xl">
-              Three values guide every partnership decision.
+              Three values guide how a practice is supported.
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-navy/70">
-              At Dental Sleep Link, we partner with forward-thinking dentists
-              to revolutionize sleep health. Together, we enable life-changing
-              care through innovative solutions, expert support, and proven
-              results — one restful night at a time.
+              The practice keeps clinical authority. Commercial illustrations
+              are planning tools, not achieved network results. Founder
+              operating history, if later approved, will be labeled separately
+              from Dental Sleep Link cohort outcomes.
             </p>
           </motion.div>
 
@@ -992,7 +992,7 @@ function Founder() {
             Founder
           </span>
           <h2 className="mt-5 text-3xl font-bold text-white sm:text-4xl">
-            Built by an operator who&apos;s lived the problem
+            Founder story held for approval
           </h2>
         </motion.div>
 
@@ -1009,24 +1009,22 @@ function Founder() {
             </div>
           </div>
           <div>
-            <p className="text-2xl font-bold text-white">Founder name</p>
+            <p className="text-2xl font-bold text-white">Name pending approval</p>
             <p className="mt-1 text-sm font-semibold uppercase tracking-[0.2em] text-teal">
-              Founder &amp; CEO, Dental Sleep Link
+              Founder biography and photograph not published
             </p>
             <p className="mt-5 text-base leading-relaxed text-white/75">
-              [Founder bio placeholder \u2014 replace before launch.] Short
-              paragraph on the founder&apos;s background in dental practice
-              operations, sleep medicine, medical billing, and why Dental
-              Sleep Link exists. The goal is to give a partner-facing dentist
-              one clear answer to &ldquo;who&apos;s actually behind this and
-              why should I trust the model?&rdquo;
+              Brian&apos;s approved name, biography, and photograph are not on
+              this test version. Local-practice operating experience must be
+              confirmed, including the practice, time period, and method, before
+              any example is published. It will be labeled as founder or local
+              practice experience, separate from Dental Sleep Link cohort results.
             </p>
             <p className="mt-4 text-base leading-relaxed text-white/75">
-              [Second paragraph placeholder.] Track record \u2014 practices
-              built or advised, sleep cases personally walked through the
-              system, the specific operational gap this MSO is built to
-              close. Close with a one-line point of view on where dental
-              sleep medicine is going over the next 3\u20135 years.
+              Sales materials that describe approximately $30,000 to $670,000
+              in annualized collections are not copied here. This review did
+              not validate those records, and they are not presented as Dental
+              Sleep Link results.
             </p>
           </div>
         </motion.div>
@@ -1074,7 +1072,7 @@ function CTABand() {
           transition={{ duration: 0.6 }}
           className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl"
         >
-          Ready to build a sleep practice without the guesswork?
+          Discuss whether your practice is ready to plan.
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 16 }}
@@ -1083,9 +1081,8 @@ function CTABand() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="mx-auto mt-6 max-w-2xl text-lg text-white/85"
         >
-          Apply to partner with Dental Sleep Link. We&apos;ll review your
-          practice, walk through the model, and outline a path to your first
-          appliances together.
+          A practice-fit conversation comes before any agreement. No payment is
+          requested on this site, and launch depends on readiness.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -1098,7 +1095,7 @@ function CTABand() {
             href="/contact-us"
             className="group inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-teal-dark shadow-2xl shadow-black/20 transition-all hover:bg-navy hover:text-white"
           >
-            Apply now
+            Discuss practice fit
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Link>
           <Link

@@ -11,7 +11,6 @@ import {
   Receipt,
   Award,
   Activity,
-  Quote,
   Star,
   ArrowUpRight,
   Users,
@@ -36,101 +35,110 @@ const OUTCOMES: {
   visual: OutcomeVisual;
 }[] = [
   {
-    id: "practices",
+    id: "readiness",
     number: "01",
-    tag: "Network",
+    tag: "Training",
     icon: Building2,
-    title: "Built for the next generation of sleep dentistry practices",
+    title: "Training readiness",
     body:
-      "We work with a small, hand-picked cohort of general dentists who want to run sleep medicine as a real business line. Solo practitioners, family groups, and multi-location owners are all a fit — with one partner per market so growth never competes inside the network.",
+      "The founding program is an introduction for an initial group of about three to five practices. Case studies are not published because authentic outcomes are not yet available. Practices will track whether the team is trained and whether clinical time is protected.",
     bullets: [
-      "Solo and group practices",
-      "One partner per market",
-      "Multi-location ready",
-      "Quarterly business reviews",
+      "Team training completed",
+      "Champion identified",
+      "Protected capacity confirmed",
+      "Not a reported network size",
     ],
-    metric: { value: "Early", label: "Founding partner cohort" },
+    metric: { value: "3–5", label: "Initial practices planned" },
     visual: "network",
   },
   {
-    id: "reimbursements",
+    id: "collections",
     number: "02",
-    tag: "Revenue",
+    tag: "Collections",
     icon: Receipt,
-    title: "Medical billing infrastructure built for scale",
+    title: "Collected revenue, not billed charges",
     body:
-      "We bill sleep cases through medical insurance under contracted rates — not cash or dental codes. Partners get a centralized billing engine, faster collection cycles, and a per-case reimbursement that supports the economics of running sleep as its own line.",
+      "Participating practices will measure appliance collections. The illustration uses $1,800 collected per completed appliance. That figure is a planning assumption, not a result already achieved by a cohort.",
     bullets: [
-      "Medical (not dental) reimbursement",
-      "Higher per-case yield",
-      "Faster collection cycles",
-      "Transparent reporting",
+      "Collected dollars, not production",
+      "14% DSL fee on those collections",
+      "Lab cost tracked separately",
+      "Membership excluded from practice revenue",
     ],
-    metric: { value: "Medical", label: "Insurance pathway" },
+    metric: { value: "$1,800", label: "Planning collection per appliance" },
     visual: "revenue",
   },
   {
-    id: "milestones",
+    id: "operations",
     number: "03",
-    tag: "Outcomes",
+    tag: "Operations",
     icon: Award,
-    title: "A structured roadmap to defined growth milestones",
+    title: "Staff time and claims status",
     body:
-      "Every partner runs the same phased rollout: foundation, ramp, scale. Clinical, operational, and financial milestones are agreed up front — so the program is measurable, accountable, and not just ‘more training’.",
+      "Practices will measure staff time and the status of claims. These are operating measures for planning. They are not milestone success rates, and they are not presented as results already hit.",
     bullets: [
-      "Defined growth milestones",
-      "Ongoing 1:1 coaching",
-      "Clinical & financial KPIs",
-      "Predictable program structure",
+      "Staff time recorded",
+      "Claims status reviewed",
+      "Denials and follow-up noted",
+      "Targets are not achievements",
     ],
-    metric: { value: "3-phase", label: "Foundation → Ramp → Scale" },
+    metric: { value: "Track", label: "Time and claim status" },
     visual: "milestones",
   },
   {
-    id: "appliances",
+    id: "follow-through",
     number: "04",
-    tag: "Volume",
+    tag: "Patients",
     icon: Activity,
-    title: "Oral appliance fulfillment, end to end",
+    title: "Patient follow-through",
     body:
-      "From impressions to fitting to compliance follow-up, the appliance workflow is fully built. Lab logistics, device choice, and patient follow-through are owned by us — so your team can focus on chair time, not coordination.",
+      "Follow-through means the patient completes the clinically appropriate path: physician-coordinated evaluation where required, dentist-led appliance care, and later visits. DSL does not own diagnosis or fitting.",
     bullets: [
-      "Streamlined fitting workflow",
-      "Lab logistics handled",
-      "Compliance tracking",
-      "Recurring patient touchpoints",
+      "Screening is not a diagnosis",
+      "Clinician selects and fits",
+      "Follow-up stays clinical",
+      "Membership does not replace visits",
     ],
-    metric: { value: "Full", label: "Lab & fulfillment handled" },
+    metric: { value: "Follow-up", label: "Measured, not guaranteed" },
     visual: "volume",
   },
 ];
 
-const TESTIMONIALS = [
+const MEASURES = [
   {
-    quote:
-      "The model gave us a real way to add sleep medicine as a business line, not just another offering buried in the schedule.",
-    name: "Founding partner practice",
-    role: "Family dental, single location",
-    initials: "FP",
+    title: "Training readiness",
+    body: "Whether the dentist, champion, and team have completed the agreed training before cases are scheduled.",
   },
   {
-    quote:
-      "Medical billing being run by them — not us — is the biggest unlock. We stopped guessing and started getting paid for the work.",
-    name: "Founding partner practice",
-    role: "General dentistry, two locations",
-    initials: "FP",
+    title: "Collected revenue",
+    body: "Appliance dollars actually collected. The $249 membership is DSL revenue and is kept out of this measure.",
   },
   {
-    quote:
-      "The training and the playbook took the fear out of saying yes to sleep cases. Our team finally has a workflow they trust.",
-    name: "Founding partner practice",
-    role: "Group practice",
-    initials: "FP",
+    title: "Staff time",
+    body: "Hours the existing team spends, so capacity can be reassessed instead of assumed.",
+  },
+  {
+    title: "Claims status",
+    body: "Submitted, pending, paid, or denied. Status is not a promise of faster payment.",
+  },
+  {
+    title: "Patient follow-through",
+    body: "Whether patients complete evaluation, appliance care, and follow-up that the clinicians determine is needed.",
   },
 ];
 
-function CountTo({ value, suffix, active }: { value: number; suffix?: string; active: boolean }) {
-  const [n, setN] = useState(0);
+function CountTo({
+  value,
+  prefix = "",
+  suffix = "",
+  active,
+}: {
+  value: number;
+  prefix?: string;
+  suffix?: string;
+  active: boolean;
+}) {
+  const [n, setN] = useState(value);
   useEffect(() => {
     if (!active) return;
     const start = performance.now();
@@ -147,17 +155,18 @@ function CountTo({ value, suffix, active }: { value: number; suffix?: string; ac
   }, [active, value]);
   return (
     <>
+      {prefix}
       {n.toLocaleString()}
-      {suffix ?? ""}
+      {suffix}
     </>
   );
 }
 
 const QUICK_STATS = [
-  { value: 1, suffix: "", label: "Partner per market", icon: Building2 },
-  { value: 3, suffix: "-phase", label: "Growth roadmap", icon: Award },
-  { value: 100, suffix: "%", label: "You keep practice ownership", icon: ShieldCheck },
-  { value: 1, suffix: " call", label: "To check market fit", icon: Activity },
+  { value: 3, prefix: "", suffix: "–5", label: "Practices in the first cohort", icon: Building2 },
+  { value: 6, prefix: "~", suffix: " mo", label: "Approximate planning horizon", icon: Award },
+  { value: 14, prefix: "", suffix: "%", label: "Of appliance collections", icon: ShieldCheck },
+  { value: 20, prefix: "$", suffix: "k", label: "Implementation fees, separate", icon: Activity },
 ];
 
 export default function SuccessStories() {
@@ -206,7 +215,7 @@ export default function SuccessStories() {
           >
             <Link href="/" className="hover:text-teal">Home</Link>
             <span className="text-white/30">/</span>
-            <span className="text-teal">Success Stories</span>
+            <span className="text-teal">Founding Practice Program</span>
           </motion.nav>
 
           <motion.span
@@ -220,7 +229,7 @@ export default function SuccessStories() {
               <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-teal" />
             </span>
             <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
-            Founding partner program
+            Founding practice program
           </motion.span>
 
           <motion.h1
@@ -229,9 +238,9 @@ export default function SuccessStories() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-5 text-[2.1rem] font-bold leading-[1.1] tracking-tight text-white sm:mt-6 sm:text-5xl md:text-6xl lg:text-7xl"
           >
-            What partner practices get with{" "}
+            What the founding program will{" "}
             <span className="bg-gradient-to-r from-teal to-teal-light bg-clip-text text-transparent">
-              Dental Sleep Link
+              measure
             </span>
             .
           </motion.h1>
@@ -242,9 +251,9 @@ export default function SuccessStories() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/70"
           >
-            We&apos;re building Dental Sleep Link with a founding cohort of
-            general dentists. Below is what the program delivers — the
-            infrastructure, the workflow, and the outcomes partners can expect.
+            This page introduces the founding practice program. It does not
+            report achieved outcomes. Authentic case studies will wait until
+            source evidence and permission exist.
           </motion.p>
 
           <motion.div
@@ -258,7 +267,7 @@ export default function SuccessStories() {
               className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-teal px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-teal/30 transition-transform hover:scale-105"
             >
               <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
-              <span className="relative">Become our next success story</span>
+              <span className="relative">Discuss practice fit</span>
               <ArrowRight className="relative h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
             <Link
@@ -344,7 +353,7 @@ export default function SuccessStories() {
                     <Icon className="h-5 w-5 sm:h-6 sm:w-6" aria-hidden="true" />
                   </span>
                   <p className="relative mt-4 break-words text-2xl font-black leading-none text-white sm:mt-5 sm:text-3xl lg:text-4xl xl:text-5xl">
-                    <CountTo value={s.value} suffix={s.suffix} active={inView} />
+                    <CountTo value={s.value} prefix={s.prefix} suffix={s.suffix} active={inView} />
                   </p>
                   <p className="relative mt-2 text-xs text-white/70 sm:mt-3 sm:text-sm">{s.label}</p>
                 </motion.div>
@@ -553,7 +562,7 @@ export default function SuccessStories() {
         </div>
       </section>
 
-      {/* TESTIMONIALS */}
+      {/* MEASURES — held in place of unverified testimonials */}
       <section className="relative overflow-hidden bg-navy py-16 sm:py-20 lg:py-24">
         <div
           aria-hidden="true"
@@ -572,44 +581,31 @@ export default function SuccessStories() {
             className="mx-auto max-w-2xl text-center"
           >
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-teal">
-              In their words
+              What will be measured
             </p>
             <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl">
-              Partner voices.
+              Planning measures, not testimonials.
             </h2>
             <p className="mt-4 text-white/70">
-              Real partners. Real outcomes. Anonymized for compliance.
+              Unverified partner quotes have been removed. These are the
+              measures participating practices will track. They are not results
+              already achieved.
             </p>
           </motion.div>
 
-          <div className="mt-14 grid gap-6 lg:grid-cols-3">
-            {TESTIMONIALS.map((t, i) => (
-              <motion.figure
-                key={t.name}
+          <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {MEASURES.map((t, i) => (
+              <motion.article
+                key={t.title}
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                whileHover={{ y: -6 }}
-                className="group relative overflow-hidden rounded-2xl bg-navy-mid/70 p-7 ring-1 ring-white/10 backdrop-blur transition-all hover:ring-teal/40 hover:shadow-2xl hover:shadow-teal/20"
+                className="rounded-2xl bg-navy-mid/70 p-7 ring-1 ring-white/10 backdrop-blur"
               >
-                <Quote className="h-8 w-8 text-teal/60" aria-hidden="true" />
-                <div className="mt-4 flex items-center gap-0.5">
-                  {Array.from({ length: 5 }).map((_, k) => (
-                    <Star key={k} className="h-4 w-4 fill-teal text-teal" aria-hidden="true" />
-                  ))}
-                </div>
-                <blockquote className="mt-4 text-white/85">&ldquo;{t.quote}&rdquo;</blockquote>
-                <figcaption className="mt-6 flex items-center gap-3">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-full bg-teal/15 text-teal-light ring-2 ring-teal/40 font-bold">
-                    {t.initials}
-                  </span>
-                  <div>
-                    <p className="text-sm font-semibold text-white">{t.name}</p>
-                    <p className="text-xs text-white/60">{t.role}</p>
-                  </div>
-                </figcaption>
-              </motion.figure>
+                <h3 className="text-lg font-semibold text-white">{t.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-white/75">{t.body}</p>
+              </motion.article>
             ))}
           </div>
         </div>
@@ -632,18 +628,18 @@ export default function SuccessStories() {
               className="pointer-events-none absolute -top-20 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-white/20 blur-3xl"
             />
             <h2 className="relative text-3xl font-bold text-white sm:text-4xl">
-              Want to be our next case study?
+              Ask whether the founding program fits.
             </h2>
             <p className="relative mx-auto mt-4 max-w-xl text-white/80">
-              Apply now and we&apos;ll map a clear, profitable path for your
-              sleep practice — within one business day.
+              Case studies are not available yet. A practice-fit conversation
+              is the way to review scope, economics, and timing.
             </p>
             <div className="relative mt-8 flex flex-wrap items-center justify-center gap-4">
               <Link
                 href="/contact-us"
                 className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-teal-dark shadow-lg transition-transform hover:scale-105"
               >
-                Apply now
+                Discuss practice fit
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
@@ -666,14 +662,7 @@ export default function SuccessStories() {
 function NetworkVisual() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
-  const orbiters = [
-    { angle: 0, label: "DR" },
-    { angle: 60, label: "JL" },
-    { angle: 120, label: "MP" },
-    { angle: 180, label: "SK" },
-    { angle: 240, label: "AR" },
-    { angle: 300, label: "EM" },
-  ];
+  const orbiters = [0, 60, 120, 180, 240, 300];
 
   return (
     <div ref={ref} className="relative h-full w-full">
@@ -697,8 +686,8 @@ function NetworkVisual() {
             className="absolute inset-0 h-full w-full"
             aria-hidden="true"
           >
-            {orbiters.map((o, i) => {
-              const rad = (o.angle * Math.PI) / 180;
+            {orbiters.map((angle, i) => {
+              const rad = (angle * Math.PI) / 180;
               const cx = 130 + Math.cos(rad) * 110;
               const cy = 130 + Math.sin(rad) * 110;
               return (
@@ -737,8 +726,8 @@ function NetworkVisual() {
             </span>
           </div>
 
-          {orbiters.map((o, i) => {
-            const rad = (o.angle * Math.PI) / 180;
+          {orbiters.map((angle, i) => {
+            const rad = (angle * Math.PI) / 180;
             const cx = 130 + Math.cos(rad) * 110;
             const cy = 130 + Math.sin(rad) * 110;
             return (
@@ -768,8 +757,8 @@ function NetworkVisual() {
                   }}
                   className="absolute inset-0 rounded-full bg-teal/40"
                 />
-                <span className="relative flex h-11 w-11 items-center justify-center rounded-full bg-navy text-[10px] font-bold text-teal-light ring-2 ring-teal/50 backdrop-blur">
-                  {o.label}
+                <span className="relative flex h-11 w-11 items-center justify-center rounded-full bg-navy text-teal-light ring-2 ring-teal/50 backdrop-blur">
+                  <Building2 className="h-4 w-4" aria-hidden="true" />
                 </span>
               </motion.div>
             );
@@ -783,23 +772,6 @@ function NetworkVisual() {
 function RevenueVisual() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
-  const [n, setN] = useState(0);
-
-  useEffect(() => {
-    if (!inView) return;
-    const start = performance.now();
-    const dur = 1800;
-    let raf = 0;
-    const tick = (t: number) => {
-      const p = Math.min((t - start) / dur, 1);
-      const eased = 1 - Math.pow(1 - p, 3);
-      setN(Math.round(50 * eased));
-      if (p < 1) raf = requestAnimationFrame(tick);
-    };
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
-  }, [inView]);
-
   const bars = [30, 42, 38, 56, 64, 72, 88, 100];
 
   return (
@@ -807,12 +779,13 @@ function RevenueVisual() {
       {/* Big counter */}
       <div className="absolute inset-x-0 top-2 flex flex-col items-center text-center">
         <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-teal">
-          Reimbursed
+          Illustration
         </p>
-        <p className="mt-1 flex items-baseline gap-1 text-4xl font-black leading-none text-white sm:text-5xl lg:text-6xl">
-          <span className="text-3xl text-teal">$</span>
-          {n}
-          <span className="text-3xl text-teal">M+</span>
+        <p className="mt-1 flex items-baseline gap-1 text-3xl font-black leading-none text-white sm:text-4xl">
+          Collections
+        </p>
+        <p className="mt-2 max-w-[12rem] text-[10px] uppercase tracking-wider text-white/60">
+          Not a reported total
         </p>
       </div>
 
@@ -876,7 +849,7 @@ function RevenueVisual() {
         className="absolute right-2 top-2 flex items-center gap-1.5 rounded-lg bg-navy/85 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-teal-light backdrop-blur ring-1 ring-teal/30"
       >
         <TrendingUp className="h-3 w-3" aria-hidden="true" />
-        Growing monthly
+        Not a result
       </motion.div>
     </div>
   );
@@ -885,23 +858,7 @@ function RevenueVisual() {
 function MilestonesVisual() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
-  const target = 95;
-  const [n, setN] = useState(0);
-
-  useEffect(() => {
-    if (!inView) return;
-    const start = performance.now();
-    const dur = 1600;
-    let raf = 0;
-    const tick = (t: number) => {
-      const p = Math.min((t - start) / dur, 1);
-      const eased = 1 - Math.pow(1 - p, 3);
-      setN(Math.round(target * eased));
-      if (p < 1) raf = requestAnimationFrame(tick);
-    };
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
-  }, [inView]);
+  const target = 0;
 
   const r = 80;
   const c = 2 * Math.PI * r;
@@ -979,14 +936,13 @@ function MilestonesVisual() {
 
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
             <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-white/60">
-              Hit milestones
+              Measures
             </p>
-            <p className="mt-1 text-4xl font-black leading-none text-white sm:text-5xl lg:text-6xl">
-              {n}
-              <span className="text-3xl text-teal">%</span>
+            <p className="mt-1 text-3xl font-black leading-none text-white sm:text-4xl">
+              Track
             </p>
             <p className="mt-2 text-[10px] uppercase tracking-wider text-teal-light">
-              Of qualified partners
+              Not a success rate
             </p>
           </div>
         </div>
@@ -994,10 +950,10 @@ function MilestonesVisual() {
 
       {/* Floating milestone chips */}
       {[
-        { label: "First case", left: "4%", top: "18%", delay: 0.2, icon: Target },
-        { label: "$10k/mo", right: "4%", top: "22%", delay: 0.4, icon: TrendingUp },
-        { label: "5×", left: "6%", bottom: "16%", delay: 0.6, icon: Award },
-        { label: "Sleep-only", right: "6%", bottom: "20%", delay: 0.8, icon: Check },
+        { label: "Training", left: "4%", top: "18%", delay: 0.2, icon: Target },
+        { label: "Collections", right: "4%", top: "22%", delay: 0.4, icon: TrendingUp },
+        { label: "Staff time", left: "6%", bottom: "16%", delay: 0.6, icon: Award },
+        { label: "Claims", right: "6%", bottom: "20%", delay: 0.8, icon: Check },
       ].map((m, i) => {
         const Icon = m.icon;
         return (
@@ -1029,10 +985,10 @@ function VolumeVisual() {
       {/* Top counter */}
       <div className="absolute inset-x-0 top-2 flex flex-col items-center text-center">
         <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-teal">
-          Avg appliances / month
+          Follow-up
         </p>
-        <p className="mt-1 text-5xl font-black leading-none text-white">
-          20<span className="text-3xl text-teal">+</span>
+        <p className="mt-1 max-w-[12rem] text-lg font-bold leading-tight text-white">
+          Measured per patient
         </p>
       </div>
 
@@ -1117,7 +1073,7 @@ function VolumeVisual() {
         className="absolute right-2 top-2 flex items-center gap-1.5 rounded-lg bg-navy/85 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-teal-light backdrop-blur ring-1 ring-teal/30"
       >
         <TrendingUp className="h-3 w-3" aria-hidden="true" />
-        12 mo trend
+        Not a cohort result
       </motion.div>
     </div>
   );
