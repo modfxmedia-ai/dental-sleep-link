@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import WhatYouGet from "./WhatYouGet";
 import ServiceJsonLd from "@/components/seo/ServiceJsonLd";
 
-const TITLE = "What You Get — Implementation, Training, and Billing Support";
+const TITLE = "What You Get: Implementation, Training, and Billing Support";
 const DESCRIPTION =
   "Agreed setup, staff training, credentialing assistance, claims submission and follow-up, reporting, and ongoing nonclinical support. Clinical care stays with the practice.";
 const PATH = "/what-you-get";

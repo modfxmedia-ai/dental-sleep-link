@@ -14,6 +14,7 @@ import {
   ArrowRight,
   Lightbulb,
 } from "lucide-react";
+import { BOOKING_URL } from "@/lib/seo";
 import type { Post, PostBlock } from "@/lib/posts";
 
 function slugify(s: string) {
@@ -268,10 +269,12 @@ export default function PostView({
                   <p className="text-sm text-white/70">{post.author.role}</p>
                 </div>
                 <Link
-                  href="/contact-us"
+                  href={BOOKING_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-full border border-white/30 px-4 py-2 text-xs font-semibold text-white backdrop-blur transition-all hover:border-teal hover:bg-teal hover:text-white"
                 >
-                  Talk to the team
+                  Book a call
                   <ArrowUpRight className="h-3.5 w-3.5" />
                 </Link>
               </div>
@@ -451,10 +454,12 @@ export default function PostView({
             </p>
             <div className="relative mt-8 flex flex-wrap items-center justify-center gap-4">
               <Link
-                href="/contact-us"
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-teal-dark shadow-lg transition-transform hover:scale-105"
               >
-                Discuss practice fit
+                Book a call
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
@@ -554,7 +559,7 @@ function Block({ block }: { block: PostBlock }) {
         </p>
         {block.cite && (
           <footer className="mt-4 text-xs font-semibold uppercase tracking-[0.2em] text-teal">
-            &mdash; {block.cite}
+            Source: {block.cite}
           </footer>
         )}
       </blockquote>

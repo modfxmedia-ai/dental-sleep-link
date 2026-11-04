@@ -22,9 +22,11 @@ import {
   Stethoscope,
   TrendingUp,
 } from "lucide-react";
+import LinkedInIcon from "@/components/icons/LinkedInIcon";
+import { BOOKING_URL, FOUNDER } from "@/lib/seo";
 
 const HERO_STATS = [
-  { value: "$20k", label: "Implementation fees" },
+  { value: "$25k", label: "Implementation fees" },
   { value: "14%", label: "Appliance collections" },
   { value: "$249", label: "DSL membership" },
   { value: "~6 mo", label: "Planning horizon" },
@@ -223,10 +225,12 @@ function Hero() {
               className="mt-10 flex flex-wrap items-center gap-4"
             >
               <Link
-                href="/contact-us"
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-teal to-teal-dark px-7 py-3.5 text-sm font-semibold text-white shadow-2xl shadow-teal/40 transition-all hover:shadow-teal/60"
               >
-                Become a partner
+                Book a call
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
@@ -549,7 +553,9 @@ function WhoWeAre() {
             className="space-y-5"
           >
             <p className="text-lg leading-relaxed text-navy/80">
-              Implementation fees are $20,000. Ongoing billing and support are
+              Implementation fees are $25,000: $5,000 initially, with the
+              remaining $20,000 spread over the next 11 months. Spencer Study
+              Club is included. Ongoing billing and support are
               14% of appliance collections. Approved costs pass through at
               actual cost, and the $249 annual membership is retained by DSL.
             </p>
@@ -992,7 +998,7 @@ function Founder() {
             Founder
           </span>
           <h2 className="mt-5 text-3xl font-bold text-white sm:text-4xl">
-            Founder story held for approval
+            Meet the founder
           </h2>
         </motion.div>
 
@@ -1009,23 +1015,26 @@ function Founder() {
             </div>
           </div>
           <div>
-            <p className="text-2xl font-bold text-white">Name pending approval</p>
+            <p className="text-2xl font-bold text-white">{FOUNDER.name}</p>
             <p className="mt-1 text-sm font-semibold uppercase tracking-[0.2em] text-teal">
-              Founder biography and photograph not published
+              {`${FOUNDER.role}, Dental Sleep Link`}
             </p>
             <p className="mt-5 text-base leading-relaxed text-white/75">
-              Brian&apos;s approved name, biography, and photograph are not on
-              this test version. Local-practice operating experience must be
-              confirmed, including the practice, time period, and method, before
-              any example is published. It will be labeled as founder or local
-              practice experience, separate from Dental Sleep Link cohort results.
+              Brian founded Dental Sleep Link to help
+              general dentists add dental sleep medicine with implementation,
+              credentialing, and billing support, while each practice keeps
+              responsibility for clinical care.
             </p>
-            <p className="mt-4 text-base leading-relaxed text-white/75">
-              Sales materials that describe approximately $30,000 to $670,000
-              in annualized collections are not copied here. This review did
-              not validate those records, and they are not presented as Dental
-              Sleep Link results.
-            </p>
+            <a
+              href={FOUNDER.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group mt-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-5 py-2.5 text-sm font-semibold text-white transition-all hover:border-teal hover:bg-teal"
+            >
+              <LinkedInIcon className="h-4 w-4" />
+              View Brian&apos;s LinkedIn profile
+              <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+            </a>
           </div>
         </motion.div>
       </div>
@@ -1092,10 +1101,12 @@ function CTABand() {
           className="mt-10 flex flex-wrap items-center justify-center gap-4"
         >
           <Link
-            href="/contact-us"
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="group inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-teal-dark shadow-2xl shadow-black/20 transition-all hover:bg-navy hover:text-white"
           >
-            Discuss practice fit
+            Book a call
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Link>
           <Link

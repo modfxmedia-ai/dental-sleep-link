@@ -14,6 +14,7 @@ import {
   Search,
   HeartPulse,
 } from "lucide-react";
+import { BOOKING_URL } from "@/lib/seo";
 import { useState } from "react";
 import { POSTS } from "@/lib/posts";
 
@@ -420,10 +421,12 @@ export default function Blog() {
               drafts held for authorship and clinical review.
             </p>
             <Link
-              href="/contact-us"
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="relative mx-auto mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-teal-dark shadow-lg transition-transform hover:scale-105"
             >
-              Discuss practice fit
+              Book a call
               <ArrowRight className="h-4 w-4" />
             </Link>
           </motion.div>

@@ -7,7 +7,12 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Mail, Menu, Phone, X } from "lucide-react";
 
 import { cn } from "@/lib/utils";
-import { CONTACT as SITE_CONTACT } from "@/lib/seo";
+import {
+  BOOKING_URL,
+  CONTACT as SITE_CONTACT,
+  LINKEDIN_COMPANY_URL,
+} from "@/lib/seo";
+import LinkedInIcon from "@/components/icons/LinkedInIcon";
 import type { NavItem } from "@/types";
 
 const NAV_ITEMS: NavItem[] = [
@@ -111,8 +116,8 @@ export default function Header({ currentPath }: HeaderProps) {
           {/* Logo */}
           <Link
             href="/"
-            className="group flex items-center gap-3"
-            aria-label="Dental Sleep Link — Home"
+            className="group flex shrink-0 items-center gap-3"
+            aria-label="Dental Sleep Link home"
           >
             <motion.div
               animate={{ scale: scrolled ? 0.85 : 1 }}
@@ -125,7 +130,7 @@ export default function Header({ currentPath }: HeaderProps) {
                 width={640}
                 height={230}
                 priority
-                className="h-11 w-auto sm:h-14 lg:h-16"
+                className="h-11 w-auto sm:h-14 xl:h-12 2xl:h-16"
               />
             </motion.div>
           </Link>
@@ -133,7 +138,7 @@ export default function Header({ currentPath }: HeaderProps) {
           {/* Desktop nav */}
           <nav
             aria-label="Primary"
-            className="hidden items-center xl:flex"
+            className="hidden min-w-0 items-center xl:flex"
           >
             <ul className="flex items-center">
               {NAV_ITEMS.map((item, i) => {
@@ -147,7 +152,7 @@ export default function Header({ currentPath }: HeaderProps) {
                       href={item.href}
                       aria-current={active ? "page" : undefined}
                       className={cn(
-                        "relative px-3 py-2 text-sm font-medium transition-colors",
+                        "relative whitespace-nowrap px-2 py-2 text-sm font-medium transition-colors 2xl:px-3",
                         active
                           ? "text-teal"
                           : "text-white hover:text-teal",
@@ -157,7 +162,7 @@ export default function Header({ currentPath }: HeaderProps) {
                       {active && (
                         <motion.span
                           layoutId="nav-underline"
-                          className="absolute inset-x-3 -bottom-0.5 h-px bg-teal"
+                          className="absolute inset-x-2 -bottom-0.5 h-px bg-teal 2xl:inset-x-3"
                           transition={{
                             type: "spring",
                             stiffness: 380,
@@ -181,12 +186,23 @@ export default function Header({ currentPath }: HeaderProps) {
           </nav>
 
           {/* CTA + mobile toggle */}
-          <div className="flex items-center gap-2">
-            <Link
-              href="/how-to-join"
-              className="hidden rounded-full bg-teal px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-teal/20 transition-transform hover:scale-105 hover:bg-teal-dark lg:inline-block"
+          <div className="flex shrink-0 items-center gap-2">
+            <a
+              href={LINKEDIN_COMPANY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Dental Sleep Link on LinkedIn"
+              className="hidden h-10 w-10 items-center justify-center rounded-full text-white/80 transition-colors hover:bg-white/10 hover:text-teal lg:inline-flex"
             >
-              Discuss fit
+              <LinkedInIcon className="h-5 w-5" />
+            </a>
+            <Link
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden whitespace-nowrap rounded-full bg-teal px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-teal/20 transition-transform hover:scale-105 hover:bg-teal-dark lg:inline-block"
+            >
+              Book a call
             </Link>
 
             <button
@@ -247,11 +263,13 @@ export default function Header({ currentPath }: HeaderProps) {
               </ul>
 
               <Link
-                href="/how-to-join"
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={closeMobile}
                 className="mt-8 block rounded-full bg-teal px-6 py-3 text-center text-base font-semibold text-white shadow-md shadow-teal/20 transition-transform hover:scale-105 hover:bg-teal-dark"
               >
-                Discuss fit
+                Book a call
               </Link>
 
               <div className="mt-8 space-y-3 text-sm text-white/80">
@@ -268,6 +286,15 @@ export default function Header({ currentPath }: HeaderProps) {
                 >
                   <Mail className="h-4 w-4" aria-hidden="true" />
                   {CONTACT.email}
+                </a>
+                <a
+                  href={LINKEDIN_COMPANY_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 hover:text-teal"
+                >
+                  <LinkedInIcon className="h-4 w-4" />
+                  LinkedIn
                 </a>
               </div>
 

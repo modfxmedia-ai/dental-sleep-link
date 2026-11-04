@@ -14,6 +14,7 @@ import {
   Check,
   ArrowUpRight,
 } from "lucide-react";
+import { BOOKING_URL } from "@/lib/seo";
 
 const PILLARS = [
   {
@@ -208,11 +209,13 @@ export default function WhatYouGetPage() {
             className="mt-10 flex flex-wrap items-center justify-center gap-4"
           >
             <Link
-              href="/contact-us"
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-teal px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-teal/30 transition-transform hover:scale-105"
             >
               <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
-              <span className="relative">Discuss practice fit</span>
+              <span className="relative">Book a call</span>
               <ArrowRight className="relative h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
             <Link
@@ -581,10 +584,12 @@ export default function WhatYouGetPage() {
                       </ul>
 
                       <Link
-                        href="/contact-us"
+                        href={BOOKING_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="group mt-8 inline-flex items-center gap-2 rounded-full border border-teal/40 bg-teal/10 px-5 py-2.5 text-sm font-semibold text-teal-dark backdrop-blur transition-all hover:border-teal hover:bg-teal hover:text-white"
                       >
-                        Discuss practice fit
+                        Book a call
                         <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                       </Link>
                     </motion.div>
@@ -629,10 +634,12 @@ export default function WhatYouGetPage() {
             </p>
             <div className="relative mt-8 flex flex-wrap items-center justify-center gap-4">
               <Link
-                href="/contact-us"
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-teal-dark shadow-lg transition-transform hover:scale-105"
               >
-                Discuss practice fit
+                Book a call
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link

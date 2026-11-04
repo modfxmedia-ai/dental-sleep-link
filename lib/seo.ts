@@ -10,3 +10,15 @@ export const CONTACT = {
   email: "info@dentalsleeplink.com",
   alternateEmail: "partnerships@dentalsleeplink.com",
 };
+
+export const BOOKING_URL =
+  "https://calendly.com/bbriesemeister88/dental-sleep-link";
+
+export const LINKEDIN_COMPANY_URL =
+  "https://www.linkedin.com/company/145345328/";
+
+export const FOUNDER = {
+  name: "Brian Briesemeister",
+  role: "Founder",
+  linkedin: "https://www.linkedin.com/in/brian-briesemeister-532467a6/",
+};

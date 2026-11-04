@@ -16,6 +16,7 @@ import {
   ShieldCheck,
   X,
 } from "lucide-react";
+import { BOOKING_URL } from "@/lib/seo";
 
 const CRITERIA = [
   {
@@ -179,11 +180,13 @@ export default function PartnerCriteria() {
             className="mt-10 flex flex-wrap items-center justify-center gap-4"
           >
             <Link
-              href="/contact-us"
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-teal px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-teal/30 transition-transform hover:scale-105"
             >
               <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
-              <span className="relative">Discuss practice fit</span>
+              <span className="relative">Book a call</span>
               <ArrowRight className="relative h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
             <Link
@@ -290,10 +293,12 @@ export default function PartnerCriteria() {
                 </p>
               </div>
               <Link
-                href="/contact-us"
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex shrink-0 items-center gap-2 rounded-full bg-teal px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-teal/30 transition-transform hover:scale-105"
               >
-                Discuss practice fit
+                Book a call
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
@@ -540,7 +545,7 @@ export default function PartnerCriteria() {
               },
               {
                 t: "Payer questions are reviewed individually",
-                b: "Open disputes are not an automatic exclusion on this test site unless a policy is approved.",
+                b: "Open disputes are not an automatic exclusion unless a policy is approved.",
               },
               {
                 t: "Territory is not reserved here",
@@ -601,10 +606,12 @@ export default function PartnerCriteria() {
             </p>
             <div className="relative mt-8 flex flex-wrap items-center justify-center gap-4">
               <Link
-                href="/contact-us"
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-teal-dark shadow-lg transition-transform hover:scale-105"
               >
-                Discuss practice fit
+                Book a call
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link

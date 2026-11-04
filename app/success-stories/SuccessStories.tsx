@@ -20,6 +20,7 @@ import {
   Check,
   ShieldCheck,
 } from "lucide-react";
+import { BOOKING_URL } from "@/lib/seo";
 
 type OutcomeVisual = "network" | "revenue" | "milestones" | "volume";
 
@@ -58,14 +59,14 @@ const OUTCOMES: {
     icon: Receipt,
     title: "Collected revenue, not billed charges",
     body:
-      "Participating practices will measure appliance collections. The illustration uses $1,800 collected per completed appliance. That figure is a planning assumption, not a result already achieved by a cohort.",
+      "Participating practices will measure appliance collections. The illustration uses $1,800 average collections per completed appliance. That figure is a planning assumption for illustrative projections, not a guaranteed result or one already achieved by a cohort.",
     bullets: [
       "Collected dollars, not production",
       "14% DSL fee on those collections",
       "Lab cost tracked separately",
       "Membership excluded from practice revenue",
     ],
-    metric: { value: "$1,800", label: "Planning collection per appliance" },
+    metric: { value: "$1,800", label: "Average collections per appliance (illustrative)" },
     visual: "revenue",
   },
   {
@@ -166,7 +167,7 @@ const QUICK_STATS = [
   { value: 3, prefix: "", suffix: "–5", label: "Practices in the first cohort", icon: Building2 },
   { value: 6, prefix: "~", suffix: " mo", label: "Approximate planning horizon", icon: Award },
   { value: 14, prefix: "", suffix: "%", label: "Of appliance collections", icon: ShieldCheck },
-  { value: 20, prefix: "$", suffix: "k", label: "Implementation fees, separate", icon: Activity },
+  { value: 25, prefix: "$", suffix: "k", label: "Implementation fees, separate", icon: Activity },
 ];
 
 export default function SuccessStories() {
@@ -263,11 +264,13 @@ export default function SuccessStories() {
             className="mt-10 flex flex-wrap items-center justify-center gap-4"
           >
             <Link
-              href="/contact-us"
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-teal px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-teal/30 transition-transform hover:scale-105"
             >
               <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
-              <span className="relative">Discuss practice fit</span>
+              <span className="relative">Book a call</span>
               <ArrowRight className="relative h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
             <Link
@@ -636,10 +639,12 @@ export default function SuccessStories() {
             </p>
             <div className="relative mt-8 flex flex-wrap items-center justify-center gap-4">
               <Link
-                href="/contact-us"
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-teal-dark shadow-lg transition-transform hover:scale-105"
               >
-                Discuss practice fit
+                Book a call
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link

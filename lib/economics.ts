@@ -1,9 +1,9 @@
 export const ECONOMICS_TITLE = "Illustrative annual operating economics";
 export const ECONOMICS_SUBTITLE =
-  "Twelve productive months using an existing team with available capacity.";
+  "Twelve productive months using an existing team with available capacity. Illustrative projections, not guaranteed results.";
 
 export const ECONOMICS_DISCLOSURE =
-  "These illustrations assume $1,800 actually collected per completed appliance, a $300 lab cost, a 14% DSL fee and $599 monthly software cost. Existing staff must have available capacity. Balances exclude incremental staffing, other practice overhead, other pass-through costs and taxes; they are not take-home income, EBITDA or guaranteed profit. The separate $20,000 implementation fees are shown separately. Twelve productive months are different from the first twelve months after signing. Credentialing, ramp-up and collection delays affect cash flow. The $249 membership belongs to DSL and is excluded from practice revenue. Actual results vary.";
+  "These illustrations assume $1,800 average collections per completed appliance, a $300 lab cost, a 14% DSL fee and $599 monthly software cost. Existing staff must have available capacity. Balances exclude incremental staffing, other practice overhead, other pass-through costs and taxes; they are not take-home income, EBITDA or guaranteed profit. The separate $25,000 implementation fees ($5,000 initially, then $20,000 over the next 11 months) are shown separately. Twelve productive months are different from the first twelve months after signing. Credentialing, ramp-up and collection delays affect cash flow. The $249 membership belongs to DSL and is excluded from practice revenue. These projections are illustrative, not guaranteed results. Actual results vary.";
 
 export const ECONOMICS_COLUMNS = [
   {
@@ -14,8 +14,8 @@ export const ECONOMICS_COLUMNS = [
     lab: "($21,600)",
     software: "($7,188)",
     beforeOther: "$82,668",
-    implementation: "($20,000)",
-    afterImplementation: "$62,668",
+    implementation: "($25,000)",
+    afterImplementation: "$57,668",
   },
   {
     volume: "12 appliances/month",
@@ -25,8 +25,8 @@ export const ECONOMICS_COLUMNS = [
     lab: "($43,200)",
     software: "($7,188)",
     beforeOther: "$172,524",
-    implementation: "($20,000)",
-    afterImplementation: "$152,524",
+    implementation: "($25,000)",
+    afterImplementation: "$147,524",
   },
 ] as const;
 
@@ -36,7 +36,7 @@ export const ECONOMICS_ROWS: {
   emphasis?: boolean;
 }[] = [
   { label: "Completed appliances", key: "appliances" },
-  { label: "Appliance collections at $1,800 each", key: "collections" },
+  { label: "Appliance collections at $1,800 average each", key: "collections" },
   { label: "DSL fee at 14%", key: "fee" },
   { label: "Lab cost at $300 each", key: "lab" },
   { label: "Software at $599/month", key: "software" },

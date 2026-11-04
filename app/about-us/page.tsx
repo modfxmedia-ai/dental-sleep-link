@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import AboutUs from "./AboutUs";
 
-const TITLE = "About Us — Dental Sleep Medicine Implementation Support";
+const TITLE = "About Us: Dental Sleep Medicine Implementation Support";
 const DESCRIPTION =
   "Dental Sleep Link supports credentialing, medical billing, team training, and workflow implementation around dentist-led care. Clinical responsibility stays with the practice.";
 const PATH = "/about-us";

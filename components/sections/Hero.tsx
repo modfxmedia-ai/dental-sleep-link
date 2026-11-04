@@ -10,6 +10,7 @@ import {
   Activity,
   Award,
 } from "lucide-react";
+import { BOOKING_URL } from "@/lib/seo";
 
 const MARQUEE_ITEMS = [
   "Implementation support",
@@ -141,8 +142,8 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="mt-4 max-w-xl text-sm leading-relaxed text-white/55"
           >
-            Proposed tagline, pending approval: Making dental sleep medicine
-            accessible to more dentists—and the patients they serve.
+            Making dental sleep medicine accessible to more dentists, and the
+            patients they serve.
           </motion.p>
 
           <motion.div
@@ -152,11 +153,13 @@ export default function Hero() {
             className="mt-7 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4"
           >
             <Link
-              href="/contact-us"
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-teal px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-teal/30 transition-transform hover:scale-105 sm:px-7"
             >
               <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
-              <span className="relative">Discuss practice fit</span>
+              <span className="relative">Book a call</span>
               <ArrowRight className="relative h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
             <Link

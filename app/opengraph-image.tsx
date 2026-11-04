@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Dental Sleep Link — implementation support for dentist-led sleep care";
+export const alt = "Dental Sleep Link: implementation support for dentist-led sleep care";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

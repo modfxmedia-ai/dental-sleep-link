@@ -12,15 +12,17 @@ import {
   BadgeDollarSign,
 } from "lucide-react";
 import EconomicsTable from "@/components/sections/EconomicsTable";
+import { BOOKING_URL } from "@/lib/seo";
 
 const TIERS = [
   {
     eyebrow: "Implementation",
     title: "Implementation fees",
-    price: "$20,000",
-    note: "Covers the agreed credentialing, setup, and team-training or billing-setup work. Shown separately from operating illustrations. It does not drop out of cash flow.",
+    price: "$25,000",
+    note: "$5,000 initially, with the remaining $20,000 spread over the next 11 months. Covers the agreed credentialing, setup, and team-training or billing-setup work. Shown separately from operating illustrations.",
     icon: Workflow,
     includes: [
+      "Spencer Study Club included",
       "Credentialing assistance",
       "Practice and billing setup",
       "Team training",
@@ -159,15 +161,18 @@ export default function Pricing() {
           <p>
             Proposed funds flow, pending the final agreement: appliance receipts
             go to the practice, and DSL invoices monthly in arrears for services
-            and approved pass-through costs. Payment timing, deposits, refunds,
-            and exclusivity are not set on this site.
+            and approved pass-through costs. This is the current standard
+            offer; existing individual arrangements are separate. Refunds and
+            exclusivity are not set on this site.
           </p>
           <div className="mt-4 flex justify-center sm:justify-start">
             <Link
-              href="/contact-us"
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group inline-flex items-center gap-2 rounded-full bg-navy px-5 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-white transition-transform hover:scale-105"
             >
-              Discuss practice fit
+              Book a call
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </Link>
           </div>

@@ -1,4 +1,11 @@
-import { SITE_URL, SITE_NAME, SITE_DESCRIPTION, CONTACT } from "@/lib/seo";
+import {
+  SITE_URL,
+  SITE_NAME,
+  SITE_DESCRIPTION,
+  CONTACT,
+  FOUNDER,
+  LINKEDIN_COMPANY_URL,
+} from "@/lib/seo";
 
 export default function OrganizationJsonLd() {
   const data = {
@@ -11,7 +18,12 @@ export default function OrganizationJsonLd() {
     image: `${SITE_URL}/opengraph-image`,
     description: SITE_DESCRIPTION,
     email: CONTACT.email,
-    sameAs: [] as string[],
+    sameAs: [LINKEDIN_COMPANY_URL],
+    founder: {
+      "@type": "Person",
+      name: FOUNDER.name,
+      sameAs: [FOUNDER.linkedin],
+    },
     areaServed: { "@type": "Country", name: "United States" },
   };
   return (

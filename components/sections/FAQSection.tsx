@@ -23,7 +23,7 @@ const FAQS = [
   {
     id: "economics",
     q: "How is the partnership priced?",
-    a: "Implementation fees are $20,000, covering the agreed credentialing, setup, and team-training or billing-setup work. Ongoing support is a flat 14% of appliance collections and includes ongoing billing and support under the services agreement. Approved fixed costs pass through at actual cost. A $599 monthly software cost is a planning assumption, not a guaranteed vendor quote. A separate $249 annual patient membership is retained by DSL, is additional to the appliance payment, and is excluded from illustrated practice revenue. The 14% fee is not applied again to that membership. These figures are not a promise of first-quarter profit.",
+    a: "The current standard offer is $25,000 in implementation fees: $5,000 initially, with the remaining $20,000 spread over the next 11 months. It covers the agreed credentialing, setup, and team-training or billing-setup work, and Spencer Study Club is included. Existing individual arrangements are separate. Ongoing support is a flat 14% of appliance collections and includes ongoing billing and support under the services agreement. Approved fixed costs pass through at actual cost. A $599 monthly software cost is a planning assumption, not a guaranteed vendor quote. A separate $249 annual patient membership is retained by DSL, is additional to the appliance payment, and is excluded from illustrated practice revenue. The 14% fee is not applied again to that membership. These figures are not a promise of first-quarter profit.",
   },
   {
     id: "billing",

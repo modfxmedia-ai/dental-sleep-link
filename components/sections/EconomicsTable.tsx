@@ -65,8 +65,8 @@ export default function EconomicsTable() {
           </table>
         </div>
         <p className="border-t border-navy/10 px-6 py-4 text-xs leading-relaxed text-navy/60 sm:px-8">
-          Volume labels only. A third or high scenario is not shown while it
-          awaits confirmation. These are not described as typical results.
+          Illustrative projections at two volumes. They are not typical or
+          guaranteed results.
         </p>
       </div>
       <aside className="rounded-[2rem] border border-navy/10 bg-navy/[0.03] p-6 text-sm leading-relaxed text-navy/75 sm:p-8">

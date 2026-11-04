@@ -39,7 +39,7 @@ type SiteGroup = {
 
 const GROUPS: SiteGroup[] = [
   {
-    eyebrow: "01 — Start here",
+    eyebrow: "01 / Start here",
     title: "Main pages",
     blurb:
       "The fastest tour of who we are, what the partnership delivers, and how the economics work.",
@@ -55,7 +55,7 @@ const GROUPS: SiteGroup[] = [
         href: "/about-us",
         label: "About Us",
         description:
-          "What Dental Sleep Link supports. Founder name, biography, and photograph are held for approval.",
+          "What Dental Sleep Link supports, and the founder, Brian Briesemeister.",
         icon: Info,
       },
       {
@@ -68,7 +68,7 @@ const GROUPS: SiteGroup[] = [
     ],
   },
   {
-    eyebrow: "02 — The program",
+    eyebrow: "02 / The program",
     title: "How the partnership works",
     blurb:
       "The actual mechanics: what we build with you, who fits, and the step-by-step path to launch.",
@@ -104,7 +104,7 @@ const GROUPS: SiteGroup[] = [
     ],
   },
   {
-    eyebrow: "03 — Resources",
+    eyebrow: "03 / Resources",
     title: "Blog & resources",
     blurb:
       "Draft resources held for authorship and clinical review.",
@@ -125,16 +125,16 @@ const GROUPS: SiteGroup[] = [
     ],
   },
   {
-    eyebrow: "04 — Get in touch",
+    eyebrow: "04 / Get in touch",
     title: "Connect",
     blurb:
-      "Prepare an email, or open the machine-readable sitemap. Indexing is not publication approval.",
+      "Book a call, prepare an email, or open the machine-readable sitemap.",
     links: [
       {
         href: "/contact-us",
         label: "Contact Us",
         description:
-          "Prepare an email about practice fit. You still have to send it. No patient information.",
+          "Book a practice-fit call or prepare an email. No patient information.",
         icon: Mail,
       },
       {
@@ -231,7 +231,7 @@ export default function SitemapPage() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/70 sm:text-lg"
           >
-            A human-friendly map of the test site, including the founding
+            A human-friendly map of the site, including the founding
             practice program and the draft resources.
           </motion.p>
 
@@ -268,7 +268,7 @@ export default function SitemapPage() {
                 href={`#${slugify(g.title)}`}
                 className="group inline-flex shrink-0 snap-start items-center gap-2 rounded-full border border-navy/10 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-navy/70 transition-all hover:-translate-y-0.5 hover:border-teal/40 hover:bg-teal/5 hover:text-teal-dark"
               >
-                <span className="text-teal">{g.eyebrow.split(" — ")[0]}</span>
+                <span className="text-teal">{g.eyebrow.split(" / ")[0]}</span>
                 <span className="hidden sm:inline">{g.title}</span>
               </a>
             ))}

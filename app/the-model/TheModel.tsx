@@ -15,6 +15,7 @@ import {
   ArrowUpRight,
   Scale,
 } from "lucide-react";
+import { BOOKING_URL } from "@/lib/seo";
 import EconomicsTable from "@/components/sections/EconomicsTable";
 
 const STEPS = [
@@ -106,7 +107,7 @@ const STEPS = [
     ],
     image: "/images/the-model/step-5.jpg",
     imageAlt: "Planning discussion of funds flow",
-    metric: { value: "$20k", label: "Separate implementation fees" },
+    metric: { value: "$25k", label: "Separate implementation fees" },
   },
 ];
 
@@ -211,11 +212,13 @@ export default function TheModel() {
             className="mt-10 flex flex-wrap items-center justify-center gap-4"
           >
             <Link
-              href="/contact-us"
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-teal px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-teal/30 transition-transform hover:scale-105"
             >
               <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
-              <span className="relative">Discuss practice fit</span>
+              <span className="relative">Book a call</span>
               <ArrowRight className="relative h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
             <Link
@@ -551,10 +554,12 @@ export default function TheModel() {
                           ))}
                         </ul>
                         <Link
-                          href="/contact-us"
+                          href={BOOKING_URL}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="group mt-8 inline-flex items-center gap-2 rounded-full border border-teal/40 bg-teal/10 px-5 py-2.5 text-sm font-semibold text-teal-dark backdrop-blur transition-all hover:border-teal hover:bg-teal hover:text-white"
                         >
-                          Discuss practice fit
+                          Book a call
                           <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                         </Link>
                       </motion.div>
@@ -598,7 +603,8 @@ export default function TheModel() {
                 </p>
                 <ul className="mt-5 grid gap-2 text-sm text-navy/75 sm:grid-cols-2">
                   {[
-                    "$20,000 implementation fees, shown separately",
+                    "$25,000 implementation fees: $5,000 initially, then $20,000 over 11 months",
+                    "Spencer Study Club included",
                     "14% of appliance collections, including ongoing billing",
                     "Approved costs pass through at actual cost",
                     "$249 membership retained by DSL and excluded from practice revenue",
@@ -649,10 +655,12 @@ export default function TheModel() {
             </p>
             <div className="relative mt-8 flex flex-wrap items-center justify-center gap-4">
               <Link
-                href="/contact-us"
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-teal-dark shadow-lg transition-transform hover:scale-105"
               >
-                Discuss practice fit
+                Book a call
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link

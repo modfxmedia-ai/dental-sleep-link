@@ -26,7 +26,7 @@ export type Post = {
 const PENDING_AUTHOR = {
   name: "Authorship pending review",
   role: "Not attributed to a named clinician",
-  initials: "—",
+  initials: "TBA",
   pending: true,
 };
 
@@ -112,7 +112,7 @@ export const POSTS: Post[] = [
       { type: "h2", text: "Follow the billing through", id: "billing" },
       {
         type: "p",
-        text: "Billing follow-through means claims are submitted, pending items are watched, and collections are recorded as money actually received. Dental Sleep Link’s planning illustration uses two volumes only: 6 and 12 completed appliances a month. At $1,800 collected each, the annual balances before other expenses and taxes are $82,668 and $172,524, after the 14% fee, a $300 lab cost, and $599 monthly software. Those balances are not take-home income. The separate $20,000 implementation fees and the $249 membership retained by DSL sit outside that practice illustration. A third volume is not shown.",
+        text: "Billing follow-through means claims are submitted, pending items are watched, and collections are recorded as money actually received. Dental Sleep Link’s planning illustration uses two volumes only: 6 and 12 completed appliances a month. At $1,800 average collections each, the illustrative annual balances before other expenses and taxes are $82,668 and $172,524, after the 14% fee, a $300 lab cost, and $599 monthly software. Those balances are projections, not guaranteed results or take-home income. The separate $25,000 implementation fees ($5,000 initially, then $20,000 over the next 11 months) and the $249 membership retained by DSL sit outside that practice illustration. A third volume is not shown.",
       },
       {
         type: "ul",

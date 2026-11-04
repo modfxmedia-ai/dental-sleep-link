@@ -4,14 +4,19 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { CONTACT as SITE_CONTACT } from "@/lib/seo";
+import {
+  BOOKING_URL,
+  CONTACT as SITE_CONTACT,
+  LINKEDIN_COMPANY_URL,
+} from "@/lib/seo";
+import LinkedInIcon from "@/components/icons/LinkedInIcon";
 import {
   ArrowRight,
   Sparkles,
   Phone,
   Mail,
   MapPin,
-  Clock,
+  CalendarDays,
   Send,
   Check,
   MessageCircle,
@@ -21,32 +26,34 @@ import {
 
 const INFO = [
   {
+    icon: CalendarDays,
+    label: "Book a call",
+    value: "Schedule a time",
+    href: BOOKING_URL,
+    sub: "Practice-fit conversation on Calendly",
+    external: true,
+  },
+  {
+    icon: LinkedInIcon,
+    label: "LinkedIn",
+    value: "Dental Sleep Link",
+    href: LINKEDIN_COMPANY_URL,
+    sub: "Company page",
+    external: true,
+  },
+  {
     icon: Phone,
-    label: "Phone on file",
+    label: "Phone",
     value: SITE_CONTACT.phoneDisplay,
     href: `tel:${SITE_CONTACT.phone}`,
-    sub: "Pending Brian's confirmation before launch",
+    sub: "Pending confirmation",
   },
   {
     icon: Mail,
-    label: "Mailbox not confirmed",
+    label: "Email",
     value: SITE_CONTACT.email,
     href: `mailto:${SITE_CONTACT.email}`,
-    sub: `One-pager uses ${SITE_CONTACT.alternateEmail}`,
-  },
-  {
-    icon: MapPin,
-    label: "Street address",
-    value: "Not published",
-    href: "#inquiry-notes",
-    sub: "No headquarters address on this test site",
-  },
-  {
-    icon: Clock,
-    label: "Hours",
-    value: "Not published",
-    href: "#inquiry-notes",
-    sub: "Operating hours need confirmation",
+    sub: "Pending confirmation",
   },
 ];
 
@@ -58,7 +65,7 @@ const REASONS = [
 ];
 
 const PROMISES = [
-  { icon: Mail, label: "Prepare email — you still send it" },
+  { icon: Mail, label: "Prepare an email that you send yourself" },
   { icon: ShieldCheck, label: "No patient information" },
   { icon: Headphones, label: "Response time not promised" },
 ];
@@ -143,10 +150,28 @@ export default function ContactUs() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/70"
           >
-            This button prepares an email in your mail app. It does not deliver
-            the message, and it does not confirm that an inquiry was received.
-            Do not include patient or medical information.
+            Book a practice-fit call, or use the form below to prepare an email
+            in your mail app. The form does not send the message for you. Do
+            not include patient or medical information.
           </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="mt-8 flex justify-center"
+          >
+            <a
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-teal px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-teal/30 transition-transform hover:scale-105"
+            >
+              <CalendarDays className="h-4 w-4" aria-hidden="true" />
+              Book a call
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </a>
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0 }}
@@ -203,6 +228,8 @@ export default function ContactUs() {
                 <motion.a
                   key={c.label}
                   href={c.href}
+                  target={c.external ? "_blank" : undefined}
+                  rel={c.external ? "noopener noreferrer" : undefined}
                   initial={{ opacity: 0, y: 24 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-60px" }}
@@ -265,19 +292,19 @@ export default function ContactUs() {
                   const lines = [
                     `Name: ${first} ${last}`.trim(),
                     `Email: ${get("email")}`,
-                    `Phone: ${get("phone") || "—"}`,
-                    `Practice: ${get("practice") || "—"}`,
-                    `City & state: ${get("city") || "—"}`,
-                    `Treating dentist: ${get("is_dentist") || "—"}`,
+                    `Phone: ${get("phone") || "Not provided"}`,
+                    `Practice: ${get("practice") || "Not provided"}`,
+                    `City & state: ${get("city") || "Not provided"}`,
+                    `Treating dentist: ${get("is_dentist") || "Not provided"}`,
                     "",
-                    `Interest: ${reasons.length ? reasons.join(", ") : "—"}`,
+                    `Interest: ${reasons.length ? reasons.join(", ") : "Not provided"}`,
                     "",
-                    "— Message —",
+                    "Message:",
                     get("message"),
                   ];
                   const body = encodeURIComponent(lines.join("\n"));
                   const subject = encodeURIComponent(
-                    `Partner inquiry — ${first} ${last}`.trim() || "Partner inquiry",
+                    `Partner inquiry: ${first} ${last}`.trim() || "Partner inquiry",
                   );
                   window.location.href = `mailto:${SITE_CONTACT.email}?subject=${subject}&body=${body}`;
                   setSent(true);
@@ -326,8 +353,16 @@ export default function ContactUs() {
                         <a href={`mailto:${SITE_CONTACT.email}`} className="font-semibold text-teal hover:text-teal-light">
                           {SITE_CONTACT.email}
                         </a>
-                        . That mailbox is still pending confirmation against{" "}
-                        {SITE_CONTACT.alternateEmail}. No reply window is promised.
+                        {" "}or{" "}
+                        <a
+                          href={BOOKING_URL}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-semibold text-teal hover:text-teal-light"
+                        >
+                          book a call
+                        </a>
+                        . No reply window is promised.
                       </p>
                       <button
                         type="button"
@@ -352,7 +387,7 @@ export default function ContactUs() {
                       <SelectField
                         label="Are you the treating dentist?"
                         name="is_dentist"
-                        options={["Yes", "No — another clinician treats", "Not sure yet"]}
+                        options={["Yes", "No, another clinician treats", "Not sure yet"]}
                       />
 
                       <div>
@@ -461,12 +496,32 @@ export default function ContactUs() {
                   Before you write
                 </p>
                 <ul className="mt-4 space-y-3 text-sm leading-relaxed text-navy/70">
-                  <li>Social profiles are omitted until verified accounts exist.</li>
-                  <li>Do not include patient or medical information.</li>
                   <li>
-                    The public mailbox is unresolved: this site prepares mail to{" "}
-                    {SITE_CONTACT.email}; the one-pager lists {SITE_CONTACT.alternateEmail}.
+                    Prefer to talk?{" "}
+                    <a
+                      href={BOOKING_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-semibold text-teal-dark hover:text-teal"
+                    >
+                      Book a practice-fit call
+                    </a>
+                    .
                   </li>
+                  <li>
+                    Follow Dental Sleep Link on{" "}
+                    <a
+                      href={LINKEDIN_COMPANY_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-semibold text-teal-dark hover:text-teal"
+                    >
+                      LinkedIn
+                    </a>
+                    .
+                  </li>
+                  <li>Do not include patient or medical information.</li>
+                  <li>This form prepares mail to {SITE_CONTACT.email}.</li>
                 </ul>
               </div>
             </motion.div>
@@ -499,9 +554,8 @@ export default function ContactUs() {
                 No street address is published.
               </h2>
               <p className="mt-4 text-white/70">
-                A placeholder address, map, and phone number have been removed.
-                The (208) number and mailbox still need Brian&apos;s confirmation
-                before launch. Hours are not listed.
+                A street address and hours are not listed. The quickest way to
+                start is to book a practice-fit call.
               </p>
               <div className="mt-8 space-y-4">
                 <div className="flex items-start gap-3">
@@ -519,7 +573,7 @@ export default function ContactUs() {
                   </span>
                   <div>
                     <p className="text-sm font-semibold text-white">{SITE_CONTACT.email}</p>
-                    <p className="text-sm text-white/65">Also listed elsewhere: {SITE_CONTACT.alternateEmail}</p>
+                    <p className="text-sm text-white/65">Pending confirmation</p>
                   </div>
                 </div>
               </div>
@@ -575,7 +629,7 @@ export default function ContactUs() {
                 <div className="absolute bottom-6 left-6 rounded-2xl bg-white/95 px-4 py-3 shadow-xl ring-1 ring-navy/5 backdrop-blur">
                   <p className="text-sm font-bold text-navy">Address not published</p>
                   <p className="mt-1 text-[11px] uppercase tracking-wider text-navy/60">
-                    Confirm before launch
+                    Book a call or email us
                   </p>
                 </div>
               </div>

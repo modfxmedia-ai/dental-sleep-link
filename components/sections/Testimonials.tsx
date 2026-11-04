@@ -92,7 +92,7 @@ export default function Testimonials() {
                     .toUpperCase()}
                 </span>
                 <span>
-                  <p className="font-semibold text-white">— {t.name}</p>
+                  <p className="font-semibold text-white">{t.name}</p>
                   <p className="text-xs text-white/60">{t.role}</p>
                 </span>
               </figcaption>

@@ -6,7 +6,12 @@ import { motion } from "framer-motion";
 import { ArrowRight, Mail, Phone } from "lucide-react";
 
 import type { NavItem } from "@/types";
-import { CONTACT as SITE_CONTACT } from "@/lib/seo";
+import {
+  BOOKING_URL,
+  CONTACT as SITE_CONTACT,
+  LINKEDIN_COMPANY_URL,
+} from "@/lib/seo";
+import LinkedInIcon from "@/components/icons/LinkedInIcon";
 
 const QUICK_LINKS: NavItem[] = [
   { label: "Home", href: "/" },
@@ -74,7 +79,7 @@ export default function Footer() {
           <Link
             href="/"
             className="inline-flex items-center"
-            aria-label="Dental Sleep Link — Home"
+            aria-label="Dental Sleep Link home"
           >
             <FooterLogo />
           </Link>
@@ -84,6 +89,16 @@ export default function Footer() {
             training, and workflow implementation around dentist-led care.
             Your practice retains responsibility for clinical care.
           </p>
+
+          <a
+            href={LINKEDIN_COMPANY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Dental Sleep Link on LinkedIn"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-teal"
+          >
+            <LinkedInIcon className="h-5 w-5" />
+          </a>
         </motion.div>
 
         {/* Column 2 — Quick Links */}
@@ -173,14 +188,16 @@ export default function Footer() {
           <div className="rounded-2xl bg-gradient-to-br from-teal to-teal-dark p-6 shadow-lg shadow-teal/10">
             <h3 className="text-lg font-semibold text-white">Discuss practice fit</h3>
             <p className="mt-2 text-sm text-white/90">
-              A practice-fit conversation is the first step. No newsletter is
-              offered until subscription behavior is confirmed.
+              A practice-fit conversation is the first step. Pick a time that
+              works for you.
             </p>
             <Link
-              href="/contact-us"
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-navy px-4 py-2.5 text-sm font-semibold text-white transition-transform hover:scale-[1.02] hover:bg-navy-mid"
             >
-              Prepare an email
+              Book a call
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </div>

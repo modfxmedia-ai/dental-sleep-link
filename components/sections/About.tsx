@@ -10,6 +10,7 @@ import {
   Receipt,
   Sparkles,
 } from "lucide-react";
+import { BOOKING_URL } from "@/lib/seo";
 
 const BULLETS = [
   "Credentialing and documentation support",
@@ -19,7 +20,7 @@ const BULLETS = [
 ];
 
 const STAT_PILLS = [
-  { icon: Building2, value: "$20,000", label: "Implementation fees" },
+  { icon: Building2, value: "$25,000", label: "Implementation fees" },
   { icon: Receipt, value: "14%", label: "Appliance collections" },
   { icon: Stethoscope, value: "$249", label: "DSL membership" },
 ];
@@ -283,22 +284,26 @@ export default function About() {
                   Discuss practice fit
                 </h3>
                 <p className="mt-2 text-sm text-white/70">
-                  The contact page prepares an email in your own mail app. You
-                  still need to send it. Do not include patient or medical
-                  information. A response time is not promised until an owner
-                  confirms one.
+                  Book a practice-fit call on our calendar, or use the contact
+                  page to prepare an email in your own mail app. Do not include
+                  patient or medical information.
                 </p>
 
                 <Link
-                  href="/contact-us"
+                  href={BOOKING_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group relative mt-7 inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-teal to-teal-dark px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-teal/30 transition-transform hover:scale-[1.02]"
                 >
                   <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
-                  <span className="relative">Prepare email</span>
+                  <span className="relative">Book a call</span>
                 </Link>
 
                 <p className="mt-4 text-center text-[11px] text-white/50">
-                  Public phone, mailbox, and hours are still pending confirmation.
+                  Prefer email?{" "}
+                  <Link href="/contact-us" className="underline hover:text-white">
+                    Prepare an email
+                  </Link>
                 </p>
               </div>
             </div>

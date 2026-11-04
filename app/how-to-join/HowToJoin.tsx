@@ -16,6 +16,7 @@ import {
   ArrowUpRight,
   Clock,
 } from "lucide-react";
+import { BOOKING_URL } from "@/lib/seo";
 
 const STEPS = [
   {
@@ -43,9 +44,11 @@ const STEPS = [
     icon: MessageSquare,
     title: "Scope and economics review",
     body:
-      "Review the $20,000 implementation fees, the 14% collections fee, actual pass-through costs, and the separate $249 membership. The illustration is not a profit promise.",
+      "Review the $25,000 implementation fees ($5,000 initially, then $20,000 over the next 11 months, with Spencer Study Club included), the 14% collections fee, actual pass-through costs, and the separate $249 membership. The illustration is not a profit promise.",
     bullets: [
-      "$20,000 implementation fees",
+      "$25,000 implementation fees",
+      "$5,000 initially, $20,000 over 11 months",
+      "Spencer Study Club included",
       "14% of appliance collections",
       "Pass-throughs at actual cost",
       "Membership excluded from practice revenue",
@@ -61,7 +64,7 @@ const STEPS = [
     icon: MapPin,
     title: "Agreement and entity or payer requirements",
     body:
-      "Move forward only when the applicable agreement and entity or payment arrangements are ready. Deposits, refunds, and installment timing are not published.",
+      "Move forward only when the applicable agreement and entity or payment arrangements are ready. The standard implementation fees start with $5,000, followed by $20,000 over the next 11 months. Existing individual arrangements are separate.",
     bullets: [
       "Agreement before payment",
       "Entity requirements reviewed",
@@ -228,11 +231,13 @@ export default function HowToJoin() {
             className="mt-10 flex flex-wrap items-center justify-center gap-4"
           >
             <Link
-              href="/contact-us"
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-teal px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-teal/30 transition-transform hover:scale-105"
             >
               <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
-              <span className="relative">Discuss practice fit</span>
+              <span className="relative">Book a call</span>
               <ArrowRight className="relative h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
             <Link
@@ -530,10 +535,12 @@ export default function HowToJoin() {
                           ))}
                         </ul>
                         <Link
-                          href="/contact-us"
+                          href={BOOKING_URL}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="group mt-8 inline-flex items-center gap-2 rounded-full border border-teal/40 bg-teal/10 px-5 py-2.5 text-sm font-semibold text-teal-dark backdrop-blur transition-all hover:border-teal hover:bg-teal hover:text-white"
                         >
-                          Start with step {p.number}
+                          Book a call
                           <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                         </Link>
                       </motion.div>
@@ -579,10 +586,12 @@ export default function HowToJoin() {
             </p>
             <div className="relative mt-8 flex flex-wrap items-center justify-center gap-4">
               <Link
-                href="/contact-us"
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-teal-dark shadow-lg transition-transform hover:scale-105"
               >
-                Discuss practice fit
+                Book a call
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
