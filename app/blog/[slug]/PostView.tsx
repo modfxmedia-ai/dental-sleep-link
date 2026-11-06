@@ -14,7 +14,7 @@ import {
   ArrowRight,
   Lightbulb,
 } from "lucide-react";
-import { BOOKING_URL } from "@/lib/seo";
+import { BOOKING_URL, CTA } from "@/lib/seo";
 import type { Post, PostBlock } from "@/lib/posts";
 
 function slugify(s: string) {
@@ -446,11 +446,10 @@ export default function PostView({
               className="pointer-events-none absolute -top-20 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-white/20 blur-3xl"
             />
             <h2 className="relative text-3xl font-bold text-white sm:text-4xl">
-              This draft is not a clinical protocol.
+              {CTA.headline}
             </h2>
             <p className="relative mx-auto mt-4 max-w-xl text-white/80">
-              If you want to discuss practice fit, prepare an email. Authorship
-              and clinical wording are still under review.
+              {CTA.action} This draft is not a clinical protocol.
             </p>
             <div className="relative mt-8 flex flex-wrap items-center justify-center gap-4">
               <Link
@@ -459,7 +458,7 @@ export default function PostView({
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-teal-dark shadow-lg transition-transform hover:scale-105"
               >
-                Book a call
+                {CTA.button}
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link

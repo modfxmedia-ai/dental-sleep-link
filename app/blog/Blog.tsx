@@ -14,7 +14,7 @@ import {
   Search,
   HeartPulse,
 } from "lucide-react";
-import { BOOKING_URL } from "@/lib/seo";
+import { BOOKING_URL, CTA } from "@/lib/seo";
 import { useState } from "react";
 import { POSTS } from "@/lib/posts";
 
@@ -414,11 +414,10 @@ export default function Blog() {
               className="pointer-events-none absolute -top-20 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-white/20 blur-3xl"
             />
             <h2 className="relative text-3xl font-bold text-white sm:text-4xl">
-              Discuss practice fit
+              {CTA.headline}
             </h2>
             <p className="relative mx-auto mt-4 max-w-xl text-white/80">
-              A practice-fit conversation is the first step. These articles are
-              drafts held for authorship and clinical review.
+              {CTA.action} These articles are drafts held for authorship and clinical review.
             </p>
             <Link
               href={BOOKING_URL}
@@ -426,7 +425,7 @@ export default function Blog() {
               rel="noopener noreferrer"
               className="relative mx-auto mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-teal-dark shadow-lg transition-transform hover:scale-105"
             >
-              Book a call
+              {CTA.button}
               <ArrowRight className="h-4 w-4" />
             </Link>
           </motion.div>

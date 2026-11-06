@@ -14,7 +14,7 @@ import {
   Check,
   ArrowUpRight,
 } from "lucide-react";
-import { BOOKING_URL } from "@/lib/seo";
+import { BOOKING_URL, CTA } from "@/lib/seo";
 
 const PILLARS = [
   {
@@ -42,14 +42,14 @@ const PILLARS = [
     icon: Receipt,
     title: "Claims submission, follow-up, and reporting",
     body:
-      "Ongoing billing and support are included in the flat 14% of appliance collections. Appliance receipts go to the practice. DSL invoices monthly in arrears for services and approved pass-through costs. The final agreement controls.",
+      "Medical billing continues after launch as part of your ongoing support. Appliance payments go to the practice. The final agreement controls.",
     bullets: [
       "Claims submission and follow-up",
       "Reporting on agreed activity",
-      "14% of appliance collections",
+      "Credentialing coordination",
       "Not a promise of faster payment",
     ],
-    metric: { value: "14%", label: "Of appliance collections" },
+    metric: { value: "Ongoing", label: "Medical billing" },
     image: "/images/what-you-get/billing.webp",
     imageAlt: "Billing support illustration",
   },
@@ -58,11 +58,11 @@ const PILLARS = [
     number: "03",
     tag: "Training",
     icon: GraduationCap,
-    title: "Staff training and workflow implementation",
+    title: "In-office team training and workflow implementation",
     body:
-      "Agreed setup includes team training and billing setup. Treating clinicians select, fit, adjust, and oversee appliances. DSL does not diagnose patients or promise a first case within 30 days.",
+      "Agreed setup includes in-office team training and billing setup. Treating clinicians select, fit, adjust, and oversee appliances. DSL does not diagnose patients or promise a first case within 30 days.",
     bullets: [
-      "Team training where capacity allows",
+      "In-office team training",
       "Workflow implementation",
       "About six months of planning",
       "Mentorship hours are not listed until confirmed",
@@ -78,32 +78,32 @@ const PILLARS = [
     icon: Boxes,
     title: "Coordination is separate from third-party purchases",
     body:
-      "DSL can coordinate agreed nonclinical steps. Software, appliances, testing, and additional marketing are not bundled unless specifically approved. Lab costs remain practice costs. The illustration assumes $300 each.",
+      "DSL can coordinate agreed nonclinical steps. Software, appliances, testing, and additional marketing are not bundled unless specifically approved. Lab costs remain practice costs.",
     bullets: [
-      "Software is a pass-through assumption",
-      "$599 per month is not a vendor quote",
+      "Software and lab costs are separate",
       "Appliances and testing are separate",
       "No supplied test-kit promise",
+      "Details discussed during a consultation",
     ],
-    metric: { value: "Actual", label: "Approved pass-through cost" },
+    metric: { value: "Separate", label: "Third-party purchases" },
     image: "/images/what-you-get/turnkey.jpg",
-    imageAlt: "Supplies coordinated separately from the services fee",
+    imageAlt: "Supplies coordinated separately from Dental Sleep Link services",
   },
   {
     id: "support",
     number: "05",
     tag: "Ongoing",
     icon: TrendingUp,
-    title: "Ongoing nonclinical support",
+    title: "Ongoing support as your program grows",
     body:
-      "After launch, support continues under the services agreement. Response times, live shadowing, dashboards, and specialist networks are not listed as available until the operational owner confirms them.",
+      "Dental Sleep Link provides ongoing support, including in-office team training, remote support, credentialing coordination, and medical billing. It is a continuing relationship to help your practice build and grow its sleep program. Spencer Study Club membership is included, a $6,200 value.",
     bullets: [
-      "Ongoing billing and support included in 14%",
-      "Separate $249 DSL membership",
-      "Membership is not practice revenue",
-      "Service levels still need confirmation",
+      "In-office team training",
+      "Remote support",
+      "Credentialing coordination and medical billing",
+      "Spencer Study Club membership included",
     ],
-    metric: { value: "$249", label: "Annual membership, DSL-retained" },
+    metric: { value: "$6,200", label: "Spencer Study Club value, included" },
     image: "/images/what-you-get/scale.webp",
     imageAlt: "Ongoing support planning image",
   },
@@ -626,11 +626,10 @@ export default function WhatYouGetPage() {
               className="pointer-events-none absolute -top-20 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-white/20 blur-3xl"
             />
             <h2 className="relative text-3xl font-bold text-white sm:text-4xl">
-              Review the services before you plan.
+              {CTA.headline}
             </h2>
             <p className="relative mx-auto mt-4 max-w-xl text-white/80">
-              A practice-fit conversation comes first. No response-time promise
-              is published until an owner confirms one.
+              {CTA.action}
             </p>
             <div className="relative mt-8 flex flex-wrap items-center justify-center gap-4">
               <Link
@@ -639,7 +638,7 @@ export default function WhatYouGetPage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-teal-dark shadow-lg transition-transform hover:scale-105"
               >
-                Book a call
+                {CTA.button}
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link

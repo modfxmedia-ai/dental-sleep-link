@@ -8,66 +8,33 @@ import {
   Sparkles,
   Receipt,
   Workflow,
-  Users,
-  BadgeDollarSign,
+  GraduationCap,
+  Headphones,
+  ClipboardCheck,
+  Award,
 } from "lucide-react";
-import EconomicsTable from "@/components/sections/EconomicsTable";
-import { BOOKING_URL } from "@/lib/seo";
+import { BOOKING_URL, CTA, SPENCER_STUDY_CLUB } from "@/lib/seo";
 
-const TIERS = [
+const FEES = [
   {
-    eyebrow: "Implementation",
-    title: "Implementation fees",
-    price: "$25,000",
-    note: "$5,000 initially, with the remaining $20,000 spread over the next 11 months. Covers the agreed credentialing, setup, and team-training or billing-setup work. Shown separately from operating illustrations.",
+    eyebrow: "To get started",
+    title: "Implementation fee",
+    note: "Covers credentialing coordination, practice and billing setup, and in-office team training to launch your sleep program.",
     icon: Workflow,
-    includes: [
-      "Spencer Study Club included",
-      "Credentialing assistance",
-      "Practice and billing setup",
-      "Team training",
-      "Separate from the 14% fee",
-    ],
   },
   {
-    eyebrow: "Ongoing",
-    title: "Services fee",
-    price: "14% of appliance collections",
-    note: "A flat fee on appliance collections, including ongoing billing and support under the services agreement. Not calculated on production, billed charges, or general-dentistry revenue.",
+    eyebrow: "As you grow",
+    title: "Ongoing service fee",
+    note: "Covers the continuing support your practice receives: medical billing, remote support, credentialing coordination, and ongoing team training.",
     icon: Receipt,
-    includes: [
-      "Claims submission and follow-up",
-      "Reporting",
-      "Ongoing nonclinical support",
-      "Exact collections definition is for counsel",
-    ],
   },
-  {
-    eyebrow: "Pass-through",
-    title: "Approved costs at actual cost",
-    price: "Actual approved cost",
-    note: "Fixed costs that are approved pass through at actual cost. $599 per month for software is a planning assumption, not a percentage fee or a guaranteed vendor quote.",
-    icon: BadgeDollarSign,
-    includes: [
-      "Retires the former 6% software proxy",
-      "Lab cost stays with the practice",
-      "Illustration uses $300 per appliance",
-      "Other pass-throughs need approval",
-    ],
-  },
-  {
-    eyebrow: "Separate",
-    title: "Patient membership",
-    price: "$249 per year",
-    note: "Additional to the appliance payment and retained by DSL. Excluded from illustrated practice revenue. The 14% fee is not applied again to the same receipt.",
-    icon: Users,
-    includes: [
-      "Not practice revenue in the illustration",
-      "Does not replace clinical follow-up",
-      "Patient terms still need review",
-      "Not public enrollment language",
-    ],
-  },
+];
+
+const ONGOING_SUPPORT = [
+  { icon: GraduationCap, label: "In-office team training" },
+  { icon: Headphones, label: "Remote support" },
+  { icon: ClipboardCheck, label: "Credentialing coordination" },
+  { icon: Receipt, label: "Medical billing" },
 ];
 
 export default function Pricing() {
@@ -94,24 +61,63 @@ export default function Pricing() {
         >
           <span className="inline-flex items-center gap-2 rounded-full bg-teal/10 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.25em] text-teal ring-1 ring-teal/30">
             <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
-            Planning economics
+            Working together
           </span>
           <h2 className="mt-5 text-3xl font-bold text-navy sm:text-4xl">
-            Implementation, ongoing support{" "}
+            A continuing partnership,{" "}
             <span className="bg-gradient-to-r from-teal-dark to-teal bg-clip-text text-transparent">
-              and practice costs.
+              not a one-time setup.
             </span>
           </h2>
           <p className="mt-4 text-base leading-relaxed text-navy/70 sm:text-lg">
-            Go-live depends on payer, entity, staff, and clinical readiness.
-            Credentialing, setup, and training overlap across an approximately
-            six-month planning horizon. Profitability is not promised for the
-            first quarter, and there is no 30-day first-case guarantee.
+            Dental Sleep Link stays with your practice after launch, helping
+            your team build and grow its sleep program over time. There is an
+            implementation fee and an ongoing service fee. Details are
+            discussed during a consultation.
           </p>
         </motion.div>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-2">
-          {TIERS.map((t, i) => {
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.5 }}
+          className="relative mt-12 overflow-hidden rounded-[2rem] bg-gradient-to-br from-navy via-navy-mid to-navy p-8 text-white shadow-2xl shadow-navy/20 ring-1 ring-white/10 sm:p-10"
+        >
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-teal/25 blur-3xl"
+          />
+          <div className="relative flex flex-col items-start gap-6 md:flex-row md:items-center md:justify-between">
+            <div className="flex items-start gap-4">
+              <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-teal to-teal-dark shadow-lg shadow-teal/30 ring-1 ring-white/20">
+                <Award className="h-7 w-7" aria-hidden="true" />
+              </span>
+              <div>
+                <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-teal">
+                  Included with your partnership
+                </p>
+                <h3 className="mt-2 text-2xl font-bold sm:text-3xl">
+                  {SPENCER_STUDY_CLUB.name} membership included
+                </h3>
+                <p className="mt-2 text-sm text-white/70 sm:text-base">
+                  Included with your Dental Sleep Link partnership.
+                </p>
+              </div>
+            </div>
+            <div className="shrink-0 rounded-2xl border border-teal/40 bg-teal/10 px-6 py-4 text-center">
+              <p className="text-4xl font-bold text-teal">
+                {SPENCER_STUDY_CLUB.value}
+              </p>
+              <p className="mt-1 text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
+                Value
+              </p>
+            </div>
+          </div>
+        </motion.div>
+
+        <div className="mt-6 grid gap-6 md:grid-cols-2">
+          {FEES.map((t, i) => {
             const Icon = t.icon;
             return (
               <motion.div
@@ -131,51 +137,75 @@ export default function Pricing() {
                   </span>
                   <h3 className="text-xl font-bold text-navy">{t.title}</h3>
                 </div>
-                <p className="mt-5 text-2xl font-bold text-navy">{t.price}</p>
-                <p className="mt-1 text-sm text-navy/60">{t.note}</p>
-                <ul className="mt-6 space-y-2.5 text-sm text-navy/75">
-                  {t.includes.map((b) => (
-                    <li key={b} className="flex items-start gap-2">
-                      <Check
-                        className="mt-0.5 h-4 w-4 shrink-0 text-teal"
-                        aria-hidden="true"
-                      />
-                      <span>{b}</span>
-                    </li>
-                  ))}
-                </ul>
+                <p className="mt-5 text-sm leading-relaxed text-navy/70">
+                  {t.note}
+                </p>
+                <p className="mt-4 text-sm font-semibold text-teal-dark">
+                  Details discussed during a consultation.
+                </p>
               </motion.div>
             );
           })}
         </div>
-
-        <EconomicsTable />
 
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.5 }}
-          className="mx-auto mt-10 max-w-4xl rounded-2xl border border-navy/10 bg-navy/[0.03] p-5 text-sm leading-relaxed text-navy/70"
+          className="mt-6 rounded-[2rem] border border-navy/10 bg-navy/[0.03] p-8 sm:p-10"
         >
-          <p>
-            Proposed funds flow, pending the final agreement: appliance receipts
-            go to the practice, and DSL invoices monthly in arrears for services
-            and approved pass-through costs. This is the current standard
-            offer; existing individual arrangements are separate. Refunds and
-            exclusivity are not set on this site.
+          <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-teal-dark">
+            Ongoing support
           </p>
-          <div className="mt-4 flex justify-center sm:justify-start">
-            <Link
-              href={BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 rounded-full bg-navy px-5 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-white transition-transform hover:scale-105"
-            >
-              Book a call
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-            </Link>
-          </div>
+          <h3 className="mt-2 text-2xl font-bold text-navy">
+            Support that continues as your sleep program grows.
+          </h3>
+          <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {ONGOING_SUPPORT.map(({ icon: Icon, label }) => (
+              <li
+                key={label}
+                className="flex items-center gap-3 rounded-2xl bg-white p-4 text-sm font-semibold text-navy ring-1 ring-navy/10"
+              >
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-teal/10 text-teal-dark">
+                  <Icon className="h-4 w-4" aria-hidden="true" />
+                </span>
+                {label}
+              </li>
+            ))}
+          </ul>
+          <ul className="mt-6 space-y-2 text-sm text-navy/70">
+            {[
+              "A continuing relationship, not a one-time setup",
+              "Your practice keeps responsibility for clinical care",
+            ].map((b) => (
+              <li key={b} className="flex items-start gap-2">
+                <Check className="mt-0.5 h-4 w-4 shrink-0 text-teal" aria-hidden="true" />
+                <span>{b}</span>
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.5 }}
+          className="mt-10 flex flex-col items-center gap-5 rounded-[2rem] bg-gradient-to-br from-teal to-teal-dark p-8 text-center shadow-xl shadow-teal/20 sm:p-10"
+        >
+          <h3 className="text-2xl font-bold text-white sm:text-3xl">
+            {CTA.headline} {CTA.action}
+          </h3>
+          <Link
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-teal-dark shadow-lg transition-transform hover:scale-105"
+          >
+            {CTA.button}
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+          </Link>
         </motion.div>
       </div>
     </section>

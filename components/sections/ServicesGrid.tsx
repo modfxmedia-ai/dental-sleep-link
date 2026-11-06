@@ -25,10 +25,10 @@ const SERVICES = [
     id: "billing",
     number: "02",
     tag: "Billing",
-    title: "Ongoing billing under the services agreement",
+    title: "Ongoing billing and remote support",
     body:
-      "Ongoing billing and support are included in the 14% fee on appliance collections. The practice receives appliance payments.",
-    bullets: ["14% of appliance collections", "Monthly invoice in arrears", "Not all practice revenue"],
+      "Billing and remote support continue after launch, as part of a continuing relationship that helps your practice grow its sleep program.",
+    bullets: ["Ongoing medical billing", "Remote support", "Credentialing coordination"],
     icon: FileCheck2,
   },
   {
@@ -37,8 +37,8 @@ const SERVICES = [
     tag: "Training",
     title: "Team training and workflow implementation",
     body:
-      "Use your existing team where capacity permits. Staffing and protected clinical time are assessed during planning.",
-    bullets: ["Agreed staff training", "Workflow implementation", "Capacity reviewed first"],
+      "In-office team training at launch and as your program grows. Staffing and protected clinical time are assessed during planning.",
+    bullets: ["In-office team training", "Workflow implementation", "Capacity reviewed first"],
     icon: Rocket,
   },
   {

@@ -14,6 +14,18 @@ export const CONTACT = {
 export const BOOKING_URL =
   "https://calendly.com/bbriesemeister88/dental-sleep-link";
 
+export const CTA = {
+  headline: "Ready to grow dental sleep medicine in your practice?",
+  action: "Book a call today.",
+  button: "Book a call today",
+};
+
+export const SPENCER_STUDY_CLUB = {
+  name: "Spencer Study Club",
+  value: "$6,200",
+  line: "Spencer Study Club membership included, a $6,200 value.",
+};
+
 export const LINKEDIN_COMPANY_URL =
   "https://www.linkedin.com/company/145345328/";
 

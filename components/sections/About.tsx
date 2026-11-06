@@ -15,14 +15,14 @@ import { BOOKING_URL } from "@/lib/seo";
 const BULLETS = [
   "Credentialing and documentation support",
   "Team training where existing capacity allows",
-  "Ongoing billing support at 14% of appliance collections",
+  "Ongoing medical billing and remote support",
   "Clinical care remains the practice's responsibility",
 ];
 
 const STAT_PILLS = [
-  { icon: Building2, value: "$25,000", label: "Implementation fees" },
-  { icon: Receipt, value: "14%", label: "Appliance collections" },
-  { icon: Stethoscope, value: "$249", label: "DSL membership" },
+  { icon: Building2, value: "$6,200", label: "Spencer Study Club value, included" },
+  { icon: Receipt, value: "Ongoing", label: "Billing and remote support" },
+  { icon: Stethoscope, value: "In-office", label: "Team training" },
 ];
 
 export default function About() {
@@ -90,10 +90,11 @@ export default function About() {
             .
           </h2>
           <p className="mt-5 text-lg text-navy/70">
-            Dental Sleep Link helps general dentists add dental sleep medicine
-            with credentialing assistance, team training, and ongoing billing.
-            Staffing needs are assessed during planning. The practice keeps
-            clinical responsibility.
+            Dental Sleep Link provides ongoing support, including in-office
+            team training, remote support, credentialing coordination, and
+            medical billing. It is a continuing relationship to help practices
+            build and grow their sleep programs. The practice keeps clinical
+            responsibility.
           </p>
         </motion.div>
 

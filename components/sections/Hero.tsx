@@ -10,7 +10,7 @@ import {
   Activity,
   Award,
 } from "lucide-react";
-import { BOOKING_URL } from "@/lib/seo";
+import { BOOKING_URL, CTA } from "@/lib/seo";
 
 const MARQUEE_ITEMS = [
   "Implementation support",
@@ -159,7 +159,7 @@ export default function Hero() {
               className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-teal px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-teal/30 transition-transform hover:scale-105 sm:px-7"
             >
               <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
-              <span className="relative">Book a call</span>
+              <span className="relative">{CTA.button}</span>
               <ArrowRight className="relative h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
             <Link

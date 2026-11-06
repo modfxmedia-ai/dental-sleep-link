@@ -112,7 +112,7 @@ export const POSTS: Post[] = [
       { type: "h2", text: "Follow the billing through", id: "billing" },
       {
         type: "p",
-        text: "Billing follow-through means claims are submitted, pending items are watched, and collections are recorded as money actually received. Dental Sleep Link’s planning illustration uses two volumes only: 6 and 12 completed appliances a month. At $1,800 average collections each, the illustrative annual balances before other expenses and taxes are $82,668 and $172,524, after the 14% fee, a $300 lab cost, and $599 monthly software. Those balances are projections, not guaranteed results or take-home income. The separate $25,000 implementation fees ($5,000 initially, then $20,000 over the next 11 months) and the $249 membership retained by DSL sit outside that practice illustration. A third volume is not shown.",
+        text: "Billing follow-through means claims are submitted, pending items are watched, and collections are recorded as money actually received. Dental Sleep Link supports this as part of a continuing relationship: ongoing medical billing, remote support, credentialing coordination, and in-office team training as the program grows. Collections vary with payer contracts, coverage, documentation, and patient responsibility.",
       },
       {
         type: "ul",
@@ -170,7 +170,7 @@ export const POSTS: Post[] = [
       { type: "h2", text: "Follow-up is clinical", id: "follow-up" },
       {
         type: "p",
-        text: "The AASM and AADSM joint clinical practice guideline supports qualified-dentist oversight for dental side effects and occlusal changes, physician follow-up testing, and periodic follow-up visits. A $249 annual membership retained by Dental Sleep Link cannot substitute for clinically necessary follow-up, and it cannot promise that teeth will not move or that office visits will be unnecessary.",
+        text: "The AASM and AADSM joint clinical practice guideline supports qualified-dentist oversight for dental side effects and occlusal changes, physician follow-up testing, and periodic follow-up visits. Support services cannot substitute for clinically necessary follow-up, and they cannot promise that teeth will not move or that office visits will be unnecessary.",
       },
       {
         type: "p",

@@ -42,7 +42,7 @@ const GROUPS: SiteGroup[] = [
     eyebrow: "01 / Start here",
     title: "Main pages",
     blurb:
-      "The fastest tour of who we are, what the partnership delivers, and how the economics work.",
+      "The fastest tour of who we are, what the partnership delivers, and how the ongoing partnership works.",
     links: [
       {
         href: "/",

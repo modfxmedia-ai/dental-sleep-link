@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import {
   BOOKING_URL,
+  CTA,
   CONTACT as SITE_CONTACT,
   LINKEDIN_COMPANY_URL,
 } from "@/lib/seo";
@@ -150,7 +151,7 @@ export default function ContactUs() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/70"
           >
-            Book a practice-fit call, or use the form below to prepare an email
+            {CTA.headline} {CTA.action} You can also use the form below to prepare an email
             in your mail app. The form does not send the message for you. Do
             not include patient or medical information.
           </motion.p>
@@ -168,7 +169,7 @@ export default function ContactUs() {
               className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-teal px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-teal/30 transition-transform hover:scale-105"
             >
               <CalendarDays className="h-4 w-4" aria-hidden="true" />
-              Book a call
+              {CTA.button}
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </a>
           </motion.div>

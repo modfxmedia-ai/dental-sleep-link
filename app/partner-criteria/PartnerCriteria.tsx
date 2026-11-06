@@ -16,7 +16,7 @@ import {
   ShieldCheck,
   X,
 } from "lucide-react";
-import { BOOKING_URL } from "@/lib/seo";
+import { BOOKING_URL, CTA } from "@/lib/seo";
 
 const CRITERIA = [
   {
@@ -598,11 +598,10 @@ export default function PartnerCriteria() {
               className="pointer-events-none absolute -top-20 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-white/20 blur-3xl"
             />
             <h2 className="relative text-3xl font-bold text-white sm:text-4xl">
-              Think you&apos;re a fit?
+              {CTA.headline}
             </h2>
             <p className="relative mx-auto mt-4 max-w-xl text-white/80">
-              Tell us about the dentist, the champion, and the time you can
-              protect. A reply window is not promised until an owner confirms one.
+              {CTA.action}
             </p>
             <div className="relative mt-8 flex flex-wrap items-center justify-center gap-4">
               <Link
@@ -611,7 +610,7 @@ export default function PartnerCriteria() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-teal-dark shadow-lg transition-transform hover:scale-105"
               >
-                Book a call
+                {CTA.button}
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link

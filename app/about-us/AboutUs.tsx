@@ -23,12 +23,12 @@ import {
   TrendingUp,
 } from "lucide-react";
 import LinkedInIcon from "@/components/icons/LinkedInIcon";
-import { BOOKING_URL, FOUNDER } from "@/lib/seo";
+import { BOOKING_URL, CTA, FOUNDER } from "@/lib/seo";
 
 const HERO_STATS = [
-  { value: "$25k", label: "Implementation fees" },
-  { value: "14%", label: "Appliance collections" },
-  { value: "$249", label: "DSL membership" },
+  { value: "$6,200", label: "Spencer Study Club value" },
+  { value: "In-office", label: "Team training" },
+  { value: "Ongoing", label: "Billing and remote support" },
   { value: "~6 mo", label: "Planning horizon" },
 ];
 
@@ -83,21 +83,21 @@ const DIFFERENTIATORS = [
   {
     number: "05",
     icon: Heart,
-    title: "Ongoing nonclinical support",
-    body: "Ongoing billing and support are included in the 14% fee on appliance collections. Specific response times are not published yet.",
+    title: "Ongoing support",
+    body: "In-office team training, remote support, credentialing coordination, and medical billing continue after launch, so your practice can keep growing its sleep program.",
   },
 ];
 
 const VALUES = [
   {
     icon: Target,
-    title: "Clear commercial terms",
-    body: "Implementation fees, the collections fee, pass-through costs, and the separate membership are stated separately.",
+    title: "A continuing relationship",
+    body: "Support does not end at launch. Dental Sleep Link stays with your practice as it builds and grows its sleep program.",
   },
   {
     icon: Heart,
     title: "Patient care stays clinical",
-    body: "A membership cannot replace diagnosis, appliance oversight, or clinically necessary follow-up.",
+    body: "Diagnosis, appliance oversight, and clinically necessary follow-up stay with the treating clinicians.",
   },
   {
     icon: Compass,
@@ -553,11 +553,11 @@ function WhoWeAre() {
             className="space-y-5"
           >
             <p className="text-lg leading-relaxed text-navy/80">
-              Implementation fees are $25,000: $5,000 initially, with the
-              remaining $20,000 spread over the next 11 months. Spencer Study
-              Club is included. Ongoing billing and support are
-              14% of appliance collections. Approved costs pass through at
-              actual cost, and the $249 annual membership is retained by DSL.
+              Dental Sleep Link provides ongoing support, including in-office
+              team training, remote support, credentialing coordination, and
+              medical billing. There is an implementation fee and an ongoing
+              service fee, with details discussed during a consultation.
+              Spencer Study Club membership is included, a $6,200 value.
             </p>
             <p className="text-lg leading-relaxed text-navy/80">
               An initial cohort of about three to five practices is planned.
@@ -1081,7 +1081,7 @@ function CTABand() {
           transition={{ duration: 0.6 }}
           className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl"
         >
-          Discuss whether your practice is ready to plan.
+          {CTA.headline}
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 16 }}
@@ -1090,8 +1090,7 @@ function CTABand() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="mx-auto mt-6 max-w-2xl text-lg text-white/85"
         >
-          A practice-fit conversation comes before any agreement. No payment is
-          requested on this site, and launch depends on readiness.
+          {CTA.action}
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -1106,7 +1105,7 @@ function CTABand() {
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-teal-dark shadow-2xl shadow-black/20 transition-all hover:bg-navy hover:text-white"
           >
-            Book a call
+            {CTA.button}
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Link>
           <Link

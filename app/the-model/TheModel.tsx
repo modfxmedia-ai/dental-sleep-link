@@ -15,8 +15,7 @@ import {
   ArrowUpRight,
   Scale,
 } from "lucide-react";
-import { BOOKING_URL } from "@/lib/seo";
-import EconomicsTable from "@/components/sections/EconomicsTable";
+import { BOOKING_URL, CTA } from "@/lib/seo";
 
 const STEPS = [
   {
@@ -66,12 +65,12 @@ const STEPS = [
     bullets: [
       "Credentialing assistance",
       "Claims submission and follow-up",
-      "14% of appliance collections",
+      "Credentialing coordination",
       "No national-contract uplift claimed",
     ],
     image: "/images/the-model/step-3-v2.webp",
     imageAlt: "Billing support, not a results dashboard",
-    metric: { value: "14%", label: "Of appliance collections" },
+    metric: { value: "Ongoing", label: "Medical billing support" },
   },
   {
     id: "clinical",
@@ -94,20 +93,20 @@ const STEPS = [
   {
     id: "funds",
     number: "05",
-    tag: "Funds",
+    tag: "Ongoing",
     icon: Compass,
-    title: "Practice receipts and a monthly invoice",
+    title: "Ongoing support as your program grows",
     body:
-      "Under the latest proposed funds flow, appliance receipts go to the practice. DSL invoices monthly in arrears for services and approved pass-through costs. The final agreement controls.",
+      "Dental Sleep Link stays with your practice after launch. Ongoing support includes in-office team training, remote support, credentialing coordination, and medical billing, so your team can build and grow its sleep program.",
     bullets: [
-      "Receipts stay with the practice",
-      "Monthly invoice in arrears",
-      "Approved costs at actual cost",
-      "No account sweep is promised",
+      "In-office team training",
+      "Remote support",
+      "Credentialing coordination",
+      "Medical billing",
     ],
     image: "/images/the-model/step-5.jpg",
-    imageAlt: "Planning discussion of funds flow",
-    metric: { value: "$25k", label: "Separate implementation fees" },
+    imageAlt: "Ongoing support planning discussion",
+    metric: { value: "$6,200", label: "Spencer Study Club value, included" },
   },
 ];
 
@@ -591,23 +590,21 @@ export default function TheModel() {
                   Agreement controls
                 </p>
                 <h2 className="mt-2 text-2xl font-bold text-navy sm:text-3xl">
-                  Ownership, services, and funds flow
+                  Ownership, services, and fees
                 </h2>
                 <p className="mt-4 text-sm leading-relaxed text-navy/70 sm:text-base">
                   Ownership, services, and any transaction-related rights are
                   governed by the final agreement. This page does not describe
                   drag-along rights, practice equity, or a share of future exit
-                  proceeds. Appliance receipts go to the practice. DSL invoices
-                  monthly in arrears for its services and approved pass-through
-                  costs.
+                  proceeds. There is an implementation fee and an ongoing
+                  service fee. Details are discussed during a consultation.
                 </p>
                 <ul className="mt-5 grid gap-2 text-sm text-navy/75 sm:grid-cols-2">
                   {[
-                    "$25,000 implementation fees: $5,000 initially, then $20,000 over 11 months",
-                    "Spencer Study Club included",
-                    "14% of appliance collections, including ongoing billing",
-                    "Approved costs pass through at actual cost",
-                    "$249 membership retained by DSL and excluded from practice revenue",
+                    "Implementation fee to launch your sleep program",
+                    "Ongoing service fee for continuing support",
+                    "Spencer Study Club membership included, a $6,200 value",
+                    "Fee details discussed during a consultation",
                   ].map((b) => (
                     <li key={b} className="flex items-start gap-2">
                       <Check className="mt-1 h-4 w-4 shrink-0 text-teal" aria-hidden="true" />
@@ -615,7 +612,6 @@ export default function TheModel() {
                     </li>
                   ))}
                 </ul>
-                <EconomicsTable />
               </div>
             </div>
           </motion.div>
@@ -647,11 +643,10 @@ export default function TheModel() {
               className="pointer-events-none absolute -top-20 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-white/20 blur-3xl"
             />
             <h2 className="relative text-3xl font-bold text-white sm:text-4xl">
-              Walk through fit, scope, and timing.
+              {CTA.headline}
             </h2>
             <p className="relative mx-auto mt-4 max-w-xl text-white/80">
-              Start with a practice-fit conversation. Payment is not requested
-              before the applicable agreement and payment arrangements are ready.
+              {CTA.action}
             </p>
             <div className="relative mt-8 flex flex-wrap items-center justify-center gap-4">
               <Link
@@ -660,7 +655,7 @@ export default function TheModel() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-teal-dark shadow-lg transition-transform hover:scale-105"
               >
-                Book a call
+                {CTA.button}
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link

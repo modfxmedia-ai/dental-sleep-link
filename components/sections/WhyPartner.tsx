@@ -35,7 +35,7 @@ const PILLARS = [
     icon: HandCoins,
     image: "/images/chin-strap.jpg",
     stats: [
-      { label: "Appliance collections", value: "14%" },
+      { label: "Billing support", value: "Ongoing" },
       { label: "Payment timing", value: "Varies" },
     ],
   },

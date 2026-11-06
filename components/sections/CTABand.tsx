@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { BOOKING_URL } from "@/lib/seo";
+import { BOOKING_URL, CTA } from "@/lib/seo";
 
 export default function CTABand() {
   return (
@@ -31,31 +31,27 @@ export default function CTABand() {
             className="absolute -bottom-20 -left-10 h-60 w-60 rounded-full bg-navy/40 blur-3xl"
           />
 
-          <p className="relative text-xs font-semibold uppercase tracking-[0.3em] text-white/80">
-            Planning conversation
-          </p>
-          <h2 className="relative mt-3 text-3xl font-bold text-white sm:text-4xl">
-            Discuss whether the program fits your practice.
+          <h2 className="relative text-3xl font-bold text-white sm:text-4xl">
+            {CTA.headline}
           </h2>
-          <p className="relative mx-auto mt-4 max-w-2xl text-white/85">
-            The first step is a practice-fit conversation. Implementation
-            planning is about six months, and launch depends on readiness.
+          <p className="relative mx-auto mt-4 max-w-2xl text-lg font-semibold text-white/90">
+            {CTA.action}
           </p>
           <div className="relative mt-8 flex flex-wrap items-center justify-center gap-4">
-            <Link
-              href="/how-to-join"
-              className="group inline-flex items-center gap-2 rounded-full bg-white px-7 py-3 text-sm font-semibold text-navy transition-transform hover:scale-105"
-            >
-              See how to join
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
             <Link
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2 rounded-full bg-white px-7 py-3 text-sm font-semibold text-navy transition-transform hover:scale-105"
+            >
+              {CTA.button}
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+            <Link
+              href="/how-to-join"
               className="inline-flex items-center gap-2 rounded-full border border-white/40 px-7 py-3 text-sm font-semibold text-white transition-colors hover:border-white hover:bg-white/10"
             >
-              Book a call
+              See how to join
             </Link>
           </div>
         </motion.div>

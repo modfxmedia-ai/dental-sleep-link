@@ -13,7 +13,7 @@ const FAQS = [
   {
     id: "what-you-get",
     q: "What do I receive?",
-    a: "Agreed implementation work covers credentialing assistance, setup, and team training, including billing setup. Ongoing services include claims submission and follow-up, reporting, and other agreed nonclinical support, billed as 14% of appliance collections. Software, appliances, testing, and additional marketing are not bundled into that fee. Collections vary with payer contracts, coverage, documentation, and patient responsibility.",
+    a: "Implementation covers credentialing coordination, practice and billing setup, and in-office team training. After launch, Dental Sleep Link provides ongoing support, including in-office team training, remote support, credentialing coordination, and medical billing. It is a continuing relationship to help your practice build and grow its sleep program. Spencer Study Club membership is included, a $6,200 value. Collections vary with payer contracts, coverage, documentation, and patient responsibility.",
   },
   {
     id: "ownership",
@@ -23,12 +23,12 @@ const FAQS = [
   {
     id: "economics",
     q: "How is the partnership priced?",
-    a: "The current standard offer is $25,000 in implementation fees: $5,000 initially, with the remaining $20,000 spread over the next 11 months. It covers the agreed credentialing, setup, and team-training or billing-setup work, and Spencer Study Club is included. Existing individual arrangements are separate. Ongoing support is a flat 14% of appliance collections and includes ongoing billing and support under the services agreement. Approved fixed costs pass through at actual cost. A $599 monthly software cost is a planning assumption, not a guaranteed vendor quote. A separate $249 annual patient membership is retained by DSL, is additional to the appliance payment, and is excluded from illustrated practice revenue. The 14% fee is not applied again to that membership. These figures are not a promise of first-quarter profit.",
+    a: "There is an implementation fee to launch your sleep program and an ongoing service fee for continuing support. Spencer Study Club membership is included, a $6,200 value. Fee details are discussed during a consultation. Book a call to talk through what fits your practice.",
   },
   {
     id: "billing",
     q: "How does medical billing work?",
-    a: "DSL supports credentialing, claims submission, follow-up, and reporting for dentist-led care. Reimbursement and payment timing are not guaranteed. Under the latest proposed funds flow, appliance receipts go to the practice, and DSL invoices monthly in arrears for its services and approved pass-through costs. The final agreement controls. DSL does not promise to hold practice funds, remit a fixed share, or sweep accounts.",
+    a: "DSL supports credentialing, claims submission, follow-up, and reporting for dentist-led care. Reimbursement and payment timing are not guaranteed. Appliance payments go to the practice. The final agreement controls.",
   },
   {
     id: "experience",
@@ -76,8 +76,8 @@ export default function FAQSection() {
             Questions about working together.
           </h2>
           <p className="mt-4 text-navy/70">
-            Commercial terms below follow the current planning materials.
-            Agreement language still needs counsel review.
+            Answers to common questions. Fee details are discussed during a
+            consultation.
           </p>
         </motion.div>
 

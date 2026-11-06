@@ -20,7 +20,7 @@ import {
   Check,
   ShieldCheck,
 } from "lucide-react";
-import { BOOKING_URL } from "@/lib/seo";
+import { BOOKING_URL, CTA } from "@/lib/seo";
 
 type OutcomeVisual = "network" | "revenue" | "milestones" | "volume";
 
@@ -59,14 +59,14 @@ const OUTCOMES: {
     icon: Receipt,
     title: "Collected revenue, not billed charges",
     body:
-      "Participating practices will measure appliance collections. The illustration uses $1,800 average collections per completed appliance. That figure is a planning assumption for illustrative projections, not a guaranteed result or one already achieved by a cohort.",
+      "Participating practices will measure appliance collections: money actually received, not production or billed charges. No collection figure is presented as a result already achieved by a cohort.",
     bullets: [
       "Collected dollars, not production",
-      "14% DSL fee on those collections",
+      "Billing support is ongoing",
       "Lab cost tracked separately",
-      "Membership excluded from practice revenue",
+      "Results vary by practice",
     ],
-    metric: { value: "$1,800", label: "Average collections per appliance (illustrative)" },
+    metric: { value: "Collected", label: "Revenue measured, not billed" },
     visual: "revenue",
   },
   {
@@ -98,7 +98,7 @@ const OUTCOMES: {
       "Screening is not a diagnosis",
       "Clinician selects and fits",
       "Follow-up stays clinical",
-      "Membership does not replace visits",
+      "Clinicians own follow-up visits",
     ],
     metric: { value: "Follow-up", label: "Measured, not guaranteed" },
     visual: "volume",
@@ -112,7 +112,7 @@ const MEASURES = [
   },
   {
     title: "Collected revenue",
-    body: "Appliance dollars actually collected. The $249 membership is DSL revenue and is kept out of this measure.",
+    body: "Appliance dollars actually collected, not production or billed charges.",
   },
   {
     title: "Staff time",
@@ -166,8 +166,8 @@ function CountTo({
 const QUICK_STATS = [
   { value: 3, prefix: "", suffix: "–5", label: "Practices in the first cohort", icon: Building2 },
   { value: 6, prefix: "~", suffix: " mo", label: "Approximate planning horizon", icon: Award },
-  { value: 14, prefix: "", suffix: "%", label: "Of appliance collections", icon: ShieldCheck },
-  { value: 25, prefix: "$", suffix: "k", label: "Implementation fees, separate", icon: Activity },
+  { value: 6200, prefix: "$", suffix: "", label: "Spencer Study Club value, included", icon: ShieldCheck },
+  { value: 4, prefix: "", suffix: "", label: "Ongoing support areas", icon: Activity },
 ];
 
 export default function SuccessStories() {
@@ -631,11 +631,10 @@ export default function SuccessStories() {
               className="pointer-events-none absolute -top-20 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-white/20 blur-3xl"
             />
             <h2 className="relative text-3xl font-bold text-white sm:text-4xl">
-              Ask whether the founding program fits.
+              {CTA.headline}
             </h2>
             <p className="relative mx-auto mt-4 max-w-xl text-white/80">
-              Case studies are not available yet. A practice-fit conversation
-              is the way to review scope, economics, and timing.
+              {CTA.action}
             </p>
             <div className="relative mt-8 flex flex-wrap items-center justify-center gap-4">
               <Link
@@ -644,7 +643,7 @@ export default function SuccessStories() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-teal-dark shadow-lg transition-transform hover:scale-105"
               >
-                Book a call
+                {CTA.button}
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link

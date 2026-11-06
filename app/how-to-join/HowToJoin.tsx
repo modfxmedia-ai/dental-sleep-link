@@ -16,7 +16,7 @@ import {
   ArrowUpRight,
   Clock,
 } from "lucide-react";
-import { BOOKING_URL } from "@/lib/seo";
+import { BOOKING_URL, CTA } from "@/lib/seo";
 
 const STEPS = [
   {
@@ -42,20 +42,18 @@ const STEPS = [
     number: "02",
     tag: "Scope",
     icon: MessageSquare,
-    title: "Scope and economics review",
+    title: "Scope and fee review",
     body:
-      "Review the $25,000 implementation fees ($5,000 initially, then $20,000 over the next 11 months, with Spencer Study Club included), the 14% collections fee, actual pass-through costs, and the separate $249 membership. The illustration is not a profit promise.",
+      "Review the scope of support and the fees during a consultation. There is an implementation fee to launch your program and an ongoing service fee for continuing support. Spencer Study Club membership is included, a $6,200 value.",
     bullets: [
-      "$25,000 implementation fees",
-      "$5,000 initially, $20,000 over 11 months",
-      "Spencer Study Club included",
-      "14% of appliance collections",
-      "Pass-throughs at actual cost",
-      "Membership excluded from practice revenue",
+      "Implementation fee",
+      "Ongoing service fee",
+      "Spencer Study Club included, a $6,200 value",
+      "Details discussed during a consultation",
     ],
-    metric: { value: "02", label: "Scope and economics" },
+    metric: { value: "02", label: "Scope and fees" },
     image: "/images/how-to-join/step-2.jpg",
-    imageAlt: "Reviewing scope and economics",
+    imageAlt: "Reviewing scope and fees",
   },
   {
     id: "agreement",
@@ -64,7 +62,7 @@ const STEPS = [
     icon: MapPin,
     title: "Agreement and entity or payer requirements",
     body:
-      "Move forward only when the applicable agreement and entity or payment arrangements are ready. The standard implementation fees start with $5,000, followed by $20,000 over the next 11 months. Existing individual arrangements are separate.",
+      "Move forward only when the applicable agreement and entity or payment arrangements are ready.",
     bullets: [
       "Agreement before payment",
       "Entity requirements reviewed",
@@ -578,11 +576,10 @@ export default function HowToJoin() {
               className="pointer-events-none absolute -top-20 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-white/20 blur-3xl"
             />
             <h2 className="relative text-3xl font-bold text-white sm:text-4xl">
-              Start with stage one.
+              {CTA.headline}
             </h2>
             <p className="relative mx-auto mt-4 max-w-xl text-white/80">
-              No payment is requested before the applicable agreement and
-              entity or payment arrangements are ready.
+              {CTA.action}
             </p>
             <div className="relative mt-8 flex flex-wrap items-center justify-center gap-4">
               <Link
@@ -591,7 +588,7 @@ export default function HowToJoin() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-teal-dark shadow-lg transition-transform hover:scale-105"
               >
-                Book a call
+                {CTA.button}
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
