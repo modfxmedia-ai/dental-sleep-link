@@ -26,12 +26,12 @@ const CRITERIA = [
     icon: Stethoscope,
     title: "A responsible dentist leads care",
     body:
-      "The treating clinician stays involved. New and experienced sleep programs may be evaluated individually. Prior sleep experience is not a blanket requirement.",
+      "The treating dentist leads clinical care and stays involved. We work with practices that are new to dental sleep medicine and with practices that already provide sleep services.",
     bullets: [
       "Dentist remains clinically responsible",
-      "New programs can be reviewed",
-      "Experienced programs can be reviewed",
-      "No published practice-age cutoff",
+      "New programs welcome",
+      "Experienced programs welcome",
+      "Prior sleep experience not required",
     ],
     image: "/images/partner-criteria/established.webp",
     imageAlt: "Dentist leading clinical care",
@@ -43,7 +43,7 @@ const CRITERIA = [
     icon: TrendingUp,
     title: "An internal team champion",
     body:
-      "Implementation needs someone inside the practice who will own scheduling, follow-up, and communication with the clinical lead. That role is part of readiness, not a promise of extra results.",
+      "Implementation needs someone inside the practice who will own scheduling, follow-up, and communication with the clinical lead. Dental Sleep Link trains and supports that person throughout.",
     bullets: [
       "Named internal champion",
       "Willing to learn the workflow",
@@ -60,11 +60,11 @@ const CRITERIA = [
     icon: HeartHandshake,
     title: "Protected capacity",
     body:
-      "Prepared to implement with a responsible dentist, an internal team champion, and protected capacity. Existing staff are used where capacity permits. Extra hiring is assessed, not ruled out.",
+      "A sleep program needs time on the schedule. We plan staffing and protected clinical time together so your existing team can carry the work.",
     bullets: [
       "Protected clinical time",
-      "Existing team if capacity allows",
-      "Staffing assessed in planning",
+      "Builds on your existing team",
+      "Staffing planned together",
       "Implementation work is expected",
     ],
     image: "/images/partner-criteria/clinicians-v2.jpg",
@@ -75,14 +75,14 @@ const CRITERIA = [
     number: "04",
     tag: "Payers",
     icon: Telescope,
-    title: "Payer readiness is reviewed individually",
+    title: "Payer readiness",
     body:
-      "Open payer questions are reviewed case by case. A blanket exclusion for disputes is not published unless Brian approves a policy. This review is not a territorial guarantee.",
+      "We review your payer mix and entity requirements together, so credentialing can start right away and run alongside setup and remote training.",
     bullets: [
       "Payer mix discussed",
       "Entity requirements reviewed",
-      "Disputes reviewed individually",
-      "No market exclusivity offered",
+      "Open payer questions talked through",
+      "Credentialing starts early",
     ],
     image: "/images/partner-criteria/visionary-v2.jpg",
     imageAlt: "Practice readiness conversation",
@@ -169,8 +169,8 @@ export default function PartnerCriteria() {
             className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/70"
           >
             Fit is a responsible dentist, an internal champion, protected
-            capacity, and payer readiness. New and experienced programs are
-            reviewed individually. Geography is not reserved on this site.
+            capacity, and payer readiness. New and experienced sleep programs
+            are both welcome, and your practice keeps its own name and brand.
           </motion.p>
 
           <motion.div
@@ -287,9 +287,9 @@ export default function PartnerCriteria() {
                   Fit is assessed practice by practice.
                 </h2>
                 <p className="mt-3 max-w-xl text-white/75">
-                  An initial cohort of about three to five practices is planned.
-                  That planning note is not a promise of market exclusivity or
-                  a claim about which partners have been most successful.
+                  Every practice starts in a different place. We talk through
+                  your team, your payers, and your goals on a call before any
+                  agreement.
                 </p>
               </div>
               <Link
@@ -345,7 +345,7 @@ export default function PartnerCriteria() {
               What a ready practice brings.
             </h2>
             <p className="mt-4 text-navy/70">
-              These are expectations for implementation, not a ranking of past partners.
+              These are the things that help implementation go well.
             </p>
           </motion.div>
 
@@ -513,15 +513,14 @@ export default function PartnerCriteria() {
           >
             <span className="inline-flex items-center gap-2 rounded-full bg-white/5 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.25em] text-white/70 ring-1 ring-white/10">
               <Lock className="h-3.5 w-3.5" aria-hidden="true" />
-              An honest filter
+              A good conversation to have
             </span>
             <h2 className="mt-5 text-3xl font-bold text-white sm:text-4xl">
-              What still needs a conversation
+              When the timing may not be right
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-white/70">
-              These are planning cautions, not a published rejection policy.
-              A three-year practice-age rule and a blanket payer-dispute rule
-              are not in effect on this site.
+              A sleep program works best when the practice is ready to put
+              time and people behind it.
             </p>
           </motion.div>
 
@@ -529,7 +528,7 @@ export default function PartnerCriteria() {
             {[
               {
                 t: "No protected clinical time",
-                b: "Implementation expects the dentist in the care and time set aside for it. Capacity is assessed rather than assumed.",
+                b: "Implementation needs the dentist involved in care and time set aside on the schedule for it.",
               },
               {
                 t: "No internal champion",
@@ -537,19 +536,11 @@ export default function PartnerCriteria() {
               },
               {
                 t: "Looking for hands-off income",
-                b: "This is implementation work around dentist-led care, not a passive referral fee.",
+                b: "This is a hands-on program built around dentist-led care, not a passive referral arrangement.",
               },
               {
-                t: "Practice age is not a published cutoff",
-                b: "Any three-year threshold stays unpublished until Brian confirms a policy.",
-              },
-              {
-                t: "Payer questions are reviewed individually",
-                b: "Open disputes are not an automatic exclusion unless a policy is approved.",
-              },
-              {
-                t: "Territory is not reserved here",
-                b: "Do not treat geography as protected. Exclusivity is unresolved.",
+                t: "Looking to rebrand as someone else",
+                b: "Your practice keeps its own name, brand, and ownership. Dental Sleep Link works behind your practice, not in place of it.",
               },
             ].map((d, i) => (
               <motion.div
@@ -614,10 +605,10 @@ export default function PartnerCriteria() {
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
-                href="/success-stories"
+                href="/how-to-join"
                 className="inline-flex items-center gap-2 rounded-full border border-white/40 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white/10"
               >
-                Founding practice program
+                See how to join
                 <ArrowUpRight className="h-4 w-4" />
               </Link>
             </div>

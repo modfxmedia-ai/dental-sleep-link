@@ -4,7 +4,7 @@ import ServiceJsonLd from "@/components/seo/ServiceJsonLd";
 
 const TITLE = "The Model: A Structured Implementation Plan";
 const DESCRIPTION =
-  "An approximately six-month planning timeline with overlapping credentialing, setup, and team training. Ongoing support continues after launch, with in-office team training, remote support, credentialing coordination, and medical billing.";
+  "Credentialing, setup, and remote training run in parallel, with hands-on training typically around months three or four. After launch, ongoing remote support, medical billing, and credentialing coordination continue.";
 const PATH = "/the-model";
 
 export const metadata: Metadata = {

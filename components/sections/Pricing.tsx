@@ -13,7 +13,7 @@ import {
   ClipboardCheck,
   Award,
 } from "lucide-react";
-import { BOOKING_URL, CTA, SPENCER_STUDY_CLUB } from "@/lib/seo";
+import { BOOKING_URL, CTA, OWNERSHIP, SPENCER_STUDY_CLUB, SUPPORT } from "@/lib/seo";
 
 const FEES = [
   {
@@ -25,14 +25,14 @@ const FEES = [
   {
     eyebrow: "As you grow",
     title: "Ongoing service fee",
-    note: "Covers the continuing support your practice receives: medical billing, remote support, credentialing coordination, and ongoing team training.",
+    note: "Covers the continuing support your practice receives after launch: remote support, medical billing, and credentialing coordination.",
     icon: Receipt,
   },
 ];
 
 const ONGOING_SUPPORT = [
-  { icon: GraduationCap, label: "In-office team training" },
-  { icon: Headphones, label: "Remote support" },
+  { icon: GraduationCap, label: "In-office team training at implementation" },
+  { icon: Headphones, label: "Ongoing remote support" },
   { icon: ClipboardCheck, label: "Credentialing coordination" },
   { icon: Receipt, label: "Medical billing" },
 ];
@@ -95,13 +95,13 @@ export default function Pricing() {
               </span>
               <div>
                 <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-teal">
-                  Included with your partnership
+                  Included benefit
                 </p>
                 <h3 className="mt-2 text-2xl font-bold sm:text-3xl">
                   {SPENCER_STUDY_CLUB.name} membership included
                 </h3>
                 <p className="mt-2 text-sm text-white/70 sm:text-base">
-                  Included with your Dental Sleep Link partnership.
+                  {SPENCER_STUDY_CLUB.term}
                 </p>
               </div>
             </div>
@@ -161,6 +161,9 @@ export default function Pricing() {
           <h3 className="mt-2 text-2xl font-bold text-navy">
             Support that continues as your sleep program grows.
           </h3>
+          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-navy/70 sm:text-base">
+            {SUPPORT.implementation} {SUPPORT.ongoing} {SUPPORT.onsite}
+          </p>
           <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {ONGOING_SUPPORT.map(({ icon: Icon, label }) => (
               <li
@@ -177,6 +180,7 @@ export default function Pricing() {
           <ul className="mt-6 space-y-2 text-sm text-navy/70">
             {[
               "A continuing relationship, not a one-time setup",
+              OWNERSHIP,
               "Your practice keeps responsibility for clinical care",
             ].map((b) => (
               <li key={b} className="flex items-start gap-2">

@@ -3,7 +3,7 @@ import SitemapPage from "./SitemapPage";
 
 const TITLE = "Sitemap";
 const DESCRIPTION =
-  "Every page on the Dental Sleep Link site, including the founding practice program, practice-fit criteria, and draft resources.";
+  "Every page on the Dental Sleep Link site, from what you get and how the model works to partner criteria and how to join.";
 const PATH = "/sitemap";
 
 export const metadata: Metadata = {

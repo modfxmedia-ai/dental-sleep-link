@@ -4,11 +4,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowUpRight, CalendarDays, Clock } from "lucide-react";
-import { POSTS } from "@/lib/posts";
+import { PUBLISHED_POSTS } from "@/lib/posts";
 
-const PREVIEW = POSTS.slice(0, 3);
+const PREVIEW = PUBLISHED_POSTS.slice(0, 3);
 
 export default function BlogPreview() {
+  if (PREVIEW.length === 0) return null;
   return (
     <section id="blog" className="relative scroll-mt-32 overflow-hidden bg-navy py-16 sm:py-20 lg:py-24">
       <div
@@ -34,9 +35,6 @@ export default function BlogPreview() {
             <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl">
               Resources for building a dental sleep program.
             </h2>
-            <p className="mt-4 text-white/70">
-              Draft articles are held for authorship and clinical review.
-            </p>
           </div>
           <Link
             href="/blog"

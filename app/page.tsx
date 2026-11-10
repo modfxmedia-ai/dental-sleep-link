@@ -1,5 +1,4 @@
 import About from "@/components/sections/About";
-import BlogPreview from "@/components/sections/BlogPreview";
 import CTABand from "@/components/sections/CTABand";
 import FAQSection from "@/components/sections/FAQSection";
 import Hero from "@/components/sections/Hero";
@@ -15,7 +14,6 @@ export default function Home() {
       <WhyPartner />
       <Pricing />
       <FAQSection />
-      <BlogPreview />
       <About />
       <CTABand />
     </>

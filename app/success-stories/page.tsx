@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import SuccessStories from "./SuccessStories";
+import { notFound } from "next/navigation";
 
-const TITLE = "Founding Practice Program: What Participating Practices Will Measure";
+const TITLE = "Success Stories";
 const DESCRIPTION =
-  "An introduction to the founding practice program. Participating practices will measure training readiness, collected revenue, staff time, claims status, and patient follow-through. These are not achieved results.";
+  "Case studies from Dental Sleep Link partner practices.";
 const PATH = "/success-stories";
 
 export const metadata: Metadata = {
@@ -15,5 +15,5 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <SuccessStories />;
+  notFound();
 }

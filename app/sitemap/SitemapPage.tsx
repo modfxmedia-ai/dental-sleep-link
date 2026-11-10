@@ -9,18 +9,13 @@ import {
   Info,
   Briefcase,
   Workflow,
-  Trophy,
-  ClipboardList,
   Rocket,
   Mail,
-  Newspaper,
   FileCode2,
   ShieldCheck,
   Phone,
-  MapPin,
   type LucideIcon,
 } from "lucide-react";
-import { POSTS } from "@/lib/posts";
 import { CONTACT, SITE_URL } from "@/lib/seo";
 
 type SiteLink = {
@@ -62,7 +57,7 @@ const GROUPS: SiteGroup[] = [
         href: "/what-you-get",
         label: "What You Get",
         description:
-          "Credentialing and billing support, staff training, and the costs that are not bundled.",
+          "Credentialing and billing support, in-office team training, ongoing remote support, and the Spencer Study Club benefit.",
         icon: Briefcase,
       },
     ],
@@ -77,14 +72,14 @@ const GROUPS: SiteGroup[] = [
         href: "/the-model",
         label: "The Model",
         description:
-          "A six-month implementation plan, practice receipts, and a monthly invoice. Final agreement controls.",
+          "How implementation runs: credentialing, setup, and remote training in parallel, hands-on training, then launch and ongoing support.",
         icon: Workflow,
       },
       {
         href: "/partner-criteria",
         label: "Partner Criteria",
         description:
-          "Dentist leadership, an internal champion, and protected capacity. No territorial guarantee.",
+          "Dentist leadership, an internal champion, and protected time for the sleep program.",
         icon: ShieldCheck,
       },
       {
@@ -94,47 +89,19 @@ const GROUPS: SiteGroup[] = [
           "Six stages from a practice-fit conversation through a readiness review and phased launch.",
         icon: Rocket,
       },
-      {
-        href: "/success-stories",
-        label: "Founding Practice Program",
-        description:
-          "What participating practices will measure. Not achieved results, and not testimonials.",
-        icon: Trophy,
-      },
     ],
   },
   {
-    eyebrow: "03 / Resources",
-    title: "Blog & resources",
-    blurb:
-      "Draft resources held for authorship and clinical review.",
-    links: [
-      {
-        href: "/blog",
-        label: "Blog index",
-        description:
-          "Resources for building a dental sleep program. Drafts are not publication-ready.",
-        icon: Newspaper,
-      },
-      ...POSTS.map((p) => ({
-        href: `/blog/${p.slug}`,
-        label: p.title,
-        description: p.excerpt,
-        icon: ClipboardList,
-      })),
-    ],
-  },
-  {
-    eyebrow: "04 / Get in touch",
+    eyebrow: "03 / Get in touch",
     title: "Connect",
     blurb:
-      "Book a call, prepare an email, or open the machine-readable sitemap.",
+      "Book a call, send an inquiry, or open the machine-readable sitemap.",
     links: [
       {
         href: "/contact-us",
         label: "Contact Us",
         description:
-          "Book a practice-fit call or prepare an email. No patient information.",
+          "Book a call or send us an inquiry.",
         icon: Mail,
       },
       {
@@ -231,8 +198,8 @@ export default function SitemapPage() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/70 sm:text-lg"
           >
-            A human-friendly map of the site, including the founding
-            practice program and the draft resources.
+            A human-friendly map of every page on the Dental Sleep Link
+            site.
           </motion.p>
 
           <motion.div
@@ -435,10 +402,6 @@ export default function SitemapPage() {
                   <Mail className="h-4 w-4 text-teal" aria-hidden="true" />
                   {CONTACT.email}
                 </a>
-                <span className="inline-flex items-center gap-2">
-                  <MapPin className="h-4 w-4 text-teal" aria-hidden="true" />
-                  Street address not published
-                </span>
               </div>
             </div>
             <Link

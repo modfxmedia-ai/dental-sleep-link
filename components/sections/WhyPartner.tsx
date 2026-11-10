@@ -14,15 +14,15 @@ const PILLARS = [
   {
     id: "plan",
     number: "01",
-    eyebrow: "Planning",
-    title: "A structured implementation plan",
+    eyebrow: "Implementation",
+    title: "Work starts right away, in parallel",
     body:
-      "Credentialing, setup, and team training overlap across an approximately six-month planning horizon. Go-live depends on payer, entity, staff, and clinical readiness.",
+      "Credentialing, setup, and remote training run at the same time. For a typical new program, hands-on training happens around months three or four, depending on readiness. Credentialing may take approximately six months, varying by payer and practice.",
     icon: TrendingUp,
     image: "/images/snoring.jpg",
     stats: [
-      { label: "Planning horizon", value: "~6 mo" },
-      { label: "First case", value: "When ready" },
+      { label: "Hands-on training", value: "Mo. 3 to 4" },
+      { label: "Credentialing", value: "~6 mo" },
     ],
   },
   {
@@ -31,7 +31,7 @@ const PILLARS = [
     eyebrow: "Billing support",
     title: "Medical billing support",
     body:
-      "Collections vary with payer contracts, coverage, documentation, and patient responsibility. Reimbursement and payment timing are not guaranteed.",
+      "Dental Sleep Link handles claims submission, follow-up, and reporting, and coordinates credentialing with medical payers. Collections vary with payer contracts, coverage, documentation, and patient responsibility.",
     icon: HandCoins,
     image: "/images/chin-strap.jpg",
     stats: [
@@ -43,14 +43,14 @@ const PILLARS = [
     id: "team",
     number: "03",
     eyebrow: "Your team",
-    title: "Training where capacity allows",
+    title: "In-office training, then ongoing remote support",
     body:
-      "Use your existing team where capacity permits. Staffing and protected clinical time are assessed during planning. Service levels such as response time are not published until confirmed.",
+      "Implementation includes in-office team training for your existing staff. After launch, your team has ongoing remote support. Any additional on-site support is defined in your agreement.",
     icon: GraduationCap,
     image: "/images/turnkey-sleep-model.jpg",
     stats: [
-      { label: "Existing team", value: "If able" },
-      { label: "Extra hires", value: "Assessed" },
+      { label: "Team training", value: "In-office" },
+      { label: "After launch", value: "Remote" },
     ],
   },
 ];
@@ -124,9 +124,9 @@ export default function WhyPartner() {
             .
           </h2>
           <p className="mt-5 text-white/70">
-            DSL supports credentialing, medical billing, team training, and
-            workflow implementation. Clinical responsibility stays with the
-            practice.
+            Dental Sleep Link supports credentialing, medical billing, team
+            training, and workflow implementation. Clinical care, ownership,
+            and your brand stay with your practice.
           </p>
         </motion.div>
 

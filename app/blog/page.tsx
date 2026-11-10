@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { PUBLISHED_POSTS } from "@/lib/posts";
 import Blog from "./Blog";
 
 const TITLE = "Resources for Building a Dental Sleep Program";
 const DESCRIPTION =
-  "Draft resources on evaluation, workflow, and adding dental sleep medicine to a general practice. Articles are held for authorship and clinical review.";
+  "Resources on evaluation, workflow, and adding dental sleep medicine to a general practice.";
 const PATH = "/blog";
 
 export const metadata: Metadata = {
@@ -15,5 +17,6 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
+  if (PUBLISHED_POSTS.length === 0) notFound();
   return <Blog />;
 }

@@ -14,7 +14,7 @@ import {
   Check,
   ArrowUpRight,
 } from "lucide-react";
-import { BOOKING_URL, CTA } from "@/lib/seo";
+import { BOOKING_URL, CTA, SPENCER_STUDY_CLUB } from "@/lib/seo";
 
 const PILLARS = [
   {
@@ -24,16 +24,16 @@ const PILLARS = [
     icon: ShieldCheck,
     title: "Credentialing and medical billing support",
     body:
-      "DSL supports credentialing and medical billing around dentist-led care. Collections vary with payer contracts, coverage, documentation, and patient responsibility. Reimbursement is not guaranteed.",
+      "Dental Sleep Link coordinates credentialing with medical payers so your practice can bill medical insurance for dental sleep medicine. Credentialing may take approximately six months, with timing varying by payer and practice.",
     bullets: [
-      "Credentialing assistance",
-      "No pre-negotiated national contracts claimed",
-      "Payer outcomes vary",
-      "Practice responsibilities stay in the agreement",
+      "Medical payer credentialing",
+      "Documentation support",
+      "Payer requirements tracked",
+      "Coordination continues after launch",
     ],
-    metric: { value: "Support", label: "Not a rate guarantee" },
+    metric: { value: "~6 mo", label: "Typical credentialing" },
     image: "/images/what-you-get/reimbursements.jpg",
-    imageAlt: "Clinical setting, not a reimbursement result",
+    imageAlt: "Dental clinical setting",
   },
   {
     id: "billing",
@@ -42,12 +42,12 @@ const PILLARS = [
     icon: Receipt,
     title: "Claims submission, follow-up, and reporting",
     body:
-      "Medical billing continues after launch as part of your ongoing support. Appliance payments go to the practice. The final agreement controls.",
+      "Medical billing continues after launch as part of your ongoing support. Appliance payments go to the practice. Collections vary with payer contracts, coverage, documentation, and patient responsibility.",
     bullets: [
       "Claims submission and follow-up",
-      "Reporting on agreed activity",
-      "Credentialing coordination",
-      "Not a promise of faster payment",
+      "Claim status tracking",
+      "Collections reporting",
+      "Payments go to your practice",
     ],
     metric: { value: "Ongoing", label: "Medical billing" },
     image: "/images/what-you-get/billing.webp",
@@ -60,14 +60,14 @@ const PILLARS = [
     icon: GraduationCap,
     title: "In-office team training and workflow implementation",
     body:
-      "Agreed setup includes in-office team training and billing setup. Treating clinicians select, fit, adjust, and oversee appliances. DSL does not diagnose patients or promise a first case within 30 days.",
+      "Remote training starts alongside credentialing and setup. For a typical new program, hands-on in-office team training happens around months three or four, depending on readiness. Treating clinicians select, fit, adjust, and oversee appliances.",
     bullets: [
+      "Remote training from the start",
       "In-office team training",
       "Workflow implementation",
-      "About six months of planning",
-      "Mentorship hours are not listed until confirmed",
+      "Additional on-site support defined in your agreement",
     ],
-    metric: { value: "~6 mo", label: "Planning horizon" },
+    metric: { value: "Mo. 3 to 4", label: "Typical hands-on training" },
     image: "/images/what-you-get/training.jpg",
     imageAlt: "Team training session",
   },
@@ -76,13 +76,13 @@ const PILLARS = [
     number: "04",
     tag: "Coordination",
     icon: Boxes,
-    title: "Coordination is separate from third-party purchases",
+    title: "Coordination of third-party purchases",
     body:
-      "DSL can coordinate agreed nonclinical steps. Software, appliances, testing, and additional marketing are not bundled unless specifically approved. Lab costs remain practice costs.",
+      "Dental Sleep Link coordinates the nonclinical steps around your sleep program. Software, appliances, lab work, and testing are purchased separately by the practice.",
     bullets: [
       "Software and lab costs are separate",
       "Appliances and testing are separate",
-      "No supplied test-kit promise",
+      "Vendor coordination",
       "Details discussed during a consultation",
     ],
     metric: { value: "Separate", label: "Third-party purchases" },
@@ -96,12 +96,12 @@ const PILLARS = [
     icon: TrendingUp,
     title: "Ongoing support as your program grows",
     body:
-      "Dental Sleep Link provides ongoing support, including in-office team training, remote support, credentialing coordination, and medical billing. It is a continuing relationship to help your practice build and grow its sleep program. Spencer Study Club membership is included, a $6,200 value.",
+      "After launch, Dental Sleep Link continues with remote support, medical billing, and credentialing coordination. It is a continuing relationship to help your practice build and grow its sleep program. Spencer Study Club membership is included, a $6,200 value.",
     bullets: [
-      "In-office team training",
-      "Remote support",
+      "Ongoing remote support",
       "Credentialing coordination and medical billing",
       "Spencer Study Club membership included",
+      SPENCER_STUDY_CLUB.term,
     ],
     metric: { value: "$6,200", label: "Spencer Study Club value, included" },
     image: "/images/what-you-get/scale.webp",
@@ -197,9 +197,9 @@ export default function WhatYouGetPage() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/70"
           >
-            Agreed setup, staff training, credentialing assistance, claims
-            work, reporting, and ongoing nonclinical support. Clinical care
-            stays with your practice.
+            Credentialing, setup, in-office team training, medical billing,
+            and ongoing remote support. Clinical care, ownership, and your
+            brand stay with your practice.
           </motion.p>
 
           <motion.div

@@ -47,14 +47,14 @@ const INFO = [
     label: "Phone",
     value: SITE_CONTACT.phoneDisplay,
     href: `tel:${SITE_CONTACT.phone}`,
-    sub: "Pending confirmation",
+    sub: "Call Dental Sleep Link",
   },
   {
     icon: Mail,
     label: "Email",
     value: SITE_CONTACT.email,
     href: `mailto:${SITE_CONTACT.email}`,
-    sub: "Pending confirmation",
+    sub: "Email Dental Sleep Link",
   },
 ];
 
@@ -66,13 +66,14 @@ const REASONS = [
 ];
 
 const PROMISES = [
-  { icon: Mail, label: "Prepare an email that you send yourself" },
+  { icon: Send, label: "Send an inquiry from this page" },
   { icon: ShieldCheck, label: "No patient information" },
-  { icon: Headphones, label: "Response time not promised" },
+  { icon: Headphones, label: "A real person reads every message" },
 ];
 
 export default function ContactUs() {
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const sent = status === "sent";
   return (
     <>
       {/* HERO */}
@@ -151,9 +152,9 @@ export default function ContactUs() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/70"
           >
-            {CTA.headline} {CTA.action} You can also use the form below to prepare an email
-            in your mail app. The form does not send the message for you. Do
-            not include patient or medical information.
+            {CTA.headline} {CTA.action} You can also send us an inquiry with
+            the form below. Please do not include patient or medical
+            information.
           </motion.p>
 
           <motion.div
@@ -282,33 +283,35 @@ export default function ContactUs() {
                 }}
               />
               <form
-                onSubmit={(e) => {
+                onSubmit={async (e) => {
                   e.preventDefault();
                   const form = e.currentTarget;
                   const data = new FormData(form);
                   const get = (k: string) => (data.get(k)?.toString() || "").trim();
-                  const reasons = data.getAll("reasons").map(String).filter(Boolean);
-                  const first = get("first");
-                  const last = get("last");
-                  const lines = [
-                    `Name: ${first} ${last}`.trim(),
-                    `Email: ${get("email")}`,
-                    `Phone: ${get("phone") || "Not provided"}`,
-                    `Practice: ${get("practice") || "Not provided"}`,
-                    `City & state: ${get("city") || "Not provided"}`,
-                    `Treating dentist: ${get("is_dentist") || "Not provided"}`,
-                    "",
-                    `Interest: ${reasons.length ? reasons.join(", ") : "Not provided"}`,
-                    "",
-                    "Message:",
-                    get("message"),
-                  ];
-                  const body = encodeURIComponent(lines.join("\n"));
-                  const subject = encodeURIComponent(
-                    `Partner inquiry: ${first} ${last}`.trim() || "Partner inquiry",
-                  );
-                  window.location.href = `mailto:${SITE_CONTACT.email}?subject=${subject}&body=${body}`;
-                  setSent(true);
+                  setStatus("sending");
+                  try {
+                    const res = await fetch("/api/contact", {
+                      method: "POST",
+                      headers: { "Content-Type": "application/json" },
+                      body: JSON.stringify({
+                        first: get("first"),
+                        last: get("last"),
+                        email: get("email"),
+                        phone: get("phone"),
+                        practice: get("practice"),
+                        city: get("city"),
+                        is_dentist: get("is_dentist"),
+                        reasons: data.getAll("reasons").map(String).filter(Boolean).join(", "),
+                        message: get("message"),
+                        website: get("website"),
+                      }),
+                    });
+                    if (!res.ok) throw new Error(String(res.status));
+                    form.reset();
+                    setStatus("sent");
+                  } catch {
+                    setStatus("error");
+                  }
                 }}
                 className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-navy via-navy-mid to-navy p-8 ring-1 ring-white/10 shadow-2xl shadow-navy/30 sm:p-10"
               >
@@ -324,15 +327,14 @@ export default function ContactUs() {
                       <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal opacity-75" />
                       <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-teal" />
                     </span>
-                    Prepare an email
+                    Send an inquiry
                   </span>
                   <h2 className="mt-4 text-3xl font-bold text-white sm:text-4xl">
                     Tell us about your practice.
                   </h2>
                   <p className="mt-3 text-sm text-white/70">
-                    Submitting opens your email app with this note filled in.
-                    You still have to send it. Nothing on this page means the
-                    message was delivered.
+                    Send us a note and the Dental Sleep Link team will follow
+                    up by email.
                   </p>
 
                   {sent ? (
@@ -346,15 +348,11 @@ export default function ContactUs() {
                         <Check className="h-7 w-7" aria-hidden="true" />
                       </span>
                       <p className="mt-4 text-lg font-bold text-white">
-                        Your email app should open. Send the message yourself.
+                        Thank you. Your inquiry has been sent.
                       </p>
                       <p className="mt-2 text-sm text-white/70">
-                        This page did not receive an application. If nothing
-                        opened, write to{" "}
-                        <a href={`mailto:${SITE_CONTACT.email}`} className="font-semibold text-teal hover:text-teal-light">
-                          {SITE_CONTACT.email}
-                        </a>
-                        {" "}or{" "}
+                        The Dental Sleep Link team will follow up by email. If
+                        you would like to talk sooner, you can{" "}
                         <a
                           href={BOOKING_URL}
                           target="_blank"
@@ -363,11 +361,11 @@ export default function ContactUs() {
                         >
                           book a call
                         </a>
-                        . No reply window is promised.
+                        .
                       </p>
                       <button
                         type="button"
-                        onClick={() => setSent(false)}
+                        onClick={() => setStatus("idle")}
                         className="mt-5 text-xs font-semibold uppercase tracking-wider text-teal hover:text-teal-light"
                       >
                         Send another message
@@ -421,19 +419,39 @@ export default function ContactUs() {
                         />
                       </div>
 
+                      <div aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
+                        <label>
+                          Website
+                          <input type="text" name="website" tabIndex={-1} autoComplete="off" />
+                        </label>
+                      </div>
+
+                      {status === "error" && (
+                        <p role="alert" className="rounded-2xl border border-red-300/40 bg-red-500/10 px-4 py-3 text-sm text-white">
+                          Sorry, your inquiry could not be sent. Please try
+                          again, or email{" "}
+                          <a href={`mailto:${SITE_CONTACT.email}`} className="font-semibold text-teal hover:text-teal-light">
+                            {SITE_CONTACT.email}
+                          </a>
+                          .
+                        </p>
+                      )}
+
                       <button
                         type="submit"
-                        className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-teal to-teal-dark px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-teal/30 transition-transform hover:scale-105"
+                        disabled={status === "sending"}
+                        className="group relative disabled:cursor-wait disabled:opacity-70 inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-teal to-teal-dark px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-teal/30 transition-transform hover:scale-105"
                       >
                         <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
-                        <span className="relative">Prepare email</span>
+                        <span className="relative">
+                          {status === "sending" ? "Sending..." : "Send inquiry"}
+                        </span>
                         <Send className="relative h-4 w-4 transition-transform group-hover:translate-x-1" />
                       </button>
                       <p className="text-center text-[11px] leading-relaxed text-white/50">
                         Do not submit patient names, records, or other medical
-                        information. This is a general inquiry, not a secure
-                        clinical channel. Preparing the email is not the same
-                        as sending it.
+                        information. This form is for general inquiries, not a
+                        secure clinical channel.
                       </p>
                     </div>
                   )}
@@ -479,14 +497,14 @@ export default function ContactUs() {
                   <div className="absolute inset-x-0 bottom-0 p-6 text-white">
                     <span className="inline-flex items-center gap-1.5 rounded-full bg-teal px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.25em] text-white shadow-lg shadow-teal/30">
                       <MessageCircle className="h-3 w-3" aria-hidden="true" />
-                      You send it
+                      We read every message
                     </span>
                     <p className="mt-3 text-2xl font-bold leading-tight">
-                      The button only prepares the email.
+                      Your inquiry goes straight to our team.
                     </p>
                     <p className="mt-2 text-sm text-white/75">
-                      Delivery depends on your mail app. A response standard is
-                      not published until an owner confirms one.
+                      We follow up by email to talk through your practice and
+                      next steps.
                     </p>
                   </div>
                 </div>
@@ -522,7 +540,16 @@ export default function ContactUs() {
                     .
                   </li>
                   <li>Do not include patient or medical information.</li>
-                  <li>This form prepares mail to {SITE_CONTACT.email}.</li>
+                  <li>
+                    You can also email us at{" "}
+                    <a
+                      href={`mailto:${SITE_CONTACT.email}`}
+                      className="font-semibold text-teal-dark hover:text-teal"
+                    >
+                      {SITE_CONTACT.email}
+                    </a>
+                    .
+                  </li>
                 </ul>
               </div>
             </motion.div>
@@ -549,14 +576,14 @@ export default function ContactUs() {
               transition={{ duration: 0.7 }}
             >
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-teal">
-                Public details
+                Reach us directly
               </p>
               <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl">
-                No street address is published.
+                Talk with Dental Sleep Link.
               </h2>
               <p className="mt-4 text-white/70">
-                A street address and hours are not listed. The quickest way to
-                start is to book a practice-fit call.
+                The quickest way to start is to book a practice-fit call. You
+                can also reach us by phone or email.
               </p>
               <div className="mt-8 space-y-4">
                 <div className="flex items-start gap-3">
@@ -565,7 +592,7 @@ export default function ContactUs() {
                   </span>
                   <div>
                     <p className="text-sm font-semibold text-white">{SITE_CONTACT.phoneDisplay}</p>
-                    <p className="text-sm text-white/65">Pending confirmation</p>
+                    <p className="text-sm text-white/65">Phone</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -574,7 +601,7 @@ export default function ContactUs() {
                   </span>
                   <div>
                     <p className="text-sm font-semibold text-white">{SITE_CONTACT.email}</p>
-                    <p className="text-sm text-white/65">Pending confirmation</p>
+                    <p className="text-sm text-white/65">Email</p>
                   </div>
                 </div>
               </div>
@@ -600,7 +627,7 @@ export default function ContactUs() {
               <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[2rem] bg-navy ring-1 ring-teal/20 shadow-2xl shadow-navy/30">
                 <Image
                   src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1600&q=80"
-                  alt="Abstract city photograph, not a Dental Sleep Link location"
+                  alt="City skyline"
                   fill
                   sizes="(min-width: 1024px) 700px, 90vw"
                   className="object-cover"
@@ -628,9 +655,9 @@ export default function ContactUs() {
                 />
 
                 <div className="absolute bottom-6 left-6 rounded-2xl bg-white/95 px-4 py-3 shadow-xl ring-1 ring-navy/5 backdrop-blur">
-                  <p className="text-sm font-bold text-navy">Address not published</p>
+                  <p className="text-sm font-bold text-navy">Dental Sleep Link</p>
                   <p className="mt-1 text-[11px] uppercase tracking-wider text-navy/60">
-                    Book a call or email us
+                    Book a call or send an inquiry
                   </p>
                 </div>
               </div>
@@ -659,7 +686,7 @@ export default function ContactUs() {
               Not ready to talk yet?
             </h2>
             <p className="relative mx-auto mt-4 max-w-xl text-white/80">
-              Read how the partnership works and what you actually get inside.
+              Read how the partnership works and what your practice receives.
             </p>
             <div className="relative mt-8 flex flex-wrap items-center justify-center gap-4">
               <Link

@@ -3,7 +3,7 @@ import AboutUs from "./AboutUs";
 
 const TITLE = "About Us: Dental Sleep Medicine Implementation Support";
 const DESCRIPTION =
-  "Dental Sleep Link supports credentialing, medical billing, team training, and workflow implementation around dentist-led care. Clinical responsibility stays with the practice.";
+  "Dental Sleep Link supports credentialing, medical billing, team training, and workflow implementation around dentist-led care. Practices keep their own brand, ownership, and clinical care. Meet founder Brian Briesemeister.";
 const PATH = "/about-us";
 
 export const metadata: Metadata = {

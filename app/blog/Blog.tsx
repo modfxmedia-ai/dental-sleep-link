@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 import { BOOKING_URL, CTA } from "@/lib/seo";
 import { useState } from "react";
-import { POSTS } from "@/lib/posts";
+import { PUBLISHED_POSTS as POSTS } from "@/lib/posts";
 
 const CATEGORIES = ["All", "Clinical", "Billing", "Growth", "Industry"];
 

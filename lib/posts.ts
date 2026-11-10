@@ -185,10 +185,12 @@ export const POSTS: Post[] = [
   },
 ];
 
+export const PUBLISHED_POSTS = POSTS.filter((p) => !p.pendingReview);
+
 export function getPost(slug: string): Post | undefined {
-  return POSTS.find((p) => p.slug === slug);
+  return PUBLISHED_POSTS.find((p) => p.slug === slug);
 }
 
 export function getRelated(slug: string, n = 2): Post[] {
-  return POSTS.filter((p) => p.slug !== slug).slice(0, n);
+  return PUBLISHED_POSTS.filter((p) => p.slug !== slug).slice(0, n);
 }

@@ -3,7 +3,7 @@ import ContactUs from "./ContactUs";
 
 const TITLE = "Contact Us: Discuss Practice Fit";
 const DESCRIPTION =
-  "Book a practice-fit call with Dental Sleep Link, or prepare an email about practice fit. Do not include patient or medical information.";
+  "Book a practice-fit call with Dental Sleep Link, or send us an inquiry. Please do not include patient or medical information.";
 const PATH = "/contact-us";
 
 export const metadata: Metadata = {

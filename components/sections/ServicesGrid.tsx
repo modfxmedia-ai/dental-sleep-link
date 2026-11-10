@@ -17,8 +17,8 @@ const SERVICES = [
     tag: "Setup",
     title: "Credentialing and medical billing support",
     body:
-      "DSL supports credentialing, claims submission, follow-up, and reporting. Reimbursement and payment timing are not guaranteed.",
-    bullets: ["Credentialing assistance", "Claims follow-up", "Payer outcomes vary"],
+      "Dental Sleep Link coordinates credentialing with medical payers and handles claims submission, follow-up, and reporting for your sleep program.",
+    bullets: ["Credentialing coordination", "Claims submission and follow-up", "Reporting"],
     icon: DollarSign,
   },
   {
@@ -27,7 +27,7 @@ const SERVICES = [
     tag: "Billing",
     title: "Ongoing billing and remote support",
     body:
-      "Billing and remote support continue after launch, as part of a continuing relationship that helps your practice grow its sleep program.",
+      "After launch, remote support, medical billing, and credentialing coordination continue, as part of a continuing relationship that helps your practice grow its sleep program.",
     bullets: ["Ongoing medical billing", "Remote support", "Credentialing coordination"],
     icon: FileCheck2,
   },
@@ -37,8 +37,8 @@ const SERVICES = [
     tag: "Training",
     title: "Team training and workflow implementation",
     body:
-      "In-office team training at launch and as your program grows. Staffing and protected clinical time are assessed during planning.",
-    bullets: ["In-office team training", "Workflow implementation", "Capacity reviewed first"],
+      "Implementation includes in-office team training, with remote training running alongside credentialing and setup. Any additional on-site support is defined in your agreement.",
+    bullets: ["In-office team training", "Remote training", "Workflow implementation"],
     icon: Rocket,
   },
   {
@@ -47,8 +47,8 @@ const SERVICES = [
     tag: "Support",
     title: "Nonclinical support around dentist-led care",
     body:
-      "Treating clinicians select, fit, adjust, and oversee appliances. DSL coordinates agreed nonclinical support.",
-    bullets: ["Dentist-led clinical care", "Agreed coordination", "Third-party costs are separate"],
+      "Treating clinicians select, fit, adjust, and oversee appliances. Dental Sleep Link handles the nonclinical work, and your practice keeps its own name and brand.",
+    bullets: ["Dentist-led clinical care", "Your brand, your practice", "Nonclinical coordination"],
     icon: Network,
   },
 ];

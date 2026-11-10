@@ -21,8 +21,8 @@ const MARQUEE_ITEMS = [
 
 const SPEC_BADGES = [
   { icon: ShieldCheck, label: "Implementation support", sub: "Setup and credentialing" },
-  { icon: Activity, label: "Team training", sub: "Where capacity allows" },
-  { icon: Award, label: "Ongoing medical billing", sub: "Under the services agreement" },
+  { icon: Activity, label: "Team training", sub: "In-office at implementation" },
+  { icon: Award, label: "Ongoing medical billing", sub: "Plus remote support" },
 ];
 
 const PARTICLES = [
@@ -133,7 +133,7 @@ export default function Hero() {
           >
             Dental Sleep Link helps general dentists add dental sleep medicine
             with implementation support, team training, credentialing assistance
-            and ongoing billing. Your practice retains responsibility for
+            and ongoing billing. Your practice keeps its own name, brand, and
             clinical care.
           </motion.p>
           <motion.p

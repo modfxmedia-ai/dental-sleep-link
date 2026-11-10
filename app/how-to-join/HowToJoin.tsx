@@ -16,7 +16,7 @@ import {
   ArrowUpRight,
   Clock,
 } from "lucide-react";
-import { BOOKING_URL, CTA } from "@/lib/seo";
+import { BOOKING_URL, CTA, SPENCER_STUDY_CLUB } from "@/lib/seo";
 
 const STEPS = [
   {
@@ -26,12 +26,12 @@ const STEPS = [
     icon: ClipboardEdit,
     title: "Practice-fit conversation",
     body:
-      "Start by discussing the dentist, the internal champion, protected capacity, and whether planning is realistic. This page does not take payment.",
+      "Start with a call about your practice: the dentist, the internal champion, your team, your payers, and your goals for a sleep program.",
     bullets: [
       "Dentist and champion identified",
       "Capacity discussed",
-      "No deposit requested here",
-      "No promised reply window",
+      "Payers and goals discussed",
+      "Book a call on our calendar",
     ],
     metric: { value: "01", label: "Practice-fit conversation" },
     image: "/images/how-to-join/step-1.jpg",
@@ -49,7 +49,7 @@ const STEPS = [
       "Implementation fee",
       "Ongoing service fee",
       "Spencer Study Club included, a $6,200 value",
-      "Details discussed during a consultation",
+      SPENCER_STUDY_CLUB.term,
     ],
     metric: { value: "02", label: "Scope and fees" },
     image: "/images/how-to-join/step-2.jpg",
@@ -60,14 +60,14 @@ const STEPS = [
     number: "03",
     tag: "Agreement",
     icon: MapPin,
-    title: "Agreement and entity or payer requirements",
+    title: "Agreement and payer requirements",
     body:
-      "Move forward only when the applicable agreement and entity or payment arrangements are ready.",
+      "Sign the services agreement and confirm entity and payer requirements. Your practice keeps its own name, brand, and ownership. You are not required to rebrand as Dental Sleep Link.",
     bullets: [
-      "Agreement before payment",
-      "Entity requirements reviewed",
-      "Payer readiness reviewed",
-      "No exclusivity term published",
+      "Services agreement signed",
+      "Entity requirements confirmed",
+      "Payer readiness confirmed",
+      "Your brand stays your own",
     ],
     metric: { value: "03", label: "Agreement and requirements" },
     image: "/images/how-to-join/step-2.jpg",
@@ -80,12 +80,12 @@ const STEPS = [
     icon: Settings,
     title: "Credentialing and setup",
     body:
-      "Credentialing and setup run inside the approximately six-month planning horizon. They overlap with training. Completion depends on the payer and the entity.",
+      "Credentialing and setup start right away and run at the same time as remote training. Credentialing may take approximately six months, with timing varying by payer and practice.",
     bullets: [
-      "Credentialing assistance",
+      "Credentialing coordination",
       "Billing setup",
-      "Overlaps with training",
-      "Not a 30-day window",
+      "Runs alongside remote training",
+      "About six months, varies by payer",
     ],
     metric: { value: "04", label: "Credentialing and setup" },
     image: "/images/how-to-join/step-3.jpg",
@@ -96,36 +96,36 @@ const STEPS = [
     number: "05",
     tag: "Training",
     icon: GraduationCap,
-    title: "Concurrent team training",
+    title: "Remote and in-office team training",
     body:
-      "Team training happens alongside credentialing and setup. The dentist remains responsible for clinical decisions, including selecting, fitting, and overseeing appliances.",
+      "Remote training starts alongside credentialing and setup. For a typical new program, hands-on in-office training happens around months three or four, depending on readiness. Practices already providing sleep services may follow a different timeline.",
     bullets: [
-      "Training runs concurrently",
-      "Existing team if capacity allows",
+      "Remote training from the start",
+      "In-office training around months 3 to 4",
+      "Built around your existing team",
       "Dentist stays clinically responsible",
-      "Shadowing is not listed until confirmed",
     ],
-    metric: { value: "05", label: "Concurrent team training" },
+    metric: { value: "05", label: "Team training" },
     image: "/images/how-to-join/step-3.jpg",
-    imageAlt: "Concurrent team training",
+    imageAlt: "Team training session",
   },
   {
     id: "launch",
     number: "06",
     tag: "Launch",
     icon: Rocket,
-    title: "Readiness review and phased launch",
+    title: "Launch and ongoing support",
     body:
-      "Launch is phased and follows a readiness review. It is not scheduled for 30 days after signing, and the first quarter is not described as profitable.",
+      "Launch follows a readiness review with your team. After launch, Dental Sleep Link continues with remote support, medical billing, and credentialing coordination. Any additional on-site support is defined in your agreement.",
     bullets: [
       "Readiness review first",
-      "Phased launch",
-      "Depends on payer and staff",
-      "No 30-day first-case promise",
+      "Ongoing remote support",
+      "Ongoing medical billing",
+      "Ongoing credentialing coordination",
     ],
-    metric: { value: "06", label: "Readiness and phased launch" },
+    metric: { value: "06", label: "Launch and ongoing support" },
     image: "/images/how-to-join/step-4.webp",
-    imageAlt: "Readiness review before a phased launch",
+    imageAlt: "Practice launching its sleep program",
   },
 ];
 
@@ -195,7 +195,7 @@ export default function HowToJoin() {
               <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-teal" />
             </span>
             <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
-            Six planning stages
+            Six stages to launch
           </motion.span>
 
           <motion.h1
@@ -217,9 +217,9 @@ export default function HowToJoin() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/70"
           >
-            Practice fit, scope, agreement, credentialing, concurrent training,
-            then a readiness review. Planning is about six months. Geographic
-            protection is not offered.
+            Practice fit, scope, and agreement, then credentialing, setup, and
+            training running in parallel, followed by launch and ongoing
+            support.
           </motion.p>
 
           <motion.div
@@ -299,7 +299,7 @@ export default function HowToJoin() {
               />
               <span className="absolute right-6 top-6 inline-flex items-center gap-1.5 rounded-full bg-teal px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.25em] text-white shadow-lg shadow-teal/30">
                 <Clock className="h-3 w-3" aria-hidden="true" />
-                About six months
+                Work runs in parallel
               </span>
             </div>
           </motion.div>

@@ -23,35 +23,35 @@ import {
   TrendingUp,
 } from "lucide-react";
 import LinkedInIcon from "@/components/icons/LinkedInIcon";
-import { BOOKING_URL, CTA, FOUNDER } from "@/lib/seo";
+import { BOOKING_URL, CTA, FOUNDER, OWNERSHIP, SPENCER_STUDY_CLUB, SUPPORT } from "@/lib/seo";
 
 const HERO_STATS = [
   { value: "$6,200", label: "Spencer Study Club value" },
-  { value: "In-office", label: "Team training" },
+  { value: "In-office", label: "Team training at implementation" },
   { value: "Ongoing", label: "Billing and remote support" },
-  { value: "~6 mo", label: "Planning horizon" },
+  { value: "Mo. 3 to 4", label: "Typical hands-on training" },
 ];
 
 const PILLARS = [
   {
     icon: Receipt,
     title: "Medical billing support",
-    body: "Claims submission, follow-up, and reporting. Reimbursement and payment timing are not guaranteed.",
+    body: "Claims submission, follow-up, and reporting for your sleep program, continuing after launch.",
   },
   {
     icon: ShieldCheck,
     title: "Credentialing assistance",
-    body: "Credentialing and documentation support. Practice responsibilities are defined in the agreement.",
+    body: "Credentialing coordination with medical payers, plus documentation support.",
   },
   {
     icon: Workflow,
     title: "Workflow implementation",
-    body: "Agreed setup around dentist-led care. Software, appliances, and testing are not automatically included.",
+    body: "Practice and billing setup around dentist-led care, built into your existing workflow.",
   },
   {
     icon: GraduationCap,
     title: "Team training",
-    body: "Training for the existing team where capacity permits. Staffing is assessed during planning.",
+    body: "Remote training from the start and in-office team training during implementation.",
   },
 ];
 
@@ -60,31 +60,31 @@ const DIFFERENTIATORS = [
     number: "01",
     icon: Handshake,
     title: "Services around your practice",
-    body: "DSL provides agreed nonclinical support. The practice remains independently owned, subject to the final agreement.",
+    body: "Dental Sleep Link provides nonclinical support. Your practice keeps its own name, brand, and ownership.",
   },
   {
     number: "02",
     icon: Workflow,
-    title: "A structured implementation plan",
-    body: "Credentialing, setup, and training overlap. Go-live depends on payer, entity, staff, and clinical readiness.",
+    title: "Work runs in parallel",
+    body: "Credentialing, setup, and remote training run at the same time, with hands-on training typically around months three or four.",
   },
   {
     number: "03",
     icon: ShieldCheck,
     title: "Credentialing and documentation support",
-    body: "Practice responsibilities are defined in the agreement. DSL does not claim that every regulatory requirement is covered.",
+    body: "Dental Sleep Link coordinates credentialing with medical payers and supports the documentation behind it.",
   },
   {
     number: "04",
     icon: Stethoscope,
     title: "Dentist-led clinical care",
-    body: "Treating clinicians select, fit, adjust, and oversee appliances. DSL is not the diagnosing provider.",
+    body: "Treating clinicians select, fit, adjust, and oversee appliances. Dental Sleep Link supports the nonclinical work around that care.",
   },
   {
     number: "05",
     icon: Heart,
     title: "Ongoing support",
-    body: "In-office team training, remote support, credentialing coordination, and medical billing continue after launch, so your practice can keep growing its sleep program.",
+    body: "After launch, remote support, medical billing, and credentialing coordination continue, so your practice can keep growing its sleep program.",
   },
 ];
 
@@ -101,8 +101,8 @@ const VALUES = [
   },
   {
     icon: Compass,
-    title: "Readiness before launch",
-    body: "Planning takes about six months. A public launch date and a 30-day first-case promise are not offered.",
+    title: "Your practice, your brand",
+    body: "Practices keep their own name and ownership. There is no requirement to rebrand as Dental Sleep Link.",
   },
 ];
 
@@ -214,8 +214,8 @@ function Hero() {
             >
               Dental Sleep Link helps general dentists add dental sleep medicine
               with implementation support, team training, credentialing
-              assistance, and ongoing billing. Your practice retains
-              responsibility for clinical care.
+              assistance, and ongoing billing. Your practice keeps its own
+              brand, its ownership, and its clinical care.
             </motion.p>
 
             <motion.div
@@ -321,7 +321,7 @@ function Hero() {
                 </div>
 
                 <span className="absolute right-6 top-6 rounded-full bg-white/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.25em] text-white backdrop-blur ring-1 ring-white/20">
-                  Founding cohort
+                  Implementation support
                 </span>
 
                 <motion.span
@@ -467,7 +467,7 @@ function NetworkGraphic() {
         className="absolute right-2 top-2 flex items-center gap-1.5 rounded-lg bg-navy/85 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-teal-light backdrop-blur ring-1 ring-teal/30"
       >
         <Activity className="h-3 w-3" aria-hidden="true" />
-        Cohort forming
+        Practice support
       </motion.div>
       <motion.div
         initial={{ opacity: 0, x: -10 }}
@@ -539,9 +539,8 @@ function WhoWeAre() {
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-navy/70">
               Dental Sleep Link supports credentialing, medical billing, team
-              training, and workflow implementation. It does not take clinical
-              responsibility away from the practice, and it does not promise
-              that the work adds no time or no risk.
+              training, and workflow implementation, while clinical
+              responsibility stays with the practice.
             </p>
           </motion.div>
 
@@ -553,16 +552,14 @@ function WhoWeAre() {
             className="space-y-5"
           >
             <p className="text-lg leading-relaxed text-navy/80">
-              Dental Sleep Link provides ongoing support, including in-office
-              team training, remote support, credentialing coordination, and
-              medical billing. There is an implementation fee and an ongoing
-              service fee, with details discussed during a consultation.
-              Spencer Study Club membership is included, a $6,200 value.
+              {SUPPORT.implementation} {SUPPORT.ongoing} {SUPPORT.onsite} There
+              is an implementation fee and an ongoing service fee, with details
+              discussed during a consultation. Spencer Study Club membership is
+              included, a $6,200 value. {SPENCER_STUDY_CLUB.term}
             </p>
             <p className="text-lg leading-relaxed text-navy/80">
-              An initial cohort of about three to five practices is planned.
-              Use your existing team where capacity permits. Staffing and
-              protected clinical time are assessed during planning.
+              {OWNERSHIP} We plan staffing and protected clinical time with
+              you, so your existing team can carry the work.
             </p>
 
             <div className="grid gap-3 pt-4 sm:grid-cols-2">
@@ -645,17 +642,17 @@ function MissionWhy() {
               Make dental sleep medicine more accessible to general dentists.
             </h3>
             <p className="relative mt-5 text-lg leading-relaxed text-white/75">
-              The proposed direction is practical support for credentialing,
-              training, and billing, while the dentist remains responsible for
-              clinical care. This is a planning statement, not a guarantee of
-              income or patient outcomes.
+              Dental Sleep Link gives general dentists practical support for
+              credentialing, training, and billing, so they can offer dental
+              sleep medicine while the dentist remains responsible for
+              clinical care.
             </p>
 
             <div className="relative mt-8 grid grid-cols-3 gap-3">
               {[
                 { v: "Patient", l: "Care stays clinical" },
                 { v: "Dentist", l: "Leads treatment" },
-                { v: "Planning", l: "About six months" },
+                { v: "Ongoing", l: "Support after launch" },
               ].map((c) => (
                 <div
                   key={c.l}
@@ -693,17 +690,16 @@ function MissionWhy() {
             </h3>
             <p className="relative mt-5 text-lg leading-relaxed text-white/75">
               Many practices do not yet have credentialing, billing workflow,
-              or protected team time in place. Dental Sleep Link is being built
-              to support those nonclinical pieces. It is an early cohort, not a
-              nationwide mature network.
+              or protected team time in place. Dental Sleep Link supports those
+              nonclinical pieces, so the dentist can focus on patient care.
             </p>
 
             <ul className="relative mt-7 space-y-3">
               {[
                 "Credentialing and documentation support",
-                "Billing support, with variable payer outcomes",
-                "Team training assessed against capacity",
-                "Phased launch only after a readiness review",
+                "Medical billing that continues after launch",
+                "In-office team training during implementation",
+                "Launch after a readiness review with your team",
               ].map((t, i) => (
                 <motion.li
                   key={t}
@@ -730,7 +726,7 @@ function MissionWhy() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="mt-12 text-center text-xl font-semibold text-white sm:text-2xl"
         >
-          DSL coordinates agreed nonclinical support.{" "}
+          Dental Sleep Link coordinates the nonclinical support.{" "}
           <span className="bg-gradient-to-r from-teal to-teal-light bg-clip-text text-transparent">
             Treating clinicians remain responsible for care.
           </span>
@@ -759,7 +755,7 @@ function Pillars() {
           <h2 className="mt-5 text-4xl font-bold leading-[1.1] tracking-tight text-navy sm:text-5xl">
             The support behind each{" "}
             <span className="bg-gradient-to-r from-teal to-teal-dark bg-clip-text text-transparent">
-              participating practice
+              partner practice
             </span>
             .
           </h2>
@@ -841,13 +837,13 @@ function Differentiators() {
           <h2 className="mt-5 text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl">
             Services, training, and billing support{" "}
             <span className="bg-gradient-to-r from-teal to-teal-light bg-clip-text text-transparent">
-              with responsibilities retained
+              built around your practice
             </span>
             .
           </h2>
           <p className="mt-5 text-white/70">
-            Describe the work that is included. Do not treat legal
-            classification, exclusivity, or zero extra work as settled.
+            Hands-on implementation, ongoing support after launch, and a
+            practice that stays your own.
           </p>
         </motion.div>
 
@@ -928,10 +924,8 @@ function Values() {
               Three values guide how a practice is supported.
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-navy/70">
-              The practice keeps clinical authority. Commercial illustrations
-              are planning tools, not achieved network results. Founder
-              operating history, if later approved, will be labeled separately
-              from Dental Sleep Link cohort outcomes.
+              The practice keeps clinical authority and its own brand, and
+              Dental Sleep Link stays with the practice after launch.
             </p>
           </motion.div>
 
@@ -1019,12 +1013,28 @@ function Founder() {
             <p className="mt-1 text-sm font-semibold uppercase tracking-[0.2em] text-teal">
               {`${FOUNDER.role}, Dental Sleep Link`}
             </p>
-            <p className="mt-5 text-base leading-relaxed text-white/75">
-              Brian founded Dental Sleep Link to help
-              general dentists add dental sleep medicine with implementation,
-              credentialing, and billing support, while each practice keeps
-              responsibility for clinical care.
-            </p>
+            <div className="mt-5 space-y-4 text-base leading-relaxed text-white/75">
+              <p>
+                Brian began his career in general dentistry. Over time he
+                moved his clinical work to full-time dental sleep medicine and
+                TMD, treating patients with obstructive sleep apnea and
+                temporomandibular disorders.
+              </p>
+              <p>
+                Making that transition taught him what it takes to run sleep
+                services inside a dental practice: credentialing with medical
+                payers, billing that follows through, a team that knows the
+                workflow, and protected time on the schedule. He founded Dental
+                Sleep Link to help other dental teams put those pieces in
+                place, so more general dentists can offer dental sleep medicine
+                to the patients they serve.
+              </p>
+              <p className="text-sm text-white/55">
+                Brian&apos;s background reflects his own clinical practice
+                experience. It is not a description of results achieved by
+                Dental Sleep Link partner practices.
+              </p>
+            </div>
             <a
               href={FOUNDER.linkedin}
               target="_blank"

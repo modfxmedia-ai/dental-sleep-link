@@ -14,7 +14,7 @@ import { BOOKING_URL } from "@/lib/seo";
 
 const BULLETS = [
   "Credentialing and documentation support",
-  "Team training where existing capacity allows",
+  "In-office team training during implementation",
   "Ongoing medical billing and remote support",
   "Clinical care remains the practice's responsibility",
 ];
@@ -22,7 +22,7 @@ const BULLETS = [
 const STAT_PILLS = [
   { icon: Building2, value: "$6,200", label: "Spencer Study Club value, included" },
   { icon: Receipt, value: "Ongoing", label: "Billing and remote support" },
-  { icon: Stethoscope, value: "In-office", label: "Team training" },
+  { icon: Stethoscope, value: "In-office", label: "Team training at implementation" },
 ];
 
 export default function About() {
@@ -90,11 +90,11 @@ export default function About() {
             .
           </h2>
           <p className="mt-5 text-lg text-navy/70">
-            Dental Sleep Link provides ongoing support, including in-office
-            team training, remote support, credentialing coordination, and
-            medical billing. It is a continuing relationship to help practices
-            build and grow their sleep programs. The practice keeps clinical
-            responsibility.
+            Implementation includes in-office team training. After launch,
+            Dental Sleep Link continues with remote support, medical billing,
+            and credentialing coordination. It is a continuing relationship to
+            help practices build and grow their sleep programs, under their own
+            name and brand.
           </p>
         </motion.div>
 
@@ -189,10 +189,10 @@ export default function About() {
                   </span>
                   <div>
                     <p className="text-xl font-bold leading-none text-navy">
-                      ~6 mo
+                      Mo. 3 to 4
                     </p>
                     <p className="mt-1 text-[10px] uppercase tracking-wider text-navy/60">
-                      Planning horizon
+                      Typical hands-on training
                     </p>
                   </div>
                 </motion.div>
@@ -285,9 +285,9 @@ export default function About() {
                   Discuss practice fit
                 </h3>
                 <p className="mt-2 text-sm text-white/70">
-                  Book a practice-fit call on our calendar, or use the contact
-                  page to prepare an email in your own mail app. Do not include
-                  patient or medical information.
+                  Book a practice-fit call on our calendar, or send us an
+                  inquiry from the contact page. Please do not include patient
+                  or medical information.
                 </p>
 
                 <Link
@@ -301,9 +301,9 @@ export default function About() {
                 </Link>
 
                 <p className="mt-4 text-center text-[11px] text-white/50">
-                  Prefer email?{" "}
+                  Prefer to write?{" "}
                   <Link href="/contact-us" className="underline hover:text-white">
-                    Prepare an email
+                    Send an inquiry
                   </Link>
                 </p>
               </div>

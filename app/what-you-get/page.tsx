@@ -4,7 +4,7 @@ import ServiceJsonLd from "@/components/seo/ServiceJsonLd";
 
 const TITLE = "What You Get: Implementation, Training, and Billing Support";
 const DESCRIPTION =
-  "Agreed setup, staff training, credentialing assistance, claims submission and follow-up, reporting, and ongoing nonclinical support. Clinical care stays with the practice.";
+  "Credentialing, setup, in-office team training, medical billing, and ongoing remote support. Clinical care, ownership, and your brand stay with your practice.";
 const PATH = "/what-you-get";
 
 export const metadata: Metadata = {

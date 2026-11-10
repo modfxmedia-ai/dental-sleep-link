@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { POSTS } from "@/lib/posts";
+import { PUBLISHED_POSTS } from "@/lib/posts";
 import { SITE_URL } from "@/lib/seo";
 
 const STATIC_ROUTES: { path: string; priority: number; changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"] }[] = [
@@ -7,10 +7,8 @@ const STATIC_ROUTES: { path: string; priority: number; changeFrequency: Metadata
   { path: "/about-us", priority: 0.8, changeFrequency: "monthly" },
   { path: "/what-you-get", priority: 0.9, changeFrequency: "monthly" },
   { path: "/the-model", priority: 0.9, changeFrequency: "monthly" },
-  { path: "/success-stories", priority: 0.8, changeFrequency: "monthly" },
   { path: "/partner-criteria", priority: 0.8, changeFrequency: "monthly" },
   { path: "/how-to-join", priority: 0.9, changeFrequency: "monthly" },
-  { path: "/blog", priority: 0.7, changeFrequency: "weekly" },
   { path: "/contact-us", priority: 0.7, changeFrequency: "yearly" },
   { path: "/sitemap", priority: 0.3, changeFrequency: "yearly" },
 ];
@@ -23,7 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: r.changeFrequency,
     priority: r.priority,
   }));
-  const postEntries = POSTS.map((p) => ({
+  const postEntries = PUBLISHED_POSTS.map((p) => ({
     url: `${SITE_URL}/blog/${p.slug}`,
     lastModified: now,
     changeFrequency: "monthly" as const,

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { POSTS, getPost, getRelated } from "@/lib/posts";
+import { PUBLISHED_POSTS, getPost, getRelated } from "@/lib/posts";
 import PostView from "./PostView";
 import ArticleJsonLd from "@/components/seo/ArticleJsonLd";
 import { SITE_URL } from "@/lib/seo";
@@ -8,7 +8,7 @@ import { SITE_URL } from "@/lib/seo";
 type Params = { params: Promise<{ slug: string }> };
 
 export function generateStaticParams() {
-  return POSTS.map((p) => ({ slug: p.slug }));
+  return PUBLISHED_POSTS.map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({ params }: Params): Promise<Metadata> {

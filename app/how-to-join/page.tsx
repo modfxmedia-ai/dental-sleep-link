@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import HowToJoin from "./HowToJoin";
 
-const TITLE = "How to Join: Six Planning Stages";
+const TITLE = "How to Join: Six Stages to Launch";
 const DESCRIPTION =
-  "Practice-fit conversation, scope and fee review, agreement and payer requirements, credentialing and setup, concurrent team training, then a readiness review and phased launch. About six months. No payment before the agreement is ready.";
+  "Practice-fit conversation, scope and fee review, agreement and payer requirements, then credentialing, setup, and team training in parallel, followed by launch and ongoing support.";
 const PATH = "/how-to-join";
 
 export const metadata: Metadata = {

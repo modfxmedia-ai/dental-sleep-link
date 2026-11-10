@@ -15,44 +15,44 @@ import {
   ArrowUpRight,
   Scale,
 } from "lucide-react";
-import { BOOKING_URL, CTA } from "@/lib/seo";
+import { BOOKING_URL, CTA, OWNERSHIP, SPENCER_STUDY_CLUB, SUPPORT } from "@/lib/seo";
 
 const STEPS = [
   {
     id: "planning",
     number: "01",
-    tag: "Planning",
+    tag: "Implementation",
     icon: Rocket,
-    title: "A structured implementation plan",
+    title: "Work runs in parallel from the start",
     body:
-      "Planning runs about six months. Credentialing, setup, and training overlap. Go-live depends on payer, entity, staff, and clinical or operational readiness. There is no 30-day first-case guarantee.",
+      "Credentialing, setup, and remote training run at the same time, so work starts right away. For a typical new program, hands-on training happens around months three or four, depending on readiness. Credentialing may take approximately six months, with timing varying by payer and practice. Practices already providing sleep services may follow a different timeline.",
     bullets: [
-      "Approximately six-month horizon",
-      "Overlapping workstreams",
-      "Readiness review before launch",
-      "No first-case date promised",
+      "Credentialing, setup, and remote training together",
+      "Hands-on training around months 3 to 4",
+      "Credentialing approximately six months",
+      "Different timeline for existing sleep programs",
     ],
     image: "/images/the-model/step-1-v2.png",
     imageAlt: "Implementation planning conversation",
-    metric: { value: "~6 mo", label: "Planning horizon" },
+    metric: { value: "Mo. 3 to 4", label: "Typical hands-on training" },
   },
   {
     id: "capacity",
     number: "02",
     tag: "Capacity",
     icon: Workflow,
-    title: "Use the existing team where capacity permits",
+    title: "Build on your existing team",
     body:
-      "Staffing and protected clinical time are assessed during planning. The model does not promise zero extra hires or that sleep work adds no time.",
+      "We look at staffing and protected clinical time together during planning, and name an internal team champion who keeps the sleep program moving day to day.",
     bullets: [
       "Capacity reviewed up front",
       "Protected clinical time",
       "Internal team champion",
-      "Extra staffing if the assessment requires it",
+      "Staffing plan that fits your practice",
     ],
     image: "/images/the-model/step-2-v3.png",
     imageAlt: "Practice team capacity planning",
-    metric: { value: "Assessed", label: "Staffing and capacity" },
+    metric: { value: "Planned", label: "Staffing and capacity" },
   },
   {
     id: "billing",
@@ -61,15 +61,15 @@ const STEPS = [
     icon: Receipt,
     title: "Credentialing and medical billing support",
     body:
-      "DSL supports credentialing, claims submission, follow-up, and reporting. Collections vary by payer, coverage, documentation, and patient responsibility. Reimbursement and payment timing are not guaranteed.",
+      "Dental Sleep Link coordinates credentialing with medical payers and handles claims submission, follow-up, and reporting. Collections vary by payer, coverage, documentation, and patient responsibility.",
     bullets: [
-      "Credentialing assistance",
-      "Claims submission and follow-up",
       "Credentialing coordination",
-      "No national-contract uplift claimed",
+      "Claims submission and follow-up",
+      "Claim status tracking",
+      "Collections reporting",
     ],
     image: "/images/the-model/step-3-v2.webp",
-    imageAlt: "Billing support, not a results dashboard",
+    imageAlt: "Medical billing support",
     metric: { value: "Ongoing", label: "Medical billing support" },
   },
   {
@@ -79,11 +79,11 @@ const STEPS = [
     icon: PackageCheck,
     title: "Clinicians oversee the appliance",
     body:
-      "Treating clinicians select, fit, adjust, and oversee appliances. DSL coordinates agreed nonclinical support. A positive screen does not by itself authorize an appliance.",
+      "Treating clinicians select, fit, adjust, and oversee appliances. Dental Sleep Link coordinates the nonclinical support around that care, and the practice keeps its own name and brand.",
     bullets: [
       "Dentist selects and fits",
       "Dentist adjusts and oversees",
-      "DSL coordinates nonclinical support",
+      "Dental Sleep Link coordinates nonclinical support",
       "Lab cost remains a practice cost",
     ],
     image: "/images/the-model/step-4-v2.jpg",
@@ -97,12 +97,12 @@ const STEPS = [
     icon: Compass,
     title: "Ongoing support as your program grows",
     body:
-      "Dental Sleep Link stays with your practice after launch. Ongoing support includes in-office team training, remote support, credentialing coordination, and medical billing, so your team can build and grow its sleep program.",
+      "Implementation includes in-office team training. After launch, Dental Sleep Link stays with your practice with ongoing remote support, medical billing, and credentialing coordination, so your team can build and grow its sleep program. Any additional on-site support is defined in your agreement.",
     bullets: [
-      "In-office team training",
-      "Remote support",
-      "Credentialing coordination",
-      "Medical billing",
+      "In-office team training at implementation",
+      "Ongoing remote support",
+      "Ongoing credentialing coordination",
+      "Ongoing medical billing",
     ],
     image: "/images/the-model/step-5.jpg",
     imageAlt: "Ongoing support planning discussion",
@@ -111,11 +111,11 @@ const STEPS = [
 ];
 
 const MARQUEE_ITEMS = [
-  "Plan",
   "Credential",
-  "Train",
-  "Review readiness",
-  "Launch in phases",
+  "Set up",
+  "Train remotely",
+  "Train in office",
+  "Launch and grow",
 ];
 
 export default function TheModel() {
@@ -199,9 +199,10 @@ export default function TheModel() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-white/70 sm:mt-6 sm:text-lg"
           >
-            Credentialing, setup, and training overlap across about six months.
-            Launch depends on readiness. The practice keeps clinical
-            responsibility and receives appliance payments.
+            Credentialing, setup, and remote training run in parallel from the
+            start, with hands-on training typically around months three or
+            four. Your practice keeps its own brand, its clinical care, and its
+            appliance payments.
           </motion.p>
 
           <motion.div
@@ -306,10 +307,10 @@ export default function TheModel() {
                 </span>
                 <div>
                   <p className="text-lg font-bold leading-none text-navy">
-                    Readiness first
+                    In parallel
                   </p>
                   <p className="mt-1 text-[10px] uppercase tracking-wider text-navy/60">
-                    About six months of planning
+                    Credentialing, setup, training
                   </p>
                 </div>
               </motion.div>
@@ -587,23 +588,22 @@ export default function TheModel() {
               </span>
               <div>
                 <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-teal-dark">
-                  Agreement controls
+                  Your practice, your brand
                 </p>
                 <h2 className="mt-2 text-2xl font-bold text-navy sm:text-3xl">
                   Ownership, services, and fees
                 </h2>
                 <p className="mt-4 text-sm leading-relaxed text-navy/70 sm:text-base">
-                  Ownership, services, and any transaction-related rights are
-                  governed by the final agreement. This page does not describe
-                  drag-along rights, practice equity, or a share of future exit
-                  proceeds. There is an implementation fee and an ongoing
+                  {OWNERSHIP} There is an implementation fee and an ongoing
                   service fee. Details are discussed during a consultation.
+                  {" "}{SUPPORT.onsite}
                 </p>
                 <ul className="mt-5 grid gap-2 text-sm text-navy/75 sm:grid-cols-2">
                   {[
                     "Implementation fee to launch your sleep program",
                     "Ongoing service fee for continuing support",
                     "Spencer Study Club membership included, a $6,200 value",
+                    SPENCER_STUDY_CLUB.term,
                     "Fee details discussed during a consultation",
                   ].map((b) => (
                     <li key={b} className="flex items-start gap-2">

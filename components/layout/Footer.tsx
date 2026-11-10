@@ -18,10 +18,8 @@ const QUICK_LINKS: NavItem[] = [
   { label: "About", href: "/about-us" },
   { label: "What You Get", href: "/what-you-get" },
   { label: "The Model", href: "/the-model" },
-  { label: "Founding Practice Program", href: "/success-stories" },
   { label: "Partner Criteria", href: "/partner-criteria" },
   { label: "How to Join", href: "/how-to-join" },
-  { label: "Blog", href: "/blog" },
   { label: "Contact Us", href: "/contact-us" },
   { label: "Sitemap", href: "/sitemap" },
 ];
@@ -154,12 +152,7 @@ export default function Footer() {
                   className="mt-0.5 h-4 w-4 shrink-0 text-teal"
                   aria-hidden="true"
                 />
-                <span>
-                  {CONTACT.phoneDisplay}
-                  <span className="mt-0.5 block text-[11px] font-normal text-white/45">
-                    Pending confirmation
-                  </span>
-                </span>
+                <span>{CONTACT.phoneDisplay}</span>
               </a>
             </li>
             <li>

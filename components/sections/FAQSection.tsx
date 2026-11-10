@@ -3,22 +3,28 @@
 import * as Accordion from "@radix-ui/react-accordion";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import { OWNERSHIP, SPENCER_STUDY_CLUB, SUPPORT, TIMELINE } from "@/lib/seo";
 
 const FAQS = [
   {
     id: "how-it-works",
     q: "How does DSL work with my practice?",
-    a: "Dental Sleep Link supports credentialing, medical billing, team training, and workflow implementation around dentist-led care. Your practice retains responsibility for clinical care. The relationship is a services arrangement. This site does not classify that arrangement as a franchise or decide any legal category.",
+    a: "Dental Sleep Link supports credentialing, medical billing, team training, and workflow implementation around dentist-led care. Your dentists keep clinical authority and responsibility for patient care, and Dental Sleep Link handles the nonclinical work that makes a sleep program run.",
   },
   {
     id: "what-you-get",
     q: "What do I receive?",
-    a: "Implementation covers credentialing coordination, practice and billing setup, and in-office team training. After launch, Dental Sleep Link provides ongoing support, including in-office team training, remote support, credentialing coordination, and medical billing. It is a continuing relationship to help your practice build and grow its sleep program. Spencer Study Club membership is included, a $6,200 value. Collections vary with payer contracts, coverage, documentation, and patient responsibility.",
+    a: `Implementation covers credentialing coordination, practice and billing setup, and in-office team training. ${SUPPORT.ongoing} ${SUPPORT.onsite} Spencer Study Club membership is included, a $6,200 value. ${SPENCER_STUDY_CLUB.term}`,
   },
   {
     id: "ownership",
-    q: "Do I still own my practice?",
-    a: "The practice remains independently owned, and treating clinicians keep clinical authority, subject to the final agreement. Ownership, services, and any transaction-related rights are governed by that agreement. This site does not describe equity transfers, exit proceeds, or drag-along rights.",
+    q: "Do I keep my practice and my brand?",
+    a: `Yes. ${OWNERSHIP} Treating clinicians keep clinical authority over patient care.`,
+  },
+  {
+    id: "timing",
+    q: "How long does implementation take?",
+    a: TIMELINE.summary,
   },
   {
     id: "economics",
@@ -28,17 +34,17 @@ const FAQS = [
   {
     id: "billing",
     q: "How does medical billing work?",
-    a: "DSL supports credentialing, claims submission, follow-up, and reporting for dentist-led care. Reimbursement and payment timing are not guaranteed. Appliance payments go to the practice. The final agreement controls.",
+    a: "Dental Sleep Link handles claims submission, follow-up, and reporting for your sleep program, and coordinates credentialing with medical payers. Appliance payments go to your practice. Reimbursement varies with payer contracts, coverage, documentation, and patient responsibility.",
   },
   {
     id: "experience",
     q: "Do I need prior sleep medicine experience?",
-    a: "New and experienced sleep programs may be evaluated individually. Readiness, training, a responsible dentist, an internal team champion, and protected capacity are assessed during planning. Prior sleep experience is not a published requirement, and a practice-age threshold is not published until it is confirmed.",
+    a: "No. Dental Sleep Link works with practices that are new to dental sleep medicine and with practices that already provide sleep services. Training, workflow, and timing are planned around where your practice is today.",
   },
   {
     id: "fit",
     q: "How is practice fit assessed?",
-    a: "Practice fit looks at capacity, payer readiness, clinical leadership, and team commitment. An initial cohort of about three to five practices is planned, with an approximately six-month implementation horizon. Go-live depends on payer, entity, staff, and clinical readiness. Territorial protection is not offered on this site.",
+    a: "Practice fit looks at team capacity, payer readiness, clinical leadership, and commitment from a dentist and an internal team champion. We talk through fit together on a call before any agreement.",
   },
 ];
 

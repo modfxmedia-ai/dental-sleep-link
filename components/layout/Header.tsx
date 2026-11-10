@@ -19,10 +19,8 @@ const NAV_ITEMS: NavItem[] = [
   { label: "About", href: "/about-us" },
   { label: "What You Get", href: "/what-you-get" },
   { label: "The Model", href: "/the-model" },
-  { label: "Founding Practice Program", href: "/success-stories" },
   { label: "Partner Criteria", href: "/partner-criteria" },
   { label: "How to Join", href: "/how-to-join" },
-  { label: "Blog", href: "/blog" },
   { label: "Contact Us", href: "/contact-us" },
 ];
 
