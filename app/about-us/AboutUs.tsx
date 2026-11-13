@@ -1009,30 +1009,37 @@ function Founder() {
             </div>
           </div>
           <div>
-            <p className="text-2xl font-bold text-white">{FOUNDER.name}</p>
+            <p className="text-2xl font-bold text-white">{FOUNDER.displayName}</p>
             <p className="mt-1 text-sm font-semibold uppercase tracking-[0.2em] text-teal">
               {`${FOUNDER.role}, Dental Sleep Link`}
             </p>
             <div className="mt-5 space-y-4 text-base leading-relaxed text-white/75">
               <p>
-                Brian began his career in general dentistry. Over time he
-                moved his clinical work to full-time dental sleep medicine and
-                TMD, treating patients with obstructive sleep apnea and
-                temporomandibular disorders.
+                Dr. Brian Briesemeister began his career in general dentistry
+                with a focus on implants and cosmetic dentistry. After taking a
+                course in dental sleep medicine, he became increasingly
+                interested in helping patients with sleep apnea and built that
+                work into a dedicated practice.
               </p>
               <p>
-                Making that transition taught him what it takes to run sleep
-                services inside a dental practice: credentialing with medical
-                payers, billing that follows through, a team that knows the
-                workflow, and protected time on the schedule. He founded Dental
-                Sleep Link to help other dental teams put those pieces in
-                place, so more general dentists can offer dental sleep medicine
-                to the patients they serve.
+                Since 2021, his sleep practice has doubled its annual revenue
+                each year, expanding to five locations and projecting more than
+                $6 million in revenue in 2026. That experience (building the
+                team, developing clinical workflows, coordinating medical
+                billing, and managing growth) led him to create Dental Sleep
+                Link.
+              </p>
+              <p>
+                Through Dental Sleep Link, Brian helps other dentists bring
+                sleep medicine into their practices with practical
+                implementation, team training, and ongoing support. He is a
+                Diplomate of the American Board of Dental Sleep Medicine and
+                founder and clinical director of the Center for Sleep and TMJ.
               </p>
               <p className="text-sm text-white/55">
-                Brian&apos;s background reflects his own clinical practice
-                experience. It is not a description of results achieved by
-                Dental Sleep Link partner practices.
+                Figures above describe Brian&apos;s own sleep practice. They
+                are not results achieved by Dental Sleep Link partner
+                practices.
               </p>
             </div>
             <a

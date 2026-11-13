@@ -22,6 +22,8 @@ export default function OrganizationJsonLd() {
     founder: {
       "@type": "Person",
       name: FOUNDER.name,
+      honorificPrefix: "Dr.",
+      jobTitle: FOUNDER.role,
       sameAs: [FOUNDER.linkedin],
     },
     areaServed: { "@type": "Country", name: "United States" },

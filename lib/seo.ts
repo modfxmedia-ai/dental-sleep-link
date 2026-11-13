@@ -5,8 +5,8 @@ export const SITE_DESCRIPTION =
 export const OG_IMAGE = "/og.png";
 
 export const CONTACT = {
-  phone: "+12089390775",
-  phoneDisplay: "(208) 939-0775",
+  phone: "+17572870757",
+  phoneDisplay: "(757) 287-0757",
   email: "info@dentalsleeplink.com",
   alternateEmail: "partnerships@dentalsleeplink.com",
 };
@@ -49,6 +49,7 @@ export const LINKEDIN_COMPANY_URL =
 
 export const FOUNDER = {
   name: "Brian Briesemeister",
+  displayName: "Dr. Brian Briesemeister",
   role: "Founder",
   linkedin: "https://www.linkedin.com/in/brian-briesemeister-532467a6/",
 };

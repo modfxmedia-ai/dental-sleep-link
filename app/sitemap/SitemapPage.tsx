@@ -50,7 +50,7 @@ const GROUPS: SiteGroup[] = [
         href: "/about-us",
         label: "About Us",
         description:
-          "What Dental Sleep Link supports, and the founder, Brian Briesemeister.",
+          "What Dental Sleep Link supports, and the founder, Dr. Brian Briesemeister.",
         icon: Info,
       },
       {
