@@ -3,7 +3,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useState } from "react";
 import {
   BOOKING_URL,
   CTA,
@@ -11,6 +10,7 @@ import {
   LINKEDIN_COMPANY_URL,
 } from "@/lib/seo";
 import LinkedInIcon from "@/components/icons/LinkedInIcon";
+import LeadConnectorForm from "@/components/forms/LeadConnectorForm";
 import {
   ArrowRight,
   Sparkles,
@@ -19,7 +19,6 @@ import {
   MapPin,
   CalendarDays,
   Send,
-  Check,
   MessageCircle,
   Headphones,
   ShieldCheck,
@@ -58,13 +57,6 @@ const INFO = [
   },
 ];
 
-const REASONS = [
-  "Discuss practice fit",
-  "Ask about implementation",
-  "Billing question",
-  "Press and media",
-];
-
 const PROMISES = [
   { icon: Send, label: "Send an inquiry from this page" },
   { icon: ShieldCheck, label: "No patient information" },
@@ -72,8 +64,6 @@ const PROMISES = [
 ];
 
 export default function ContactUs() {
-  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
-  const sent = status === "sent";
   return (
     <>
       {/* HERO */}
@@ -282,181 +272,22 @@ export default function ContactUs() {
                     "conic-gradient(from 0deg, rgba(42,191,191,0.6), rgba(42,191,191,0) 28%, rgba(42,191,191,0) 72%, rgba(42,191,191,0.6))",
                 }}
               />
-              <form
-                onSubmit={async (e) => {
-                  e.preventDefault();
-                  const form = e.currentTarget;
-                  const data = new FormData(form);
-                  const get = (k: string) => (data.get(k)?.toString() || "").trim();
-                  setStatus("sending");
-                  try {
-                    const res = await fetch("/api/contact", {
-                      method: "POST",
-                      headers: { "Content-Type": "application/json" },
-                      body: JSON.stringify({
-                        first: get("first"),
-                        last: get("last"),
-                        email: get("email"),
-                        phone: get("phone"),
-                        practice: get("practice"),
-                        city: get("city"),
-                        is_dentist: get("is_dentist"),
-                        reasons: data.getAll("reasons").map(String).filter(Boolean).join(", "),
-                        message: get("message"),
-                        website: get("website"),
-                      }),
-                    });
-                    if (!res.ok) throw new Error(String(res.status));
-                    form.reset();
-                    setStatus("sent");
-                  } catch {
-                    setStatus("error");
-                  }
-                }}
+              <div
                 className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-navy via-navy-mid to-navy p-8 ring-1 ring-white/10 shadow-2xl shadow-navy/30 sm:p-10"
               >
-                <motion.span
-                  aria-hidden="true"
-                  animate={{ scale: [1, 1.2, 1], opacity: [0.4, 0.7, 0.4] }}
-                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                  className="pointer-events-none absolute -top-20 -right-20 h-64 w-64 rounded-full bg-teal/20 blur-3xl"
-                />
                 <div className="relative">
-                  <span className="inline-flex items-center gap-2 rounded-full bg-teal/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.25em] text-teal ring-1 ring-teal/30">
-                    <span className="relative flex h-1.5 w-1.5">
-                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal opacity-75" />
-                      <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-teal" />
-                    </span>
-                    Send an inquiry
-                  </span>
-                  <h2 className="mt-4 text-3xl font-bold text-white sm:text-4xl">
+                  <h2 className="text-3xl font-bold text-white sm:text-4xl">
                     Tell us about your practice.
                   </h2>
                   <p className="mt-3 text-sm text-white/70">
                     Send us a note and the Dental Sleep Link team will follow
-                    up by email.
+                    up. Please do not include patient or medical information.
                   </p>
-
-                  {sent ? (
-                    <motion.div
-                      initial={{ opacity: 0, scale: 0.95 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.4 }}
-                      className="mt-10 rounded-2xl border border-teal/40 bg-teal/10 p-8 text-center backdrop-blur"
-                    >
-                      <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-teal to-teal-dark text-white shadow-lg shadow-teal/40">
-                        <Check className="h-7 w-7" aria-hidden="true" />
-                      </span>
-                      <p className="mt-4 text-lg font-bold text-white">
-                        Thank you. Your inquiry has been sent.
-                      </p>
-                      <p className="mt-2 text-sm text-white/70">
-                        The Dental Sleep Link team will follow up by email. If
-                        you would like to talk sooner, you can{" "}
-                        <a
-                          href={BOOKING_URL}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="font-semibold text-teal hover:text-teal-light"
-                        >
-                          book a call
-                        </a>
-                        .
-                      </p>
-                      <button
-                        type="button"
-                        onClick={() => setStatus("idle")}
-                        className="mt-5 text-xs font-semibold uppercase tracking-wider text-teal hover:text-teal-light"
-                      >
-                        Send another message
-                      </button>
-                    </motion.div>
-                  ) : (
-                    <div className="mt-8 grid gap-5">
-                      <div className="grid gap-5 sm:grid-cols-2">
-                        <Field label="First name" name="first" placeholder="Jane" required />
-                        <Field label="Last name" name="last" placeholder="Doe" required />
-                      </div>
-                      <div className="grid gap-5 sm:grid-cols-2">
-                        <Field type="email" label="Work email" name="email" placeholder="you@practice.com" required />
-                        <Field label="Phone" name="phone" placeholder="(555) 123-4567" />
-                      </div>
-                      <Field label="Practice name" name="practice" placeholder="Smile Family Dental" />
-                      <Field label="City and state" name="city" placeholder="City, ST" required />
-                      <SelectField
-                        label="Are you the treating dentist?"
-                        name="is_dentist"
-                        options={["Yes", "No, another clinician treats", "Not sure yet"]}
-                      />
-
-                      <div>
-                        <label className="block text-[11px] font-semibold uppercase tracking-[0.2em] text-white/70">
-                          What can we help with?
-                        </label>
-                        <div className="mt-3 flex flex-wrap gap-2">
-                          {REASONS.map((r) => (
-                            <label
-                              key={r}
-                              className="cursor-pointer rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-semibold text-white/80 backdrop-blur transition-all has-[:checked]:border-teal has-[:checked]:bg-teal has-[:checked]:text-white hover:border-teal/60"
-                            >
-                              <input type="checkbox" name="reasons" value={r} className="sr-only" />
-                              <span>{r}</span>
-                            </label>
-                          ))}
-                        </div>
-                      </div>
-
-                      <div>
-                        <label className="block text-[11px] font-semibold uppercase tracking-[0.2em] text-white/70">
-                          Your message
-                        </label>
-                        <textarea
-                          name="message"
-                          rows={4}
-                          required
-                          placeholder="Tell us about your practice and what you&rsquo;re hoping to learn…"
-                          className="mt-3 w-full rounded-2xl border border-white/15 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/40 backdrop-blur focus:border-teal focus:outline-none focus:ring-2 focus:ring-teal/40"
-                        />
-                      </div>
-
-                      <div aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
-                        <label>
-                          Website
-                          <input type="text" name="website" tabIndex={-1} autoComplete="off" />
-                        </label>
-                      </div>
-
-                      {status === "error" && (
-                        <p role="alert" className="rounded-2xl border border-red-300/40 bg-red-500/10 px-4 py-3 text-sm text-white">
-                          Sorry, your inquiry could not be sent. Please try
-                          again, or email{" "}
-                          <a href={`mailto:${SITE_CONTACT.email}`} className="font-semibold text-teal hover:text-teal-light">
-                            {SITE_CONTACT.email}
-                          </a>
-                          .
-                        </p>
-                      )}
-
-                      <button
-                        type="submit"
-                        disabled={status === "sending"}
-                        className="group relative disabled:cursor-wait disabled:opacity-70 inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-teal to-teal-dark px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-teal/30 transition-transform hover:scale-105"
-                      >
-                        <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
-                        <span className="relative">
-                          {status === "sending" ? "Sending..." : "Send inquiry"}
-                        </span>
-                        <Send className="relative h-4 w-4 transition-transform group-hover:translate-x-1" />
-                      </button>
-                      <p className="text-center text-[11px] leading-relaxed text-white/50">
-                        Do not submit patient names, records, or other medical
-                        information. This form is for general inquiries, not a
-                        secure clinical channel.
-                      </p>
-                    </div>
-                  )}
+                  <div className="mt-8 min-h-[598px] overflow-hidden rounded-2xl">
+                    <LeadConnectorForm />
+                  </div>
                 </div>
-              </form>
+              </div>
             </motion.div>
 
             {/* SIDE PANEL */}
@@ -707,76 +538,5 @@ export default function ContactUs() {
         </div>
       </section>
     </>
-  );
-}
-
-function Field({
-  label,
-  name,
-  type = "text",
-  placeholder,
-  required,
-}: {
-  label: string;
-  name: string;
-  type?: string;
-  placeholder?: string;
-  required?: boolean;
-}) {
-  return (
-    <div>
-      <label
-        htmlFor={name}
-        className="block text-[11px] font-semibold uppercase tracking-[0.2em] text-white/70"
-        dangerouslySetInnerHTML={{ __html: label }}
-      />
-      <input
-        id={name}
-        name={name}
-        type={type}
-        placeholder={placeholder}
-        required={required}
-        className="mt-3 w-full rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm text-white placeholder:text-white/40 backdrop-blur focus:border-teal focus:outline-none focus:ring-2 focus:ring-teal/40"
-      />
-    </div>
-  );
-}
-
-function SelectField({
-  label,
-  name,
-  options,
-  required,
-}: {
-  label: string;
-  name: string;
-  options: string[];
-  required?: boolean;
-}) {
-  return (
-    <div>
-      <label
-        htmlFor={name}
-        className="block text-[11px] font-semibold uppercase tracking-[0.2em] text-white/70"
-      >
-        {label}
-      </label>
-      <select
-        id={name}
-        name={name}
-        required={required}
-        defaultValue=""
-        className="mt-3 w-full appearance-none rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm text-white backdrop-blur focus:border-teal focus:outline-none focus:ring-2 focus:ring-teal/40"
-      >
-        <option value="" disabled className="bg-navy text-white">
-          Select …
-        </option>
-        {options.map((opt) => (
-          <option key={opt} value={opt} className="bg-navy text-white">
-            {opt}
-          </option>
-        ))}
-      </select>
-    </div>
   );
 }
