@@ -47,8 +47,13 @@ export default function Header({ currentPath }: HeaderProps) {
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMobileOpen(false);
+    };
+    if (mobileOpen) window.addEventListener("keydown", onKeyDown);
     return () => {
       document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKeyDown);
     };
   }, [mobileOpen]);
 
@@ -57,35 +62,6 @@ export default function Header({ currentPath }: HeaderProps) {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
-      {/* Tier 1 — top bar (desktop only; on mobile the same info lives in the slide-down menu) */}
-      <AnimatePresence initial={false}>
-        {!scrolled && (
-          <motion.div
-            key="top-bar"
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.25, ease: "easeInOut" }}
-            className="hidden overflow-hidden bg-teal text-white md:block"
-          >
-            <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-4 py-2 text-sm md:flex-row md:gap-4">
-              <ul className="flex flex-wrap items-center gap-x-6 gap-y-1">
-                <li>
-                  <a
-                    href={`tel:${CONTACT.phone}`}
-                    className="inline-flex items-center gap-2 transition-opacity hover:opacity-80"
-                  >
-                    <Phone className="h-4 w-4" aria-hidden="true" />
-                    <span>{CONTACT.phoneDisplay}</span>
-                  </a>
-                </li>
-              </ul>
-
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
       {/* Tier 2 — main nav */}
       <motion.div
         animate={{
@@ -94,7 +70,7 @@ export default function Header({ currentPath }: HeaderProps) {
         }}
         transition={{ duration: 0.25, ease: "easeInOut" }}
         className={cn(
-          "transition-colors duration-300",
+          "relative z-50 transition-colors duration-300",
           scrolled
             ? "bg-navy/90 backdrop-blur-md shadow-lg shadow-black/20"
             : "bg-navy",
@@ -175,6 +151,14 @@ export default function Header({ currentPath }: HeaderProps) {
 
           {/* CTA + mobile toggle */}
           <div className="flex shrink-0 items-center gap-2">
+            <a
+              href={`tel:${CONTACT.phone}`}
+              aria-label={`Call ${CONTACT.phoneDisplay}`}
+              className="hidden items-center gap-2 whitespace-nowrap rounded-full px-2 py-2 text-sm font-medium text-white transition-colors hover:text-teal lg:inline-flex"
+            >
+              <Phone className="h-4 w-4 text-teal" aria-hidden="true" />
+              <span>{CONTACT.phoneDisplay}</span>
+            </a>
             <a
               href={LINKEDIN_COMPANY_URL}
               target="_blank"
