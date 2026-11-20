@@ -2,7 +2,6 @@ import {
   SITE_URL,
   SITE_NAME,
   SITE_DESCRIPTION,
-  CONTACT,
   FOUNDER,
   LINKEDIN_COMPANY_URL,
 } from "@/lib/seo";
@@ -17,7 +16,6 @@ export default function OrganizationJsonLd() {
     logo: `${SITE_URL}/logo.png`,
     image: `${SITE_URL}/opengraph-image`,
     description: SITE_DESCRIPTION,
-    email: CONTACT.email,
     sameAs: [LINKEDIN_COMPANY_URL],
     founder: {
       "@type": "Person",

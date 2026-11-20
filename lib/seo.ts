@@ -7,8 +7,6 @@ export const OG_IMAGE = "/og.png";
 export const CONTACT = {
   phone: "+17572870757",
   phoneDisplay: "(757) 287-0757",
-  email: "info@dentalsleeplink.com",
-  alternateEmail: "partnerships@dentalsleeplink.com",
 };
 
 export const BOOKING_URL =

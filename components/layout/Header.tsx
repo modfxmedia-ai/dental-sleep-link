@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Mail, Menu, Phone, X } from "lucide-react";
+import { Menu, Phone, X } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import {
@@ -27,7 +27,6 @@ const NAV_ITEMS: NavItem[] = [
 const CONTACT = {
   phone: SITE_CONTACT.phone,
   phoneDisplay: SITE_CONTACT.phoneDisplay,
-  email: SITE_CONTACT.email,
 };
 
 interface HeaderProps {
@@ -78,15 +77,6 @@ export default function Header({ currentPath }: HeaderProps) {
                   >
                     <Phone className="h-4 w-4" aria-hidden="true" />
                     <span>{CONTACT.phoneDisplay}</span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={`mailto:${CONTACT.email}`}
-                    className="inline-flex items-center gap-2 transition-opacity hover:opacity-80"
-                  >
-                    <Mail className="h-4 w-4" aria-hidden="true" />
-                    <span>{CONTACT.email}</span>
                   </a>
                 </li>
               </ul>
@@ -277,13 +267,6 @@ export default function Header({ currentPath }: HeaderProps) {
                 >
                   <Phone className="h-4 w-4" aria-hidden="true" />
                   {CONTACT.phoneDisplay}
-                </a>
-                <a
-                  href={`mailto:${CONTACT.email}`}
-                  className="flex items-center gap-3 hover:text-teal"
-                >
-                  <Mail className="h-4 w-4" aria-hidden="true" />
-                  {CONTACT.email}
                 </a>
                 <a
                   href={LINKEDIN_COMPANY_URL}

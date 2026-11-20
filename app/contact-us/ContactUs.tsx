@@ -15,7 +15,6 @@ import {
   ArrowRight,
   Sparkles,
   Phone,
-  Mail,
   MapPin,
   CalendarDays,
   Send,
@@ -47,13 +46,6 @@ const INFO = [
     value: SITE_CONTACT.phoneDisplay,
     href: `tel:${SITE_CONTACT.phone}`,
     sub: "Call Dental Sleep Link",
-  },
-  {
-    icon: Mail,
-    label: "Email",
-    value: SITE_CONTACT.email,
-    href: `mailto:${SITE_CONTACT.email}`,
-    sub: "Email Dental Sleep Link",
   },
 ];
 
@@ -213,7 +205,7 @@ export default function ContactUs() {
 
         <div className="relative mx-auto max-w-7xl px-6">
           {/* Info cards */}
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {INFO.map((c, i) => {
               const Icon = c.icon;
               return (
@@ -334,8 +326,8 @@ export default function ContactUs() {
                       Your inquiry goes straight to our team.
                     </p>
                     <p className="mt-2 text-sm text-white/75">
-                      We follow up by email to talk through your practice and
-                      next steps.
+                      We follow up to talk through your practice and next
+                      steps.
                     </p>
                   </div>
                 </div>
@@ -371,16 +363,6 @@ export default function ContactUs() {
                     .
                   </li>
                   <li>Do not include patient or medical information.</li>
-                  <li>
-                    You can also email us at{" "}
-                    <a
-                      href={`mailto:${SITE_CONTACT.email}`}
-                      className="font-semibold text-teal-dark hover:text-teal"
-                    >
-                      {SITE_CONTACT.email}
-                    </a>
-                    .
-                  </li>
                 </ul>
               </div>
             </motion.div>
@@ -414,7 +396,7 @@ export default function ContactUs() {
               </h2>
               <p className="mt-4 text-white/70">
                 The quickest way to start is to book a practice-fit call. You
-                can also reach us by phone or email.
+                can also reach us by phone.
               </p>
               <div className="mt-8 space-y-4">
                 <div className="flex items-start gap-3">
@@ -424,15 +406,6 @@ export default function ContactUs() {
                   <div>
                     <p className="text-sm font-semibold text-white">{SITE_CONTACT.phoneDisplay}</p>
                     <p className="text-sm text-white/65">Phone</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-teal/15 text-teal ring-1 ring-teal/30">
-                    <Mail className="h-4 w-4" aria-hidden="true" />
-                  </span>
-                  <div>
-                    <p className="text-sm font-semibold text-white">{SITE_CONTACT.email}</p>
-                    <p className="text-sm text-white/65">Email</p>
                   </div>
                 </div>
               </div>

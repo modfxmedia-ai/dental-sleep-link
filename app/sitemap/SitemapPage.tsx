@@ -395,13 +395,6 @@ export default function SitemapPage() {
                   <Phone className="h-4 w-4 text-teal" aria-hidden="true" />
                   {CONTACT.phoneDisplay}
                 </a>
-                <a
-                  href={`mailto:${CONTACT.email}`}
-                  className="inline-flex items-center gap-2 hover:text-teal"
-                >
-                  <Mail className="h-4 w-4 text-teal" aria-hidden="true" />
-                  {CONTACT.email}
-                </a>
               </div>
             </div>
             <Link
