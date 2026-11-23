@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, Phone, X } from "lucide-react";
+import { Mail, Menu, Phone, X } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import {
@@ -27,6 +27,7 @@ const NAV_ITEMS: NavItem[] = [
 const CONTACT = {
   phone: SITE_CONTACT.phone,
   phoneDisplay: SITE_CONTACT.phoneDisplay,
+  email: SITE_CONTACT.email,
 };
 
 interface HeaderProps {
@@ -160,6 +161,14 @@ export default function Header({ currentPath }: HeaderProps) {
               <span>{CONTACT.phoneDisplay}</span>
             </a>
             <a
+              href={`mailto:${CONTACT.email}`}
+              aria-label={`Email ${CONTACT.email}`}
+              title={CONTACT.email}
+              className="hidden h-10 w-10 items-center justify-center rounded-full text-white/80 transition-colors hover:bg-white/10 hover:text-teal lg:inline-flex"
+            >
+              <Mail className="h-5 w-5" aria-hidden="true" />
+            </a>
+            <a
               href={LINKEDIN_COMPANY_URL}
               target="_blank"
               rel="noopener noreferrer"
@@ -251,6 +260,13 @@ export default function Header({ currentPath }: HeaderProps) {
                 >
                   <Phone className="h-4 w-4" aria-hidden="true" />
                   {CONTACT.phoneDisplay}
+                </a>
+                <a
+                  href={`mailto:${CONTACT.email}`}
+                  className="flex items-center gap-3 hover:text-teal"
+                >
+                  <Mail className="h-4 w-4" aria-hidden="true" />
+                  {CONTACT.email}
                 </a>
                 <a
                   href={LINKEDIN_COMPANY_URL}

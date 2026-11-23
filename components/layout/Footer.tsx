@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, Phone } from "lucide-react";
+import { ArrowRight, Mail, Phone } from "lucide-react";
 
 import type { NavItem } from "@/types";
 import {
@@ -27,6 +27,7 @@ const QUICK_LINKS: NavItem[] = [
 const CONTACT = {
   phone: SITE_CONTACT.phone,
   phoneDisplay: SITE_CONTACT.phoneDisplay,
+  email: SITE_CONTACT.email,
 };
 
 function FooterLogo() {
@@ -152,6 +153,18 @@ export default function Footer() {
                   aria-hidden="true"
                 />
                 <span>{CONTACT.phoneDisplay}</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href={`mailto:${CONTACT.email}`}
+                className="group flex items-start gap-3 break-all text-white/80 transition-colors hover:text-teal"
+              >
+                <Mail
+                  className="mt-0.5 h-4 w-4 shrink-0 text-teal"
+                  aria-hidden="true"
+                />
+                <span>{CONTACT.email}</span>
               </a>
             </li>
           </ul>
